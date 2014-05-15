@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Condominio.Dominio
 {
-    public class Class1
+    class Directivo
     {
     }
 }
