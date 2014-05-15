@@ -7,5 +7,6 @@ namespace Condominio.Dominio
 {
     class ReservaEspacio
     {
+        public int codigo { get; set; }
     }
 }
