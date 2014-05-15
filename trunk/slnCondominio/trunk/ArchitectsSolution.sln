@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOA.Condominio", "SOA.Condominio\SOA.Condominio.csproj", "{B8FF13BA-6F31-4043-8FB1-D6BAD74253AD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Dominio", "Condominio.Dominio\Condominio.Dominio.csproj", "{45EA13FD-3C61-442E-A3D7-843672C1D9FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Persistencia", "Condominio.Persistencia\Condominio.Persistencia.csproj", "{133976C4-2261-4980-B5F0-A543878C8488}"
@@ -15,6 +13,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Componentes", "Componentes"
 		..\Componentes\NHibernate.dll = ..\Componentes\NHibernate.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResidenteService", "ResidenteService\ResidenteService.csproj", "{3D2E228F-F352-4743-B895-FCC1E1840DAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Negocio", "Arquitects.BusinessLogic\Architects.Negocio.csproj", "{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Dominio", "Architects.BusinessEntity\Architects.Dominio.csproj", "{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Persistencia", "Architects.Persistencia\Architects.Persistencia.csproj", "{3C538BB7-8008-47E6-AB37-0F7B75471518}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -25,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B8FF13BA-6F31-4043-8FB1-D6BAD74253AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8FF13BA-6F31-4043-8FB1-D6BAD74253AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8FF13BA-6F31-4043-8FB1-D6BAD74253AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8FF13BA-6F31-4043-8FB1-D6BAD74253AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45EA13FD-3C61-442E-A3D7-843672C1D9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45EA13FD-3C61-442E-A3D7-843672C1D9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45EA13FD-3C61-442E-A3D7-843672C1D9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +43,22 @@ Global
 		{137F115B-1C69-4874-8970-52CA19CCCA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{137F115B-1C69-4874-8970-52CA19CCCA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{137F115B-1C69-4874-8970-52CA19CCCA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C538BB7-8008-47E6-AB37-0F7B75471518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C538BB7-8008-47E6-AB37-0F7B75471518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C538BB7-8008-47E6-AB37-0F7B75471518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C538BB7-8008-47E6-AB37-0F7B75471518}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
