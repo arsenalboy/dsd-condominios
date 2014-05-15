@@ -40,7 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Cuota.cs" />
+    <Compile Include="Directivo.cs" />
+    <Compile Include="EspacioComun.cs" />
+    <Compile Include="Horario.cs" />
+    <Compile Include="Junta.cs" />
+    <Compile Include="JuntaDirectivo.cs" />
+    <Compile Include="Mensaje.cs" />
+    <Compile Include="Mensajeria.cs" />
+    <Compile Include="Queja.cs" />
+    <Compile Include="ReservaEspacio.cs" />
+    <Compile Include="Residente.cs" />
+    <Compile Include="TipoPago.cs" />
+    <Compile Include="Visitas.cs" />
+    <Compile Include="Vivienda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
