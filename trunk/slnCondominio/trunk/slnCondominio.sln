@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Persistencia", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Negocio", "Condominio.Negocio\Condominio.Negocio.csproj", "{137F115B-1C69-4874-8970-52CA19CCCA3F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Componentes", "Componentes", "{87099D29-0B8F-40E2-B435-C7AEE27718D2}"
+	ProjectSection(SolutionItems) = preProject
+		..\Componentes\Iesi.Collections.dll = ..\Componentes\Iesi.Collections.dll
+		..\Componentes\NHibernate.dll = ..\Componentes\NHibernate.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
