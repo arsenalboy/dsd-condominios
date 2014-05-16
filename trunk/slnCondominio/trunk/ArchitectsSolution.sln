@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Componentes", "Componentes"
 		..\Componentes\NHibernate.dll = ..\Componentes\NHibernate.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResidenteService", "ResidenteService\ResidenteService.csproj", "{3D2E228F-F352-4743-B895-FCC1E1840DAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "ResidenteService\WCFService.csproj", "{3D2E228F-F352-4743-B895-FCC1E1840DAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Negocio", "Arquitects.BusinessLogic\Architects.Negocio.csproj", "{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}"
 EndProject
