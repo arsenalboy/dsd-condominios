@@ -13,10 +13,18 @@ namespace WcfService
     public class ResidenteService : IResidenteService
     {
         ResidenteDAO objresidenteDAO = new ResidenteDAO();
-        //public Architects.Dominio.Residente CrearResidente(int n_IdRes, string c_NomRes, int n_TipDoc, DateTime d_FecNac, string c_Correo, string c_NumDoc, string c_Clave, string c_EstReg)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public Int32 CrearResidente(int n_IdRes, string c_NomRes, int n_TipDoc, DateTime d_FecNac, string c_Correo, string c_NumDoc, string c_Clave, string c_EstReg)
+        {
+            Residente objresidente = new Residente();
+            objresidente.C_NomRes = c_NomRes;
+            objresidente.N_TipDoc = n_TipDoc;
+            objresidente.D_FecNac = d_FecNac;
+            objresidente.C_Correo = c_Correo;
+            objresidente.C_NumDoc = c_NumDoc;
+            objresidente.C_Clave = c_Clave;
+            objresidente.C_EstReg = c_EstReg;
+            return objresidenteDAO.CreaResidente(objresidente);
+        }
 
         //public Architects.Dominio.Residente ObtenerResidente(int n_IdRes)
         //{
