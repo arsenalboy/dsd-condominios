@@ -7,28 +7,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Componentes", "Componentes"
 		..\Componentes\NHibernate.dll = ..\Componentes\NHibernate.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "ResidenteService\WCFService.csproj", "{3D2E228F-F352-4743-B895-FCC1E1840DAA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Negocio", "Arquitects.BusinessLogic\Architects.Negocio.csproj", "{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Dominio", "Architects.BusinessEntity\Architects.Dominio.csproj", "{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Persistencia", "Architects.Persistencia\Architects.Persistencia.csproj", "{3C538BB7-8008-47E6-AB37-0F7B75471518}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "WcfService1\WCFService.csproj", "{77B087B8-92E2-4FDF-A41F-057E58B43133}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{13502522-7DEC-4AC8-8741-318198010AC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1A26CD9-092F-4156-BBED-59DE4AFE1695}"
+	ProjectSection(SolutionItems) = preProject
+		ArchitectsSolution.vsmdi = ArchitectsSolution.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
 		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ArchitectsSolution.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D2E228F-F352-4743-B895-FCC1E1840DAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +49,14 @@ Global
 		{3C538BB7-8008-47E6-AB37-0F7B75471518}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C538BB7-8008-47E6-AB37-0F7B75471518}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C538BB7-8008-47E6-AB37-0F7B75471518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77B087B8-92E2-4FDF-A41F-057E58B43133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B087B8-92E2-4FDF-A41F-057E58B43133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B087B8-92E2-4FDF-A41F-057E58B43133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B087B8-92E2-4FDF-A41F-057E58B43133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13502522-7DEC-4AC8-8741-318198010AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13502522-7DEC-4AC8-8741-318198010AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13502522-7DEC-4AC8-8741-318198010AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13502522-7DEC-4AC8-8741-318198010AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
