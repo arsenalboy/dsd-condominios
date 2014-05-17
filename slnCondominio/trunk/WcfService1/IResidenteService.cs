@@ -12,8 +12,8 @@ namespace WcfService
     [ServiceContract]
     public interface IResidenteService
     {
-        //[OperationContract]
-        //Residente CrearResidente(int n_IdRes, string c_NomRes, int n_TipDoc, DateTime d_FecNac, string c_Correo, string c_NumDoc, string c_Clave, string c_EstReg);
+        [OperationContract]
+        Int32 CrearResidente(int n_IdRes, string c_NomRes, int n_TipDoc, DateTime d_FecNac, string c_Correo, string c_NumDoc, string c_Clave, string c_EstReg);
         //[OperationContract]
         //Residente ObtenerResidente(int n_IdRes);
         //[OperationContract]
