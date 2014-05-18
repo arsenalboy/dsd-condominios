@@ -16,6 +16,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "WcfService1\WCFService.csproj", "{77B087B8-92E2-4FDF-A41F-057E58B43133}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{13502522-7DEC-4AC8-8741-318198010AC9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77B087B8-92E2-4FDF-A41F-057E58B43133} = {77B087B8-92E2-4FDF-A41F-057E58B43133}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1A26CD9-092F-4156-BBED-59DE4AFE1695}"
 	ProjectSection(SolutionItems) = preProject

@@ -42,6 +42,9 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -50,6 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SOAResidenteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="TestResidente.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +69,38 @@
       <Project>{3C538BB7-8008-47E6-AB37-0F7B75471518}</Project>
       <Name>Architects.Persistencia</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Architects.Dominio.Residente.datasource" />
+    <None Include="Service References\SOAResidenteService\ResidenteService.wsdl" />
+    <None Include="Service References\SOAResidenteService\ResidenteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SOAResidenteService\ResidenteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SOAResidenteService\ResidenteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SOAResidenteService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAResidenteService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAResidenteService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAResidenteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3dd3df7c-29ae-4578-b0a0-28e6f8f46d53" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53631/ResidenteService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ResidenteService.xsd" MetadataType="Schema" ID="4f880cb8-b712-4fc0-8c3d-9270a7202fd2" SourceId="1" SourceUrl="http://localhost:53631/ResidenteService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResidenteService.wsdl" MetadataType="Wsdl" ID="3ff26482-edda-4809-a199-c4a9bb150ae9" SourceId="1" SourceUrl="http://localhost:53631/ResidenteService.svc?wsdl" />
+    <MetadataFile FileName="ResidenteService1.xsd" MetadataType="Schema" ID="a55bdf40-a924-41e0-bf47-59e88d492738" SourceId="1" SourceUrl="http://localhost:53631/ResidenteService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ResidenteService2.xsd" MetadataType="Schema" ID="118fc8f5-9c65-4b26-bb9a-38f5dffdbf85" SourceId="1" SourceUrl="http://localhost:53631/ResidenteService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

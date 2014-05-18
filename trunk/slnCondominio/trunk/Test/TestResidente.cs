@@ -14,9 +14,9 @@ namespace Test
         [TestMethod]
         public void ListarAsesorTest()
         {
-            ResidenteDAO objresidentedao = new ResidenteDAO();
+            SOAResidenteService.ResidenteServiceClient objProxi = new SOAResidenteService.ResidenteServiceClient();
             IList<Residente> objresidente;
-            objresidente = objresidentedao.ListarResidentes();
+            objresidente = objProxi.ListarResidente();
             Assert.AreNotEqual(objresidente.Count,0);
             
         }

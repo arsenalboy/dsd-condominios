@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53631/ResidenteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio" />
+  <xs:element name="CrearResidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="n_IdResidente" type="xs:int" />
+        <xs:element minOccurs="0" name="c_Nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="c_Apellidos" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="n_TipoDoc" type="xs:int" />
+        <xs:element minOccurs="0" name="c_NumDocume" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="D_FecNacimi" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="c_Correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="c_Clave" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="b_Estado" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearResidenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearResidenteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResidente">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResidenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="ListarResidenteResult" nillable="true" type="q1:ArrayOfResidente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
