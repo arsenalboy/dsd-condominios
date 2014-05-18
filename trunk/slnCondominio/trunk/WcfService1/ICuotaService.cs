@@ -5,8 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Collections;
-
-using Condominio.Entities;
+using Architects.Dominio;
 
 namespace WcfService
 {
@@ -16,5 +15,8 @@ namespace WcfService
     {
         [OperationContract]
         IList<TipoPago> ListarTipoPago();
+
+        [OperationContract]
+        TipoPago CrearTipoPago(string Descripcion);
     }
 }
