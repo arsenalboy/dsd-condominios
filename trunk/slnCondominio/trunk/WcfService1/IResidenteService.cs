@@ -13,7 +13,7 @@ namespace WcfService
     public interface IResidenteService
     {
         [OperationContract]
-        Int32 CrearResidente(int n_IdRes, string c_NomRes, int n_TipDoc, DateTime d_FecNac, string c_Correo, string c_NumDoc, string c_Clave, string c_EstReg);
+        Int32 CrearResidente(int n_IdResidente, string c_Nombre, string c_Apellidos, int n_TipoDoc, string c_NumDocume, DateTime D_FecNacimi, string c_Correo, string c_Clave, Boolean b_Estado);
         //[OperationContract]
         //Residente ObtenerResidente(int n_IdRes);
         //[OperationContract]

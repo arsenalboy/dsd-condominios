@@ -10,21 +10,23 @@ namespace Architects.Dominio
     public class Residente
     {
         [DataMember]
-        public int N_IdRes { get; set; }
+        public int N_IdResidente { get; set; }
         [DataMember]
-        public string C_NomRes { get; set; }
+        public string C_Nombre { get; set; }
         [DataMember]
-        public int N_TipDoc { get; set; }
+        public string C_Apellidos { get; set; }
         [DataMember]
-        public DateTime D_FecNac { get; set; }
+        public int N_TipoDoc { get; set; }
+        [DataMember]
+        public string C_NumDocume { get; set; }
+        [DataMember]
+        public DateTime D_FecNacimi { get; set; }
         [DataMember]
         public string C_Correo { get; set; }
         [DataMember]
-        public string C_NumDoc { get; set; }
-        [DataMember]
         public string C_Clave { get; set; }
         [DataMember]
-        public string C_EstReg { get; set; }
+        public Boolean B_Estado { get; set; }
 
 
     }
