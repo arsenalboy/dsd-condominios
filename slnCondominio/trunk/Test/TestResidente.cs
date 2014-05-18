@@ -27,13 +27,14 @@ namespace Test
             ResidenteDAO objresidentedao = new ResidenteDAO();
 
              Residente objresidente = new Residente();
-            objresidente.C_NomRes ="MARITZA ESPERANZA";
-            objresidente.N_TipDoc = 1;
-            objresidente.D_FecNac = Convert.ToDateTime("1986-10-21");
+            objresidente.C_Nombre ="MARITZA ESPERANZA";
+            objresidente.C_Apellidos = "GUERRA RIVERA";
+            objresidente.N_TipoDoc = 1;
+            objresidente.C_NumDocume = "12343213";
+            objresidente.D_FecNacimi = Convert.ToDateTime("1986-10-21");
             objresidente.C_Correo = "CORREO5@GMAIL.COM";
-            objresidente.C_NumDoc = "12343213";
             objresidente.C_Clave = "SUPERMAN";
-            objresidente.C_EstReg = "S";
+            objresidente.B_Estado = true;
             Int32 id = objresidentedao.CreaResidente(objresidente);
 
             Assert.AreNotEqual(id, 0);
