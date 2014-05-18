@@ -31,9 +31,29 @@ namespace Arquitects.Negocio
             return intResultado;
         }
 
+        public Int32 ActualizaResidente(Residente objresidente)
+        {
+            int intResultado = 0;
+            try
+            {
+                intResultado = residenteDAO.ActualizaResidente(objresidente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return intResultado;
+        }
+
         public List<Residente> ListarResidente()
         {
             return residenteDAO.ListarResidentes();
+        }
+
+        public Residente ObtenerResidente(int n_IdResidente)
+        {
+            return residenteDAO.ObtenerResidente(n_IdResidente);
         }
     }
 }
