@@ -73,9 +73,9 @@
       <Project>{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}</Project>
       <Name>Architects.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Architects.Persistencia\Architects.Persistencia.csproj">
-      <Project>{3C538BB7-8008-47E6-AB37-0F7B75471518}</Project>
-      <Name>Architects.Persistencia</Name>
+    <ProjectReference Include="..\Arquitects.BusinessLogic\Architects.Negocio.csproj">
+      <Project>{A4206A4E-68A6-4AE5-B3C0-9D492EC301B2}</Project>
+      <Name>Architects.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
