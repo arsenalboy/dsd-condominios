@@ -15,12 +15,12 @@ namespace Architects.Dominio
 	/// </summary>
     [DataContract]
     public class TipoPago
-	{
+    {
         [DataMember]
-		public  int N_IdTipoPago { get; set; }
+        public int N_IdTipoPago { get; set; }
         [DataMember]
-		public  string C_Descripcion { get; set; }
+        public string C_Descripcion { get; set; }
         [DataMember]
-		public  bool B_Estado { get; set; }
-	} 
+        public bool B_Estado { get; set; }
+    }
 } 
