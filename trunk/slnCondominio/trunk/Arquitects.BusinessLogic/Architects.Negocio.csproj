@@ -48,9 +48,6 @@
     <Compile Include="TipoPagoBL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Architects.BusinessEntity\Architects.Dominio.csproj">
       <Project>{317596C9-FA2E-47D6-B4F8-8AA8D2AE0096}</Project>
       <Name>Architects.Dominio</Name>

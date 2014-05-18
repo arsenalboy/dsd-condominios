@@ -23,10 +23,11 @@ namespace Arquitects.Negocio
 
         public TipoPago CrearTipoPago(TipoPago tipoPago)
         {
-            TipoPago tipoPagoCrear = new TipoPago();
+            TipoPago tipoPagoCreado = new TipoPago();
             try
             {
-                tipoPagoCrear = TipoPagoDAO.Crear(tipoPago);
+                tipoPagoCreado.N_IdTipoPago = TipoPagoDAO.Crear(tipoPago);
+                tipoPagoCreado = TipoPagoDAO.Buscar(tipoPagoCreado.N_IdTipoPago);
             }
             catch (Exception ex)
             {
@@ -34,12 +35,14 @@ namespace Arquitects.Negocio
                 throw ex;
             }
 
-            return (tipoPagoCrear);
+            return (tipoPagoCreado);
         }
 
         public List<TipoPago> ListarTipoPago()
         {
-            return TipoPagoDAO.ListarTodos().ToList();
+            List<TipoPago> lstTipoPago = new List<TipoPago>();
+            lstTipoPago = TipoPagoDAO.Listar().ToList();
+            return lstTipoPago ;
         }
 
 
