@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Architects.Persistencia
 {
-    class Utilitario
+    public static class Utilitario
     {
-        public string CadenaConeccion()
+        public static string CadenaConeccion()
         {
             return "workstation id=CondominiosDB.mssql.somee.com;packet size=4096;user id=julioanyosa_SQLLogin_1;pwd=spnnkydfl1;data source=CondominiosDB.mssql.somee.com;persist security info=False;initial catalog=CondominiosDB";
         }

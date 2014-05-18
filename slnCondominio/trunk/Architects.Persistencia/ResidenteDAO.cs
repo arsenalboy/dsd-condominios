@@ -21,7 +21,7 @@ namespace Architects.Persistencia
 
         public ResidenteDAO()
         {
-            CadenaConexionSQL = new Utilitario().CadenaConeccion();
+            CadenaConexionSQL = Utilitario.CadenaConeccion();
             
         }
 
