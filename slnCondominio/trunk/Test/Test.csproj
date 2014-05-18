@@ -83,7 +83,6 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\Architects.Dominio.Residente.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.TipoPago.datasource" />
-    <None Include="Properties\DataSources\Condominio.Entities.TipoPago.datasource" />
     <None Include="Service References\SOAPagosService\CuotaService.wsdl" />
     <None Include="Service References\SOAPagosService\CuotaService.xsd">
       <SubType>Designer</SubType>
