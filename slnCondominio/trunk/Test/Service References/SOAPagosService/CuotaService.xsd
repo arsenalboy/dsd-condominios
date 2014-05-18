@@ -13,4 +13,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CrearTipoPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearTipoPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Condominio.Entities" minOccurs="0" name="CrearTipoPagoResult" nillable="true" type="q2:TipoPago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
