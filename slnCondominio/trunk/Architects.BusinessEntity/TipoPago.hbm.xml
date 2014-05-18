@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
-                   assembly="wcfSOAu201300077"
-                   namespace="wcfSOAu201300077.Dominio"
+                   assembly="Architects.Dominio"
+                   namespace="Architects.Dominio"
                    default-lazy="false"
                    schema="Maestros">
+  <!--<typedef class="com.test.model.TinyIntegerToBoolean" name="tinyint_boolean"/>-->
   <class name="TipoPago" table="TipoPago">
     <id name="N_IdTipoPago" column="N_IdTipoPago">
-      <generator class="increment" />
+      <generator class="identity" />
     </id>
     <property name="C_Descripcion" column="C_Descripcion" />
-    <property name="B_Estado" column="B_Estado" />
+    <property name="B_Estado" column="B_Estado" type="boolean" />
   </class>
 </hibernate-mapping>

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Condominio.Entities;
 using Architects.Persistencia;
+using Architects.Dominio;
 
 namespace Arquitects.Negocio
 {
@@ -28,10 +28,10 @@ namespace Arquitects.Negocio
             {
                 tipoPagoCrear = TipoPagoDAO.Crear(tipoPago);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 
-                throw;
+                throw ex;
             }
 
             return (tipoPagoCrear);

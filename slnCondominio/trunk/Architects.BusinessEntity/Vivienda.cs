@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Condominio.Entities
+namespace Architects.Dominio
 {
     /// <summary>
     /// Proyecto    : Modulo de Mantenimiento de : 

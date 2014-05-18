@@ -4,8 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Condominio.Entities;
+
 using Arquitects.Negocio;
+using Architects.Dominio;
 
 namespace WcfService
 {
@@ -17,6 +18,15 @@ namespace WcfService
         public IList<TipoPago> ListarTipoPago()
         {
             return tipoPagoBL.ListarTipoPago();
+        }
+
+        public TipoPago CrearTipoPago(string Descripcion)
+        {
+            TipoPago tipoPago = new TipoPago();
+            tipoPago.B_Estado = true;
+            tipoPago.C_Descripcion = Descripcion;
+
+            return tipoPagoBL.CrearTipoPago(tipoPago);
         }
     }
 }
