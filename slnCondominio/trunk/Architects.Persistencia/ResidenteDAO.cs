@@ -22,7 +22,6 @@ namespace Architects.Persistencia
         public ResidenteDAO()
         {
             CadenaConexionSQL = Utilitario.CadenaConeccion();
-            
         }
 
         public List<Residente> ListarResidentes()
@@ -57,21 +56,11 @@ namespace Architects.Persistencia
                 objconeccion = new SqlConnection(CadenaConexionSQL);
                 SqlCommand objcomand = new SqlCommand("insertar_residente", objconeccion);
                 objcomand.CommandType = CommandType.StoredProcedure;
-                objcomand.Parameters.Add("@C_Nombre", SqlDbType.VarChar, 80);
-                objcomand.Parameters["@C_Nombre"].Value = objresidente.C_Nombre;
-                objcomand.Parameters.Add("@C_Apellidos", SqlDbType.VarChar, 100);
-                objcomand.Parameters["@C_Apellidos"].Value = objresidente.C_Nombre;
-                objcomand.Parameters.Add("@N_TipoDoc", SqlDbType.Int);
-                objcomand.Parameters["@N_TipoDoc"].Value = objresidente.N_TipoDoc;
-                objcomand.Parameters.Add("@C_NumDocume", SqlDbType.VarChar, 10);
-                objcomand.Parameters["@C_NumDocume"].Value = objresidente.C_NumDocume;
-                objcomand.Parameters.Add("@D_FecNacimi", SqlDbType.DateTime);
-                objcomand.Parameters["@D_FecNacimi"].Value = objresidente.D_FecNacimi;
-                objcomand.Parameters.Add("@C_Correo", SqlDbType.VarChar, 45);
-                objcomand.Parameters["@C_Correo"].Value = objresidente.C_Correo;
-                objcomand.Parameters.Add("@C_Clave", SqlDbType.VarChar, 14);
-                objcomand.Parameters["@C_Clave"].Value = objresidente.C_Clave;
-                objcomand.Parameters.Add("@B_Estado", SqlDbType.VarChar, 1);
+                objcomand.Parameters.Add("@prm_C_Descripcion", SqlDbType.VarChar, 80);
+                objcomand.Parameters.Add("@B_Estado", SqlDbType.Bit, 1);
+
+                objcomand.Parameters["@prm_C_Descripcion"].Value = objresidente.C_Nombre;
+                
                 objcomand.Parameters["@B_Estado"].Value = objresidente.B_Estado;
                 objconeccion.Open();
                 Int32 id;
