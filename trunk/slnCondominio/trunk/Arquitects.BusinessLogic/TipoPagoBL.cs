@@ -21,9 +21,27 @@ namespace Arquitects.Negocio
             }
         }
 
+        public TipoPago CrearTipoPago(TipoPago tipoPago)
+        {
+            TipoPago tipoPagoCrear = new TipoPago();
+            try
+            {
+                tipoPagoCrear = TipoPagoDAO.Crear(tipoPago);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
+            return (tipoPagoCrear);
+        }
+
         public List<TipoPago> ListarTipoPago()
         {
             return TipoPagoDAO.ListarTodos().ToList();
         }
+
+
     }
 }

@@ -2,7 +2,8 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    assembly="wcfSOAu201300077"
                    namespace="wcfSOAu201300077.Dominio"
-                   default-lazy="false">
+                   default-lazy="false"
+                   schema="Maestros">
   <class name="TipoPago" table="TipoPago">
     <id name="N_IdTipoPago" column="N_IdTipoPago">
       <generator class="increment" />

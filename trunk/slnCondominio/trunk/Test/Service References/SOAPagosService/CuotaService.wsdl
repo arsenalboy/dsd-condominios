@@ -13,16 +13,35 @@
   <wsdl:message name="ICuotaService_ListarTipoPago_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarTipoPagoResponse" />
   </wsdl:message>
+  <wsdl:message name="ICuotaService_CrearTipoPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTipoPago" />
+  </wsdl:message>
+  <wsdl:message name="ICuotaService_CrearTipoPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTipoPagoResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICuotaService">
     <wsdl:operation name="ListarTipoPago">
       <wsdl:input wsaw:Action="http://tempuri.org/ICuotaService/ListarTipoPago" message="tns:ICuotaService_ListarTipoPago_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICuotaService/ListarTipoPagoResponse" message="tns:ICuotaService_ListarTipoPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearTipoPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuotaService/CrearTipoPago" message="tns:ICuotaService_CrearTipoPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuotaService/CrearTipoPagoResponse" message="tns:ICuotaService_CrearTipoPago_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICuotaService" type="tns:ICuotaService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ListarTipoPago">
       <soap:operation soapAction="http://tempuri.org/ICuotaService/ListarTipoPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTipoPago">
+      <soap:operation soapAction="http://tempuri.org/ICuotaService/CrearTipoPago" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

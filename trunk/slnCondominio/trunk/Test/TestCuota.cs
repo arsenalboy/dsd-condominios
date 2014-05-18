@@ -12,7 +12,7 @@ namespace Test
     {
 
         [TestMethod]
-        public void ListarTipoPagoTest()
+        public void TipoPagoListarTest()
         {
             SOAPagosService.CuotaServiceClient proxy = new SOAPagosService.CuotaServiceClient();
             IList<TipoPago> tipoPagoListar;
@@ -20,6 +20,18 @@ namespace Test
 
             Assert.AreNotEqual(tipoPagoListar.Count, 0);
 
+        }
+
+        [TestMethod]
+        public void TipoPagoCrearTest()
+        {
+            SOAPagosService.CuotaServiceClient proxy = new SOAPagosService.CuotaServiceClient();
+            TipoPago tipoPago = new TipoPago();
+            string strDescripcion = "CONTADO";
+            tipoPago = proxy.CrearTipoPago(strDescripcion);
+
+            Assert.AreEqual(tipoPago.C_Descripcion, strDescripcion);
+            /* */
         }
     }
 }

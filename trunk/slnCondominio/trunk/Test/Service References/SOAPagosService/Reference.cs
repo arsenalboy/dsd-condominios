@@ -17,6 +17,9 @@ namespace Test.SOAPagosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuotaService/ListarTipoPago", ReplyAction="http://tempuri.org/ICuotaService/ListarTipoPagoResponse")]
         Condominio.Entities.TipoPago[] ListarTipoPago();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuotaService/CrearTipoPago", ReplyAction="http://tempuri.org/ICuotaService/CrearTipoPagoResponse")]
+        Condominio.Entities.TipoPago CrearTipoPago(string Descripcion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -48,6 +51,10 @@ namespace Test.SOAPagosService {
         
         public Condominio.Entities.TipoPago[] ListarTipoPago() {
             return base.Channel.ListarTipoPago();
+        }
+        
+        public Condominio.Entities.TipoPago CrearTipoPago(string Descripcion) {
+            return base.Channel.CrearTipoPago(Descripcion);
         }
     }
 }
