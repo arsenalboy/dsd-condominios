@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="79ba0e02-a462-4889-8971-4fa2c59dbae3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53631/CuotaService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CuotaService.xsd" MetadataType="Schema" ID="639e65a8-c9ae-4942-85d3-1acee2102ea0" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CuotaService1.xsd" MetadataType="Schema" ID="c2d090d1-81c2-4418-b871-87b747f0a07b" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CuotaService.wsdl" MetadataType="Wsdl" ID="e39c3263-f51a-41ea-bd41-cb39051b68cc" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?wsdl" />
+    <MetadataFile FileName="CuotaService2.xsd" MetadataType="Schema" ID="50de1586-bfb7-4c08-9b48-b4972fdd64da" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
