@@ -48,9 +48,6 @@
     <Compile Include="TipoPago.cs" />
     <Compile Include="Vivienda.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TipoPago.hbm.xml" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
