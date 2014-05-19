@@ -28,6 +28,7 @@
       <th>Fecha Nacimiento</th>
       <th>Correo</th>
       <th>Estado</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -59,6 +60,7 @@ if(r.getN_TipoDoc()==1){
   <td><%=r.getD_FecNacimi().getTime() %></td>
   <td><%=r.getC_Correo() %></td>
   <td><%=estado %></td>
+  <td>Editar Eliminar</td>
 </tr>
 <%}
 %>

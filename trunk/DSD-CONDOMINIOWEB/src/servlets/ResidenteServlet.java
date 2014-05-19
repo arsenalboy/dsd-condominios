@@ -43,7 +43,7 @@ public class ResidenteServlet extends HttpServlet {
 			//Usuario usuario= (Usuario) session.getAttribute("USUARIO_ACTUAL");//listo ahora ya tienes al usuario para que onbtengas en codigo
 			Residente[] listado = residente.listarResidente();
 			request.setAttribute("ListaResidentes", listado);
-			RequestDispatcher rd = request.getRequestDispatcher("/pages/EspacioComunCliente.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/pages/ListaResidentes.jsp");
 			rd.forward(request, response);
 
 		} catch (Exception e) {
