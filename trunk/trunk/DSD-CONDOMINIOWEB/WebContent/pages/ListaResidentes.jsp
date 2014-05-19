@@ -8,6 +8,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/thickbox.js"></script>
+<link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
+
+<style>
+div.oculto{
+	display:none;
+}
+</style>
 </head>
 <body>
 <jsp:include page="/pages/header.jsp" />
@@ -16,8 +25,8 @@
         <h3>LISTA DE RESIDENTES</h3>
         <p></p>
       </div>
-    </div>
-    <table class="table">
+ </div>
+<table class="table">
   <thead>
     <tr>
       <th>#</th>
@@ -60,13 +69,11 @@ if(r.getN_TipoDoc()==1){
   <td><%=r.getD_FecNacimi().getTime() %></td>
   <td><%=r.getC_Correo() %></td>
   <td><%=estado %></td>
-  <td>Editar Eliminar</td>
+  <td><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=500&width=620" 
+title="mostrando un iframe" class="thickbox"><span class="label label-primary">Editar</span></a> <span class="label label-danger">Eliminar</span></td>
 </tr>
-<%}
-%>
+<%}%>
   </tbody>
 </table>
-      
-    </div>
 </body>
 </html>
