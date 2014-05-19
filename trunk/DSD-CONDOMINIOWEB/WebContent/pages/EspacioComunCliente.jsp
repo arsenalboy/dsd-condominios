@@ -36,18 +36,25 @@ Residente[] listado = (Residente[])request.getAttribute("ListaResidentes");
 int x=1;
 
 String estado=null;
+String doc=null;
 for (Residente r : listado) {
 
 if(r.getB_Estado()==true){
  	estado = "Activo";
 }else{
 	estado = "Retirado";
-}%>
+}
+if(r.getN_TipoDoc()==1){
+ 	doc = "DNI";
+}else{
+	doc = "Carnet de Extrnajería";
+}
+%>
 <tr>	
 <td><%=x++ %></td>
   <td><%=r.getC_Nombre() %></td>
   <td><%=r.getC_Apellidos() %></td>
-  <td><%=r.getN_TipoDoc() %></td>
+  <td><%=doc %></td>
   <td><%=r.getC_NumDocume() %></td>
   <td><%=r.getD_FecNacimi().getTime() %></td>
   <td><%=r.getC_Correo() %></td>
