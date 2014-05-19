@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 <!-- Bootstrap core CSS -->
     <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet" media="screen">
-
+	<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!-- Static navbar -->
@@ -30,7 +31,7 @@
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
 						<li><a href="<%=request.getContextPath()%>/pages/principal.jsp" target="_top" >Viviendas</a></li>
-						<li><a href="<%=request.getContextPath()%>/pages/principal.jsp" target="_top" >Residentes</a></li>	        							
+						<li><a href="<%=request.getContextPath()%>/ResidenteServlet" target="_top" >Residentes</a></li>	        							
 					</ul>
 			  </li>
 			  <li><a href="<%=request.getContextPath()%>/pages/ingresarReserva.jsp?x=0" target="_top">Reservas</a></li>

@@ -8,9 +8,6 @@
     <meta name="author" content="">
     <title>Reserva Espacio comun</title>    
   	<meta name="viewport" content="width=device-width">
-   	<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<script src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js"></script> 	 	 	 	
-    <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
     <style type="text/css">
       body {
         padding-bottom: 20px;
