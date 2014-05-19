@@ -41,7 +41,12 @@
 					</ul>
 			  </li>
 			  <li><a href="<%=request.getContextPath()%>/pages/ingresarReserva.jsp?x=0" target="_top">Reservas</a></li>
-			  <li><a href="<%=request.getContextPath()%>/pages/frmListarCuota.jsp" target="_top">Cuotas</a></li>
+			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuotas <b class="caret"></b></a>
+			  		<ul class="dropdown-menu">
+						<li><a href="<%=request.getContextPath()%>/pages/principal.jsp" target="_top" >Registrar</a></li>
+						<li><a href="<%=request.getContextPath()%>/pages/frmListarCuota.jsp" target="_top" >Listar</a></li>	        							
+					</ul>
+			  </li>
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Visitas <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
 						<li><a href="<%=request.getContextPath()%>/pages/principal.jsp" target="_top" >Registro</a></li>
