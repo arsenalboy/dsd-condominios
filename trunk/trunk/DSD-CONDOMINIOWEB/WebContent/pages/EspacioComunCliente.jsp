@@ -23,19 +23,35 @@
       <th>#</th>
       <th>Nombre</th>
       <th>Apellidos</th>
+      <th>Tipo de Documento</th>
+      <th>Numero</th>
+      <th>Fecha Nacimiento</th>
       <th>Correo</th>
+      <th>Estado</th>
     </tr>
   </thead>
   <tbody>
 <%
 Residente[] listado = (Residente[])request.getAttribute("ListaResidentes");
 int x=1;
-for (Residente r : listado) {%>
+
+String estado=null;
+for (Residente r : listado) {
+
+if(r.getB_Estado()==true){
+ 	estado = "Activo";
+}else{
+	estado = "Retirado";
+}%>
 <tr>	
 <td><%=x++ %></td>
   <td><%=r.getC_Nombre() %></td>
   <td><%=r.getC_Apellidos() %></td>
+  <td><%=r.getN_TipoDoc() %></td>
+  <td><%=r.getC_NumDocume() %></td>
+  <td><%=r.getD_FecNacimi().getTime() %></td>
   <td><%=r.getC_Correo() %></td>
+  <td><%=estado %></td>
 </tr>
 <%}
 %>
