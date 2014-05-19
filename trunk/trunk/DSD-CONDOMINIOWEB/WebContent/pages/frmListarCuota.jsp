@@ -102,7 +102,7 @@ $(document).ready(function() {
 	 
 	<%
 	int i = 1;
-	for(int Cuota=0;Cuota<=10; Cuota++) {
+	for(int Cuota=1;Cuota<=9; Cuota++) {
 	%>  
 	  <tr>
 	    <td><%=i++ %></td>
