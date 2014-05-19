@@ -71,6 +71,7 @@
     <Compile Include="ResidenteDAO.cs" />
     <Compile Include="TipoPagoDAO.cs" />
     <Compile Include="Utilitario.cs" />
+    <Compile Include="ViviendaDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
