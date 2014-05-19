@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CuotaService.svc" />
+    <Content Include="ReservasService.svc" />
     <Content Include="ResidenteService.svc" />
   </ItemGroup>
   <ItemGroup>
@@ -64,8 +65,12 @@
       <DependentUpon>CuotaService.svc</DependentUpon>
     </Compile>
     <Compile Include="ICuotaService.cs" />
+    <Compile Include="IReservasService.cs" />
     <Compile Include="IResidenteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservasService.svc.cs">
+      <DependentUpon>ReservasService.svc</DependentUpon>
+    </Compile>
     <Compile Include="ResidenteService.svc.cs">
       <DependentUpon>ResidenteService.svc</DependentUpon>
     </Compile>

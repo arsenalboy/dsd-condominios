@@ -58,12 +58,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\SOAReservasService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SOAResidenteService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="TestCuota.cs" />
+    <Compile Include="TestReservas.cs" />
     <Compile Include="TestResidente.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\Architects.Dominio.EspacioComun.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.Residente.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.TipoPago.datasource" />
     <None Include="Service References\SOAPagosService\CuotaService.wsdl" />
@@ -91,6 +98,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SOAPagosService\CuotaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SOAReservasService\ReservasService.wsdl" />
+    <None Include="Service References\SOAReservasService\ReservasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SOAReservasService\ReservasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SOAReservasService\ReservasService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SOAResidenteService\ResidenteService.wsdl" />
@@ -106,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\SOAPagosService\" />
+    <WCFMetadataStorage Include="Service References\SOAReservasService\" />
     <WCFMetadataStorage Include="Service References\SOAResidenteService\" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +146,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SOAPagosService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAReservasService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAReservasService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAReservasService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
