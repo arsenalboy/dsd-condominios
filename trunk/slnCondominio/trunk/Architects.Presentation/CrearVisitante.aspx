@@ -55,7 +55,7 @@
               <td></td>
               <td>
                 <div class="btn-group">
-                    <asp:Button ID="Button1" runat="server" Text="Button" class="btn btn-default"/>
+                    <asp:Button ID="Button1" runat="server" Text="Grabar" class="btn btn-default"/>
                 </div>
                 <div>
         
