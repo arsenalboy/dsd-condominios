@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 import javax.xml.bind.ParseConversionEvent;
 
 import org.datacontract.schemas._2004._07.Architects_Dominio.Residente;
@@ -43,49 +44,50 @@ public class ResidenteServlet extends HttpServlet {
 	private void processRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		
-   		String opcion = request.getParameter("opcion")==null?"2":request.getParameter("opcion");
-   		String c_Nombre = request.getParameter("txtNombre")==null?"2":request.getParameter("txtNombre");
+		String opcion = request.getParameter("opcion")==null?"2":request.getParameter("opcion");
+		int n_IdResidente = Integer.parseInt(request.getParameter("n_IdResidente")==null?"2":request.getParameter("n_IdResidente"));
+		String c_Nombre = request.getParameter("txtNombre")==null?"2":request.getParameter("txtNombre");
 		String c_Apellidos = request.getParameter("txtApellidos")==null?"2":request.getParameter("txtApellidos");
 		int n_TipoDoc = Integer.parseInt(request.getParameter("txtTipoDocumento")==null?"2":request.getParameter("txtTipoDocumento"));
 		String c_NumDocume = request.getParameter("txtNuDocumento")==null?"2":request.getParameter("txtNuDocumento");
 		Calendar D_FecNacimi = FormatoFecha.stringToCalendarDate(request.getParameter("txtFeNac")==null?"2":request.getParameter("txtFeNac"));
+		
 		String c_Correo = request.getParameter("txtCorreo")==null?"2":request.getParameter("txtCorreo");
 		String c_Clave = request.getParameter("txtClave")==null?"2":request.getParameter("txtClave");
 		Boolean b_Estado=true;
 		String page="";	
 		
-
 		try{
-			//trae todas las cuotas vencidas
-			if(opcion.equals("1")){		
-				page="/pages/ListaResidentes.jsp?opcion=1";
+ 
+			if(opcion.equals("1")){	//trae todos los residentes
+				
 				ResidenteWS residente = new ResidenteWS();
-					HttpSession session=request.getSession();
-					//Usuario usuario= (Usuario) session.getAttribute("USUARIO_ACTUAL");//listo ahora ya tienes al usuario para que onbtengas en codigo
-					Residente[] listado = residente.listarResidente();
-					request.setAttribute("ListaResidentes", listado);
-	
-			//registra juntas	
-			}else if(opcion.equals("2")){
-				page="/pages/ListaResidentes.jsp?opcion=1";
+				
+				Residente[] listado = residente.listarResidente();
+				request.setAttribute("ListaResidentes", listado);
+				page="/pages/ListaResidentes.jsp";
+				
+			}else if(opcion.equals("2")){ //registra Residentes
+				
 				ResidenteWS residente = new ResidenteWS();
 				residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
-				opcion="1";
-			}else if(opcion.equals("3")){
+				page="/pages/util.jsp";
 				
-				/*page="/pages/BuscarDirigente.jsp";
-				String codigo=request.getParameter("codigo").trim().equals("")?"-1":request.getParameter("codigo").trim();								
-				c=(List<Directivos>) negocioJunta.BuscarDirectivos(Integer.parseInt(codigo));				
-				request.setAttribute("lista",c);*/
+			}else if(opcion.equals("3")){ //Actualiza Residentes
 				
-			}else if(opcion.equals("4")){
-				/*page="/pages/detalleResidente.jsp";
-				String codigo=request.getParameter("codigo").trim().equals("")?"-1":request.getParameter("codigo").trim();								
-				GestionResidente negocio=new GestionResidente();
-				Residente resi=negocio.obtener(Integer.parseInt(codigo));
-				request.setAttribute("resi",resi);
-				*/
+				ResidenteWS residente = new ResidenteWS();
+				residente.ModificarResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+				page="/pages/ListaResidentes.jsp";
+				
+			}else if(opcion.equals("4")){ //Obtiene un residente por codigo
+				
+				ResidenteWS residente = new ResidenteWS();
+				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"-1":request.getParameter("cod").trim());								
+				
+				residente.ObtenerResidente(codigo);
+				request.setAttribute("residente",residente);
+				page="/pages/frmResidenteActualizar.jsp";
+				
 			}else if(opcion.equals("5")){
 				/*page="/pages/detalleVivienda.jsp";
 				String codigo=request.getParameter("codigo").trim().equals("")?"-1":request.getParameter("codigo").trim();								
