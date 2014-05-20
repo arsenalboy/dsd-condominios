@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listado de CUOTAS Generadas</title>
+<title>Listado de Cuotas PAGADAS y POR PAGAR</title>
   <!-- Bootstrap core CSS -->
  	<!-- Bootstrap core CSS -->
      <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -14,38 +14,17 @@
     
  	<script src="<%=request.getContextPath()%>/js/jquery-1.10.2.js"></script>
  	<script src="<%=request.getContextPath()%>/js/jquery.dataTables.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<%=request.getContextPath()%>/js/bootstrap-3.0.0.js"></script>
 <script language="Javascript">
-	function OnButton1()
+	function OnButtonBuscar()
 	{
-		if(document.forms[0].txtperiodo.value==""){
-			
-			
-			alert("Especifique un periodo");
-			return false;
-		}
-		document.form1.action = "<%=request.getContextPath()%>/CuotaServlet?paramOpcion=buscar";
+		document.form1.action =  "frmCuotaPagos.jsp?x=0";
     	document.form1.submit();      
 
     	return true;
 	}
-	function OnButton2()
-	{
-		
-		if(document.forms[0].txtperiodo.value==""){
-			
-			
-			alert("Especifique un periodo");
-			return false;
-		}
-    	document.form1.action = "<%=request.getContextPath()%>/CuotaServlet?paramOpcion=nuevo";
-    	document.form1.submit();             	
-    	return true;
-	}
 	</script>
 </head>
-
 
 <script type="text/javascript">
 
@@ -61,26 +40,20 @@ $(document).ready(function() {
   <fieldset>
   	<div class="jumbotron">
       <div class="container">
-        <h3>Cuotas Generadas</h3>
+        <h3>Cuotas Pagadas y Por Pagar</h3>
       </div>
     </div>
   </fieldset>  
   <fieldset class="form-horizontal well">
-  	<form id="form1" name="form1" method="post" > <!-- action="CuotaServlet?paramOpcion=buscar;CuotaServlet?paramOpcion=nuevo" -->
-        <p>Periodo a buscar [YYYYMM]:
-        <label>
-        	<input type="text" name="txtperiodo" id="txtperiodo" placeholder="201301"  class="form-control" />
-		</label>
-		    
-        <label>
+  	<form id="form1" name="form1" method="post" > 
+  	   <Div>
+           Residente :
+          <input type="text" size="100px" disabled="disabled" name="txtperiodo" id="txtperiodo" placeholder="Dato del Residente"  class="form-control"  value="<%=request.getAttribute("prmResidente") %>"/>
+	   </Div>
+        <Div>
         <input type="submit" class="btn btn-primary" id="btnBuscar" value="Buscar" onclick="OnButton1();"/>
-        </label>
-          <input type="submit" class="btn btn-primary"  id="btnNuevo" value="Nuevo" onclick="OnButton2();"/>	            
-        </p>
+        </Div>
       </form>
-     <!-- <form id="form2" name="form2" method="post" action=CuotaServlet?paramOpcion=nuevo>
-		   	
-		</form> -->
   </fieldset>
 
   <fieldset  class="form-horizontal well">
@@ -99,32 +72,36 @@ $(document).ready(function() {
 	  	<th width="192" scope="col">Acciones</th> 
   	</tr>
 
-	 
+	
 	<%
 	int i = 1;
 	for(int Cuota=1;Cuota<=9; Cuota++) {
 	%>  
 	  <tr>
 	    <td><%=i++ %></td>
-	    <td><% out.print("Cuota "+ i); %></td>
-	    <td><% out.print("Periodo"+ i); %></td>
-	    <td><% out.print("N° Viv : " + i); %></td>
-	    <td><% out.print("NombreResidente: " + i); %></td>
-	     <td><% out.print("999.00" + i); %></td>
-	     <td><% out.print("25/05/2014"); %></td>
-	     <td><% out.print("Efectivo"); %></td>
-	     <td><% out.print("30/05/2014"); %></td>
-	     
-	      <%if( (i >0)){ %>
-	    		  <td><a href="<%=request.getContextPath() %>/CuotaServlet?id=<%=i %>">Editar</a> - <a href="<%=request.getContextPath()%>
-	/CuotaServlet?id=<%=i%>" onclick="return confirm('¿Está seguro que desea eliminar Cuota');">Eliminar</a></td>
-	    		 
+	    <td><% out.print("Cuota "  + i); %></td>
+	    <td><% out.print("Periodo " + i); %></td>
+	    <td><% out.print("Numero " + i ); %></td>
+	    <td><% out.print("NombreResidente" + i); %></td>
+	     <td><% out.print("S/. 125.00 " + i); %></td>
+	     <td><% out.print("Fecha Vento " + i); %></td>
+	     <td><% out.print("Tipo de Pago " + i); %></td>
+	     <td><% out.print("Fecha Pago " + i); %></td>
+	     <%if( (i <5)){ %>
+	    		 <td> Pagado-Cancelado</td>
 	    	<%}else{ %>	 
+	    <td>
+	    
+	     <%if( (i >0)){ %>
+	    		  <td>
+	    		  <a href="frmCuotaPagar.jsp?x=0" onclick="return confirm('¿Está seguro que pagar CUOTA ');">Pagar</a> - 
+
+    	<%}else{ %>	 
 	   <td> Colocar Cuota</td>
 	    <%} %>
 	  </tr>
 	<% }  
-	  %>
+	  } %>
   
 	</table>
 

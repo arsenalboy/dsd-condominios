@@ -68,8 +68,7 @@
               </tbody>
             </table>
             <div>
-            <p></p>
-			 
+		 
             <%
            try {
         	   int x=0;
