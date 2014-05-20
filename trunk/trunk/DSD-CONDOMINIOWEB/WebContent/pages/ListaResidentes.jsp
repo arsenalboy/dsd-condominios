@@ -26,6 +26,8 @@ div.oculto{
         <p></p>
       </div>
  </div>
+ <p><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=280&width=380" 
+title="mostrando un iframe" class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </p>
 <table class="table">
   <thead>
     <tr>
@@ -69,7 +71,7 @@ if(r.getN_TipoDoc()==1){
   <td><%=r.getD_FecNacimi().getTime() %></td>
   <td><%=r.getC_Correo() %></td>
   <td><%=estado %></td>
-  <td><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=500&width=620" 
+  <td><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=280&width=380" 
 title="mostrando un iframe" class="thickbox"><span class="label label-primary">Editar</span></a> <span class="label label-danger">Eliminar</span></td>
 </tr>
 <%}%>

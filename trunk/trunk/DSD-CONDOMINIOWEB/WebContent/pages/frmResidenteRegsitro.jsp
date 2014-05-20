@@ -7,21 +7,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet" method="post">
+<form name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=2" method="post">
 <TABLE WIDTH=300>	
 		<TR>
 			<TD WIDTH=100>	
 				Nombre:
 			</TD>			
 			<TD WIDTH=100>
-				<input id="txtNombre" name="txtNombre" type="text" value="${requestScope.txtNombre}" required autofocus/>
+				<input id="txtNombre" name="txtNombre" type="text" value="" required autofocus/>
 			</TD>
-		</TR>	
+		</TR>
+		<TR>
+			<TD WIDTH=100>	
+				Apellidos:
+			</TD>			
+			<TD WIDTH=100>
+				<input id="txtApellidos" name="txtApellidos" type="text" value="" required autofocus/>
+			</TD>
+		</TR>		
 		<TR>
 			<TD WIDTH=100>	
 				Tipo Doc.: 
-			</TD>
-			
+			</TD>			
 			<TD WIDTH=100>			
 				<select id="txtTipoDocumento" name="txtTipoDocumento" >
 				  <option value="1" >DNI</option>
@@ -34,7 +41,7 @@
 				Num. Doc.: 
 			</TD>			
 			<TD WIDTH=100>
-				<input id="txtNuDocumento" name="txtNuDocumento" value="${requestScope.txtNuDocumento}" min="0" max="9999999999"  type="text" required autofocus style=" width : 179px;"/>
+				<input id="txtNuDocumento" name="txtNuDocumento"   type="text" required autofocus style=" width : 179px;"/>
 			</TD>
 		</TR>		
 		<TR>
@@ -42,7 +49,7 @@
 				Fecha Nac.:
 			</TD>			
 			<TD WIDTH=100>
-				 <input id="txtFeNac" name="txtFeNac" value="${requestScope.txtFeNac}" type="date" required autofocus/>
+				 <input id="txtFeNac" name="txtFeNac"  type="date" required autofocus/>
 			</TD>
 		</TR>
 		
@@ -51,7 +58,15 @@
 				Correo:
 			</TD>
 			<TD WIDTH=100>
-				 <input id="txtCorreo" name="txtCorreo" type="email"  value="${requestScope.txtCorreo}"required autofocus/>
+				 <input id="txtCorreo" name="txtCorreo" type="email"  required autofocus/>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=100>	
+				Clave:
+			</TD>
+			<TD WIDTH=100>
+				 <input id="txtClave" name="txtClave" type="text"  value="" required autofocus/>
 			</TD>
 		</TR>
 		<TR>
