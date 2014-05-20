@@ -43,8 +43,10 @@
 			  <li><a href="<%=request.getContextPath()%>/pages/ingresarReserva.jsp?x=0" target="_top">Reservas</a></li>
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuotas <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
-						<li><a href="<%=request.getContextPath()%>/pages/frmCuotaCrear.jsp" target="_top" >Registrar</a></li>
-						<li><a href="<%=request.getContextPath()%>/pages/frmCuotaListar.jsp" target="_top" >Listar</a></li>	        							
+						<li><a href="<%=request.getContextPath()%>/pages/frmCuotaListar.jsp" target="_top" >Listar</a></li>
+						<li><a href="<%=request.getContextPath()%>/pages/frmCuotaCrear.jsp?x=0" target="_top" >Registrar</a></li>
+						<li><a href="<%=request.getContextPath()%>/pages/frmCuotaPagos.jsp" target="_top" >Listar Pagos</a></li>	     
+						<li><a href="<%=request.getContextPath()%>/pages/frmCuotaPagar.jsp?x=0" target="_top" >Realizar Pago</a></li>   							
 					</ul>
 			  </li>
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Visitas <b class="caret"></b></a>
