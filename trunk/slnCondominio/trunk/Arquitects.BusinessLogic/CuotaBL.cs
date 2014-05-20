@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 
 using Architects.Dominio;
+using Architects.Persistencia;
+using System.Transactions;
 
 namespace Arquitects.Negocio
 {/// <summary>
@@ -16,76 +18,57 @@ namespace Arquitects.Negocio
     public class CuotaBL
     {
         private CuotaDAO cuotaDAO = null;
+
         public CuotaBL()
         {
             cuotaDAO = new CuotaDAO();
         }
-        //#region /* Proceso de SELECT ALL */
 
-        ///// <summary>
-        ///// Retorna un LISTA de registros de la Entidad Gestion.Cuota
-        ///// En la BASE de DATO la Tabla : [Gestion.Cuota]
-        ///// <summary>
-        ///// <returns>List</returns>
-        //public List<Cuota> List()
-        //{
-        //    List<Cuota> miLista = new List<Cuota>();
-        //    try
-        //    {
-        //        miLista = cuotaDAO.List();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    return miLista;
-        //}
-        //#endregion
+        #region /* Proceso de SELECT ALL */
 
-        //#region /* Proceso de SELECT BY ID CODE */
+        /// <summary>
+        /// Retorna un LISTA de registros de la Entidad Gestion.Cuota
+        /// En la BASE de DATO la Tabla : [Gestion.Cuota]
+        /// <summary>
+        /// <returns>List</returns>
+        public List<Cuota> Listar(string prm_C_Periodo)
+        {
+            List<Cuota> lstCuota = new List<Cuota>();
+            try
+            {
+                lstCuota = new CuotaDAO().Listar(prm_C_Periodo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstCuota;
+        }
 
-        ///// <summary>
-        ///// Retorna una ENTIDAD de registro de la Entidad Gestion.Cuota
-        ///// En la BASE de DATO la Tabla : [Gestion.Cuota]
-        ///// <summary>
-        ///// <returns>Entidad</returns>
-        //public Cuota Find(int prm_N_IdCuota)
-        //{
-        //    Cuota miEntidad = new Cuota();
-        //    try
-        //    {
-        //        miEntidad = cuotaDAO.Find(prm_N_IdCuota);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    return miEntidad;
-        //}
-        //#endregion
+        #endregion
 
-        //#region /* Proceso de SELECT BY ID CODE FOREIGN KEY*/
+        #region /* Proceso de SELECT BY ID CODE */
 
-        ///// <summary>
-        ///// Retorna una LISTA de registro de la Entidad Gestion.Cuota POR FOREIGN KEY
-        ///// En la BASE de DATO la Tabla : [Gestion.Cuota]
-        ///// <summary>
-        ///// <returns>Entidad</returns>
-        //public List<Cuota> ListBy_FK_Vivienda(int prm_N_IdVivienda)
-        //{
-        //    List<Cuota> miLista = new List<Cuota>();
-        //    try
-        //    {
-        //        miLista = cuotaDAO.ListBy_FK_Vivienda(prm_N_IdVivienda);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    return miLista;
-        //}
-
-        //#endregion
+        /// <summary>
+        /// Retorna una ENTIDAD de registro de la Entidad Gestion.Cuota
+        /// En la BASE de DATO la Tabla : [Gestion.Cuota]
+        /// <summary>
+        /// <returns>Entidad</returns>
+        public Cuota Buscar(int prm_N_IdCuota)
+        {
+            Cuota cuota = new Cuota();
+            try
+            {
+                cuota = cuotaDAO.Buscar(prm_N_IdCuota);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return cuota;
+        }
+    
+        #endregion
 
         //#region /* Proceso de INSERT RECORD */
 
@@ -94,13 +77,13 @@ namespace Arquitects.Negocio
         ///// En la BASE de DATO la Tabla : [Gestion.Cuota]
         ///// <summary>
         ///// <param name = >itemCuota</param>
-        //public ReturnValor Insert(Cuota itemCuota)
+        //public Cuota Registra(Cuota pcuota)
         //{
         //    try
         //    {
         //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
         //        {
-        //            oReturnValor.Exitosa = cuotaDAO.Insert(itemCuota);
+        //            oReturnValor.Exitosa = cuotaDAO.Registrar(pcuota);
         //            if (oReturnValor.Exitosa)
         //            {
         //                oReturnValor.Message = "¡Los Datos de la Entidad ha sido REGISTRADO SATISFACTORIAMENTE !";

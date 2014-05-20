@@ -13,10 +13,10 @@ namespace Architects.Persistencia
     /// Descripcion : Capa de Datos 
     /// Archivo     : [Gestion.CuotaData.cs]
     /// </summary>
-    public class CuotaData
+    public class CuotaDAO
     {
         private string conexion = string.Empty;
-        public CuotaData()
+        public CuotaDAO()
         {
             conexion = Utilitario.CadenaConeccion();
         }
