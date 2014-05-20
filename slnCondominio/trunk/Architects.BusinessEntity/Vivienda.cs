@@ -16,6 +16,11 @@ namespace Architects.Dominio
     [DataContract]
     public class Vivienda
     {
+        public Vivienda()
+        {
+            objResidente = new Residente();
+        }
+
         [DataMember]
         public int N_IdVivienda { get; set; }
         [DataMember]
@@ -30,5 +35,8 @@ namespace Architects.Dominio
         public string C_CodTipo { get; set; }
         [DataMember]
         public bool B_Estado { get; set; }
+
+        [DataMember]
+        public Residente objResidente { get; set; }
     }
 } 

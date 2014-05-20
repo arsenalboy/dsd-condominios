@@ -16,6 +16,12 @@ namespace Architects.Dominio
     [DataContract]
     public class Cuota
     {
+        public Cuota()
+        {
+            objTipoPago = new TipoPago();
+            objVivienda = new Vivienda();
+        }
+
         [DataMember]
         public int N_IdCuota { get; set; }
         [DataMember]
@@ -25,11 +31,11 @@ namespace Architects.Dominio
         [DataMember]
         public int N_IdTipoPago { get; set; }
         [DataMember]
-        public decimal N_Importe { get; set; }
+        public decimal? N_Importe { get; set; }
         [DataMember]
-        public string D_FecVncto { get; set; }
+        public Nullable<DateTime> D_FecVncto { get; set; }
         [DataMember]
-        public string D_FecPago { get; set; }
+        public Nullable<DateTime> D_FecPago { get; set; }
 
         [DataMember]
         public TipoPago objTipoPago { get; set; }
