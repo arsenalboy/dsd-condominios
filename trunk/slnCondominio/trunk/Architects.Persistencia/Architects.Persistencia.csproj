@@ -51,6 +51,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CuotaDAO.cs" />
     <Compile Include="DBMLPagos.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
