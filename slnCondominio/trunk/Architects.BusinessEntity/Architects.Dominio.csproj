@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cuota.cs" />
+    <Compile Include="Directivo.cs" />
     <Compile Include="EspacioComun.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
