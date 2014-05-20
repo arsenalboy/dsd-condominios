@@ -31,6 +31,29 @@ public class ResidenteWS {
 		return 0;
 	}
 	
+	public int ModificarResidente(int n_IdResidente,String c_Nombre, String c_Apellidos, int n_TipoDoc, 
+			String c_NumDocume, Calendar d_FecNacimi, String c_Correo, String c_Clave, Boolean b_Estado){
+		
+		try {
+			return servicio.actualizaResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, d_FecNacimi, c_Correo, c_Clave, b_Estado);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	public Residente ObtenerResidente(int n_IdResidente){
+		
+		try {
+			return servicio.obtenerResidente(n_IdResidente);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public Residente[] listarResidente(){
 	
 		try {

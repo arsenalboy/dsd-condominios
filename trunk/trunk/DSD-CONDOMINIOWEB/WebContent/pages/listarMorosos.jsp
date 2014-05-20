@@ -1,14 +1,4 @@
 
-    <tr>
-      <th>#</th>
-      <th>Nombre</th>
-      <th>Vivienda</th>
-      <th>Periodo</th>
-      <th>Importe</th>
-      <th>Fecha Vencimiento</th>
-      <th>Fecha Pago</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td>1</td>

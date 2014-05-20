@@ -27,7 +27,7 @@ div.oculto{
       </div>
  </div>
  <p><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=280&width=380" 
-title="mostrando un iframe" class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </p>
+title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </p>
 <table class="table">
   <thead>
     <tr>
@@ -44,7 +44,8 @@ title="mostrando un iframe" class="thickbox"><span class="btn btn-primary btn-lg
   </thead>
   <tbody>
 <%
-Residente[] listado = (Residente[])request.getAttribute("ListaResidentes");
+
+		Residente[] listado = (Residente[])request.getAttribute("ListaResidentes");
 int x=1;
 
 String estado=null;
@@ -71,8 +72,9 @@ if(r.getN_TipoDoc()==1){
   <td><%=r.getD_FecNacimi().getTime() %></td>
   <td><%=r.getC_Correo() %></td>
   <td><%=estado %></td>
-  <td><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=280&width=380" 
-title="mostrando un iframe" class="thickbox"><span class="label label-primary">Editar</span></a> <span class="label label-danger">Eliminar</span></td>
+  <td><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=4&cod=<%=r.getN_IdResidente()%>&keepThis=true&TB_iframe=true&height=300&width=750" 
+title="ACTUALIZAR RESIDENTE" class="thickbox"><span class="label label-primary">Editar</span></a> 
+<a href="<%=request.getContextPath()%>ResidenteServlet?opcion=4"><span class="label label-danger">Eliminar</span></a></td>
 </tr>
 <%}%>
   </tbody>
