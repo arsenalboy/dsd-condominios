@@ -16,19 +16,16 @@
  	<script src="<%=request.getContextPath()%>/js/jquery.dataTables.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<%=request.getContextPath()%>/js/bootstrap-3.0.0.js"></script>
-<script language="Javascript">
+	<script language="Javascript">
 	function OnButton1()
 	{
 		if(document.forms[0].txtperiodo.value==""){
-			
-			
-			alert("Especifique un periodo");
+ 			alert("Especifique un periodo");
 			return false;
 		}
-		document.form1.action = "<%=request.getContextPath()%>/CuotaServlet?paramOpcion=buscar";
+		document.form1.action = "frmCuotaListar.jsp?x=1";
     	document.form1.submit();      
-
-    	return true;
+     	return true;
 	}
 	function OnButton2()
 	{
@@ -39,7 +36,7 @@
 			alert("Especifique un periodo");
 			return false;
 		}
-    	document.form1.action = "<%=request.getContextPath()%>/CuotaServlet?paramOpcion=nuevo";
+    	document.form1.action ="frmCuotaCrear.jsp?x=0";
     	document.form1.submit();             	
     	return true;
 	}
@@ -66,7 +63,7 @@ $(document).ready(function() {
     </div>
   </fieldset>  
   <fieldset class="form-horizontal well">
-  	<form id="form1" name="form1" method="post" > <!-- action="CuotaServlet?paramOpcion=buscar;CuotaServlet?paramOpcion=nuevo" -->
+  	<form id="form1" name="form1" method="post" > 
         <p>Periodo a buscar [YYYYMM]:
         <label>
         	<input type="text" name="txtperiodo" id="txtperiodo" placeholder="201301"  class="form-control" />
@@ -78,9 +75,7 @@ $(document).ready(function() {
           <input type="submit" class="btn btn-primary"  id="btnNuevo" value="Nuevo" onclick="OnButton2();"/>	            
         </p>
       </form>
-     <!-- <form id="form2" name="form2" method="post" action=CuotaServlet?paramOpcion=nuevo>
-		   	
-		</form> -->
+     
   </fieldset>
 
   <fieldset  class="form-horizontal well">
@@ -113,11 +108,12 @@ $(document).ready(function() {
 	     <td><% out.print("999.00" + i); %></td>
 	     <td><% out.print("25/05/2014"); %></td>
 	     <td><% out.print("Efectivo"); %></td>
-	     <td><% out.print("30/05/2014"); %></td>
+	     <td><% out.print("30/05/2014" + i); %></td>
 	     
 	      <%if( (i >0)){ %>
-	    		  <td><a href="<%=request.getContextPath() %>/CuotaServlet?id=<%=i %>">Editar</a> - <a href="<%=request.getContextPath()%>
-	/CuotaServlet?id=<%=i%>" onclick="return confirm('¿Está seguro que desea eliminar Cuota');">Eliminar</a></td>
+	    		  <td>
+	    		  <a href="Editar" onclick="return confirm('¿Está seguro que desea EDITAR Cuota');">Editar</a> - 
+	    		  <a href="Eliminar" onclick="return confirm('¿Está seguro que desea ELIMINAR Cuota');">Eliminar</a></td>
 	    		 
 	    	<%}else{ %>	 
 	   <td> Colocar Cuota</td>
