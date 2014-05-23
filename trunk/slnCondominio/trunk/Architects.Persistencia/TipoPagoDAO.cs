@@ -77,7 +77,7 @@ namespace Architects.Persistencia
             return tipoPago;
         }
 
-        public int Crear(TipoPago tipoPago)
+        public int Registrar(TipoPago tipoPago)
         {
             int? codigoRetorno = null;
             try
