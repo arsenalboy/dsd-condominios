@@ -30,7 +30,8 @@ namespace Arquitects.Negocio
         /// Retorna un LISTA de registros de la Entidad Gestion.Cuota
         /// En la BASE de DATO la Tabla : [Gestion.Cuota]
         /// <summary>
-        /// <returns>List</returns>
+        /// <param name="prm_C_Periodo"></param>
+        /// <returns></returns>
         public List<Cuota> Listar(string prm_C_Periodo)
         {
             List<Cuota> lstCuota = new List<Cuota>();
@@ -53,7 +54,8 @@ namespace Arquitects.Negocio
         /// Retorna una ENTIDAD de registro de la Entidad Gestion.Cuota
         /// En la BASE de DATO la Tabla : [Gestion.Cuota]
         /// <summary>
-        /// <returns>Entidad</returns>
+        /// <param name="prm_N_IdCuota"></param>
+        /// <returns></returns>
         public Cuota Buscar(int prm_N_IdCuota)
         {
             Cuota cuota = new Cuota();
@@ -67,101 +69,94 @@ namespace Arquitects.Negocio
             }
             return cuota;
         }
-    
+
         #endregion
 
-        //#region /* Proceso de INSERT RECORD */
+        #region /* Proceso de INSERT RECORD */
 
-        ///// <summary>
-        ///// Almacena el registro de una ENTIDAD de registro de Tipo Cuota
-        ///// En la BASE de DATO la Tabla : [Gestion.Cuota]
-        ///// <summary>
-        ///// <param name = >itemCuota</param>
-        //public Cuota Registra(Cuota pcuota)
-        //{
-        //    try
-        //    {
-        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-        //        {
-        //            oReturnValor.Exitosa = cuotaDAO.Registrar(pcuota);
-        //            if (oReturnValor.Exitosa)
-        //            {
-        //                oReturnValor.Message = "¡Los Datos de la Entidad ha sido REGISTRADO SATISFACTORIAMENTE !";
-        //                tx.Complete();
-        //            }
-        //            else
-        //                oReturnValor.Message = "¡L¡Los Datos NO han REGISTRADO !";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        oReturnValor = ManejoException.mTraerMensaje(ex);
-        //    }
-        //    return oReturnValor;
-        //}
-        //#endregion
+        /// <summary>
+        /// Almacena el registro de una ENTIDAD de registro de Tipo Cuota
+        /// En la BASE de DATO la Tabla : [Gestion.Cuota]
+        /// <summary>
+        /// <param name="pcuota"></param>
+        /// <returns></returns>
+        public int Registrar(Cuota pcuota)
+        {
+            int IdcuotaNueva = -1;
+            try
+            {
+                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+                {
+                    IdcuotaNueva = cuotaDAO.Registrar(pcuota);
+                    if (IdcuotaNueva > 0)
+                    {
+                        tx.Complete();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return IdcuotaNueva;
+        }
 
-        //#region /* Proceso de UPDATE RECORD */
+        #endregion
 
-        ///// <summary>
-        ///// Almacena el registro de una ENTIDAD de registro de Tipo Cuota
-        ///// En la BASE de DATO la Tabla : [Gestion.Cuota]
-        ///// <summary>
-        ///// <param name = >itemCuota</param>
-        //public ReturnValor Update(Cuota itemCuota)
-        //{
-        //    try
-        //    {
-        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-        //        {
-        //            oReturnValor.Exitosa = cuotaDAO.Update(itemCuota);
-        //            if (oReturnValor.Exitosa)
-        //            {
-        //                oReturnValor.Message = "¡Los Datos de la Entidad ha sido ACTUALIZADO SATISFACTORIAMENTE !";
-        //                tx.Complete();
-        //            }
-        //            else
-        //                oReturnValor.Message = "¡Los Datos NO HAN sido ACTUALIZADO !";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        oReturnValor = ManejoException.mTraerMensaje(ex);
-        //    }
-        //    return oReturnValor;
-        //}
-        //#endregion
+        #region /* Proceso de UPDATE RECORD */
 
-        //#region /* Proceso de DELETE BY ID CODE */
+        /// <summary>
+        /// Almacena el registro de una ENTIDAD de registro de Tipo Cuota
+        /// En la BASE de DATO la Tabla : [Gestion.Cuota]
+        /// <summary>
+        /// <param name="pCuota"></param>
+        /// <returns></returns>
+        public int Actualizar(Cuota pCuota)
+        {
+            int cuotaEditada = -1;
+            try
+            {
+                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+                {
+                    cuotaEditada = cuotaDAO.Actualizar(pCuota);
+                    if (cuotaEditada > 0)
+                    {
+                        tx.Complete();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return cuotaEditada;
+        }
 
-        ///// <summary>
-        ///// ELIMINA un registro de la Entidad Gestion.Cuota
-        ///// En la BASE de DATO la Tabla : [Gestion.Cuota]
-        ///// <summary>
-        ///// <returns>bool</returns>
-        //public ReturnValor Delete(int prm_N_IdCuota)
-        //{
-        //    try
-        //    {
-        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-        //        {
-        //            oReturnValor.Exitosa = cuotaDAO.Delete(prm_N_IdCuota);
-        //            if (oReturnValor.Exitosa)
-        //            {
-        //                oReturnValor.Message = "¡El Registro ha sido ELIMINADO SATISFACTORIAMENTE !";
-        //                tx.Complete();
-        //            }
-        //            else
-        //                oReturnValor.Message = "¡El Registro NO HA SIDO ELIMINADO !";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        oReturnValor = ManejoException.mTraerMensaje(ex);
-        //    }
-        //    return oReturnValor;
-        //}
-        //#endregion
+        #endregion
+
+        #region /* Proceso de DELETE BY ID CODE */
+
+        /// <summary>
+        /// ELIMINA un registro de la Entidad Gestion.Cuota
+        /// En la BASE de DATO la Tabla : [Gestion.Cuota]
+        /// <param name="prm_N_IdCuota"></param>
+        public void Eliminar(int prm_N_IdCuota)
+        {
+            try
+            {
+                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+                {
+                    cuotaDAO.Eliminar(prm_N_IdCuota);
+                    tx.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
 
     }
 }

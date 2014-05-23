@@ -140,7 +140,7 @@ namespace Architects.Persistencia
         /// En la BASE de DATO la Tabla : [Gestion.Cuota]
         /// <summary>
         /// <param name = >itemCuota</param>
-        public bool Actualozar(Cuota pcuota)
+        public int Actualizar(Cuota pcuota)
         {
             int codigoRetorno = -1;
             try
@@ -160,7 +160,7 @@ namespace Architects.Persistencia
             {
                 throw ex;
             }
-            return codigoRetorno == 0 ? true : false;
+            return codigoRetorno;
         }
 
         #endregion
@@ -172,7 +172,7 @@ namespace Architects.Persistencia
         /// En la BASE de DATO la Tabla : [Gestion.Cuota]
         /// <summary>
         /// <returns>bool</returns>
-        public bool Delete(int prm_N_IdCuota)
+        public bool Eliminar(int prm_N_IdCuota)
         {
             int codigoRetorno = -1;
             try
