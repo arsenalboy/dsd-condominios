@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53631/PagosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio" />
+  <xs:import schemaLocation="http://localhost:53631/PagosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+  <xs:element name="ListarTipoPago">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="ListarTipoPagoResult" nillable="true" type="q1:ArrayOfTipoPago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarTipoPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarTipoPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="RegistrarTipoPagoResult" nillable="true" type="q2:TipoPago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarCuota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="C_Periodo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="N_IdVivienda" type="xs:int" />
+        <xs:element minOccurs="0" name="N_IdTipoPago" type="xs:int" />
+        <xs:element minOccurs="0" name="N_Importe" type="xs:decimal" />
+        <xs:element minOccurs="0" name="D_FecVncto" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarCuotaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="RegistrarCuotaResult" nillable="true" type="q3:RetornaMensaje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

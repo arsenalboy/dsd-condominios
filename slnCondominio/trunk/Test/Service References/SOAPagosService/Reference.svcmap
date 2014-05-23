@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="90c9684e-d412-4049-905a-81ce8889e6bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ecde7e38-5046-49ae-b0ea-1d5027d7ee0e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,13 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:53631/CuotaService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:53631/PagosService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CuotaService.xsd" MetadataType="Schema" ID="dc84d581-cc0d-4fa8-bbf7-969bb39e2805" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CuotaService1.xsd" MetadataType="Schema" ID="500f51f5-a5b9-456e-bad6-6184520850c7" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CuotaService.wsdl" MetadataType="Wsdl" ID="24d824ad-f444-4ea3-ad23-77137ed1669f" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?wsdl" />
-    <MetadataFile FileName="CuotaService2.xsd" MetadataType="Schema" ID="63f16b89-042b-4afe-8a89-26062840e20b" SourceId="1" SourceUrl="http://localhost:53631/CuotaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PagosService.xsd" MetadataType="Schema" ID="d68ee109-298b-4779-b717-82afb0c8867b" SourceId="1" SourceUrl="http://localhost:53631/PagosService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PagosService1.xsd" MetadataType="Schema" ID="683b7a7c-6a2c-48a6-ba57-12f993a714ba" SourceId="1" SourceUrl="http://localhost:53631/PagosService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PagosService2.xsd" MetadataType="Schema" ID="183e45a1-fcf3-49da-89d4-2b458dcdfd83" SourceId="1" SourceUrl="http://localhost:53631/PagosService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PagosService3.xsd" MetadataType="Schema" ID="cc141cf4-ec9e-4325-9cd8-3aac42109e57" SourceId="1" SourceUrl="http://localhost:53631/PagosService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PagosService.wsdl" MetadataType="Wsdl" ID="f5241f49-5e9a-4ec3-b2b3-4ee7d5f10e64" SourceId="1" SourceUrl="http://localhost:53631/PagosService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

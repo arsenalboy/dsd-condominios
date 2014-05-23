@@ -68,7 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="TestCuota.cs" />
+    <Compile Include="TestPagos.cs" />
     <Compile Include="TestReservas.cs" />
     <Compile Include="TestResidente.cs" />
   </ItemGroup>
@@ -90,15 +90,21 @@
     <None Include="Properties\DataSources\Architects.Dominio.EspacioComun.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.Residente.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.TipoPago.datasource" />
-    <None Include="Service References\SOAPagosService\CuotaService.wsdl" />
-    <None Include="Service References\SOAPagosService\CuotaService.xsd">
+    <None Include="Service References\SOAPagosService\PagosService.wsdl" />
+    <None Include="Service References\SOAPagosService\PagosService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SOAPagosService\CuotaService1.xsd">
+    <None Include="Service References\SOAPagosService\PagosService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SOAPagosService\CuotaService2.xsd">
+    <None Include="Service References\SOAPagosService\PagosService2.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SOAPagosService\PagosService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SOAPagosService\Test.SOAPagosService.RetornaMensaje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SOAReservasService\ReservasService.wsdl" />
     <None Include="Service References\SOAReservasService\ReservasService.xsd">
@@ -139,18 +145,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SOAPagosService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SOAPagosService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SOAPagosService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\SOAReservasService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SOAReservasService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAPagosService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAPagosService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOAPagosService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
