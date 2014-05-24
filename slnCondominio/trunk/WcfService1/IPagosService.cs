@@ -12,19 +12,32 @@ namespace WcfService
     [ServiceContract]
     public interface IPagosService
     {
-
+        /* TIPO DE PAGO */
         [OperationContract]
         IList<TipoPago> ListarTipoPago();
 
         [OperationContract]
         TipoPago RegistrarTipoPago(string Descripcion);
 
-        //[OperationContract(Name = "Error")]
-        //[FaultContract(typeof(RetornaMensaje))]
-
+        /* CUOTAS */
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "RegistrarCuota")]
-        RetornaMensaje RegistrarCuota(string C_Periodo, int N_IdVivienda, int N_IdTipoPago, decimal N_Importe, DateTime D_FecVncto);
+        RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, DateTime pFecVncto);
 
+        [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "ActualizarCuota")]
+        RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, DateTime pFecVncto);
+
+        [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "ListarCuota")]
+        List<Cuota> ListarCuota(string pPeriodo);
+
+        [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "BuscarCuota")]
+        Cuota BuscarCuota(int pIdCuota);
+
+        [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "EliminarCuota")]
+        RetornaMensaje EliminarCuota(int pIdCuota); 
     }
 }
