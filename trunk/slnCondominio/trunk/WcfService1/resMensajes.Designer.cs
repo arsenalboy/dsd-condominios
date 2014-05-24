@@ -86,5 +86,14 @@ namespace WcfService {
                 return ResourceManager.GetString("msjGuardadoOK", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to !Registro de {0}, no se ha guardado con exito.!.
+        /// </summary>
+        internal static string msjNoRegistrado {
+            get {
+                return ResourceManager.GetString("msjNoRegistrado", resourceCulture);
+            }
+        }
     }
 }

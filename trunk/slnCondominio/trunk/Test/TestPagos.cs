@@ -44,7 +44,7 @@ namespace Test
             Cuota cuotaRegistrada = new Cuota();
 
             string C_Periodo = "201401"; 
-            int N_IdVivienda=1; 
+            int N_IdVivienda=9; 
             int N_IdTipoPago=1; 
             decimal N_Importe = 120; 
             DateTime D_FecVncto = DateTime.Now;

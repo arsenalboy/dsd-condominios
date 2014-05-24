@@ -116,7 +116,7 @@ namespace Architects.Persistencia
             {
                 using (DBMLPagosDataContext SQLDC = new DBMLPagosDataContext(conexion))
                 {
-                    codigoRetorno = SQLDC.dsd_mnt_I_Cuota(
+                    SQLDC.dsd_mnt_I_Cuota(
                         ref codigoRetorno,
                         pcuota.C_Periodo,
                         pcuota.N_IdVivienda,
