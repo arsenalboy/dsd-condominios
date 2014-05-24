@@ -52,16 +52,14 @@ namespace WcfService
                     D_FecVncto = D_FecVncto
                 };
                 retornaMensaje.CodigoRetorno = cuotaBL.Registrar(cuota);
-                if (retornaMensaje.CodigoRetorno > 0)
-                {
-                    retornaMensaje.Mensage = resMensajes.msjGuardadoOK;
-                }
+                retornaMensaje.Mensage = resMensajes.msjGuardadoOK;
             }
             catch (Exception exception)
             {
-                retornaMensaje.Mensage = exception.Message;
-                retornaMensaje.CodigoError = exception.GetHashCode().ToString();
-                throw new FaultException<RetornaMensaje>(retornaMensaje);
+                throw new FaultException<RetornaMensaje>(new RetornaMensaje { Mensage = string.Format(resMensajes.msjNoRegistrado, "Cuota"), 
+                                                                              CodigoError = exception.GetHashCode().ToString() 
+                                                                            }
+                                                        , new FaultReason(exception.Message));
             }
             return retornaMensaje;
         }

@@ -22,8 +22,8 @@ namespace WcfService
         //[OperationContract(Name = "Error")]
         //[FaultContract(typeof(RetornaMensaje))]
 
-        [OperationContract]
         [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "RegistrarCuota")]
         RetornaMensaje RegistrarCuota(string C_Periodo, int N_IdVivienda, int N_IdTipoPago, decimal N_Importe, DateTime D_FecVncto);
 
     }
