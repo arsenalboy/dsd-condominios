@@ -118,13 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="msjActualizadoOK" xml:space="preserve">
-    <value>!Registro se ha actualizado con exito.!</value>
+    <value>!Registro de {0}, se ha actualizado con exito.!</value>
   </data>
   <data name="msjEliminadoOK" xml:space="preserve">
-    <value>!Registro se ha eliminado con exito.!</value>
+    <value>!Registro de {0}, se ha eliminado con exito.!</value>
   </data>
   <data name="msjGuardadoOK" xml:space="preserve">
-    <value>!Registro se ha guardado con exito.!</value>
+    <value>!Registro de {0}, se ha guardado con exito.!</value>
+  </data>
+  <data name="msjNoBuscado" xml:space="preserve">
+    <value>!No se ha encontrado el registro de {0}. !</value>
+  </data>
+  <data name="msjNoEliminado" xml:space="preserve">
+    <value>!No se ha podido eliminar registro de {0}. !</value>
+  </data>
+  <data name="msjNoListado" xml:space="preserve">
+    <value>!No se ha podido realizar el listado de {0}. !</value>
   </data>
   <data name="msjNoRegistrado" xml:space="preserve">
     <value>!Registro de {0}, no se ha guardado con exito.!</value>

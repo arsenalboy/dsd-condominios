@@ -61,7 +61,7 @@ namespace WcfService {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to !Registro se ha actualizado con exito.!.
+        ///   Looks up a localized string similar to !Registro de {0}, se ha actualizado con exito.!.
         /// </summary>
         internal static string msjActualizadoOK {
             get {
@@ -70,7 +70,7 @@ namespace WcfService {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to !Registro se ha eliminado con exito.!.
+        ///   Looks up a localized string similar to !Registro de {0}, se ha eliminado con exito.!.
         /// </summary>
         internal static string msjEliminadoOK {
             get {
@@ -79,11 +79,38 @@ namespace WcfService {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to !Registro se ha guardado con exito.!.
+        ///   Looks up a localized string similar to !Registro de {0}, se ha guardado con exito.!.
         /// </summary>
         internal static string msjGuardadoOK {
             get {
                 return ResourceManager.GetString("msjGuardadoOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to !No se ha encontrado el registro de {0}. !.
+        /// </summary>
+        internal static string msjNoBuscado {
+            get {
+                return ResourceManager.GetString("msjNoBuscado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to !No se ha podido eliminar registro de {0}. !.
+        /// </summary>
+        internal static string msjNoEliminado {
+            get {
+                return ResourceManager.GetString("msjNoEliminado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to !No se ha podido realizar el listado de {0}. !.
+        /// </summary>
+        internal static string msjNoListado {
+            get {
+                return ResourceManager.GetString("msjNoListado", resourceCulture);
             }
         }
         

@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\Architects.Dominio.Cuota.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.EspacioComun.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.Residente.datasource" />
     <None Include="Properties\DataSources\Architects.Dominio.TipoPago.datasource" />

@@ -14,4 +14,51 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoPago" nillable="true" type="tns:TipoPago" />
+  <xs:complexType name="ArrayOfCuota">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cuota" nillable="true" type="tns:Cuota" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuota" nillable="true" type="tns:ArrayOfCuota" />
+  <xs:complexType name="Cuota">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="C_Periodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_FecPago" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="D_FecVncto" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="N_IdCuota" type="xs:int" />
+      <xs:element minOccurs="0" name="N_IdTipoPago" type="xs:int" />
+      <xs:element minOccurs="0" name="N_IdVivienda" type="xs:int" />
+      <xs:element minOccurs="0" name="N_Importe" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="objTipoPago" nillable="true" type="tns:TipoPago" />
+      <xs:element minOccurs="0" name="objVivienda" nillable="true" type="tns:Vivienda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cuota" nillable="true" type="tns:Cuota" />
+  <xs:complexType name="Vivienda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="B_Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="C_CodTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NumDpto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NumEdificio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="N_IdResidente" type="xs:int" />
+      <xs:element minOccurs="0" name="N_IdVivienda" type="xs:int" />
+      <xs:element minOccurs="0" name="N_NumMetros" type="xs:decimal" />
+      <xs:element minOccurs="0" name="objResidente" nillable="true" type="tns:Residente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vivienda" nillable="true" type="tns:Vivienda" />
+  <xs:complexType name="Residente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="B_Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="C_Apellidos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NumDocume" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_FecNacimi" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="N_IdResidente" type="xs:int" />
+      <xs:element minOccurs="0" name="N_TipoDoc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Residente" nillable="true" type="tns:Residente" />
 </xs:schema>

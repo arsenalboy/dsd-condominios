@@ -118,7 +118,23 @@ namespace Test.SOAPagosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/RegistrarCuota", ReplyAction="http://tempuri.org/IPagosService/RegistrarCuotaResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Test.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/RegistrarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
-        Test.SOAPagosService.RetornaMensaje RegistrarCuota(string C_Periodo, int N_IdVivienda, int N_IdTipoPago, decimal N_Importe, System.DateTime D_FecVncto);
+        Test.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ActualizarCuota", ReplyAction="http://tempuri.org/IPagosService/ActualizarCuotaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Test.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+        Test.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuota", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Test.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+        Architects.Dominio.Cuota[] ListarCuota(string pPeriodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/BuscarCuota", ReplyAction="http://tempuri.org/IPagosService/BuscarCuotaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Test.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/BuscarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+        Architects.Dominio.Cuota BuscarCuota(int pIdCuota);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/EliminarCuota", ReplyAction="http://tempuri.org/IPagosService/EliminarCuotaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Test.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/EliminarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+        Test.SOAPagosService.RetornaMensaje EliminarCuota(int pIdCuota);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -156,8 +172,24 @@ namespace Test.SOAPagosService {
             return base.Channel.RegistrarTipoPago(Descripcion);
         }
         
-        public Test.SOAPagosService.RetornaMensaje RegistrarCuota(string C_Periodo, int N_IdVivienda, int N_IdTipoPago, decimal N_Importe, System.DateTime D_FecVncto) {
-            return base.Channel.RegistrarCuota(C_Periodo, N_IdVivienda, N_IdTipoPago, N_Importe, D_FecVncto);
+        public Test.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto) {
+            return base.Channel.RegistrarCuota(pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+        }
+        
+        public Test.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto) {
+            return base.Channel.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+        }
+        
+        public Architects.Dominio.Cuota[] ListarCuota(string pPeriodo) {
+            return base.Channel.ListarCuota(pPeriodo);
+        }
+        
+        public Architects.Dominio.Cuota BuscarCuota(int pIdCuota) {
+            return base.Channel.BuscarCuota(pIdCuota);
+        }
+        
+        public Test.SOAPagosService.RetornaMensaje EliminarCuota(int pIdCuota) {
+            return base.Channel.EliminarCuota(pIdCuota);
         }
     }
 }

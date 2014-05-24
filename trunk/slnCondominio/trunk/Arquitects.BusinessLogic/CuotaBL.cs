@@ -119,7 +119,7 @@ namespace Arquitects.Negocio
                 using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
                 {
                     cuotaEditada = cuotaDAO.Actualizar(pCuota);
-                    if (cuotaEditada > 0)
+                    if (cuotaEditada == 0)
                     {
                         tx.Complete();
                     }
