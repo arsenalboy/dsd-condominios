@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Architecs.PagosService" />
+  <xs:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Architecs.Dominio" />
+  <xs:element name="ListarTipoPago">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architecs.PagosService" minOccurs="0" name="ListarTipoPagoResult" nillable="true" type="q1:ArrayOfTipoPago" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarTipoPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarTipoPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="RegistrarTipoPagoResult" nillable="true" type="q2:RetornaMensaje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarCuota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pPeriodo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pIdVivienda" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTipoPago" type="xs:int" />
+        <xs:element minOccurs="0" name="pImporte" type="xs:decimal" />
+        <xs:element minOccurs="0" name="pFecVncto" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarCuotaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="RegistrarCuotaResult" nillable="true" type="q3:RetornaMensaje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCuota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdCuota" type="xs:int" />
+        <xs:element minOccurs="0" name="pPeriodo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pIdVivienda" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdTipoPago" type="xs:int" />
+        <xs:element minOccurs="0" name="pImporte" type="xs:decimal" />
+        <xs:element minOccurs="0" name="pFecVncto" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCuotaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="ActualizarCuotaResult" nillable="true" type="q4:RetornaMensaje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCuota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pPeriodo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCuotaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Architecs.PagosService" minOccurs="0" name="ListarCuotaResult" nillable="true" type="q5:ArrayOfCuota" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarCuota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdCuota" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarCuotaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Architecs.PagosService" minOccurs="0" name="BuscarCuotaResult" nillable="true" type="q6:Cuota" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarCuota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdCuota" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarCuotaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="EliminarCuotaResult" nillable="true" type="q7:RetornaMensaje" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

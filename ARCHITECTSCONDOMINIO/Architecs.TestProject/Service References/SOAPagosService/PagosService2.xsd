@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Architecs.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Architecs.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RetornaMensaje">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoRetorno" type="xs:int" />
+      <xs:element minOccurs="0" name="Exito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Mensage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetornaMensaje" nillable="true" type="tns:RetornaMensaje" />
+  <xs:complexType name="Vivienda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="B_Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="C_CodTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NumDpto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NumEdificio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="N_IdResidente" type="xs:int" />
+      <xs:element minOccurs="0" name="N_IdVivienda" type="xs:int" />
+      <xs:element minOccurs="0" name="N_NumMetros" type="xs:decimal" />
+      <xs:element minOccurs="0" name="objResidente" nillable="true" type="tns:Residente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vivienda" nillable="true" type="tns:Vivienda" />
+  <xs:complexType name="Residente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="B_Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="C_Apellidos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NumDocume" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_FecNacimi" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="N_IdResidente" type="xs:int" />
+      <xs:element minOccurs="0" name="N_TipoDoc" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Residente" nillable="true" type="tns:Residente" />
+</xs:schema>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PagosService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Architecs.PagosService" />
+      <xsd:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Architecs.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPagosService_ListarTipoPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoPago" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ListarTipoPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_RegistrarTipoPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarTipoPago" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_RegistrarTipoPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarTipoPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_RegistrarCuota_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarCuota" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_RegistrarCuota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_RegistrarCuota_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Architecs.Dominio" name="detail" element="q1:RetornaMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ActualizarCuota_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCuota" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ActualizarCuota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ActualizarCuota_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Architecs.Dominio" name="detail" element="q2:RetornaMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ListarCuota_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCuota" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ListarCuota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ListarCuota_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Architecs.Dominio" name="detail" element="q3:RetornaMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_BuscarCuota_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCuota" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_BuscarCuota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_BuscarCuota_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Architecs.Dominio" name="detail" element="q4:RetornaMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_EliminarCuota_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCuota" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_EliminarCuota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_EliminarCuota_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Architecs.Dominio" name="detail" element="q5:RetornaMensaje" />
+  </wsdl:message>
+  <wsdl:portType name="IPagosService">
+    <wsdl:operation name="ListarTipoPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/ListarTipoPago" message="tns:IPagosService_ListarTipoPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/ListarTipoPagoResponse" message="tns:IPagosService_ListarTipoPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTipoPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/RegistrarTipoPago" message="tns:IPagosService_RegistrarTipoPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/RegistrarTipoPagoResponse" message="tns:IPagosService_RegistrarTipoPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCuota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/RegistrarCuota" message="tns:IPagosService_RegistrarCuota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/RegistrarCuotaResponse" message="tns:IPagosService_RegistrarCuota_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/RegistrarCuotaRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_RegistrarCuota_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCuota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/ActualizarCuota" message="tns:IPagosService_ActualizarCuota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/ActualizarCuotaResponse" message="tns:IPagosService_ActualizarCuota_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_ActualizarCuota_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCuota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/ListarCuota" message="tns:IPagosService_ListarCuota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaResponse" message="tns:IPagosService_ListarCuota_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_ListarCuota_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCuota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/BuscarCuota" message="tns:IPagosService_BuscarCuota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/BuscarCuotaResponse" message="tns:IPagosService_BuscarCuota_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/BuscarCuotaRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_BuscarCuota_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCuota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/EliminarCuota" message="tns:IPagosService_EliminarCuota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/EliminarCuotaResponse" message="tns:IPagosService_EliminarCuota_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/EliminarCuotaRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_EliminarCuota_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPagosService" type="tns:IPagosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarTipoPago">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/ListarTipoPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTipoPago">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/RegistrarTipoPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCuota">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/RegistrarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCuota">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/ActualizarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCuota">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/ListarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCuota">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/BuscarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCuota">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/EliminarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PagosService">
+    <wsdl:port name="BasicHttpBinding_IPagosService" binding="tns:BasicHttpBinding_IPagosService">
+      <soap:address location="http://localhost:62031/PagosService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
