@@ -14,7 +14,7 @@
 
 <style>
 div.oculto{
-	display:none;
+	
 }
 </style>
 </head>
@@ -26,8 +26,9 @@ div.oculto{
         <p></p>
       </div>
  </div>
- <p><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=280&width=380" 
-title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </p>
+ <p>
+ <div class="container"><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=650&width=900" 
+title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </div></p>
 <table class="table">
   <thead>
     <tr>
@@ -39,7 +40,7 @@ title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg
       <th>Fecha Nacimiento</th>
       <th>Correo</th>
       <th>Estado</th>
-      <th>Acciones</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -69,12 +70,22 @@ if(r.getN_TipoDoc()==1){
   <td><%=r.getC_Apellidos() %></td>
   <td><%=doc %></td>
   <td><%=r.getC_NumDocume() %></td>
-  <td><%=r.getD_FecNacimi().getTime() %></td>
+  <td><%=r.getD_FecNacimi() %></td>
   <td><%=r.getC_Correo() %></td>
   <td><%=estado %></td>
-  <td><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=4&cod=<%=r.getN_IdResidente()%>&keepThis=true&TB_iframe=true&height=300&width=750" 
-title="ACTUALIZAR RESIDENTE" class="thickbox"><span class="label label-primary">Editar</span></a> 
-<a href="<%=request.getContextPath()%>ResidenteServlet?opcion=4"><span class="label label-danger">Eliminar</span></a></td>
+  <td>
+<div class="btn-group">
+  <a class="btn btn-primary"><i class="fa fa-user fa-fw"></i> Editar</a>
+  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+    <span class="fa fa-caret-down">></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=4&cod=<%=r.getN_IdResidente()%>&keepThis=true&TB_iframe=true&height=300&width=750" 
+			title="ACTUALIZAR RESIDENTE" class="thickbox">Actualizar</a></li>
+    <li class="divider"></li>
+    <li><a href="#"><i class="i"></i> Eliminar</a></li>
+  </ul>
+</div>
+</td>
 </tr>
 <%}%>
   </tbody>

@@ -20,7 +20,7 @@ public class Residente  implements java.io.Serializable {
 
     private java.lang.String c_NumDocume;
 
-    private java.util.Calendar d_FecNacimi;
+    private java.sql.Date d_FecNacimi;
 
     private java.lang.Integer n_IdResidente;
 
@@ -36,7 +36,7 @@ public class Residente  implements java.io.Serializable {
            java.lang.String c_Correo,
            java.lang.String c_Nombre,
            java.lang.String c_NumDocume,
-           java.util.Calendar d_FecNacimi,
+           java.sql.Date d_FecNacimi,
            java.lang.Integer n_IdResidente,
            java.lang.Integer n_TipoDoc) {
            this.b_Estado = b_Estado;
@@ -111,111 +111,51 @@ public class Residente  implements java.io.Serializable {
     }
 
 
-    /**
-     * Gets the c_Correo value for this Residente.
-     * 
-     * @return c_Correo
-     */
     public java.lang.String getC_Correo() {
         return c_Correo;
     }
 
 
-    /**
-     * Sets the c_Correo value for this Residente.
-     * 
-     * @param c_Correo
-     */
     public void setC_Correo(java.lang.String c_Correo) {
         this.c_Correo = c_Correo;
     }
 
 
-    /**
-     * Gets the c_Nombre value for this Residente.
-     * 
-     * @return c_Nombre
-     */
     public java.lang.String getC_Nombre() {
         return c_Nombre;
     }
 
 
-    /**
-     * Sets the c_Nombre value for this Residente.
-     * 
-     * @param c_Nombre
-     */
     public void setC_Nombre(java.lang.String c_Nombre) {
         this.c_Nombre = c_Nombre;
     }
 
 
-    /**
-     * Gets the c_NumDocume value for this Residente.
-     * 
-     * @return c_NumDocume
-     */
     public java.lang.String getC_NumDocume() {
         return c_NumDocume;
     }
 
 
-    /**
-     * Sets the c_NumDocume value for this Residente.
-     * 
-     * @param c_NumDocume
-     */
     public void setC_NumDocume(java.lang.String c_NumDocume) {
         this.c_NumDocume = c_NumDocume;
     }
 
-
-    /**
-     * Gets the d_FecNacimi value for this Residente.
-     * 
-     * @return d_FecNacimi
-     */
-    public java.util.Calendar getD_FecNacimi() {
+    public java.sql.Date getD_FecNacimi() {
         return d_FecNacimi;
     }
 
-
-    /**
-     * Sets the d_FecNacimi value for this Residente.
-     * 
-     * @param d_FecNacimi
-     */
-    public void setD_FecNacimi(java.util.Calendar d_FecNacimi) {
+    public void setD_FecNacimi(java.sql.Date d_FecNacimi) {
         this.d_FecNacimi = d_FecNacimi;
     }
 
-
-    /**
-     * Gets the n_IdResidente value for this Residente.
-     * 
-     * @return n_IdResidente
-     */
     public java.lang.Integer getN_IdResidente() {
         return n_IdResidente;
     }
 
-
-    /**
-     * Sets the n_IdResidente value for this Residente.
-     * 
-     * @param n_IdResidente
-     */
     public void setN_IdResidente(java.lang.Integer n_IdResidente) {
         this.n_IdResidente = n_IdResidente;
     }
 
-
-    /**
-     * Gets the n_TipoDoc value for this Residente.
-     * 
-     * @return n_TipoDoc
-     */
     public java.lang.Integer getN_TipoDoc() {
         return n_TipoDoc;
     }

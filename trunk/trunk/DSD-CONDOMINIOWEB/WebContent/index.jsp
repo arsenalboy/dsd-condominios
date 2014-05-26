@@ -7,7 +7,7 @@
     <meta name="author" content="">
 <!--     <link rel="shortcut icon" href="../../assets/ico/favicon.png"> -->
 
-    <title>Condominio</title>
+    <title>.:: ARCHITECTS CONDOMINIO ::.</title>
 
   
    <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet" media="screen">

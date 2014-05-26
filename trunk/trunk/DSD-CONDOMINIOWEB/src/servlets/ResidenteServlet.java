@@ -50,7 +50,7 @@ public class ResidenteServlet extends HttpServlet {
 		String c_Apellidos = request.getParameter("txtApellidos")==null?"2":request.getParameter("txtApellidos");
 		int n_TipoDoc = Integer.parseInt(request.getParameter("txtTipoDocumento")==null?"2":request.getParameter("txtTipoDocumento"));
 		String c_NumDocume = request.getParameter("txtNuDocumento")==null?"2":request.getParameter("txtNuDocumento");
-		Calendar D_FecNacimi = FormatoFecha.stringToCalendarDate(request.getParameter("txtFeNac")==null?"2":request.getParameter("txtFeNac"));
+		Date D_FecNacimi = FormatoFecha.stringToSqlDateYYYYMMDD(request.getParameter("txtFeNac")==null?"2":request.getParameter("txtFeNac"));
 		
 		String c_Correo = request.getParameter("txtCorreo")==null?"2":request.getParameter("txtCorreo");
 		String c_Clave = request.getParameter("txtClave")==null?"2":request.getParameter("txtClave");
@@ -64,6 +64,7 @@ public class ResidenteServlet extends HttpServlet {
 				ResidenteWS residente = new ResidenteWS();
 				
 				Residente[] listado = residente.listarResidente();
+				
 				request.setAttribute("ListaResidentes", listado);
 				page="/pages/ListaResidentes.jsp";
 				
@@ -85,6 +86,7 @@ public class ResidenteServlet extends HttpServlet {
 				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"-1":request.getParameter("cod").trim());								
 				
 				residente.ObtenerResidente(codigo);
+				//JOptionPane.showMessageDialog(null, residente.ObtenerResidente(codigo).getC_Correo());
 				request.setAttribute("residente",residente);
 				page="/pages/frmResidenteActualizar.jsp";
 				
