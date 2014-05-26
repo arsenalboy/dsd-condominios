@@ -18,7 +18,7 @@ namespace Architecs.Dominio
     {
         public Vivienda()
         {
-            objResidente = new Residente();
+            objResidente = new ResidenteBE();
         }
 
         [DataMember]
@@ -37,6 +37,6 @@ namespace Architecs.Dominio
         public bool B_Estado { get; set; }
 
         [DataMember]
-        public Residente objResidente { get; set; }
+        public ResidenteBE objResidente { get; set; }
     }
 } 
