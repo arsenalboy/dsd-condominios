@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Architecs.TestProject.SOAPagosService;
+using Architects.TestProject.SOAPagosService;
 using System.ServiceModel;
 
 namespace Architecs.TestProject
@@ -15,7 +15,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void TipoPagoListarTest()
         {
-            SOAPagosService.PagosServiceClient proxy = new SOAPagosService.PagosServiceClient();
+            PagosServiceClient proxy = new PagosServiceClient();
             IList<TipoPago> tipoPagoListar;
             tipoPagoListar = proxy.ListarTipoPago();
 
@@ -25,7 +25,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void TipoPagoCrearTest()
         {
-            SOAPagosService.PagosServiceClient proxy = new SOAPagosService.PagosServiceClient();
+            PagosServiceClient proxy = new PagosServiceClient();
             RetornaMensaje retornaMensaje = null;
             TipoPago tipoPago = new TipoPago();
             string strDescripcion = "CONTADO";
@@ -38,7 +38,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void RegistrarCuotaTest()
         {
-            SOAPagosService.PagosServiceClient proxy = new SOAPagosService.PagosServiceClient();
+            PagosServiceClient proxy = new PagosServiceClient();
             RetornaMensaje retornaMensaje = null;
             Cuota cuotaRegistrada = new Cuota();
 
@@ -62,7 +62,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void ActualizarCuotaTest()
         {
-            SOAPagosService.PagosServiceClient proxy = new SOAPagosService.PagosServiceClient();
+            PagosServiceClient proxy = new PagosServiceClient();
             RetornaMensaje retornaMensaje = null;
             Cuota cuotaRegistrada = new Cuota();
 
@@ -87,7 +87,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void ListarCuotaTest()
         {
-            SOAPagosService.PagosServiceClient proxy = new SOAPagosService.PagosServiceClient();
+            PagosServiceClient proxy = new PagosServiceClient();
             try
             {
                 string pPeriodo = "201401";
@@ -104,7 +104,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void BuscarCuotaTest()
         {
-            SOAPagosService.PagosServiceClient proxy = new SOAPagosService.PagosServiceClient();
+            PagosServiceClient proxy = new PagosServiceClient();
             try
             {
                 int pIdCuota = 80;
@@ -121,7 +121,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void EliminarCuotaTest()
         {
-            SOAPagosService.PagosServiceClient proxy = new SOAPagosService.PagosServiceClient();
+            PagosServiceClient proxy = new PagosServiceClient();
             RetornaMensaje retornaMensaje = null;
             try
             {
