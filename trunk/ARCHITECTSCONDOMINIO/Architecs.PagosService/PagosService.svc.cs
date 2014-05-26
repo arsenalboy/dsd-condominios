@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 
 using Architecs.PagosService.Persistencia;
-using Architecs.Dominio;
+using Architects.Dominio;
 
 namespace Architecs.PagosService
 {

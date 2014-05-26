@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Architecs.Dominio;
+using Architects.Dominio;
 
 namespace Architecs.PagosService
 {
