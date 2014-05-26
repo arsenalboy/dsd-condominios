@@ -30,6 +30,20 @@ namespace ResidenteService
             }
         }
 
+        public ResidenteBE[] BuscarResidentes(string nombre, string apellidos, string numDocumento)
+        {
+            try
+            {
+                return objDA.BuscarResidentes(nombre, apellidos, numDocumento);
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException<ValidationException>
+                    (new ValidationException { ValidationError = ex.Message },
+                    new FaultReason("Validation Failed"));
+            }
+        }
+
         public IEnumerable<ResidenteBE> ListarResidentesPaginado(int page, int size)
         {
             List<ResidenteBE> listaResidentes = null;
