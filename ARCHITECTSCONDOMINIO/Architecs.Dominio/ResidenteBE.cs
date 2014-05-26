@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace Architecs.Dominio
 {
     [DataContract]
-    public class Residente
+    public class ResidenteBE
     {
         [DataMember]
         public int N_IdResidente { get; set; }
