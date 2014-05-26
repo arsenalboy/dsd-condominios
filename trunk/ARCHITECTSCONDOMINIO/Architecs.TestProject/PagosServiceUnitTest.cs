@@ -12,7 +12,7 @@ namespace Architecs.TestProject
     public class PagosServiceUnitTest
     {
         /* TABLA : TipoPago*/
-        [TestMethod]
+        //[TestMethod]
         public void TipoPagoListarTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
@@ -22,7 +22,7 @@ namespace Architecs.TestProject
             Assert.AreNotEqual(tipoPagoListar.Count, 0);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TipoPagoCrearTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
@@ -35,7 +35,7 @@ namespace Architecs.TestProject
         }
 
         /* TABLA : Cuota*/
-        [TestMethod]
+        //[TestMethod]
         public void RegistrarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
@@ -59,7 +59,7 @@ namespace Architecs.TestProject
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void ActualizarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
@@ -84,7 +84,7 @@ namespace Architecs.TestProject
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void ListarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
@@ -101,7 +101,7 @@ namespace Architecs.TestProject
 
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void BuscarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
@@ -118,7 +118,7 @@ namespace Architecs.TestProject
 
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void EliminarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
