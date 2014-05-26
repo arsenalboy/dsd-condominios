@@ -5,78 +5,66 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
-<form name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=2" method="post">
-<TABLE WIDTH=300>	
-		<TR>
-			<TD WIDTH=100>	
-				Nombre:
-			</TD>			
-			<TD WIDTH=100>
-				<input id="txtNombre" name="txtNombre" type="text" value="" required autofocus/>
-			</TD>
-		</TR>
-		<TR>
-			<TD WIDTH=100>	
-				Apellidos:
-			</TD>			
-			<TD WIDTH=100>
-				<input id="txtApellidos" name="txtApellidos" type="text" value="" required autofocus/>
-			</TD>
-		</TR>		
-		<TR>
-			<TD WIDTH=100>	
-				Tipo Doc.: 
-			</TD>			
-			<TD WIDTH=100>			
-				<select id="txtTipoDocumento" name="txtTipoDocumento" >
-				  <option value="1" >DNI</option>
-				  <option value="2" >CARNET EXTRANJERIA</option>			  
-				</select>
-			</TD>
-		</TR>		
-		<TR>
-			<TD WIDTH=100>	
-				Num. Doc.: 
-			</TD>			
-			<TD WIDTH=100>
-				<input id="txtNuDocumento" name="txtNuDocumento"   type="text" required autofocus style=" width : 179px;"/>
-			</TD>
-		</TR>		
-		<TR>
-			<TD WIDTH=100>	
-				Fecha Nac.:
-			</TD>			
-			<TD WIDTH=100>
-				 <input id="txtFeNac" name="txtFeNac"  type="date" required autofocus/>
-			</TD>
-		</TR>
-		
-		<TR>
-			<TD WIDTH=100>	
-				Correo:
-			</TD>
-			<TD WIDTH=100>
-				 <input id="txtCorreo" name="txtCorreo" type="email"  required autofocus/>
-			</TD>
-		</TR>
-		<TR>
-			<TD WIDTH=100>	
-				Clave:
-			</TD>
-			<TD WIDTH=100>
-				 <input id="txtClave" name="txtClave" type="text"  value="" required autofocus/>
-			</TD>
-		</TR>
-		<TR>
-			<TD WIDTH=100>					
-			</TD>		
-			<TD WIDTH=100>
-				<button id="botonEnviar" type="submit" class="btn btn-primary" >Enviar</button>															
-			</TD>
-		</TR>			
-		</TABLE>
-</form>
+<div class="container">
+<form class="form-horizontal" name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=2" method="post">
+      <legend>RGISTRO DE RESIDENTES</legend>
+        <div class="form-group">
+          <label for="txtNombre" class="col-lg-2 control-label">Nombres</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombres" type="text" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="txtApellidos" class="col-lg-2 control-label">Apellidos</label>
+          <div class="col-lg-10">
+              <input class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos" type="text" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label" for="txtNuDocumento">Tipo de Documento</label>
+          <div class="col-lg-10">
+          <select id="txtNuDocumento" name="txtNuDocumento" class="form-control" required>
+            <option value="1" >DNI</option>
+				    <option value="2" >CARNET EXTRANJERIA</option>
+          </select>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="txtNombre" class="col-lg-2 control-label">Número de Documento</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="txtNombre" name="txtNombre" placeholder="Número de Documento" type="text" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="txtFeNac" class="col-lg-2 control-label">Fecha de nacimiento</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="txtFeNac" name="txtFeNac" placeholder="Fecha de nacimiento" type="date" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="txtCorreo" class="col-lg-4 control-label">Correo</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="txtCorreo" name="txtCorreo" placeholder="Correo" type="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="txtClave" class="col-lg-4 control-label">Contraseña</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="txtClave" name="txtClave" placeholder="Contraseña" type="password" required>
+          </div>
+        </div>
+        <div class="form-group"></div>
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-default">Entrar</button>
+          </div>
+        </div>
+      </form>
+</div>
 </body>
 </html>

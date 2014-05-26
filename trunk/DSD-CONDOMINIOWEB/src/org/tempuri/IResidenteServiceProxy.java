@@ -1,7 +1,5 @@
 package org.tempuri;
 
-import java.text.SimpleDateFormat;
-
 public class IResidenteServiceProxy implements org.tempuri.IResidenteService {
   private String _endpoint = null;
   private org.tempuri.IResidenteService iResidenteService = null;
@@ -46,19 +44,17 @@ public class IResidenteServiceProxy implements org.tempuri.IResidenteService {
     return iResidenteService;
   }
   
-  public java.lang.Integer crearResidente(java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.util.Calendar d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException{
+  public java.lang.Integer crearResidente(java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.sql.Date d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException{
     if (iResidenteService == null)
       _initIResidenteServiceProxy();
 
     return iResidenteService.crearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, d_FecNacimi, c_Correo, c_Clave, b_Estado);
   }
   
-  public java.lang.Integer actualizaResidente(java.lang.Integer n_IdResidente, java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.util.Calendar d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException{
+  public java.lang.Integer actualizaResidente(java.lang.Integer n_IdResidente, java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.sql.Date d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException{
     if (iResidenteService == null)
       _initIResidenteServiceProxy();
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MMMMM/yyyy hh:mm:ss");
-
-    sdf.format(d_FecNacimi.getTime());
+    
     return iResidenteService.actualizaResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, d_FecNacimi, c_Correo, c_Clave, b_Estado);
   }
   

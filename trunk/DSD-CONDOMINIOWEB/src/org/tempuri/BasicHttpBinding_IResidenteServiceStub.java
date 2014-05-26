@@ -1,10 +1,3 @@
-/**
- * BasicHttpBinding_IResidenteServiceStub.java
- *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
- */
-
 package org.tempuri;
 
 public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.client.Stub implements org.tempuri.IResidenteService {
@@ -40,7 +33,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         param.setOmittable(true);
         param.setNillable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "D_FecNacimi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "datetime"), java.util.Calendar.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "D_FecNacimi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "datetime"), java.sql.Date.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Correo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -81,7 +74,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         param.setOmittable(true);
         param.setNillable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "D_FecNacimi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "D_FecNacimi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.sql.Date.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Correo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -238,7 +231,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         }
     }
 
-    public java.lang.Integer crearResidente(java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.util.Calendar d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException {
+    public java.lang.Integer crearResidente(java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.sql.Date d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -272,7 +265,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
 }
     }
 
-    public java.lang.Integer actualizaResidente(java.lang.Integer n_IdResidente, java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.util.Calendar d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException {
+    public java.lang.Integer actualizaResidente(java.lang.Integer n_IdResidente, java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.sql.Date d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }

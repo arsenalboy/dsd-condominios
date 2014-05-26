@@ -12,9 +12,9 @@
 </head>
 <body>
 <%
-	
 	Residente r= (Residente)request.getAttribute("residente");
-
+	JOptionPane.showMessageDialog(null, r.getC_Correo());
+	if(r != null) { 
 %>
 <form name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=2" method="post">
 
@@ -59,7 +59,7 @@
 				Fecha Nac.:
 			</TD>			
 			<TD WIDTH=100>
-				 <input id="txtFeNac" name="txtFeNac"  type="date" value="<%=r.getD_FecNacimi().getTime() %>" autofocus/>
+				 <input id="txtFeNac" name="txtFeNac"  type="date" value="<%=r.getD_FecNacimi() %>" autofocus/>
 			</TD>
 		</TR>
 		
@@ -89,5 +89,6 @@
 		<input type="hidden" name="n_IdResidente" value="10" >		
 		</TABLE>
 </form>
+<%} %>
 </body>
 </html>
