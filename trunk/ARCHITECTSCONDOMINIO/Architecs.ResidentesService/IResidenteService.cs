@@ -21,6 +21,10 @@ namespace ResidenteService
 
         [FaultContract(typeof(ValidationException))]
         [OperationContract]
+        ResidenteBE[] BuscarResidentes(string nombre, string apellidos, string numDocumento);
+
+        [FaultContract(typeof(ValidationException))]
+        [OperationContract]
         IEnumerable<ResidenteBE> ListarResidentesPaginado(int page, int size);
 
         [FaultContract(typeof(ValidationException))]
