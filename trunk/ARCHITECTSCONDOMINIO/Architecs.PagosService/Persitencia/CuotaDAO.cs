@@ -43,10 +43,16 @@ namespace Architecs.PagosService.Persistencia
                         cuota.N_IdCuota = item.N_IdCuota;
                         cuota.C_Periodo = item.C_Periodo;
                         cuota.N_IdVivienda = item.N_IdVivienda;
+
+                        cuota.objVivienda.C_NumDpto = item.C_NumDpto;
+                        cuota.objVivienda.C_NumEdificio = item.C_NumEdificio;
+                        cuota.objVivienda.objResidente.C_Apellidos = item.C_Propietario;
+
                         cuota.N_IdTipoPago = item.N_IdTipoPago;
                         cuota.N_Importe = item.N_Importe;
                         cuota.D_FecVncto = item.D_FecVncto;
                         cuota.D_FecPago = item.D_FecPago;
+                        
                         cuota.objTipoPago.C_Descripcion = item.V_IdTipoPago;
                         cuota.objVivienda.C_NumDpto = item.C_NumDpto;
                         cuota.objVivienda.C_NumEdificio = item.C_NumEdificio;
@@ -120,7 +126,6 @@ namespace Architecs.PagosService.Persistencia
                         ref codigoRetorno,
                         pcuota.C_Periodo,
                         pcuota.N_IdVivienda,
-                        pcuota.N_IdTipoPago,
                         pcuota.N_Importe,
                         pcuota.D_FecVncto);
                 }

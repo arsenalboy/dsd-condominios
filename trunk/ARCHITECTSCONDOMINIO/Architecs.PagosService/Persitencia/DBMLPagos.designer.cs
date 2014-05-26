@@ -76,14 +76,6 @@ namespace Architecs.PagosService.Persitencia
 			return ((ISingleResult<dsd_mnt_S_TipoPagoIdResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Gestion.dsd_mnt_I_Cuota")]
-		public int dsd_mnt_I_Cuota([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> prm_N_IdCuota, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(6)")] string prm_C_Periodo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_N_IdVivienda, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_N_IdTipoPago, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,0)")] System.Nullable<decimal> prm_N_Importe, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> prm_D_FecVncto)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_N_IdCuota, prm_C_Periodo, prm_N_IdVivienda, prm_N_IdTipoPago, prm_N_Importe, prm_D_FecVncto);
-			prm_N_IdCuota = ((System.Nullable<int>)(result.GetParameterValue(0)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Gestion.dsd_mnt_S_Cuota")]
 		public ISingleResult<dsd_mnt_S_CuotaResult> dsd_mnt_S_Cuota([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string prm_C_Periodo)
 		{
@@ -147,6 +139,14 @@ namespace Architecs.PagosService.Persitencia
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<dsd_mnt_S_TipoPagoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Gestion.dsd_mnt_I_Cuota")]
+		public int dsd_mnt_I_Cuota([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> prm_N_IdCuota, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(6)")] string prm_C_Periodo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_N_IdVivienda, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,0)")] System.Nullable<decimal> prm_N_Importe, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> prm_D_FecVncto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_N_IdCuota, prm_C_Periodo, prm_N_IdVivienda, prm_N_Importe, prm_D_FecVncto);
+			prm_N_IdCuota = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
