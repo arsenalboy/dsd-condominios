@@ -57,6 +57,46 @@ namespace Architects.Persistencia
             }
         }
 
+        public ResidenteBE[] BuscarResidentes(string nombre, string apellidos, string numDocumento)
+        {
+            List<ResidenteBE> Residentes = new List<ResidenteBE>();
+            ResidenteBE residente = null;
+            DbCommand SearchCommand = null;  
+
+            try
+            {
+                SearchCommand = _db.GetStoredProcCommand("Maestros.USP_GET_RESIDENTE");
+                _db.AddInParameter(SearchCommand, "@pv_nombre", DbType.String, nombre);
+                _db.AddInParameter(SearchCommand, "@pv_Apellidos", DbType.String, apellidos);
+                _db.AddInParameter(SearchCommand, "@pv_NumDocume", DbType.Int32, numDocumento);
+
+                using (IDataReader dataReader = _db.ExecuteReader(SearchCommand))
+                {
+                    while (dataReader.Read())
+                    {
+                        residente = new ResidenteBE();
+
+                        residente.N_IdResidente = dataReader.GetInt32(0);
+                        residente.C_Nombre = dataReader.GetString(1);
+                        residente.C_Apellidos = dataReader.GetString(2);
+                        residente.N_TipoDoc = dataReader.GetInt32(3);
+                        residente.C_NumDocume = dataReader.GetString(4);
+                        residente.D_FecNacimi = dataReader.GetDateTime(5);
+                        residente.C_Correo = dataReader.IsDBNull(6) ? "" : dataReader.GetString(6);
+                        residente.B_Estado = dataReader.GetBoolean(7);
+
+                        Residentes.Add(residente);
+                    }
+                }
+
+                return Residentes.ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Int32 CrearResidente(ResidenteBE prmResidente)
         {
             DbCommand insertCommand = null;            
