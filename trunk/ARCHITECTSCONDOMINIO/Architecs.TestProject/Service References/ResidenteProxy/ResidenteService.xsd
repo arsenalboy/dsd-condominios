@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61951/ResidenteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio" />
+  <xs:import schemaLocation="http://localhost:61951/ResidenteService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ResidenteService" />
+  <xs:element name="ListarResidentes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResidentesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="ListarResidentesResult" nillable="true" type="q1:ArrayOfResidenteBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResidentesPaginado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="size" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResidentesPaginadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="ListarResidentesPaginadoResult" nillable="true" type="q2:ArrayOfResidenteBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerResidentePorID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="residenteId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerResidentePorIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="ObtenerResidentePorIDResult" nillable="true" type="q3:ResidenteBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearResidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="prmResidente" nillable="true" type="q4:ResidenteBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearResidenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearResidenteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="prmResidente" nillable="true" type="q5:ResidenteBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResidenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ResidenteService" minOccurs="0" name="ActualizarResidenteResult" nillable="true" type="q6:ValidationException" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarResidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="residenteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarResidenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ResidenteService" minOccurs="0" name="EliminarResidenteResult" nillable="true" type="q7:ValidationException" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
