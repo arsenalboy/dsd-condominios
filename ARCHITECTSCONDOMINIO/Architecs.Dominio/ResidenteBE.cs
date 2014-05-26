@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
 
-namespace Architecs.Dominio
+namespace Architects.Dominio
 {
     [DataContract]
     public class ResidenteBE
@@ -27,7 +28,5 @@ namespace Architecs.Dominio
         public string C_Clave { get; set; }
         [DataMember]
         public Boolean B_Estado { get; set; }
-
-
     }
 }

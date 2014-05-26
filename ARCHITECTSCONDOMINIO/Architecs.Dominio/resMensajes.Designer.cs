@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Architecs.Dominio {
+namespace Architects.Dominio {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Architecs.Dominio {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Architecs.Dominio.resMensajes", typeof(resMensajes).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Architects.Dominio.resMensajes", typeof(resMensajes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

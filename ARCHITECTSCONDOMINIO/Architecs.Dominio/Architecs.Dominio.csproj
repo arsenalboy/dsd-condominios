@@ -8,8 +8,8 @@
     <ProjectGuid>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Architecs.Dominio</RootNamespace>
-    <AssemblyName>Architecs.Dominio</AssemblyName>
+    <RootNamespace>Architects.Dominio</RootNamespace>
+    <AssemblyName>Architects.Dominio</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -53,9 +53,6 @@
     </Compile>
     <Compile Include="RetornaMensaje.cs" />
     <Compile Include="Vivienda.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="resMensajes.resx">
