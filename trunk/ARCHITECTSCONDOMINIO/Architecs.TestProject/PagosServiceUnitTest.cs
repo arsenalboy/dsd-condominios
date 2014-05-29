@@ -3,8 +3,9 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Architects.TestProject.SOAPagosService;
+using Architecs.TestProject.SOAPagosService;
 using System.ServiceModel;
+
 
 namespace Architecs.TestProject
 {
@@ -12,7 +13,7 @@ namespace Architecs.TestProject
     public class PagosServiceUnitTest
     {
         /* TABLA : TipoPago*/
-        //[TestMethod]
+        [TestMethod]
         public void TipoPagoListarTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
@@ -84,7 +85,7 @@ namespace Architecs.TestProject
             }
         }
 
-        //[TestMethod]
+        [TestMethod]
         public void ListarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
