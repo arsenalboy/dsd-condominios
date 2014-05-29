@@ -64,6 +64,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Microsoft.Practices.ServiceLocation.dll" />
     <Content Include="ResidenteService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
