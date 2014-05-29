@@ -20,7 +20,7 @@ namespace Architecs.PagosService
         public Cuota()
         {
             objTipoPago = new TipoPago();
-            objVivienda = new Vivienda();
+            objVivienda = new ViviendaBE();
         }
 
         [DataMember]
@@ -41,6 +41,6 @@ namespace Architecs.PagosService
         [DataMember]
         public TipoPago objTipoPago { get; set; }
         [DataMember]
-        public Vivienda objVivienda { get; set; }
+        public ViviendaBE objVivienda { get; set; }
     } 
 } 
