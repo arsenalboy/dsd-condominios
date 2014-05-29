@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Architecs.PagosService" />
-  <xs:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Architecs.Dominio" />
+  <xs:import schemaLocation="http://localhost:62031/PagosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio" />
   <xs:element name="ListarTipoPago">
     <xs:complexType>
       <xs:sequence />
@@ -24,7 +24,7 @@
   <xs:element name="RegistrarTipoPagoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="RegistrarTipoPagoResult" nillable="true" type="q2:RetornaMensaje" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="RegistrarTipoPagoResult" nillable="true" type="q2:RetornaMensaje" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +42,7 @@
   <xs:element name="RegistrarCuotaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="RegistrarCuotaResult" nillable="true" type="q3:RetornaMensaje" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="RegistrarCuotaResult" nillable="true" type="q3:RetornaMensaje" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -61,7 +61,7 @@
   <xs:element name="ActualizarCuotaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="ActualizarCuotaResult" nillable="true" type="q4:RetornaMensaje" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="ActualizarCuotaResult" nillable="true" type="q4:RetornaMensaje" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -103,7 +103,7 @@
   <xs:element name="EliminarCuotaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Architecs.Dominio" minOccurs="0" name="EliminarCuotaResult" nillable="true" type="q7:RetornaMensaje" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="EliminarCuotaResult" nillable="true" type="q7:RetornaMensaje" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
