@@ -24,7 +24,7 @@ public class Cuota  implements java.io.Serializable {
 
     private org.datacontract.schemas._2004._07.Architecs_PagosService.TipoPago objTipoPago;
 
-    private org.datacontract.schemas._2004._07.Architecs_Dominio.Vivienda objVivienda;
+    private org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda objVivienda;
 
     public Cuota() {
     }
@@ -38,7 +38,7 @@ public class Cuota  implements java.io.Serializable {
            java.lang.Integer n_IdVivienda,
            java.math.BigDecimal n_Importe,
            org.datacontract.schemas._2004._07.Architecs_PagosService.TipoPago objTipoPago,
-           org.datacontract.schemas._2004._07.Architecs_Dominio.Vivienda objVivienda) {
+           org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda objVivienda) {
            this.c_Periodo = c_Periodo;
            this.d_FecPago = d_FecPago;
            this.d_FecVncto = d_FecVncto;
@@ -216,7 +216,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @return objVivienda
      */
-    public org.datacontract.schemas._2004._07.Architecs_Dominio.Vivienda getObjVivienda() {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda getObjVivienda() {
         return objVivienda;
     }
 
@@ -226,7 +226,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @param objVivienda
      */
-    public void setObjVivienda(org.datacontract.schemas._2004._07.Architecs_Dominio.Vivienda objVivienda) {
+    public void setObjVivienda(org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda objVivienda) {
         this.objVivienda = objVivienda;
     }
 
@@ -376,7 +376,7 @@ public class Cuota  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("objVivienda");
         elemField.setXmlName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.PagosService", "objVivienda"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "Vivienda"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Vivienda"));
         elemField.setMinOccurs(0);
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);

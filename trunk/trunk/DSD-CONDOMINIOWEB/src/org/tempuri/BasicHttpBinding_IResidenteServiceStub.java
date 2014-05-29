@@ -1,3 +1,10 @@
+/**
+ * BasicHttpBinding_IResidenteServiceStub.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
 package org.tempuri;
 
 public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.client.Stub implements org.tempuri.IResidenteService {
@@ -9,7 +16,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[4];
+        _operations = new org.apache.axis.description.OperationDesc[7];
         _initOperationDesc1();
     }
 
@@ -17,106 +24,147 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("ListarResidentes");
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ArrayOfResidenteBE"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ListarResidentesResult"));
+        param = oper.getReturnParamDesc();
+        param.setItemQName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      true
+                     ));
+        _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("BuscarResidentes");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "nombre"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        param.setNillable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "apellidos"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        param.setNillable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "numDocumento"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        param.setNillable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ArrayOfResidenteBE"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "BuscarResidentesResult"));
+        param = oper.getReturnParamDesc();
+        param.setItemQName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      true
+                     ));
+        _operations[1] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("ListarResidentesPaginado");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "page"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "size"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ArrayOfResidenteBE"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ListarResidentesPaginadoResult"));
+        param = oper.getReturnParamDesc();
+        param.setItemQName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      true
+                     ));
+        _operations[2] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("ObtenerResidentePorID");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "residenteId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ObtenerResidentePorIDResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      true
+                     ));
+        _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CrearResidente");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Nombre"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "prmResidente"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"), org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class, false, false);
         param.setOmittable(true);
         param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Apellidos"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "n_TipoDoc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_NumDocume"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "D_FecNacimi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "datetime"), java.sql.Date.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Correo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Clave"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "b_Estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), java.lang.Boolean.class, false, false);
-        param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(java.lang.Integer.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "CrearResidenteResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[0] = oper;
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      true
+                     ));
+        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("ActualizaResidente");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "n_IdResidente"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Nombre"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.setName("ActualizarResidente");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "prmResidente"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"), org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class, false, false);
         param.setOmittable(true);
         param.setNillable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Apellidos"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "n_TipoDoc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_NumDocume"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "D_FecNacimi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.sql.Date.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Correo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "c_Clave"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        param.setNillable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "b_Estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), java.lang.Boolean.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        oper.setReturnClass(java.lang.Integer.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ActualizaResidenteResult"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ActualizarResidenteResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[1] = oper;
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      true
+                     ));
+        _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("ObtenerResidente");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "n_IdResidente"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
+        oper.setName("EliminarResidente");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "residenteID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Residente"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.Residente.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ObtenerResidenteResult"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "EliminarResidenteResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("ListarResidente");
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ArrayOfResidente"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.Residente[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ListarResidenteResult"));
-        param = oper.getReturnParamDesc();
-        param.setItemQName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Residente"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      true
+                     ));
+        _operations[6] = oper;
 
     }
 
@@ -149,18 +197,25 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ArrayOfResidente");
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ArrayOfResidenteBE");
             cachedSerQNames.add(qName);
-            cls = org.datacontract.schemas._2004._07.Architects_Dominio.Residente[].class;
+            cls = org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[].class;
             cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Residente");
-            qName2 = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Residente");
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE");
+            qName2 = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Residente");
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE");
             cachedSerQNames.add(qName);
-            cls = org.datacontract.schemas._2004._07.Architects_Dominio.Residente.class;
+            cls = org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException");
+            cachedSerQNames.add(qName);
+            cls = org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -231,121 +286,19 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         }
     }
 
-    public java.lang.Integer crearResidente(java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.sql.Date d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] listarResidentes() throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[0]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/CrearResidente");
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ListarResidentes");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "CrearResidente"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, d_FecNacimi, c_Correo, c_Clave, b_Estado});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.lang.Integer) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.Integer.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.lang.Integer actualizaResidente(java.lang.Integer n_IdResidente, java.lang.String c_Nombre, java.lang.String c_Apellidos, java.lang.Integer n_TipoDoc, java.lang.String c_NumDocume, java.sql.Date d_FecNacimi, java.lang.String c_Correo, java.lang.String c_Clave, java.lang.Boolean b_Estado) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ActualizaResidente");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ActualizaResidente"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, d_FecNacimi, c_Correo, c_Clave, b_Estado});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.lang.Integer) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.Integer.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public org.datacontract.schemas._2004._07.Architects_Dominio.Residente obtenerResidente(java.lang.Integer n_IdResidente) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ObtenerResidente");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ObtenerResidente"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {n_IdResidente});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (org.datacontract.schemas._2004._07.Architects_Dominio.Residente) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.Architects_Dominio.Residente) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.Residente.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public org.datacontract.schemas._2004._07.Architects_Dominio.Residente[] listarResidente() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ListarResidente");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ListarResidente"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ListarResidentes"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -357,12 +310,272 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         else {
             extractAttachments(_call);
             try {
-                return (org.datacontract.schemas._2004._07.Architects_Dominio.Residente[]) _resp;
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.Architects_Dominio.Residente[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.Residente[].class);
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] buscarResidentes(java.lang.String nombre, java.lang.String apellidos, java.lang.String numDocumento) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/BuscarResidentes");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "BuscarResidentes"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {nombre, apellidos, numDocumento});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] listarResidentesPaginado(java.lang.Integer page, java.lang.Integer size) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ListarResidentesPaginado");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ListarResidentesPaginado"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {page, size});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE obtenerResidentePorID(java.lang.Integer residenteId) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ObtenerResidentePorID");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ObtenerResidentePorID"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {residenteId});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.Integer crearResidente(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE prmResidente) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[4]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/CrearResidente");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "CrearResidente"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {prmResidente});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.Integer) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.Integer.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public org.datacontract.schemas._2004._07.ResidenteService.ValidationException actualizarResidente(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE prmResidente) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[5]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ActualizarResidente");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ActualizarResidente"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {prmResidente});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public org.datacontract.schemas._2004._07.ResidenteService.ValidationException eliminarResidente(java.lang.Integer residenteID) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[6]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/EliminarResidente");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "EliminarResidente"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {residenteID});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+         }
+   }
   throw axisFaultException;
 }
     }

@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.xml.bind.ParseConversionEvent;
 
 import org.datacontract.schemas._2004._07.Architects_Dominio.Residente;
+import org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE;
 
 import util.FormatoFecha;
 import cleaner.ResidenteWS;
@@ -63,7 +64,7 @@ public class ResidenteServlet extends HttpServlet {
 				
 				ResidenteWS residente = new ResidenteWS();
 				
-				Residente[] listado = residente.listarResidente();
+				ResidenteBE[] listado = residente.listarResidente()
 				
 				request.setAttribute("ListaResidentes", listado);
 				page="/pages/ListaResidentes.jsp";

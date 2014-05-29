@@ -40,8 +40,8 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         param.setOmittable(true);
         param.setNillable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "RegistrarTipoPagoResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -65,15 +65,15 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "RegistrarCuotaResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"),
-                      "org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"), 
                       true
                      ));
         _operations[2] = oper;
@@ -99,15 +99,15 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ActualizarCuotaResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"),
-                      "org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"), 
                       true
                      ));
         _operations[3] = oper;
@@ -126,9 +126,9 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"),
-                      "org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"), 
                       true
                      ));
         _operations[4] = oper;
@@ -144,9 +144,9 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"),
-                      "org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"), 
                       true
                      ));
         _operations[5] = oper;
@@ -156,15 +156,15 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pIdCuota"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "EliminarCuotaResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"),
-                      "org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"), 
                       true
                      ));
         _operations[6] = oper;
@@ -200,27 +200,6 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "Residente");
-            cachedSerQNames.add(qName);
-            cls = org.datacontract.schemas._2004._07.Architecs_Dominio.Residente.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "RetornaMensaje");
-            cachedSerQNames.add(qName);
-            cls = org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.Dominio", "Vivienda");
-            cachedSerQNames.add(qName);
-            cls = org.datacontract.schemas._2004._07.Architecs_Dominio.Vivienda.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.PagosService", "ArrayOfCuota");
             cachedSerQNames.add(qName);
             cls = org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota[].class;
@@ -249,6 +228,27 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
             qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.PagosService", "TipoPago");
             cachedSerQNames.add(qName);
             cls = org.datacontract.schemas._2004._07.Architecs_PagosService.TipoPago.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE");
+            cachedSerQNames.add(qName);
+            cls = org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje");
+            cachedSerQNames.add(qName);
+            cls = org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Vivienda");
+            cachedSerQNames.add(qName);
+            cls = org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -353,7 +353,7 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje registrarTipoPago(java.lang.String descripcion) throws java.rmi.RemoteException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarTipoPago(java.lang.String descripcion) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -377,9 +377,9 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) _resp;
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) _resp;
             } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -387,7 +387,7 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje registrarCuota(java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarCuota(java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -411,9 +411,9 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) _resp;
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) _resp;
             } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -421,15 +421,15 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) {
-              throw (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje actualizarCuota(java.lang.Integer pIdCuota, java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje actualizarCuota(java.lang.Integer pIdCuota, java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -453,9 +453,9 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) _resp;
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) _resp;
             } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -463,15 +463,15 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) {
-              throw (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota[] listarCuota(java.lang.String pPeriodo) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje {
+    public org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota[] listarCuota(java.lang.String pPeriodo) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -505,15 +505,15 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) {
-              throw (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota buscarCuota(java.lang.Integer pIdCuota) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje {
+    public org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota buscarCuota(java.lang.Integer pIdCuota) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -547,15 +547,15 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) {
-              throw (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje eliminarCuota(java.lang.Integer pIdCuota) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje eliminarCuota(java.lang.Integer pIdCuota) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -579,9 +579,9 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) _resp;
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) _resp;
             } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje.class);
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -589,8 +589,8 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) {
-              throw (org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje) axisFaultException.detail;
          }
    }
   throw axisFaultException;
