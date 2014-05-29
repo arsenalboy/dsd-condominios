@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.sql.Date;
 import java.util.List;
 
-import org.datacontract.schemas._2004._07.Architects_Dominio.Residente;
+import org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE;
 import org.tempuri.IResidenteServiceProxy;
 import org.tempuri.ResidenteService;
 
@@ -23,7 +23,15 @@ public class ResidenteWS {
 			String c_NumDocume, Date d_FecNacimi, String c_Correo, String c_Clave, Boolean b_Estado){
 		
 		try {
-			return servicio.crearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, d_FecNacimi, c_Correo, c_Clave, b_Estado);
+			ResidenteBE prmResidenteBE = new ResidenteBE();
+			prmResidenteBE.setC_Nombre(c_Nombre);
+			prmResidenteBE.setC_Apellidos(c_Apellidos);
+			prmResidenteBE.setN_TipoDoc(n_TipoDoc);
+			prmResidenteBE.setC_NumDocume(c_NumDocume);
+			//prmResidenteBE.setD_FecNacimi(d_FecNacimi.getClass(Calendar.AM)) ;
+			prmResidenteBE.setC_Correo(c_Correo);
+			prmResidenteBE.setC_Clave(c_Clave);
+			return servicio.crearResidente(prmResidenteBE);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,7 +43,16 @@ public class ResidenteWS {
 			String c_NumDocume, Date d_FecNacimi, String c_Correo, String c_Clave, Boolean b_Estado){
 		
 		try {
-			return servicio.actualizaResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, d_FecNacimi, c_Correo, c_Clave, b_Estado);
+			ResidenteBE prmResidenteBE = new ResidenteBE();
+			prmResidenteBE.setN_IdResidente(n_IdResidente);
+			prmResidenteBE.setC_Nombre(c_Nombre);
+			prmResidenteBE.setC_Apellidos(c_Apellidos);
+			prmResidenteBE.setN_TipoDoc(n_TipoDoc);
+			prmResidenteBE.setC_NumDocume(c_NumDocume);
+			//prmResidenteBE.setD_FecNacimi(d_FecNacimi.getClass(Calendar.AM)) ;
+			prmResidenteBE.setC_Correo(c_Correo);
+			prmResidenteBE.setC_Clave(c_Clave);
+			servicio.actualizarResidente(prmResidenteBE);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,23 +60,21 @@ public class ResidenteWS {
 		return 0;
 	}
 	
-	public Residente ObtenerResidente(int n_IdResidente){
+	public ResidenteBE ObtenerResidente(int n_IdResidente){
 		
 		try {
-			return servicio.obtenerResidente(n_IdResidente);
+			return servicio.obtenerResidentePorID(n_IdResidente);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public Residente[] listarResidente(){
+	public ResidenteBE[] listarResidente(){
 	
 		try {
-			return servicio.listarResidente();
+			return servicio.listarResidentes();
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

@@ -1,10 +1,10 @@
 eclipse.preferences.version=1
-encoding//src/org/datacontract/schemas/_2004/_07/Architecs_Dominio/Residente.java=UTF-8
-encoding//src/org/datacontract/schemas/_2004/_07/Architecs_Dominio/RetornaMensaje.java=UTF-8
-encoding//src/org/datacontract/schemas/_2004/_07/Architecs_Dominio/Vivienda.java=UTF-8
 encoding//src/org/datacontract/schemas/_2004/_07/Architecs_PagosService/Cuota.java=UTF-8
 encoding//src/org/datacontract/schemas/_2004/_07/Architecs_PagosService/TipoPago.java=UTF-8
-encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/Residente.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/ResidenteBE.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/RetornaMensaje.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/Vivienda.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/ResidenteService/ValidationException.java=UTF-8
 encoding//src/org/tempuri/BasicHttpBinding_IPagosServiceStub.java=UTF-8
 encoding//src/org/tempuri/BasicHttpBinding_IResidenteServiceStub.java=UTF-8
 encoding//src/org/tempuri/IPagosService.java=UTF-8

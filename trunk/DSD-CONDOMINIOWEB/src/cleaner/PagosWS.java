@@ -3,7 +3,7 @@ package cleaner;
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
 
-import org.datacontract.schemas._2004._07.Architecs_Dominio.RetornaMensaje;
+import org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje;
 import org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota;
 import org.tempuri.IPagosServiceProxy;
 
