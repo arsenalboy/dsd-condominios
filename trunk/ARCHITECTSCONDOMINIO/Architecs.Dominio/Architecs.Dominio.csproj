@@ -52,7 +52,7 @@
       <DependentUpon>resMensajes.resx</DependentUpon>
     </Compile>
     <Compile Include="RetornaMensaje.cs" />
-    <Compile Include="Vivienda.cs" />
+    <Compile Include="ViviendaBE.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="resMensajes.resx">
