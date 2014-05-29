@@ -40,7 +40,7 @@
 	<div class="container">
 	 <div class="row">
         <div class="col-lg-0">
-		<form id="form1" name="form1" method="post" action="frmCuotaCrear.jsp?x=1" onsubmit="validar()">
+		<form id="form1" name="form1" method="post" action="frmCuotaCrear.jsp?op=create" onsubmit="validar()">
 		<fieldset>
         <legend>Cuota</legend>   
 			<div class="col-md-4" >
