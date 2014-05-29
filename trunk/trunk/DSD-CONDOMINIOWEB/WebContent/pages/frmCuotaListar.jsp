@@ -1,69 +1,32 @@
+<%@page import="util.FormatoFecha"%>
 <%@page import="cleaner.PagosWS"%>
-<%@page import="org.datacontract.schemas._2004._07.Architecs_PagosService.*,cleaner.*"%>
+<%@page import="org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota,cleaner.*"%>
+<%@page import="org.datacontract.schemas._2004._07.Architecs_PagosService.TipoPago,cleaner.*"%>
+
 <%@page import="org.tempuri.PagosService"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listado de CUOTAS Generadas</title>
-  <!-- Bootstrap core CSS -->
- 	<!-- Bootstrap core CSS -->
-     <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="<%=request.getContextPath()%>/css/bootswatch.min.css" rel="stylesheet" media="screen">
-    <link href="<%=request.getContextPath()%>/css/jquery.dataTables.css" rel="stylesheet">
-    <link href="<%=request.getContextPath()%>/css/DT_bootstrap.css" rel="stylesheet">
+<title>LISTADO DE CUOTAS </title>
     
- 	<script src="<%=request.getContextPath()%>/js/jquery-1.10.2.js"></script>
- 	<script src="<%=request.getContextPath()%>/js/jquery.dataTables.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<%=request.getContextPath()%>/js/bootstrap-3.0.0.js"></script>
-	<script language="Javascript">
-	function OnButton1()
-	{
-		if(document.forms[0].txtperiodo.value==""){
- 			alert("Especifique un periodo");
-			return false;
-		}
-		document.form1.action = "frmCuotaListar.jsp?x=1";
-    	document.form1.submit();      
-     	return true;
-	}
-	function OnButton2()
-	{
-		
-		if(document.forms[0].txtperiodo.value==""){
-			
-			
-			alert("Especifique un periodo");
-			return false;
-		}
-    	document.form1.action ="frmCuotaCrear.jsp?x=0";
-    	document.form1.submit();             	
-    	return true;
-	}
-	</script>
 </head>
-
 
 <script type="text/javascript">
 
-$(document).ready(function() {
-
-} );
-
 </script>
 	
-  <body>
+<body>
   
   <jsp:include page="/pages/header.jsp" />
   <fieldset>
-  	<div class="jumbotron">
+  	
       <div class="container">
         <h3>Cuotas Generadas</h3>
       </div>
-    </div>
+  
   </fieldset>  
   <fieldset class="form-horizontal well">
   	<form id="form1" name="form1" method="post" > 
@@ -75,7 +38,9 @@ $(document).ready(function() {
         <label>
         <input type="submit" class="btn btn-primary" id="btnBuscar" value="Buscar" onclick="OnButton1();"/>
         </label>
-          <input type="submit" class="btn btn-primary"  id="btnNuevo" value="Nuevo" onclick="OnButton2();"/>	            
+          <input type="submit" class="btn btn-primary"  id="btnNuevo" value="Nuevo" onclick="OnButton2();"/>	
+          
+          <a href="<%= request.getContextPath()%>/CuotaServlet?op=create" class="btn btn-primar">Nuevo</a>           
         </p>
       </form>
      
@@ -83,7 +48,8 @@ $(document).ready(function() {
 
   <fieldset  class="form-horizontal well">
       
-	<table width="550" height="65" border="1" cellpadding="0" cellspacing="0"  class="table table-bordered table-hover">
+	<table width="550" height="65" border="1" cellpadding="0" cellspacing="0"   
+		   class="table table-striped">
   	<tr>
 	  	<th width="40" scope="col">Item</th>
 	    <th width="49" scope="col">Nro.Cuota</th>
@@ -96,34 +62,32 @@ $(document).ready(function() {
 	    <th width="90" scope="col">Fecha Pago</th>
 	  	<th width="192" scope="col">Acciones</th> 
   	</tr>
-
-	 
 	<%
-	int i = 1;
-	for(int Cuota=1;Cuota<=9; Cuota++) {
+	Cuota[] lstCuotas = (Cuota[])request.getAttribute("lstCuotas");
+	int contador = 1;
+
+	for(Cuota cuotas : lstCuotas){
 	%>  
 	  <tr>
-	    <td><%=i++ %></td>
-	    <td><% out.print("Cuota "+ i); %></td>
-	    <td><% out.print("Periodo"+ i); %></td>
-	    <td><% out.print("N° Viv : " + i); %></td>
-	    <td><% out.print("NombreResidente: " + i); %></td>
-	     <td><% out.print("999.00" + i); %></td>
-	     <td><% out.print("25/05/2014"); %></td>
-	     <td><% out.print("Efectivo"); %></td>
-	     <td><% out.print("30/05/2014" + i); %></td>
-	     
-	      <%if( (i >0)){ %>
+	    <td><%=contador++ %></td>
+	    <td><% out.print(cuotas.getN_IdCuota()); %></td>
+	    <td><% out.print(cuotas.getC_Periodo()); %></td>
+	    <td><% out.print(cuotas.getObjVivienda().getC_NumEdificio()); %></td>
+	    <td><% out.print(cuotas.getObjVivienda().getObjResidente().getC_Apellidos()); %></td>
+	    <td><% out.print(cuotas.getN_Importe()); %></td>
+	    <td><% out.print(FormatoFecha.dateToStringDDMMYYYYY(cuotas.getD_FecVncto().getTime())); %></td>
+	    <td><% out.print(cuotas.getObjTipoPago().getC_Descripcion()==null?"":cuotas.getObjTipoPago().getC_Descripcion()); %></td>
+	    <td><% out.print(cuotas.getD_FecPago()==null?"":cuotas.getD_FecPago()); %></td>
+	      <%if( (contador >0)){ %>
 	    		  <td>
-	    		  <a href="Editar" onclick="return confirm('¿Está seguro que desea EDITAR Cuota');">Editar</a> - 
+	    		  <a href="Editar"   onclick="return confirm('¿Está seguro que desea EDITAR Cuota');">Editar</a> - 
 	    		  <a href="Eliminar" onclick="return confirm('¿Está seguro que desea ELIMINAR Cuota');">Eliminar</a></td>
 	    		 
 	    	<%}else{ %>	 
 	   <td> Colocar Cuota</td>
 	    <%} %>
 	  </tr>
-	<% }  
-	  %>
+	<% } %>
   
 	</table>
 

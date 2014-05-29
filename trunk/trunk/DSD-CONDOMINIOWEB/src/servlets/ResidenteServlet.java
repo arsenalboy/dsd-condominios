@@ -64,7 +64,7 @@ public class ResidenteServlet extends HttpServlet {
 				
 				ResidenteWS residente = new ResidenteWS();
 				
-				ResidenteBE[] listado = residente.listarResidente()
+				ResidenteBE[] listado = residente.listarResidente();
 				
 				request.setAttribute("ListaResidentes", listado);
 				page="/pages/ListaResidentes.jsp";
