@@ -68,7 +68,7 @@ namespace Architecs.PagosService
         /// <param name="N_Importe"></param>
         /// <param name="D_FecVncto"></param>
         /// <returns></returns>
-        public RetornaMensaje RegistrarCuota(string C_Periodo, int N_IdVivienda, int N_IdTipoPago, decimal N_Importe, DateTime D_FecVncto)
+        public RetornaMensaje RegistrarCuota(string C_Periodo, int N_IdVivienda, double N_Importe, string D_FecVncto)
         {
             try
             {
@@ -79,9 +79,8 @@ namespace Architecs.PagosService
                 {
                     C_Periodo = C_Periodo,
                     N_IdVivienda = N_IdVivienda,
-                    N_IdTipoPago = N_IdTipoPago,
-                    N_Importe = N_Importe,
-                    D_FecVncto = D_FecVncto
+                    N_Importe = Convert.ToDecimal(N_Importe),
+                    D_FecVncto = Convert.ToDateTime(D_FecVncto)
                 };
                 retornaMensaje.CodigoRetorno = cuotaDAO.Registrar(cuota);
                 retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Cuota");
@@ -111,7 +110,7 @@ namespace Architecs.PagosService
         /// <param name="pImporte"></param>
         /// <param name="pFecVncto"></param>
         /// <returns></returns>
-        public RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, DateTime pFecVncto)
+        public RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto)
         {
             try
             {
@@ -123,9 +122,8 @@ namespace Architecs.PagosService
                         N_IdCuota = pIdCuota,
                         C_Periodo = pPeriodo,
                         N_IdVivienda = pIdVivienda,
-                        N_IdTipoPago = pIdTipoPago,
-                        N_Importe = pImporte,
-                        D_FecVncto = pFecVncto
+                        N_Importe = Convert.ToDecimal(pImporte),
+                        D_FecVncto = Convert.ToDateTime(pFecVncto)
                     };
                 retornaMensaje.CodigoRetorno = cuotaDAO.Actualizar(cuota);
                 retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Cuota");
