@@ -9,7 +9,6 @@ using System.Text;
 using Architects.Dominio;
 using Architects.Persistencia;
 
-
 namespace ResidenteService
 {
     [ServiceContract]
@@ -29,7 +28,11 @@ namespace ResidenteService
 
         [FaultContract(typeof(ValidationException))]
         [OperationContract]
-        ResidenteBE ObtenerResidentePorID(int residenteId);
+        ResidenteBE ObtenerResidentePorID(int residente);
+
+        [FaultContract(typeof(ValidationException))]
+        [OperationContract]
+        ResidenteBE ObtenerResidentePorNroDocumento(string numeroDocumento);
 
         [FaultContract(typeof(ValidationException))]
         [OperationContract]
@@ -44,10 +47,5 @@ namespace ResidenteService
         ValidationException EliminarResidente(int residenteID);
     }
 
-    [DataContract]
-    public class ValidationException
-    {
-        [DataMember]
-        public string ValidationError { get; set; } 
-    }
+   
 }
