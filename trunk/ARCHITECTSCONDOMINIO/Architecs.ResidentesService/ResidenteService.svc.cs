@@ -147,5 +147,41 @@ namespace ResidenteService
                     new FaultReason(ex.Message));
             }
         }
+
+        public ResidenteBE ObtenerResidentePorNroDocumento(string numeroDocumento)
+        {
+            List<ResidenteBE> listaResidentes = null;
+            ResidenteBE result = null;
+
+            try
+            {
+                listaResidentes = new List<ResidenteBE>(ListarResidentes());
+
+                var nres = from l in listaResidentes
+                           where l.C_NumDocume == numeroDocumento
+                           select l;
+
+                foreach (var item in nres)
+                {
+                    result = new ResidenteBE();
+                    result.N_IdResidente = item.N_IdResidente;
+                    result.C_Nombre = item.C_Nombre;
+                    result.C_Apellidos = item.C_Apellidos;
+                    result.B_Estado = item.B_Estado;
+                    result.N_TipoDoc = item.N_TipoDoc;
+                    result.C_NumDocume = item.C_NumDocume;
+                    result.D_FecNacimi = item.D_FecNacimi;
+                    result.C_Correo = item.C_Correo;
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException<ValidationException>
+                    (new ValidationException { ValidationError = ex.Message },
+                    new FaultReason("Validation Failed"));
+            }
+        }
     }
 }
