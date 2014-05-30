@@ -20,4 +20,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResidenteBE" nillable="true" type="tns:ResidenteBE" />
+  <xs:complexType name="ValidationException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ValidationError" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationException" nillable="true" type="tns:ValidationException" />
 </xs:schema>

@@ -3,9 +3,8 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:61951/ResidenteService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:61951/ResidenteService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ResidenteService" />
-      <xsd:import schemaLocation="http://localhost:61951/ResidenteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:61951/ResidenteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio" />
+      <xsd:import schemaLocation="http://localhost:61951/ResidenteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IResidenteService_ListarResidentes_InputMessage">
@@ -15,7 +14,16 @@
     <wsdl:part name="parameters" element="tns:ListarResidentesResponse" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_ListarResidentes_ValidationExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ResidenteService" name="detail" element="q1:ValidationException" />
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q1:ValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IResidenteService_BuscarResidentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarResidentes" />
+  </wsdl:message>
+  <wsdl:message name="IResidenteService_BuscarResidentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarResidentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResidenteService_BuscarResidentes_ValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q2:ValidationException" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_ListarResidentesPaginado_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarResidentesPaginado" />
@@ -24,7 +32,7 @@
     <wsdl:part name="parameters" element="tns:ListarResidentesPaginadoResponse" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_ListarResidentesPaginado_ValidationExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/ResidenteService" name="detail" element="q2:ValidationException" />
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q3:ValidationException" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_ObtenerResidentePorID_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerResidentePorID" />
@@ -33,7 +41,16 @@
     <wsdl:part name="parameters" element="tns:ObtenerResidentePorIDResponse" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_ObtenerResidentePorID_ValidationExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/ResidenteService" name="detail" element="q3:ValidationException" />
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q4:ValidationException" />
+  </wsdl:message>
+  <wsdl:message name="IResidenteService_ObtenerResidentePorNroDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerResidentePorNroDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IResidenteService_ObtenerResidentePorNroDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerResidentePorNroDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResidenteService_ObtenerResidentePorNroDocumento_ValidationExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q5:ValidationException" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_CrearResidente_InputMessage">
     <wsdl:part name="parameters" element="tns:CrearResidente" />
@@ -42,7 +59,7 @@
     <wsdl:part name="parameters" element="tns:CrearResidenteResponse" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_CrearResidente_ValidationExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/ResidenteService" name="detail" element="q4:ValidationException" />
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q6:ValidationException" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_ActualizarResidente_InputMessage">
     <wsdl:part name="parameters" element="tns:ActualizarResidente" />
@@ -51,7 +68,7 @@
     <wsdl:part name="parameters" element="tns:ActualizarResidenteResponse" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_ActualizarResidente_ValidationExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/ResidenteService" name="detail" element="q5:ValidationException" />
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q7:ValidationException" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_EliminarResidente_InputMessage">
     <wsdl:part name="parameters" element="tns:EliminarResidente" />
@@ -60,13 +77,18 @@
     <wsdl:part name="parameters" element="tns:EliminarResidenteResponse" />
   </wsdl:message>
   <wsdl:message name="IResidenteService_EliminarResidente_ValidationExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/ResidenteService" name="detail" element="q6:ValidationException" />
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q8:ValidationException" />
   </wsdl:message>
   <wsdl:portType name="IResidenteService">
     <wsdl:operation name="ListarResidentes">
       <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/ListarResidentes" message="tns:IResidenteService_ListarResidentes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IResidenteService/ListarResidentesResponse" message="tns:IResidenteService_ListarResidentes_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IResidenteService/ListarResidentesValidationExceptionFault" name="ValidationExceptionFault" message="tns:IResidenteService_ListarResidentes_ValidationExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarResidentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/BuscarResidentes" message="tns:IResidenteService_BuscarResidentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResidenteService/BuscarResidentesResponse" message="tns:IResidenteService_BuscarResidentes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IResidenteService/BuscarResidentesValidationExceptionFault" name="ValidationExceptionFault" message="tns:IResidenteService_BuscarResidentes_ValidationExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarResidentesPaginado">
       <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/ListarResidentesPaginado" message="tns:IResidenteService_ListarResidentesPaginado_InputMessage" />
@@ -77,6 +99,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/ObtenerResidentePorID" message="tns:IResidenteService_ObtenerResidentePorID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IResidenteService/ObtenerResidentePorIDResponse" message="tns:IResidenteService_ObtenerResidentePorID_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IResidenteService/ObtenerResidentePorIDValidationExceptionFault" name="ValidationExceptionFault" message="tns:IResidenteService_ObtenerResidentePorID_ValidationExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerResidentePorNroDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/ObtenerResidentePorNroDocumento" message="tns:IResidenteService_ObtenerResidentePorNroDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResidenteService/ObtenerResidentePorNroDocumentoResponse" message="tns:IResidenteService_ObtenerResidentePorNroDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IResidenteService/ObtenerResidentePorNroDocumentoValidationExceptionFault" name="ValidationExceptionFault" message="tns:IResidenteService_ObtenerResidentePorNroDocumento_ValidationExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="CrearResidente">
       <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/CrearResidente" message="tns:IResidenteService_CrearResidente_InputMessage" />
@@ -108,6 +135,18 @@
         <soap:fault use="literal" name="ValidationExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="BuscarResidentes">
+      <soap:operation soapAction="http://tempuri.org/IResidenteService/BuscarResidentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ValidationExceptionFault">
+        <soap:fault use="literal" name="ValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ListarResidentesPaginado">
       <soap:operation soapAction="http://tempuri.org/IResidenteService/ListarResidentesPaginado" style="document" />
       <wsdl:input>
@@ -122,6 +161,18 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerResidentePorID">
       <soap:operation soapAction="http://tempuri.org/IResidenteService/ObtenerResidentePorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ValidationExceptionFault">
+        <soap:fault use="literal" name="ValidationExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerResidentePorNroDocumento">
+      <soap:operation soapAction="http://tempuri.org/IResidenteService/ObtenerResidentePorNroDocumento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
