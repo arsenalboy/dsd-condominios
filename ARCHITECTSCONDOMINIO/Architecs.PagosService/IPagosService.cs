@@ -22,11 +22,11 @@ namespace Architecs.PagosService
         /* CUOTAS */
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "RegistrarCuota")]
-        RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, DateTime pFecVncto);
+        RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
 
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "ActualizarCuota")]
-        RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, DateTime pFecVncto);
+        RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
 
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "ListarCuota")]
