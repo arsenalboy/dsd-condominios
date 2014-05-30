@@ -5,6 +5,7 @@ using System.Web;
 using System.Collections.Generic;
 using System.Configuration;
 using Architects.Dominio;
+using Architects.Dominio;
 
 namespace Architecs.HorariosService.Persitencia
 {
@@ -15,12 +16,12 @@ namespace Architecs.HorariosService.Persitencia
         {
             conexion = ConexionUtil.CadenaConeccion();
         }
-        /*public List<HorarioBE> Listar(string prm_C_Periodo)
+        public List<HorarioBE> Listar(string prm_C_Periodo)
         {
             List<HorarioBE> lstHorario = new List<HorarioBE>();
             try
             {
-                using (DBMLHorariossDataContext SQLDC = new DBMLHorariossDataContext(conexion))
+               /* using (DBMLHorariossDataContext SQLDC = new DBMLHorariossDataContext(conexion))
                 {
                     var resul = SQLDC.dsd_mnt_S_Cuota(prm_C_Periodo);
 
@@ -32,14 +33,14 @@ namespace Architecs.HorariosService.Persitencia
                         cuota.N_IdVivienda = item.N_IdVivienda;
                         lstHorario.Add(cuota);
                     }
-                }
+                }*/
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             return lstHorario;
-        }*/
+        }
         
     }
 }
