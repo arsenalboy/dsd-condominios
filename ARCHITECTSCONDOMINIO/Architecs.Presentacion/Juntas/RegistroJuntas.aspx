@@ -164,7 +164,8 @@
       <tr>
       <td>Buscar</td>
       <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
-      <td><asp:ImageButton ID="BtnBusca" runat="server" ImageUrl="~/images/Buscar_24x24.png" /></td>
+      <td><asp:ImageButton ID="BtnBusca" runat="server" 
+              ImageUrl="~/images/Buscar_24x24.png" onclick="BtnBusca_Click" /></td>
       </tr>
           <tr>
               <td colspan="3">

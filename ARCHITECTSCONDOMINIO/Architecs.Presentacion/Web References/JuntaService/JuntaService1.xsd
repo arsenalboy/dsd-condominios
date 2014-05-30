@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Architecs.ReunionesService.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Architecs.ReunionesService.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfdirectivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="directivo" nillable="true" type="tns:directivo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdirectivo" nillable="true" type="tns:ArrayOfdirectivo" />
+  <xs:complexType name="directivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="B_Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="C_Cargo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NomPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="N_IdDirectivo" type="xs:int" />
+      <xs:element minOccurs="0" name="N_IdResidente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="directivo" nillable="true" type="tns:directivo" />
+</xs:schema>

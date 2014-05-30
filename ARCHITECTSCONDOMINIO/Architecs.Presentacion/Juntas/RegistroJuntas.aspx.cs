@@ -35,5 +35,11 @@ namespace Architecs.Presentacion.Juntas
             GvDirectivos.DataSource = listdirectivo;
             GvDirectivos.DataBind();
         }
+
+        protected void BtnBusca_Click(object sender, ImageClickEventArgs e)
+        {
+            //declaramos el servicio y lo consumimos
+            //Juntas.;
+        }
     }
 }
