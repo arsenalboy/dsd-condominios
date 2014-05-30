@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CondominiosDB" Class="DBMLHorariosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CondominiosDB.mssql.somee.com;Initial Catalog=CondominiosDB;Persist Security Info=True;User ID=julioanyosa_SQLLogin_1" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CondominiosDBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="Gestion.omgc_mnt_GetAllFromHorario" Method="omgc_mnt_GetAllFromHorario">
+    <ElementType Name="omgc_mnt_GetAllFromHorarioResult">
+      <Column Name="N_IdHorario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Rango" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
