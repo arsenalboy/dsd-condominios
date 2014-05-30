@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.ServiceModel;
 using Architects.TestProject.ResidenteProxy;
+using Architects.Dominio;
 
 namespace Architects.TestProject
 {
@@ -19,6 +20,22 @@ namespace Architects.TestProject
         {
             List<ResidenteBE> residentes = new List<ResidenteBE>(client.ListarResidentes());
             Assert.AreNotEqual(residentes, null);
+        }
+
+        [TestMethod]
+        public void Test_ObtenerResidentePorNumeroDocumento()
+        {
+            string strNroDoc = "87032897";
+            ResidenteBE residente = client.ObtenerResidentePorNroDocumento(strNroDoc);
+            Assert.AreEqual(residente.C_NumDocume, strNroDoc);
+        }
+
+        [TestMethod]
+        public void Test_BuscarResidente()
+        {
+            string strNroDoc = "87032897";
+            List<ResidenteBE> residentes = new List<ResidenteBE>(client.BuscarResidentes("","",strNroDoc));
+            Assert.AreNotEqual(residentes.Count, 0);
         }
 
         [TestMethod]
