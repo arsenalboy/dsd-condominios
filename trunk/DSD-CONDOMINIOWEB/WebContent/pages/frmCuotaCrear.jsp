@@ -31,92 +31,77 @@
 </head>
 <body>
 	<jsp:include page="/pages/header.jsp" />
-	<div class="jumbotron">
-      <div class="container">
-        <h3>Generación de Cuotas</h3>
-        <p></p>
-      </div>
-    </div>
 	<div class="container">
-	 <div class="row">
-        <div class="col-lg-0">
-		<form id="form1" name="form1" method="post" action="frmCuotaCrear.jsp?op=create" onsubmit="validar()">
+        <h3>Generación de Cuotas</h3>
+    </div>
+	<div class="jumbotron">
+		<form id="frmCuotaNueva" name="frmCuotaNueva" action="<%= request.getContextPath() %>/pages" method="post">
 		<fieldset>
-        <legend>Cuota</legend>   
-			<div class="col-md-4" >
-				Periodo a generar [YYYYMM]:
-				<input 	type="number" name="periodo" id="periodo"  
-						class="form-control" required autofocus placeholder="YYYYMM" 
-						value="<%=request.getAttribute("paramPeriodo") %>">
-			</div>
-			<div class="col-md-4">
-			 	Importe de Pago:
-			 	<input  type="number" name="importepago" class="form-control" 
-						id="importepago" required autofocus placeholder="0.00" />
-			</div>
-			<div class="col-md-4">
-			 	Id de Vivienda:
-			 	<select name="slcvivienda" class="form-control"
-						id="slcvivienda" required autofocus placeholder="Seleccionar" >
-						<option></option>
-						<%
-						for(int intVivienda=1;intVivienda<=9; intVivienda++){%>
-						<option value="<%=intVivienda%>">
-						<%="ID: "+ "Vivienda N°" +" - : " + intVivienda + " - Ubic.:"+ intVivienda%>
-						</option>
-						<%} %>
-				</select>
-			</div> 
-			<div class="col-md-4">
-				Fecha de Vencimiento:
-				<input id="fechaVcto" type="date" class="form-control" placeholder="dd/mm/yyyy" 
-						name="fechaVcto" />
-			</div> 
-			
-			
+        <legend>Cuota Nueva</legend>   
+        	<input type="hidden" id="id" name ="id" value="">
+        	<table class="table table-bordered" style="width:600px;">
+	        	<tr>
+		        	<td><label>Periodo [YYYYMM]:</label> </td>
+		        	<td>
+						<input 	type="number" 
+								name="periodo" 
+								id="periodo"  
+								class="form-control" 
+								required autofocus placeholder="YYYYMM" 
+								value="<%=request.getAttribute("paramPeriodo") %>">
+					</td>
+	        	</tr>
+				<tr>
+					<td><label>Importe de Pago:</label></td>
+					<td>
+			 			<input type="number" 
+			 				   name="importepago" 
+			 				   class="form-control" 
+							   id="importepago" 
+							   required autofocus placeholder="0.00" />
+					</td>
+				</tr>
+				<tr>
+					<td><label>Id de Vivienda:</label></td>
+					<td>
+				 		<select name="slcvivienda" class="form-control"
+							id="slcvivienda" required autofocus placeholder="Seleccionar" >
+							<option></option>
+							<%
+							for(int intVivienda=1;intVivienda<=9; intVivienda++){%>
+							<option value="<%=intVivienda%>">
+							<%="ID: "+ "Vivienda N°" +" - : " + intVivienda + " - Ubic.:"+ intVivienda%>
+							</option>
+							<%} %>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Fecha de Vencimiento: </label></td>
+					<td>
+						<input id="fechaVcto" 
+								type="date" 
+								class="form-control" 
+								placeholder="dd/mm/yyyy" 
+								name="fechaVcto" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="Aceptar" class="btn btn-succes"/>
+						<input type="button" value="Regresar" class="btn btn-danger"/>
+						
+						<!-- CuotaServlet?op=create" onsubmit="validar()" -->
+					</td>	
+				</tr>
+			</table>	
 		</fieldset>
-		<p>
-			
-			<div class="col-md-4">
-				<input id="btnGuardar"
-					type="submit" value="Guardar" class="btn btn-primary" />
-			
-			</div>
-			
-			<p>	
-			<div>
-				<%
-            String vt=null;
-            String vf=null;
-            
-            int x=0;
-            x=(int)Integer.parseInt(request.getParameter("x"));
-            if(x==1)
-            {%>
-				<p></p>
-				<div class="alert alert-success">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<b>En hora buena,</b> Su Cuota se registró con éxito.
-				</div>
-
-				<%}else if(x != 1 && x==0){%>
-				<p></p>
-				<div class="alert alert-danger">
-					<button type="button" class="close"  onclick="ver();" data-dismiss="alert">&times;</button>
-					<b>ERROR!</b> No se pudo insertar el registro de la Cuota.
-				</div>
-				<%}%>
-			</div>
 		</form>
-		</div>
-      </div>
-       <hr>
-		<!-- Site footer -->
-		<div class="footer">
+	</div>
+	<div class="footer">
 			<p>&nbsp;</p>
 			<p>&copy; Orlando Carril 2014</p>
-		</div>
-
 	</div>
+	
 </body>
 </html>
