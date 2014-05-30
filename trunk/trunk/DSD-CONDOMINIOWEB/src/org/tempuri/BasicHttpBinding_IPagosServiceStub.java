@@ -56,14 +56,12 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pIdVivienda"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pIdTipoPago"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pImporte"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"), java.lang.Double.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pImporte"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "decimal"), java.math.BigDecimal.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
-        param.setOmittable(true);
+        param.setNillable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"));
         oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
@@ -90,14 +88,12 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pIdVivienda"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pIdTipoPago"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pImporte"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"), java.lang.Double.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pImporte"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "decimal"), java.math.BigDecimal.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
-        param.setOmittable(true);
+        param.setNillable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "RetornaMensaje"));
         oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje.class);
@@ -387,7 +383,7 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarCuota(java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarCuota(java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Double pImporte, java.lang.String pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -403,7 +399,7 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {pPeriodo, pIdVivienda, pImporte, pFecVncto});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -429,7 +425,7 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje actualizarCuota(java.lang.Integer pIdCuota, java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje actualizarCuota(java.lang.Integer pIdCuota, java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Double pImporte, java.lang.String pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -445,7 +441,7 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {pIdCuota, pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

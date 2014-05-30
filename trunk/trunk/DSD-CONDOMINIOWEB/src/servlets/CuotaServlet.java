@@ -44,18 +44,22 @@ public class CuotaServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request,response);
-		//String op= request.getParameter("op");
-		//String pagina ;
-		//if(op.equals("create"))
-	//	{
-		//	pagina= "/pages/frmCuotaCrear.jsp";
-		//	//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
-	//		//dispatcher.forward(request, response);
-	//		request.getRequestDispatcher(pagina).forward(request, response);
-//		}
-	//	else{
-			this.listar(request, response);
-	//	}
+		
+		String strperiodo = request.getParameter("periodo");
+		String strVivienda = request.getParameter("slcvivienda");
+		String strImporte = request.getParameter("importepago");
+		String strfechaVcto = request.getParameter("fechaVcto");
+		
+		Date strfechaVenc = FormatoFecha.stringToSqlDateYYYYMMDD(strfechaVcto);
+		PagosWS pagoWS = new PagosWS();
+		Cuota cuota = new Cuota();
+		cuota.setC_Periodo(strperiodo);
+		
+		pagoWS.RegistrarCuota(strperiodo
+							 ,Integer.parseInt(strVivienda)
+							 ,Float.parseFloat(strImporte)
+							 ,strfechaVenc.toString());
+		
 	}
 	
 	private void processRequest(HttpServletRequest request,
@@ -65,17 +69,12 @@ public class CuotaServlet extends HttpServlet {
 		String pagina="";
 		if(op.equals("create"))
 		{
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
-			//dispatcher.forward(request, response);
 			pagina= "/pages/frmCuotaCrear.jsp";
 			request.getRequestDispatcher(pagina).forward(request, response);
-			
 		}
 		else{
 			this.listar(request, response);
 		}
-		//this.listar(request, response);
-		
 	}
 
 	private void listar(HttpServletRequest request, HttpServletResponse response) 

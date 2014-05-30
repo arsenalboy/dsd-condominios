@@ -17,11 +17,11 @@ public class PagosWS {
 		servicio = new IPagosServiceProxy();
 	}
 	
-	public RetornaMensaje RegistrarCuota(String pPeriodo, int pIdVivienda, int pIdTipoPago, BigDecimal pImporte, Calendar pFecVncto){
+	public RetornaMensaje RegistrarCuota(String pPeriodo, int pIdVivienda, double pImporte, String pFecVncto){
 		RetornaMensaje retornaMensaje = null;
 		try{
 			//Date dateFecVncto = pFecVncto.getTime(); 
-			retornaMensaje = servicio.registrarCuota(pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+			retornaMensaje = servicio.registrarCuota(pPeriodo, pIdVivienda,  pImporte, pFecVncto);
 		}
 		catch(RemoteException ex){
 			ex.printStackTrace();
@@ -29,11 +29,11 @@ public class PagosWS {
 		return retornaMensaje;
 	}
 	
-	public RetornaMensaje ActualizarCuota(int pIdCuota, String pPeriodo, int pIdVivienda, int pIdTipoPago, BigDecimal pImporte, Calendar pFecVncto){
+	public RetornaMensaje ActualizarCuota(int pIdCuota, String pPeriodo, int pIdVivienda, double pImporte, String pFecVncto){
 		RetornaMensaje retornaMensaje = null;
 		try{
 			//Date dateFecVncto = pFecVncto.getTime(); 
-			retornaMensaje = servicio.actualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+			retornaMensaje = servicio.actualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto);
 		}
 		catch(RemoteException ex){
 			ex.printStackTrace();

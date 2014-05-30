@@ -56,16 +56,16 @@ public class IPagosServiceProxy implements org.tempuri.IPagosService {
     return iPagosService.registrarTipoPago(descripcion);
   }
   
-  public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarCuota(java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje{
+  public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarCuota(java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Double pImporte, java.lang.String pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje{
     if (iPagosService == null)
       _initIPagosServiceProxy();
-    return iPagosService.registrarCuota(pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+    return iPagosService.registrarCuota(pPeriodo, pIdVivienda, pImporte, pFecVncto);
   }
   
-  public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje actualizarCuota(java.lang.Integer pIdCuota, java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Integer pIdTipoPago, java.math.BigDecimal pImporte, java.util.Calendar pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje{
+  public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje actualizarCuota(java.lang.Integer pIdCuota, java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Double pImporte, java.lang.String pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje{
     if (iPagosService == null)
       _initIPagosServiceProxy();
-    return iPagosService.actualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+    return iPagosService.actualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto);
   }
   
   public org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota[] listarCuota(java.lang.String pPeriodo) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje{
