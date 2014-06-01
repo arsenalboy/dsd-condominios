@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Collections.Generic;
 using System.Configuration;
 using Architects.Dominio;
-using Architects.Dominio;
+
 
 namespace Architecs.HorariosService.Persitencia
 {
@@ -21,19 +20,19 @@ namespace Architecs.HorariosService.Persitencia
             List<HorarioBE> lstHorario = new List<HorarioBE>();
             try
             {
-               /* using (DBMLHorariossDataContext SQLDC = new DBMLHorariossDataContext(conexion))
+               using (DBMLHorariosDataContext SQLDC = new DBMLHorariosDataContext(conexion))
                 {
-                    var resul = SQLDC.dsd_mnt_S_Cuota(prm_C_Periodo);
+                    var resul = SQLDC.dsd_mnt_S_Horario();
 
                     foreach (var item in resul)
                     {
-                        Cuota cuota = new Cuota();
-                        cuota.N_IdCuota = item.N_IdCuota;
-                        cuota.C_Periodo = item.C_Periodo;
-                        cuota.N_IdVivienda = item.N_IdVivienda;
-                        lstHorario.Add(cuota);
+                        HorarioBE horario = new HorarioBE();
+                        horario.N_IdHorario = item.N_IdHorario;
+                        horario.C_Rango = item.C_Rango;
+                        horario.B_Estado = item.B_Estado;
+                        lstHorario.Add(horario);
                     }
-                }*/
+                }
             }
             catch (Exception ex)
             {
