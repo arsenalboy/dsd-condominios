@@ -43,14 +43,14 @@
 			              </div>
 			              <div class="col-sm-4">
 			             
-			            <asp:TextBox ID="TextBox4" type="date" runat="server" class="form-control input-sm" required name="txtfecha"></asp:TextBox>
+			            <asp:TextBox ID="TxtFecha" type="date" runat="server" class="form-control input-sm" required name="txtfecha"></asp:TextBox>
 			              </div>
 			              <div class="col-sm-1">
 			                <label class="form-label">Hora</label>
 			              </div>
 			              <div class="col-sm-5">
 			              	<div class="col-sm-4">
-			              	   <asp:TextBox ID="TextBox5" type="number" runat="server" class="form-control input-sm" required min="6" max="23" name="txtHora" style="width: 55px; "></asp:TextBox>
+			              	   <asp:TextBox ID="TxtHora" type="number" runat="server" class="form-control input-sm" required min="6" max="23" name="txtHora" style="width: 55px; "></asp:TextBox>
 			              	</div>
 			              	<div class="col-sm-8">
 			              		:00 Hrs
@@ -65,7 +65,7 @@
 			              </div>
 			              <div>
 			                <div class="col-sm-10">
-			                    <asp:TextBox ID="TextBox2" runat="server" class="form-control input-sm" 
+			                    <asp:TextBox ID="TxtTemas" runat="server" class="form-control input-sm" 
                                     required placeholder="Tema" Height="88px" TextMode="MultiLine"></asp:TextBox>
 			                </div>
 			              </div>
@@ -76,7 +76,7 @@
 			                <label class="form-label">Acuerdos</label>
 			              </div>
 			              <div class="col-sm-10">
-			                  <asp:TextBox ID="TextBox3" runat="server" class="form-control input-sm" required placeholder="Tema" TextMode="MultiLine"></asp:TextBox>
+			                  <asp:TextBox ID="txtAcuerdos" runat="server" class="form-control input-sm" required placeholder="Tema" TextMode="MultiLine"></asp:TextBox>
 			              </div>
 			            </div>
 			            <br /><br />
@@ -95,6 +95,9 @@
 			            <div class="col-md-12">
 			             
                          <%--ACA VA LA GRILLA--%>
+                        
+                         
+                        
                             <asp:GridView ID="GvDirectivos" runat="server" AutoGenerateColumns="False" 
                                 class="table table-striped table-bordered table-hover" 
                                 ShowHeaderWhenEmpty="True">
@@ -107,7 +110,15 @@
                                     </asp:BoundField>
                                     <asp:TemplateField HeaderText="DIRIGE">
                                         <ItemTemplate>
-                                            <asp:CheckBox ID="ChkSeleccionado" runat="server" />
+                                        <%-- <asp:UpdatePanel ID="upgrilla" runat="server">
+                                         <ContentTemplate>--%>
+                                                            <asp:CheckBox ID="ChkSeleccionado" runat="server" 
+                                                                oncheckedchanged="ChkSeleccionado_CheckedChanged" AutoPostBack="True" />
+                                                                 </ContentTemplate>
+                                   <%--      <Triggers>
+                                         <asp:PostBackTrigger  ControlID="ChkSeleccionado" />
+                                         </Triggers>
+                                         </asp:UpdatePanel>--%>
                                         </ItemTemplate>
                                         <ItemStyle Width="90px" />
                                     </asp:TemplateField>
@@ -127,7 +138,8 @@
 				           <c:if test="${requestScope.mensaje!='1'}">
 					          <div class="row">
 					            <div class="col-md-12" align="center">
-					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary"/>			              			             
+					                <asp:Button ID="BtnGrabar" runat="server" Text="Grabar" class="btn btn-primary" 
+                                        onclick="BtnGrabar_Click"/>			              			             
 					            </div>
 					          </div>	
 				          </c:if>	
@@ -150,20 +162,21 @@
      
    
   <ajaxToolkit:ModalPopupExtender ID="MpDirectores" runat="server" 
-                                                    TargetControlID="TextBox1"
+                                                    TargetControlID="TxtBuscar"
                                                     PopupControlID="PnlDirectivos" 
                                                     BackgroundCssClass="modalBackground"                                                         
                                                     CancelControlID="BtnCerrar" 
                                                     DropShadow="true" 
                                                     PopupDragHandleControlID="Panel3"/>    
-                
+  
     <asp:Panel ID="PnlDirectivos" runat="server" Style="display:none;"  CssClass="modalPopup">
      <asp:Panel ID="Panel3" runat="server"  Style="cursor: move; background-color:#F4F5EB; border:solid 1px Gray;color:Black"> 
-  
+
+
       <table>
       <tr>
       <td>Buscar</td>
-      <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+      <td><asp:TextBox ID="TxtBuscar" runat="server"></asp:TextBox></td>
       <td><asp:ImageButton ID="BtnBusca" runat="server" 
               ImageUrl="~/images/Buscar_24x24.png" onclick="BtnBusca_Click" /></td>
       </tr>
@@ -172,7 +185,7 @@
               <asp:UpdatePanel runat="server" ID="up1">
               <ContentTemplate>
               <asp:GridView ID="GvBusca" runat="server" AutoGenerateColumns="False" 
-                                class="table table-striped table-bordered table-hover" 
+                                class="table table-striped table-bordered table-hover"  DataKeyNames="N_IdDirectivo,C_NomPer"
                                 ShowHeaderWhenEmpty="True">
                                 <Columns>
                                     <asp:BoundField HeaderText="Codigo" DataField="N_IdDirectivo">
@@ -183,7 +196,8 @@
                                     </asp:BoundField>
                                     <asp:TemplateField HeaderText="SELECCIONE">
                                         <ItemTemplate>
-                                            <asp:ImageButton ID="btnSelecciona" runat="server" ImageUrl="~/images/Select_16x16.png" />
+                                            <asp:ImageButton ID="btnSelecciona" runat="server" 
+                                                ImageUrl="~/images/Select_16x16.png" onclick="btnSelecciona_Click" />
                                         </ItemTemplate>
                                         <ItemStyle Width="90px" />
                                     </asp:TemplateField>
@@ -197,7 +211,11 @@
                                 </emptydatatemplate> 
                             </asp:GridView>
                </ContentTemplate>
+              <Triggers>
+              <asp:AsyncPostBackTrigger ControlID="BtnBusca" EventName="Click" />
+              </Triggers>
               </asp:UpdatePanel>
+
                   </td>
           </tr>
           <tr>

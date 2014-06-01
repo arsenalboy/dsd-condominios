@@ -7,6 +7,7 @@ using System.Text;
 using Architecs.ReunionesService.Dominio;
 using Architecs.ReunionesService.Persistencia;
 
+
 namespace Architecs.ReunionesService
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "JuntaService" en el código, en svc y en el archivo de configuración a la vez.
@@ -16,7 +17,7 @@ namespace Architecs.ReunionesService
 
         #region Miembros de IJuntaService
 
-        public List<directivo> listarDirectivos(string C_NomPer)
+        public List<Directivo> listarDirectivos(string C_NomPer)
         {
             return ObjjuntaDAO.listarDirectivos(C_NomPer);
         }

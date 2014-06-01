@@ -40,40 +40,40 @@ namespace Architecs.Presentacion.Juntas {
         protected global::System.Web.UI.UpdatePanel uptabla;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control TxtFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox TxtFecha;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control TxtHora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox TxtHora;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TxtTemas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TxtTemas;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control txtAcuerdos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtAcuerdos;
         
         /// <summary>
         /// Control BtnAgregar.
@@ -130,13 +130,13 @@ namespace Architecs.Presentacion.Juntas {
         protected global::System.Web.UI.WebControls.Panel Panel3;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control TxtBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TxtBuscar;
         
         /// <summary>
         /// Control BtnBusca.

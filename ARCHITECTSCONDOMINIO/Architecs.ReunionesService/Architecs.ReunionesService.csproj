@@ -62,7 +62,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dominio\directivo.cs" />
+    <Compile Include="Dominio\Directivo.cs" />
     <Compile Include="Dominio\Junta.cs" />
     <Compile Include="Dominio\JuntaDirectivos.cs" />
     <Compile Include="IJuntaService.cs" />
@@ -77,7 +77,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Architecs.Dominio\Architects.Dominio.csproj">
+    <ProjectReference Include="..\Architecs.Dominio\Architecs.Dominio.csproj">
       <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
       <Name>Architecs.Dominio</Name>
     </ProjectReference>

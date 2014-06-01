@@ -16,7 +16,7 @@ namespace Architecs.ReunionesService
         /* LISTAR DIRECTIVOS POR NOMBRES */
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "listarDirectivos")]
-        List<directivo> listarDirectivos(string C_NomPer);
+        List<Directivo> listarDirectivos(string C_NomPer);
 
         /* INSERTA JUNTA */
         [FaultContract(typeof(RetornaMensaje))]
