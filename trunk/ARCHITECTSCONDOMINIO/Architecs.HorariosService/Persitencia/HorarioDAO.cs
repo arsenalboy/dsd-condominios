@@ -44,6 +44,7 @@ namespace Architecs.HorariosService.Persitencia
         public int Registrar(HorarioBE horario)
         {
             int? codigoRetorno = -1;
+
             try
             {
                 using (DBMLHorariosDataContext SQLDC = new DBMLHorariosDataContext(conexion))
