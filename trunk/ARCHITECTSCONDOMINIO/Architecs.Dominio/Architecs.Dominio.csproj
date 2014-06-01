@@ -54,6 +54,7 @@
       <DependentUpon>resMensajes.resx</DependentUpon>
     </Compile>
     <Compile Include="RetornaMensaje.cs" />
+    <Compile Include="ValidationException.cs" />
     <Compile Include="ViviendaBE.cs" />
   </ItemGroup>
   <ItemGroup>
