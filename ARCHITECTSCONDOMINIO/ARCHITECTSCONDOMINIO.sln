@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.ResidentesService", "Architecs.ResidentesService\Architecs.ResidentesService.csproj", "{E7C73601-A0AD-4638-B8D4-4A0F868D961D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.Dominio", "Architecs.Dominio\Architecs.Dominio.csproj", "{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Dominio", "Architecs.Dominio\Architects.Dominio.csproj", "{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.ViviendasService", "Architecs.ViviendasService\Architecs.ViviendasService.csproj", "{6D40C973-D59F-4D4D-B223-1DD7948F4ABE}"
 EndProject

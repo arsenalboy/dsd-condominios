@@ -13,13 +13,6 @@
     <Parameter Name="prm_B_Estado" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Gestion.dsd_mnt_I_Horario" Method="dsd_mnt_I_Horario">
-    <Parameter Name="prm_C_Rango" Type="System.String" DbType="VarChar(45)" />
-    <Parameter Name="prm_B_Estado" Type="System.Int32" DbType="Int" />
-    <ElementType Name="dsd_mnt_I_HorarioResult">
-      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="Gestion.dsd_mnt_D_Horario" Method="dsd_mnt_D_Horario">
     <Parameter Name="prm_N_IdHorario" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -30,6 +23,12 @@
       <Column Name="N_IdHorario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="C_Rango" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
       <Column Name="B_Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Gestion.dsd_mnt_I_Horario" Method="dsd_mnt_I_Horario">
+    <Parameter Name="prm_C_Rango" Type="System.String" DbType="VarChar(45)" />
+    <ElementType Name="dsd_mnt_I_HorarioResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

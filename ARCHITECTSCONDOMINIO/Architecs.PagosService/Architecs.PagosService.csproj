@@ -83,9 +83,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Architecs.Dominio\Architecs.Dominio.csproj">
+    <ProjectReference Include="..\Architecs.Dominio\Architects.Dominio.csproj">
       <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
-      <Name>Architecs.Dominio</Name>
+      <Name>Architects.Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

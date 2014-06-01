@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Architects.Dominio;
 
 namespace Architecs.HorariosService
 {
@@ -11,7 +12,17 @@ namespace Architecs.HorariosService
     [ServiceContract]
     public interface IHorarioService
     {
+        /* TIPO DE PAGO */
         [OperationContract]
-        void DoWork();
+        IList<HorarioBE> ListarHorario();
+
+        [OperationContract]
+        RetornaMensaje RegistrarHorario(string rango);
+
+        [OperationContract]
+        RetornaMensaje ActualizarHorario(int idHorario, string rango, int estado);
+
+        [OperationContract]
+        RetornaMensaje EliminarHorario(int idHorario); 
     }
 }

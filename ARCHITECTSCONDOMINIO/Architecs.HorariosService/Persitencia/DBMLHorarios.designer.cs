@@ -76,13 +76,6 @@ namespace Architecs.HorariosService.Persitencia
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Gestion.dsd_mnt_I_Horario")]
-		public ISingleResult<dsd_mnt_I_HorarioResult> dsd_mnt_I_Horario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(45)")] string prm_C_Rango, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_B_Estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_C_Rango, prm_B_Estado);
-			return ((ISingleResult<dsd_mnt_I_HorarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Gestion.dsd_mnt_D_Horario")]
 		public int dsd_mnt_D_Horario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_N_IdHorario)
 		{
@@ -96,6 +89,13 @@ namespace Architecs.HorariosService.Persitencia
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_N_IdHorario);
 			return ((ISingleResult<dsd_mnt_G_HorarioResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Gestion.dsd_mnt_I_Horario")]
+		public ISingleResult<dsd_mnt_I_HorarioResult> dsd_mnt_I_Horario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(45)")] string prm_C_Rango)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_C_Rango);
+			return ((ISingleResult<dsd_mnt_I_HorarioResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class dsd_mnt_S_HorarioResult
@@ -108,6 +108,68 @@ namespace Architecs.HorariosService.Persitencia
 		private int _B_Estado;
 		
 		public dsd_mnt_S_HorarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_N_IdHorario", DbType="Int NOT NULL")]
+		public int N_IdHorario
+		{
+			get
+			{
+				return this._N_IdHorario;
+			}
+			set
+			{
+				if ((this._N_IdHorario != value))
+				{
+					this._N_IdHorario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_C_Rango", DbType="VarChar(45)")]
+		public string C_Rango
+		{
+			get
+			{
+				return this._C_Rango;
+			}
+			set
+			{
+				if ((this._C_Rango != value))
+				{
+					this._C_Rango = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B_Estado", DbType="Int NOT NULL")]
+		public int B_Estado
+		{
+			get
+			{
+				return this._B_Estado;
+			}
+			set
+			{
+				if ((this._B_Estado != value))
+				{
+					this._B_Estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class dsd_mnt_G_HorarioResult
+	{
+		
+		private int _N_IdHorario;
+		
+		private string _C_Rango;
+		
+		private int _B_Estado;
+		
+		public dsd_mnt_G_HorarioResult()
 		{
 		}
 		
@@ -181,68 +243,6 @@ namespace Architecs.HorariosService.Persitencia
 				if ((this._Column1 != value))
 				{
 					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
-	public partial class dsd_mnt_G_HorarioResult
-	{
-		
-		private int _N_IdHorario;
-		
-		private string _C_Rango;
-		
-		private int _B_Estado;
-		
-		public dsd_mnt_G_HorarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_N_IdHorario", DbType="Int NOT NULL")]
-		public int N_IdHorario
-		{
-			get
-			{
-				return this._N_IdHorario;
-			}
-			set
-			{
-				if ((this._N_IdHorario != value))
-				{
-					this._N_IdHorario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_C_Rango", DbType="VarChar(45)")]
-		public string C_Rango
-		{
-			get
-			{
-				return this._C_Rango;
-			}
-			set
-			{
-				if ((this._C_Rango != value))
-				{
-					this._C_Rango = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B_Estado", DbType="Int NOT NULL")]
-		public int B_Estado
-		{
-			get
-			{
-				return this._B_Estado;
-			}
-			set
-			{
-				if ((this._B_Estado != value))
-				{
-					this._B_Estado = value;
 				}
 			}
 		}
