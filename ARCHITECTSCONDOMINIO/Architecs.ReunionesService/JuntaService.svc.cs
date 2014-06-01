@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using Architecs.ReunionesService.Dominio;
 using Architecs.ReunionesService.Persistencia;
+using Architects.Dominio;
 
 
 namespace Architecs.ReunionesService
@@ -24,13 +25,29 @@ namespace Architecs.ReunionesService
 
         public int CreaJunta(DateTime D_Fecha, string C_Hora, string C_Tema, string C_Acuerdo)
         {
-            Junta  ObjJunta = new Junta();
-            ObjJunta.D_Fecha = D_Fecha;
-            ObjJunta.C_Hora = C_Hora;
-            ObjJunta.C_Tema = C_Tema;
-            ObjJunta.C_Acuerdo = C_Acuerdo;
+            try
+            {
+                Junta ObjJunta = new Junta();
+                ObjJunta.D_Fecha = D_Fecha;
+                ObjJunta.C_Hora = C_Hora;
+                ObjJunta.C_Tema = C_Tema;
+                ObjJunta.C_Acuerdo = C_Acuerdo;
 
-            return ObjjuntaDAO.CreaJunta(ObjJunta);
+                return ObjjuntaDAO.CreaJunta(ObjJunta);
+            }
+            catch (Exception exception)
+            {
+                 throw new FaultException<RetornaMensaje>
+                    (new RetornaMensaje
+                    {
+                        Mensage = string.Format(resMensajes.msjNoRegistrado, "Cuota"),
+                        CodigoError = exception.GetHashCode().ToString(),
+                        Exito = false
+                    }
+                    , new FaultReason(exception.Message));
+            
+            }
+           
         }
 
         public int CreaJuntaDirectivos(int N_IdJunta, int N_IdDirectivo, string C_PreJun, bool B_Estado)

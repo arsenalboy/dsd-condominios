@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Architecs.Presentacion.Dominio;
 using System.Xml.Linq;
+using System.ServiceModel;
 
 namespace Architecs.Presentacion.Juntas
 {
@@ -143,7 +144,7 @@ namespace Architecs.Presentacion.Juntas
 
                 limpiar();
 	        }
-	        catch (Exception ex)
+            catch (FaultException ex)
 	        {
                 String strScript;
                 strScript = "<script>alert('" + ex.Message + "')</script>";
