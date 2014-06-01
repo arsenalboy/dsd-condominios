@@ -18,17 +18,17 @@ namespace Architecs.HorariosService
             return dao.Listar().ToList();
         }
 
-        public Architects.Dominio.RetornaMensaje RegistrarHorario(string rango)
+        public HorarioBE RegistrarHorario(string rango)
         {
             throw new NotImplementedException();
         }
 
-        public Architects.Dominio.RetornaMensaje ActualizarHorario(int idHorario, string rango, int estado)
+        public HorarioBE ActualizarHorario(int idHorario, string rango, int estado)
         {
             throw new NotImplementedException();
         }
 
-        public Architects.Dominio.RetornaMensaje EliminarHorario(int idHorario)
+        public void EliminarHorario(int idHorario)
         {
             throw new NotImplementedException();
         }

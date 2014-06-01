@@ -6,21 +6,21 @@ using System.ServiceModel;
 using System.Text;
 using Architects.Dominio;
 
-namespace Architecs.HorariosService
+namespace Architecs.EspaciosComunuesService
 {
     [ServiceContract]
-    public interface IHorarioService
+    public interface IEspacioComunService
     {
         [OperationContract]
-        IList<HorarioBE> ListarHorario();
+        IList<EspacioComunBE> ListarEspacioComun();
 
         [OperationContract]
-        HorarioBE RegistrarHorario(string rango);
+        EspacioComunBE RegistrarEspacioComun(string nombre);
 
         [OperationContract]
-        HorarioBE ActualizarHorario(int idHorario, string rango, int estado);
+        EspacioComunBE ActualizarEspacioComun(int idEspacioComun, string nombre, int estado);
 
         [OperationContract]
-        void EliminarHorario(int idHorario); 
+        void EliminarHorario(int idEspacioComun);
     }
 }
