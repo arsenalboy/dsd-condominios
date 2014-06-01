@@ -25,9 +25,9 @@ namespace Architecs.ReunionesService.Persistencia
             CadenaConexionSQL = ConexionUtil.CadenaConeccion();
         }
 
-        public List<directivo> listarDirectivos(string C_NomPer)
+        public List<Directivo> listarDirectivos(string C_NomPer)
         {
-            List<directivo> listarDirectivos = new List<directivo>();
+            List<Directivo> listarDirectivos = new List<Directivo>();
             objconeccion = new SqlConnection(CadenaConexionSQL);
             SqlCommand objcomand = new SqlCommand("LISTAR_DIRECTIVOS", objconeccion);
             objcomand.CommandType = CommandType.StoredProcedure;
@@ -37,7 +37,7 @@ namespace Architecs.ReunionesService.Persistencia
             SqlDataReader reader = objcomand.ExecuteReader();
             while (reader.Read())
             {
-                directivo objdirectivo = new directivo();
+                Directivo objdirectivo = new Directivo();
                 objdirectivo.N_IdDirectivo = reader.GetInt32(0);
                 objdirectivo.C_NomPer = reader.GetString(1);
                 objdirectivo.C_Cargo = reader.GetString(2);

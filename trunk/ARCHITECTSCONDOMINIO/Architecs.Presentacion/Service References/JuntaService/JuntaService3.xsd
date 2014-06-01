@@ -11,7 +11,7 @@
   <xs:element name="listarDirectivosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architecs.ReunionesService.Dominio" minOccurs="0" name="listarDirectivosResult" nillable="true" type="q1:ArrayOfdirectivo" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architecs.ReunionesService.Dominio" minOccurs="0" name="listarDirectivosResult" nillable="true" type="q1:ArrayOfDirectivo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

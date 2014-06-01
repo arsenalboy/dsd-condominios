@@ -83,12 +83,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Architecs.Dominio\Architects.Dominio.csproj">
-      <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
-      <Name>Architects.Dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Persitencia\DBMLPagos.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DBMLPagos.designer.cs</LastGenOutput>
@@ -102,6 +96,12 @@
     <None Include="Persitencia\DBMLPagos.dbml.layout">
       <DependentUpon>DBMLPagos.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Architecs.Dominio\Architecs.Dominio.csproj">
+      <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
+      <Name>Architecs.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

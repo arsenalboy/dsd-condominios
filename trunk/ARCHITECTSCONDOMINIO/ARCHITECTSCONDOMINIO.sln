@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.ResidentesService", "Architecs.ResidentesService\Architecs.ResidentesService.csproj", "{E7C73601-A0AD-4638-B8D4-4A0F868D961D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Dominio", "Architecs.Dominio\Architects.Dominio.csproj", "{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.ViviendasService", "Architecs.ViviendasService\Architecs.ViviendasService.csproj", "{6D40C973-D59F-4D4D-B223-1DD7948F4ABE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.PagosService", "Architecs.PagosService\Architecs.PagosService.csproj", "{7CDAB574-411F-4F5E-90A2-F822E686EEA1}"
@@ -12,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.ReservasService", "Architecs.ReservasService\Architecs.ReservasService.csproj", "{C9028327-B102-4B19-BBC4-D61897578156}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.EspaciosComunuesService", "Architecs.EspaciosComunuesService\Architecs.EspaciosComunuesService.csproj", "{4F19E56C-AF97-437E-9A9A-B06F6B1B4F1B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.HorariosService", "Architecs.HorariosService\Architecs.HorariosService.csproj", "{DDE52FFF-206B-4AEC-BB2D-C41F11612EC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.ConfiguracionService", "Architecs.ConfiguracionService\Architecs.ConfiguracionService.csproj", "{4AC56FE2-CC3A-4D5F-90EA-D477CEC4E913}"
 EndProject
@@ -40,6 +36,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.Presentacion", "Architecs.Presentacion\Architecs.Presentacion.csproj", "{C86C111C-C405-4319-A43B-C56580AC4FC4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D8401D94-D4E9-4F0C-842B-326879C5C04C} = {D8401D94-D4E9-4F0C-842B-326879C5C04C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.Dominio", "Architecs.Dominio\Architecs.Dominio.csproj", "{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architects.Dominio", "Architects.Dominio\Architects.Dominio.csproj", "{AEC58D5C-B1E9-4062-B0DA-3C4D5A800DB3}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -58,10 +61,6 @@ Global
 		{E7C73601-A0AD-4638-B8D4-4A0F868D961D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7C73601-A0AD-4638-B8D4-4A0F868D961D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7C73601-A0AD-4638-B8D4-4A0F868D961D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D40C973-D59F-4D4D-B223-1DD7948F4ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D40C973-D59F-4D4D-B223-1DD7948F4ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D40C973-D59F-4D4D-B223-1DD7948F4ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -78,10 +77,6 @@ Global
 		{4F19E56C-AF97-437E-9A9A-B06F6B1B4F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F19E56C-AF97-437E-9A9A-B06F6B1B4F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F19E56C-AF97-437E-9A9A-B06F6B1B4F1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDE52FFF-206B-4AEC-BB2D-C41F11612EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDE52FFF-206B-4AEC-BB2D-C41F11612EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDE52FFF-206B-4AEC-BB2D-C41F11612EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDE52FFF-206B-4AEC-BB2D-C41F11612EC7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AC56FE2-CC3A-4D5F-90EA-D477CEC4E913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AC56FE2-CC3A-4D5F-90EA-D477CEC4E913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AC56FE2-CC3A-4D5F-90EA-D477CEC4E913}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -114,6 +109,14 @@ Global
 		{C86C111C-C405-4319-A43B-C56580AC4FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C86C111C-C405-4319-A43B-C56580AC4FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C86C111C-C405-4319-A43B-C56580AC4FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC58D5C-B1E9-4062-B0DA-3C4D5A800DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC58D5C-B1E9-4062-B0DA-3C4D5A800DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC58D5C-B1E9-4062-B0DA-3C4D5A800DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC58D5C-B1E9-4062-B0DA-3C4D5A800DB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

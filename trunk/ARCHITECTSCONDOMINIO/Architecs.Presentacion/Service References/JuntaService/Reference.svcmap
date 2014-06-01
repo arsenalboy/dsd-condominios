@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="077cc509-360d-4caf-b4d6-1223eed3dddf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62067/JuntaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="JuntaService.disco" MetadataType="Disco" ID="db35bfd2-bb04-4309-95a4-9b92fc042f7a" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?disco" />
+    <MetadataFile FileName="JuntaService.xsd" MetadataType="Schema" ID="59a99238-cde5-481b-9ac1-4d3426447da4" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="JuntaService1.xsd" MetadataType="Schema" ID="f91fb4fe-6632-4ecd-976e-8e1c58ab7590" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="JuntaService.wsdl" MetadataType="Wsdl" ID="faae2d6c-7ad1-46bc-9673-9c22662915fd" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?wsdl" />
+    <MetadataFile FileName="JuntaService2.xsd" MetadataType="Schema" ID="e9436280-070e-4ed0-aae2-9fbcac1b1a51" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="JuntaService3.xsd" MetadataType="Schema" ID="b312d19f-8ff8-4058-b092-862f09bb1398" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

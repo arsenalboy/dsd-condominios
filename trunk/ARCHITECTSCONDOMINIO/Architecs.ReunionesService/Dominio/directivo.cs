@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace Architecs.ReunionesService.Dominio
 {
     [DataContract]
-    public class directivo
+    public class Directivo
     {
         [DataMember]
         public int N_IdDirectivo { get; set; }
