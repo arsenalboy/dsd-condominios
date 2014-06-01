@@ -15,7 +15,7 @@ namespace Architecs.HorariosService.Persitencia
         {
             conexion = ConexionUtil.CadenaConeccion();
         }
-        public List<HorarioBE> Listar(string prm_C_Periodo)
+        public List<HorarioBE> Listar()
         {
             List<HorarioBE> lstHorario = new List<HorarioBE>();
             try
@@ -40,6 +40,24 @@ namespace Architecs.HorariosService.Persitencia
             }
             return lstHorario;
         }
-        
+
+        public int Registrar(HorarioBE horario)
+        {
+            int? codigoRetorno = -1;
+            try
+            {
+                using (DBMLHorariosDataContext SQLDC = new DBMLHorariosDataContext(conexion))
+                {
+                    SQLDC.dsd_mnt_I_Horario(
+                        horario.C_Rango
+                       );
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return codigoRetorno == null ? 0 : codigoRetorno.Value;
+        }
     }
 }
