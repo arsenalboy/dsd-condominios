@@ -81,6 +81,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Quejas\ConsultaQuejas.aspx" />
+    <Content Include="Quejas\CreaQueja.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -152,6 +154,20 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Quejas\ConsultaQuejas.aspx.cs">
+      <DependentUpon>ConsultaQuejas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quejas\ConsultaQuejas.aspx.designer.cs">
+      <DependentUpon>ConsultaQuejas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quejas\CreaQueja.aspx.cs">
+      <DependentUpon>CreaQueja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quejas\CreaQueja.aspx.designer.cs">
+      <DependentUpon>CreaQueja.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service References\JuntaService\Reference.cs">
       <AutoGen>True</AutoGen>

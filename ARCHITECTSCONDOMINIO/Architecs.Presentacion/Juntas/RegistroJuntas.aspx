@@ -148,8 +148,15 @@
      
          	</div>
          </div>
-          <div class="col-sm-3"></div>
-       </div>     
+        
+           <p></p>
+          <div class="alert alert-success" id="divacepto" style="display:none;">
+			            <button type="button" class="close" data-dismiss="alert">&times;</button>
+			            <b>En hora buena,</b> La junta se registró con éxito.
+			          </div>
+          
+          </div>
+           
        
 
          </ContentTemplate>
@@ -227,6 +234,7 @@
                   <td >
                   &nbsp;</td>
           </tr>
+          
       </table>
 
       </asp:Panel>

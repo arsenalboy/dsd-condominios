@@ -15,12 +15,16 @@ namespace Architecs.Presentacion.Juntas
         
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             if (!IsPostBack)
             {
                 List<Directivo> listdirectivo = new List<Directivo>();
                 Session["listdirectivo"] = listdirectivo;
                 GvDirectivos.DataSource = listdirectivo;
                 GvDirectivos.DataBind();
+
+
             }
     
         }
@@ -138,9 +142,12 @@ namespace Architecs.Presentacion.Juntas
                     objjunta.CreaJuntaDirectivos(id, N_IdDirectivo, valor, true);
                 }
 
-                String strScript;
-                strScript = "<script>alert('Se grabo la junta correctamente.')</script>";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", strScript, false);
+                String script = "document.getElementById('divacepto').style.display='block';";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta", script, true);
+
+                //String strScript;
+                //strScript = "<script>alert('Se grabo la junta correctamente.')</script>";
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", strScript, false);
 
                 limpiar();
 	        }
