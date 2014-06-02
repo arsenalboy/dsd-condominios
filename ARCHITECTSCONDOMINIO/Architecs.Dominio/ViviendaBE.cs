@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 
 namespace Architects.Dominio
 {
+    [DataContract]
     public class ViviendaBE
     {
         public ViviendaBE()
@@ -22,7 +23,7 @@ namespace Architects.Dominio
         [DataMember]
         public string C_NumDpto { get; set; }
         [DataMember]
-        public decimal N_NumMetros { get; set; }
+        public decimal? N_NumMetros { get; set; }
         [DataMember]
         public string C_CodTipo { get; set; }
         [DataMember]

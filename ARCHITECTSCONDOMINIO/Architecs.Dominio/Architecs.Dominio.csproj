@@ -49,9 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResidenteBE.cs" />
     <Compile Include="resMensajes.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>resMensajes.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="RetornaMensaje.cs" />
     <Compile Include="ValidationException.cs" />
