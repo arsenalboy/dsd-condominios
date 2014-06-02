@@ -12,7 +12,7 @@ namespace Architecs.HorariosService
     public interface IHorarioService
     {
         [OperationContract]
-        IList<HorarioBE> ListarHorario();
+        IList<HorarioBE> ListarHorariosDisponibles(DateTime fecha, int idEspacio);
 
         [OperationContract]
         HorarioBE RegistrarHorario(string rango);

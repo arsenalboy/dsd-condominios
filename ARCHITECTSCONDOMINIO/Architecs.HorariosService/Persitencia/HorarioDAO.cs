@@ -15,21 +15,21 @@ namespace Architecs.HorariosService.Persitencia
         {
             conexion = ConexionUtil.CadenaConeccion();
         }
-        public List<HorarioBE> Listar()
+        public List<HorarioBE> ListarHorariosDisponibles(DateTime prm_fecha, int prm_idEspacio)
         {
             List<HorarioBE> lstHorario = new List<HorarioBE>();
             try
             {
                using (DBMLHorariosDataContext SQLDC = new DBMLHorariosDataContext(conexion))
                 {
-                    var resul = SQLDC.dsd_mnt_S_Horario();
-
+                    var resul = SQLDC.dsd_mnt_S_HorarioDisponible(prm_fecha, prm_idEspacio);
+                    string estado;
                     foreach (var item in resul)
                     {
                         HorarioBE horario = new HorarioBE();
                         horario.N_IdHorario = item.N_IdHorario;
                         horario.C_Rango = item.C_Rango;
-                        horario.B_Estado = item.B_Estado;
+                        estado = item.Estado;
                         lstHorario.Add(horario);
                     }
                 }
