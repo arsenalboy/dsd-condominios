@@ -34,7 +34,7 @@ namespace Architecs.ViviendasService.Persistencia
             {
                 using (DBML_ViviendaDataContext SQLDC = new DBML_ViviendaDataContext(CadenaConexionSQL))
                 {
-                    var resul = SQLDC.dsd_mnt_S_Vivienda(prm_N_IdResidente, prm_C_NumEdificio);
+                    var resul = SQLDC.dsd_mnt_S_Vivienda(prm_C_NumEdificio);
                     foreach (var item in resul)
                     {
                         itemViviendaBE = new ViviendaBE();
@@ -45,7 +45,7 @@ namespace Architecs.ViviendasService.Persistencia
                             itemViviendaBE.N_NumMetros = item.N_NumMetros;
                             itemViviendaBE.C_CodTipo = item.C_CodTipo;
                             itemViviendaBE.B_Estado = item.B_Estado;
-                            itemViviendaBE.objResidente.C_Apellidos = item.Column1;
+                            itemViviendaBE.objResidente.C_Apellidos = item.v_IdResidente;
 
                             lstViviendas.Add(itemViviendaBE);
                     }

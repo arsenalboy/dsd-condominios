@@ -35,13 +35,12 @@
     <Parameter Name="prm_B_Estado" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Maestros.dsd_mnt_S_Vivienda" Method="dsd_mnt_S_Vivienda">
-    <Parameter Name="prm_N_IdResidente" Type="System.Int32" DbType="Int" />
+  <Function Name="Maestros.dsd_mnt_S_ViviendaDpto" Method="dsd_mnt_S_ViviendaDpto">
+    <Parameter Name="prm_C_NumDpto" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="prm_C_NumEdificio" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="dsd_mnt_S_ViviendaResult">
+    <ElementType Name="dsd_mnt_S_ViviendaDptoResult">
       <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="N_IdResidente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(182)" CanBeNull="true" />
       <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="N_NumMetros" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
@@ -49,12 +48,12 @@
       <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="Maestros.dsd_mnt_S_ViviendaDpto" Method="dsd_mnt_S_ViviendaDpto">
-    <Parameter Name="prm_C_NumDpto" Type="System.String" DbType="VarChar(10)" />
+  <Function Name="Maestros.dsd_mnt_S_Vivienda" Method="dsd_mnt_S_Vivienda">
     <Parameter Name="prm_C_NumEdificio" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="dsd_mnt_S_ViviendaDptoResult">
+    <ElementType Name="dsd_mnt_S_ViviendaResult">
       <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="N_IdResidente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="v_IdResidente" Type="System.String" DbType="VarChar(182)" CanBeNull="true" />
       <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="N_NumMetros" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />

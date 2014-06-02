@@ -91,18 +91,18 @@ namespace Architecs.ViviendasService.Persistencia
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Maestros.dsd_mnt_S_Vivienda")]
-		public ISingleResult<dsd_mnt_S_ViviendaResult> dsd_mnt_S_Vivienda([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_N_IdResidente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string prm_C_NumEdificio)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_N_IdResidente, prm_C_NumEdificio);
-			return ((ISingleResult<dsd_mnt_S_ViviendaResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Maestros.dsd_mnt_S_ViviendaDpto")]
 		public ISingleResult<dsd_mnt_S_ViviendaDptoResult> dsd_mnt_S_ViviendaDpto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string prm_C_NumDpto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string prm_C_NumEdificio)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_C_NumDpto, prm_C_NumEdificio);
 			return ((ISingleResult<dsd_mnt_S_ViviendaDptoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Maestros.dsd_mnt_S_Vivienda")]
+		public ISingleResult<dsd_mnt_S_ViviendaResult> dsd_mnt_S_Vivienda([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string prm_C_NumEdificio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_C_NumEdificio);
+			return ((ISingleResult<dsd_mnt_S_ViviendaResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -240,14 +240,12 @@ namespace Architecs.ViviendasService.Persistencia
 		}
 	}
 	
-	public partial class dsd_mnt_S_ViviendaResult
+	public partial class dsd_mnt_S_ViviendaDptoResult
 	{
 		
 		private int _N_IdVivienda;
 		
 		private int _N_IdResidente;
-		
-		private string _Column1;
 		
 		private string _C_NumEdificio;
 		
@@ -259,7 +257,7 @@ namespace Architecs.ViviendasService.Persistencia
 		
 		private bool _B_Estado;
 		
-		public dsd_mnt_S_ViviendaResult()
+		public dsd_mnt_S_ViviendaDptoResult()
 		{
 		}
 		
@@ -291,22 +289,6 @@ namespace Architecs.ViviendasService.Persistencia
 				if ((this._N_IdResidente != value))
 				{
 					this._N_IdResidente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="VarChar(182)")]
-		public string Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
 				}
 			}
 		}
@@ -392,12 +374,14 @@ namespace Architecs.ViviendasService.Persistencia
 		}
 	}
 	
-	public partial class dsd_mnt_S_ViviendaDptoResult
+	public partial class dsd_mnt_S_ViviendaResult
 	{
 		
 		private int _N_IdVivienda;
 		
 		private int _N_IdResidente;
+		
+		private string _v_IdResidente;
 		
 		private string _C_NumEdificio;
 		
@@ -409,7 +393,7 @@ namespace Architecs.ViviendasService.Persistencia
 		
 		private bool _B_Estado;
 		
-		public dsd_mnt_S_ViviendaDptoResult()
+		public dsd_mnt_S_ViviendaResult()
 		{
 		}
 		
@@ -441,6 +425,22 @@ namespace Architecs.ViviendasService.Persistencia
 				if ((this._N_IdResidente != value))
 				{
 					this._N_IdResidente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_v_IdResidente", DbType="VarChar(182)")]
+		public string v_IdResidente
+		{
+			get
+			{
+				return this._v_IdResidente;
+			}
+			set
+			{
+				if ((this._v_IdResidente != value))
+				{
+					this._v_IdResidente = value;
 				}
 			}
 		}
