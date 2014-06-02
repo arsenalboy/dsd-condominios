@@ -33,9 +33,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="pPeriodo" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pIdVivienda" type="xs:int" />
-        <xs:element minOccurs="0" name="pIdTipoPago" type="xs:int" />
-        <xs:element minOccurs="0" name="pImporte" type="xs:decimal" />
-        <xs:element minOccurs="0" name="pFecVncto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pImporte" type="xs:double" />
+        <xs:element minOccurs="0" name="pFecVncto" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -52,9 +51,8 @@
         <xs:element minOccurs="0" name="pIdCuota" type="xs:int" />
         <xs:element minOccurs="0" name="pPeriodo" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pIdVivienda" type="xs:int" />
-        <xs:element minOccurs="0" name="pIdTipoPago" type="xs:int" />
-        <xs:element minOccurs="0" name="pImporte" type="xs:decimal" />
-        <xs:element minOccurs="0" name="pFecVncto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pImporte" type="xs:double" />
+        <xs:element minOccurs="0" name="pFecVncto" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

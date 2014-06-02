@@ -148,6 +148,13 @@ namespace Architecs.PagosService.Persitencia
 			prm_N_IdCuota = ((System.Nullable<int>)(result.GetParameterValue(0)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Gestion.dsd_mnt_S_CuotaIdPeriodo")]
+		public ISingleResult<dsd_mnt_S_CuotaIdPeriodoResult> dsd_mnt_S_CuotaIdPeriodo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(6)")] string prm_C_Periodo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_N_IdVivienda)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_C_Periodo, prm_N_IdVivienda);
+			return ((ISingleResult<dsd_mnt_S_CuotaIdPeriodoResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class dsd_mnt_S_TipoPagoIdResult
@@ -733,6 +740,212 @@ namespace Architecs.PagosService.Persitencia
 				if ((this._B_Estado != value))
 				{
 					this._B_Estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class dsd_mnt_S_CuotaIdPeriodoResult
+	{
+		
+		private int _N_IdCuota;
+		
+		private string _C_Periodo;
+		
+		private int _N_IdVivienda;
+		
+		private string _C_NumEdificio;
+		
+		private string _C_NumDpto;
+		
+		private string _C_Propietario;
+		
+		private System.Nullable<int> _N_IdTipoPago;
+		
+		private string _V_IdTipoPago;
+		
+		private System.Nullable<decimal> _N_Importe;
+		
+		private System.Nullable<System.DateTime> _D_FecVncto;
+		
+		private System.Nullable<System.DateTime> _D_FecPago;
+		
+		public dsd_mnt_S_CuotaIdPeriodoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_N_IdCuota", DbType="Int NOT NULL")]
+		public int N_IdCuota
+		{
+			get
+			{
+				return this._N_IdCuota;
+			}
+			set
+			{
+				if ((this._N_IdCuota != value))
+				{
+					this._N_IdCuota = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_C_Periodo", DbType="VarChar(6)")]
+		public string C_Periodo
+		{
+			get
+			{
+				return this._C_Periodo;
+			}
+			set
+			{
+				if ((this._C_Periodo != value))
+				{
+					this._C_Periodo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_N_IdVivienda", DbType="Int NOT NULL")]
+		public int N_IdVivienda
+		{
+			get
+			{
+				return this._N_IdVivienda;
+			}
+			set
+			{
+				if ((this._N_IdVivienda != value))
+				{
+					this._N_IdVivienda = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_C_NumEdificio", DbType="VarChar(10)")]
+		public string C_NumEdificio
+		{
+			get
+			{
+				return this._C_NumEdificio;
+			}
+			set
+			{
+				if ((this._C_NumEdificio != value))
+				{
+					this._C_NumEdificio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_C_NumDpto", DbType="VarChar(10)")]
+		public string C_NumDpto
+		{
+			get
+			{
+				return this._C_NumDpto;
+			}
+			set
+			{
+				if ((this._C_NumDpto != value))
+				{
+					this._C_NumDpto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_C_Propietario", DbType="VarChar(181)")]
+		public string C_Propietario
+		{
+			get
+			{
+				return this._C_Propietario;
+			}
+			set
+			{
+				if ((this._C_Propietario != value))
+				{
+					this._C_Propietario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_N_IdTipoPago", DbType="Int")]
+		public System.Nullable<int> N_IdTipoPago
+		{
+			get
+			{
+				return this._N_IdTipoPago;
+			}
+			set
+			{
+				if ((this._N_IdTipoPago != value))
+				{
+					this._N_IdTipoPago = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_V_IdTipoPago", DbType="VarChar(45)")]
+		public string V_IdTipoPago
+		{
+			get
+			{
+				return this._V_IdTipoPago;
+			}
+			set
+			{
+				if ((this._V_IdTipoPago != value))
+				{
+					this._V_IdTipoPago = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_N_Importe", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> N_Importe
+		{
+			get
+			{
+				return this._N_Importe;
+			}
+			set
+			{
+				if ((this._N_Importe != value))
+				{
+					this._N_Importe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_D_FecVncto", DbType="Date")]
+		public System.Nullable<System.DateTime> D_FecVncto
+		{
+			get
+			{
+				return this._D_FecVncto;
+			}
+			set
+			{
+				if ((this._D_FecVncto != value))
+				{
+					this._D_FecVncto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_D_FecPago", DbType="Date")]
+		public System.Nullable<System.DateTime> D_FecPago
+		{
+			get
+			{
+				return this._D_FecPago;
+			}
+			set
+			{
+				if ((this._D_FecPago != value))
+				{
+					this._D_FecPago = value;
 				}
 			}
 		}

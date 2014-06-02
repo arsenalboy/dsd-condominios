@@ -30,7 +30,7 @@ namespace Architecs.PagosService
         [DataMember]
         public int N_IdVivienda { get; set; }
         [DataMember]
-        public int N_IdTipoPago { get; set; }
+        public int? N_IdTipoPago { get; set; }
         [DataMember]
         public decimal? N_Importe { get; set; }
         [DataMember]

@@ -106,6 +106,36 @@ namespace Architecs.PagosService.Persistencia
             return cuota;
         }
 
+        public Cuota Buscar(string prm_C_Periodo, int prm_N_IdVivienda)
+        {
+            Cuota cuota = null;
+            try
+            {
+                using (DBMLPagosDataContext SQLDC = new DBMLPagosDataContext(conexion))
+                {
+                    var resul = SQLDC.dsd_mnt_S_CuotaIdPeriodo(prm_C_Periodo, prm_N_IdVivienda);
+                    foreach (var item in resul)
+                    {
+                        cuota = new Cuota()
+                        {
+                            N_IdCuota = item.N_IdCuota,
+                            C_Periodo = item.C_Periodo,
+                            N_IdVivienda = item.N_IdVivienda,
+                            N_IdTipoPago = item.N_IdTipoPago,
+                            N_Importe = item.N_Importe,
+                            D_FecVncto = item.D_FecVncto,
+                            D_FecPago = item.D_FecPago,
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return cuota;
+        }
+
         #endregion
 
         #region /* Proceso de INSERT RECORD */

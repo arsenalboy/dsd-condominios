@@ -27,11 +27,11 @@
       <xs:element minOccurs="0" name="D_FecPago" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="D_FecVncto" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="N_IdCuota" type="xs:int" />
-      <xs:element minOccurs="0" name="N_IdTipoPago" type="xs:int" />
+      <xs:element minOccurs="0" name="N_IdTipoPago" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="N_IdVivienda" type="xs:int" />
       <xs:element minOccurs="0" name="N_Importe" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="objTipoPago" nillable="true" type="tns:TipoPago" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="objVivienda" nillable="true" type="q1:Vivienda" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="objVivienda" nillable="true" type="q1:ViviendaBE" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Cuota" nillable="true" type="tns:Cuota" />
