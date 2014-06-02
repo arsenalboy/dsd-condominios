@@ -10,7 +10,7 @@ namespace Architecs.QuejasService.Persistencia
 {
     public class QuejaDAO
     {
-       string CadenaConexionSQL;
+        string CadenaConexionSQL;
         SqlConnection objconeccion;
 
         public QuejaDAO(string cadenaconexion)
