@@ -15,14 +15,14 @@ namespace Architects.TestProject
     {
         ResidenteServiceClient client = new ResidenteServiceClient();
                
-        [TestMethod]
+        //[TestMethod]
         public void Test_ListarResidente()
         {
             List<ResidenteBE> residentes = new List<ResidenteBE>(client.ListarResidentes());
             Assert.AreNotEqual(residentes, null);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Test_ObtenerResidentePorNumeroDocumento()
         {
             string strNroDoc = "87032897";
@@ -30,7 +30,7 @@ namespace Architects.TestProject
             Assert.AreEqual(residente.C_NumDocume, strNroDoc);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Test_BuscarResidente()
         {
             string strNroDoc = "87032897";
@@ -38,7 +38,7 @@ namespace Architects.TestProject
             Assert.AreNotEqual(residentes.Count, 0);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Test_CrearResidente()
         {
             ResidenteBE nuevoResidente = new ResidenteBE();
@@ -54,7 +54,7 @@ namespace Architects.TestProject
             Assert.AreNotEqual(client.ObtenerResidentePorID(idResidente), null);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Test_ActualizaResidente()
         {
             ResidenteBE modificarResidente = client.ObtenerResidentePorID(1);
@@ -66,7 +66,7 @@ namespace Architects.TestProject
                 modificarResidente.C_Correo);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Test_EliminarResidente()
         {
             try
