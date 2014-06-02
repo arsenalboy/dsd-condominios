@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
+using Architects.Dominio;
+
 namespace Architecs.ViviendasService
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
@@ -14,34 +16,30 @@ namespace Architecs.ViviendasService
     {
 
         [OperationContract]
-        string GetData(int value);
+        [WebInvoke(Method = "POST", UriTemplate = "Viviendas", ResponseFormat = WebMessageFormat.Json)]
+        RetornaMensaje CrearVivienda(ViviendaBE viviendaCrear);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        [WebInvoke(Method = "GET", UriTemplate = "Viviendas/{N_IdVivienda}", ResponseFormat = WebMessageFormat.Json)]
+        ViviendaBE ObtenerVivienda(string N_IdVivienda);
 
-        // TODO: agregue aquí sus operaciones de servicio
+        //[OperationContract]
+        //[WebInvoke(
+        //      Method = "PUT"
+        //    , UriTemplate = "Viviendas/{N_IdVivienda}"
+        //    , RequestFormat = WebMessageFormat.Json
+        //    , ResponseFormat = WebMessageFormat.Json
+        //    , BodyStyle = WebMessageBodyStyle.Bare)]
+        //RetornaMensaje ModificarVivienda(string N_IdVivienda, ViviendaBE viviendaModificar);
+
+        //[OperationContract]
+        //[WebInvoke(Method = "DELETE", UriTemplate = "Viviendas/{N_IdVivienda}", ResponseFormat = WebMessageFormat.Json)]
+        //RetornaMensaje EliminarAlumno(string codAlumno);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "Viviendas/", ResponseFormat = WebMessageFormat.Json)]
+        List<ViviendaBE> ListarVivienda();
     }
 
 
-    // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
 }
