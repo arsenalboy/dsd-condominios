@@ -10,6 +10,7 @@ namespace Architecs.TestProject
         public Vivienda()
         {
             objResidente = new ResidenteBE();
+            
         }
 
         public int N_IdVivienda { get; set; }
