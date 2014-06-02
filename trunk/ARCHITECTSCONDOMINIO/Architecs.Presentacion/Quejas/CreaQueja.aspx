@@ -15,7 +15,7 @@
         <p></p>
       </div>
     </div>
-    <form method="post" action="../QuejaServlet">
+    <form id="form1" runat="server">
       
       <div class="container">
         <table class="table">
@@ -55,28 +55,26 @@
               <td></td>
               <td>
                 <div class="btn-group">
-                    <asp:Button ID="botonEnviar" runat="server" Text="ENVIAR" class="btn btn-default"/>
+                    <asp:Button ID="botonEnviar" runat="server" Text="ENVIAR" 
+                        class="btn btn-default" onclick="botonEnviar_Click"/>
                 </div>
                 <div>
-                <%
-            String vt=null;
-            String vf=null;
-            
-            String aux = request.getParameter("aux");
-            if(aux != null && aux.equals("y")){%>
+                
+           
             		  <p></p>
 			          <div class="alert alert-success">
 			            <button type="button" class="close" data-dismiss="alert">&times;</button>
 			            <b>En hora buena,</b> Su Queja se registró con éxito.
 			          </div>
             	
-            <%}else if(aux != null && aux.equals("n")){%>
+
+
 			          <p></p>
 			          <div class="alert alert-danger">
 			            <button type="button" class="close" data-dismiss="alert">&times;</button>
 			            <b>ERROR!</b> No se pudo insertar el registro.
 			          </div>
-            	<%}%>
+            	
                 </div>
               </td>
             </tr>
