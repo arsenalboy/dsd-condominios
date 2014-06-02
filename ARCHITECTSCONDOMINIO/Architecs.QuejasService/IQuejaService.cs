@@ -14,7 +14,7 @@ namespace Architecs.QuejasService
     public interface IQuejaService
     {
         [OperationContract]
-        [WebInvoke(Method="POST", UriTemplate="Quejas",ResponseFormat=WebMessageFormat.Xml)]
+        [WebInvoke(Method = "POST", UriTemplate = "Quejas", ResponseFormat = WebMessageFormat.Xml, RequestFormat = WebMessageFormat.Xml)]
         Queja CrearQueja(Queja QuejaCrear);
 
         [OperationContract]
