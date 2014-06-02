@@ -5,22 +5,25 @@ using System.Web;
 using System.Runtime.Serialization;
 using Architects.Dominio;
 
-namespace Architecs.ReunionesService.Dominio
+namespace Architecs.QuejasService.Dominio
 {
     [DataContract]
-    public class Junta
+    public class Queja
     {
         [DataMember]
-        public int N_IdJunta { get; set; }
+        public int N_IdQueja { get; set; }
         [DataMember]
-        public DateTime D_Fecha { get; set; }
+        public int N_IdResidente { get; set; }
         [DataMember]
-        public string C_Hora { get; set; }
+        public string C_Tipo { get; set; }
         [DataMember]
-        public string C_Tema { get; set; }
+        public string C_Motivo { get; set; }
         [DataMember]
-        public string C_Acuerdo { get; set; }
+        public DateTime D_FecRegistro { get; set; }
+        [DataMember]
+        public Boolean B_Estado { get; set; }
         [DataMember]
         public ResidenteBE Residente { get; set; }
+
     }
 }
