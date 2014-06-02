@@ -28,6 +28,42 @@ namespace Architecs.PagosService.Persistencia
         /// En la BASE de DATO la Tabla : [Gestion.Cuota]
         /// <summary>
         /// <returns>List</returns>
+        public List<TipoPago> Listar()
+        {
+            List<TipoPago> lstTipoPago = new List<TipoPago>();
+            try
+            {
+                using (DBMLPagosDataContext SQLDC = new DBMLPagosDataContext(conexion))
+                {
+                    var resul = SQLDC.dsd_mnt_S_TipoPago();
+
+                    foreach (var item in resul)
+                    {
+                        TipoPago tipoPago = new TipoPago();
+                        tipoPago.N_IdTipoPago = item.N_IdTipoPago;
+                        tipoPago.C_Descripcion = item.C_Descripcion;
+                        tipoPago.B_Estado = item.B_Estado;
+
+                        lstTipoPago.Add(tipoPago);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstTipoPago;
+        }
+
+        #endregion
+
+        #region /* Proceso de SELECT ALL */
+
+        /// <summary>
+        /// Retorna un LISTA de registros de la Entidad Gestion.Cuota
+        /// En la BASE de DATO la Tabla : [Gestion.Cuota]
+        /// <summary>
+        /// <returns>List</returns>
         public List<Cuota> Listar(string prm_C_Periodo)
         {
             List<Cuota> lstCuota = new List<Cuota>();
