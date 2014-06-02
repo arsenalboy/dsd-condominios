@@ -70,21 +70,31 @@ namespace Architecs.PagosService
         /// <returns></returns>
         public RetornaMensaje RegistrarCuota(string C_Periodo, int N_IdVivienda, double N_Importe, string D_FecVncto)
         {
+            Cuota cuotaBuscar = null;
             try
             {
                 retornaMensaje = new RetornaMensaje();
                 cuotaDAO = new CuotaDAO();
-
-                Cuota cuota = new Cuota
+                cuotaBuscar = cuotaDAO.Buscar(C_Periodo, N_IdVivienda);
+                if (cuotaBuscar == null)
                 {
-                    C_Periodo = C_Periodo,
-                    N_IdVivienda = N_IdVivienda,
-                    N_Importe = Convert.ToDecimal(N_Importe),
-                    D_FecVncto = Convert.ToDateTime(D_FecVncto)
-                };
-                retornaMensaje.CodigoRetorno = cuotaDAO.Registrar(cuota);
-                retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Cuota");
-                retornaMensaje.Exito = true;
+                    Cuota cuota = new Cuota
+                    {
+                        C_Periodo = C_Periodo,
+                        N_IdVivienda = N_IdVivienda,
+                        N_Importe = Convert.ToDecimal(N_Importe),
+                        D_FecVncto = Convert.ToDateTime(D_FecVncto)
+                    };
+                    retornaMensaje.CodigoRetorno = cuotaDAO.Registrar(cuota);
+                    retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Cuota");
+                    retornaMensaje.Exito = true;
+                }
+                else
+                {
+                    retornaMensaje.CodigoRetorno = -1;
+                    retornaMensaje.Mensage = string.Format(resMensajes.msjYaExiste, "Cuota");
+                    retornaMensaje.Exito = false;
+                }
             }
             catch (Exception exception)
             {
@@ -116,8 +126,11 @@ namespace Architecs.PagosService
             {
                 retornaMensaje = new RetornaMensaje();
                 cuotaDAO = new CuotaDAO();
-
-                Cuota cuota = new Cuota
+                Cuota cuotaBuscar = null;
+                cuotaBuscar = cuotaDAO.Buscar(pPeriodo, pIdVivienda);
+                if (cuotaBuscar != null)
+                {
+                    Cuota cuota = new Cuota
                     {
                         N_IdCuota = pIdCuota,
                         C_Periodo = pPeriodo,
@@ -125,9 +138,16 @@ namespace Architecs.PagosService
                         N_Importe = Convert.ToDecimal(pImporte),
                         D_FecVncto = Convert.ToDateTime(pFecVncto)
                     };
-                retornaMensaje.CodigoRetorno = cuotaDAO.Actualizar(cuota);
-                retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Cuota");
-                retornaMensaje.Exito = true;
+                    retornaMensaje.CodigoRetorno = cuotaDAO.Actualizar(cuota);
+                    retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Cuota");
+                    retornaMensaje.Exito = true;
+                }
+                else
+                {
+                    retornaMensaje.CodigoRetorno = -1;
+                    retornaMensaje.Mensage = string.Format(resMensajes.msjYaExiste, "Cuota");
+                    retornaMensaje.Exito = false;
+                }
             }
             catch (Exception exception)
             {

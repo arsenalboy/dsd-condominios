@@ -122,5 +122,14 @@ namespace Architects.Dominio {
                 return ResourceManager.GetString("msjNoRegistrado", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to !Registro de {0}, ya existe; ingresar otro registro.!.
+        /// </summary>
+        public static string msjYaExiste {
+            get {
+                return ResourceManager.GetString("msjYaExiste", resourceCulture);
+            }
+        }
     }
 }

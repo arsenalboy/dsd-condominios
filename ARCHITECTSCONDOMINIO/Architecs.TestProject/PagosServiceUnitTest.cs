@@ -36,21 +36,20 @@ namespace Architecs.TestProject
         }
 
         /* TABLA : Cuota*/
-        //[TestMethod]
+        [TestMethod]
         public void RegistrarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
             RetornaMensaje retornaMensaje = null;
             Cuota cuotaRegistrada = new Cuota();
 
-            string C_Periodo = "201401";
-            int N_IdVivienda = 9;
-            int N_IdTipoPago = 1;
+            string C_Periodo = "201402";
+            int N_IdVivienda = 3;
             decimal N_Importe = 120;
-            DateTime D_FecVncto = DateTime.Now;
+            string D_FecVncto = DateTime.Now.ToShortDateString();
             try
             {
-                retornaMensaje = proxy.RegistrarCuota(C_Periodo, N_IdVivienda, N_IdTipoPago, N_Importe, D_FecVncto);
+                retornaMensaje = proxy.RegistrarCuota(C_Periodo, N_IdVivienda,Convert.ToDouble(N_Importe), D_FecVncto);
 
                 Assert.AreNotEqual(0, retornaMensaje.CodigoRetorno);
             }
@@ -60,22 +59,21 @@ namespace Architecs.TestProject
             }
         }
 
-        //[TestMethod]
+        [TestMethod]
         public void ActualizarCuotaTest()
         {
             PagosServiceClient proxy = new PagosServiceClient();
             RetornaMensaje retornaMensaje = null;
             Cuota cuotaRegistrada = new Cuota();
 
-            int pIdCuota = 6;
+            int pIdCuota = 24;
             string pPeriodo = "201401";
             int pIdVivienda = 2;
-            int pIdTipoPago = 1;
-            decimal pImporte = 150;
-            DateTime pFecVncto = DateTime.Now;
+            double pImporte = 150;
+            string pFecVncto = DateTime.Now.ToShortDateString();
             try
             {
-                retornaMensaje = proxy.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+                retornaMensaje = proxy.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto);
 
                 Assert.AreNotEqual(1, retornaMensaje.CodigoRetorno);
             }

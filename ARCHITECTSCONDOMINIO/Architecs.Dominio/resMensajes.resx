@@ -138,4 +138,7 @@
   <data name="msjNoRegistrado" xml:space="preserve">
     <value>!Registro de {0}, no se ha guardado con exito.!</value>
   </data>
+  <data name="msjYaExiste" xml:space="preserve">
+    <value>!Registro de {0}, ya existe; ingresar otro registro.!</value>
+  </data>
 </root>

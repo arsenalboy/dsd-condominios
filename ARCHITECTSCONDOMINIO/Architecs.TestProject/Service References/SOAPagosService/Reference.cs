@@ -205,7 +205,7 @@ namespace Architecs.TestProject.SOAPagosService {
         private int N_IdCuotaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int N_IdTipoPagoField;
+        private System.Nullable<int> N_IdTipoPagoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int N_IdViviendaField;
@@ -217,7 +217,7 @@ namespace Architecs.TestProject.SOAPagosService {
         private Architecs.TestProject.SOAPagosService.TipoPago objTipoPagoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Architecs.TestProject.SOAPagosService.Vivienda objViviendaField;
+        private Architecs.TestProject.SOAPagosService.ViviendaBE objViviendaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -282,7 +282,7 @@ namespace Architecs.TestProject.SOAPagosService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int N_IdTipoPago {
+        public System.Nullable<int> N_IdTipoPago {
             get {
                 return this.N_IdTipoPagoField;
             }
@@ -334,7 +334,7 @@ namespace Architecs.TestProject.SOAPagosService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Architecs.TestProject.SOAPagosService.Vivienda objVivienda {
+        public Architecs.TestProject.SOAPagosService.ViviendaBE objVivienda {
             get {
                 return this.objViviendaField;
             }
@@ -358,9 +358,9 @@ namespace Architecs.TestProject.SOAPagosService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Vivienda", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ViviendaBE", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
     [System.SerializableAttribute()]
-    public partial class Vivienda : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ViviendaBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -698,11 +698,11 @@ namespace Architecs.TestProject.SOAPagosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/RegistrarCuota", ReplyAction="http://tempuri.org/IPagosService/RegistrarCuotaResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/RegistrarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto);
+        Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ActualizarCuota", ReplyAction="http://tempuri.org/IPagosService/ActualizarCuotaResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.TestProject.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto);
+        Architecs.TestProject.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuota", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
@@ -752,12 +752,12 @@ namespace Architecs.TestProject.SOAPagosService {
             return base.Channel.RegistrarTipoPago(Descripcion);
         }
         
-        public Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto) {
-            return base.Channel.RegistrarCuota(pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+        public Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
+            return base.Channel.RegistrarCuota(pPeriodo, pIdVivienda, pImporte, pFecVncto);
         }
         
-        public Architecs.TestProject.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, int pIdTipoPago, decimal pImporte, System.DateTime pFecVncto) {
-            return base.Channel.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pIdTipoPago, pImporte, pFecVncto);
+        public Architecs.TestProject.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
+            return base.Channel.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto);
         }
         
         public Architecs.TestProject.SOAPagosService.Cuota[] ListarCuota(string pPeriodo) {

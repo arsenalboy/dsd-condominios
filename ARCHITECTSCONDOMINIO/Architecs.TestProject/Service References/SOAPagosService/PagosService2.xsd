@@ -9,7 +9,7 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RetornaMensaje" nillable="true" type="tns:RetornaMensaje" />
-  <xs:complexType name="Vivienda">
+  <xs:complexType name="ViviendaBE">
     <xs:sequence>
       <xs:element minOccurs="0" name="B_Estado" type="xs:boolean" />
       <xs:element minOccurs="0" name="C_CodTipo" nillable="true" type="xs:string" />
@@ -21,7 +21,7 @@
       <xs:element minOccurs="0" name="objResidente" nillable="true" type="tns:ResidenteBE" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Vivienda" nillable="true" type="tns:Vivienda" />
+  <xs:element name="ViviendaBE" nillable="true" type="tns:ViviendaBE" />
   <xs:complexType name="ResidenteBE">
     <xs:sequence>
       <xs:element minOccurs="0" name="B_Estado" type="xs:boolean" />

@@ -96,4 +96,21 @@
     <Parameter Name="prm_D_FecVncto" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="Gestion.dsd_mnt_S_CuotaIdPeriodo" Method="dsd_mnt_S_CuotaIdPeriodo">
+    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="dsd_mnt_S_CuotaIdPeriodoResult">
+      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_Propietario" Type="System.String" DbType="VarChar(181)" CanBeNull="true" />
+      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="V_IdTipoPago" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
