@@ -61,9 +61,13 @@
   <ItemGroup>
     <Content Include="AjaxControlToolkit.dll" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="frmViviendas.aspx" />
     <Content Include="images\Buscar_24x24.png" />
+    <Content Include="images\Delete.gif" />
+    <Content Include="images\Edit.gif" />
     <Content Include="images\NoData_32x32.png" />
     <Content Include="images\Select_16x16.png" />
+    <Content Include="images\ver.png" />
     <Content Include="Juntas\consultaVisitantes.aspx" />
     <Content Include="Juntas\CrearVisitante.aspx" />
     <Content Include="Juntas\RegistroJuntas.aspx" />
@@ -117,6 +121,14 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dominio\Directivo.cs" />
+    <Compile Include="Dominio\ResidenteBE.cs" />
+    <Compile Include="frmViviendas.aspx.cs">
+      <DependentUpon>frmViviendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmViviendas.aspx.designer.cs">
+      <DependentUpon>frmViviendas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +165,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Dominio\Vivienda.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
