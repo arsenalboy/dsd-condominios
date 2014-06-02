@@ -31,4 +31,13 @@
       <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="Gestion.dsd_mnt_S_HorarioDisponible" Method="dsd_mnt_S_HorarioDisponible">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="idEspacio" Type="System.Int32" DbType="Int" />
+    <ElementType Name="dsd_mnt_S_HorarioDisponibleResult">
+      <Column Name="N_IdHorario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Rango" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

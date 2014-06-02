@@ -13,9 +13,9 @@ namespace Architecs.HorariosService
     {
         HorarioDAO dao = new HorarioDAO();
 
-        public IList<Architects.Dominio.HorarioBE> ListarHorario()
+        public IList<HorarioBE> ListarHorariosDisponibles(DateTime fecha, int idEspacio)
         {
-            return dao.Listar().ToList();
+            return dao.ListarHorariosDisponibles(fecha, idEspacio).ToList();
         }
 
         public HorarioBE RegistrarHorario(string rango)
