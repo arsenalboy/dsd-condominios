@@ -1,1 +1,6 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Architecs.PagosService.PagosService" CodeBehind="PagosService.svc.cs" %>
+﻿<%@ ServiceHost 
+Language="C#" 
+Debug="true" 
+Service="Architecs.PagosService.PagosService" 
+CodeBehind="PagosService.svc.cs" 
+%>
