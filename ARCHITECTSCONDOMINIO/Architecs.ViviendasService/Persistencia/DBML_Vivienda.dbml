@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CondominiosDB" Class="DBML_ViviendaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CondominiosDB.mssql.somee.com;Initial Catalog=CondominiosDB;User ID=julioanyosa_SQLLogin_1" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="cnxCondominiosDB" Provider="System.Data.SqlClient" />
+  <Function Name="Maestros.dsd_mnt_I_Vivienda" Method="dsd_mnt_I_Vivienda">
+    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_N_IdResidente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_C_NumEdificio" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_C_NumDpto" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_N_NumMetros" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="prm_C_CodTipo" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Maestros.dsd_mnt_D_Vivienda" Method="dsd_mnt_D_Vivienda">
+    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Maestros.dsd_mnt_S_ViviendaId" Method="dsd_mnt_S_ViviendaId">
+    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="dsd_mnt_S_ViviendaIdResult">
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="N_IdResidente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="N_NumMetros" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="C_CodTipo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.dsd_mnt_U_Vivienda" Method="dsd_mnt_U_Vivienda">
+    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_N_IdResidente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_C_NumEdificio" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_C_NumDpto" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_N_NumMetros" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="prm_C_CodTipo" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_B_Estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Maestros.dsd_mnt_S_Vivienda" Method="dsd_mnt_S_Vivienda">
+    <Parameter Name="prm_N_IdResidente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_C_NumEdificio" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="dsd_mnt_S_ViviendaResult">
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="N_IdResidente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(182)" CanBeNull="true" />
+      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="N_NumMetros" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="C_CodTipo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.dsd_mnt_S_ViviendaDpto" Method="dsd_mnt_S_ViviendaDpto">
+    <Parameter Name="prm_C_NumDpto" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_C_NumEdificio" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="dsd_mnt_S_ViviendaDptoResult">
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="N_IdResidente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="N_NumMetros" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="C_CodTipo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
