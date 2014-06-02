@@ -32,11 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Architects.Dominio, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Architects.Dominio.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -56,7 +53,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service1.svc" />
+    <Content Include="ViviendasService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -66,23 +63,47 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Persistencia\DBML_Vivienda.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBML_Vivienda.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Persistencia\IViviendaDAO.cs" />
     <Compile Include="Persistencia\Utilitario.cs" />
     <Compile Include="Persistencia\ViviendaDAO.cs" />
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="ViviendasService.svc.cs">
+      <DependentUpon>ViviendasService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IViviendasService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Architecs.Dominio\Architecs.Dominio.csproj">
+      <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
+      <Name>Architecs.Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Architecs.Dominio\Architects.Dominio.csproj">
       <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
       <Name>Architects.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Persistencia\DBML_Vivienda.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBML_Vivienda.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Persistencia\DBML_Vivienda.dbml.layout">
+      <DependentUpon>DBML_Vivienda.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

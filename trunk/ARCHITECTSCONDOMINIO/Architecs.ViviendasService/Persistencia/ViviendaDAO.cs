@@ -26,6 +26,163 @@ namespace Architecs.ViviendasService.Persistencia
             CadenaConexionSQL = Utilitario.CadenaConeccion();
         }
 
+        public List<ViviendaBE> Listar(int? prm_N_IdResidente, string prm_C_NumEdificio)
+        {
+            List<ViviendaBE> lstViviendas = new List<ViviendaBE>();
+            ViviendaBE itemViviendaBE = null;
+            try
+            {
+                using (DBML_ViviendaDataContext SQLDC = new DBML_ViviendaDataContext(CadenaConexionSQL))
+                {
+                    var resul = SQLDC.dsd_mnt_S_Vivienda(prm_N_IdResidente, prm_C_NumEdificio);
+                    foreach (var item in resul)
+                    {
+                        itemViviendaBE = new ViviendaBE();
+                            itemViviendaBE.N_IdVivienda = item.N_IdVivienda;
+                            itemViviendaBE.N_IdResidente = item.N_IdResidente;
+                            itemViviendaBE.C_NumEdificio = item.C_NumEdificio;
+                            itemViviendaBE.C_NumDpto = item.C_NumDpto;
+                            itemViviendaBE.N_NumMetros = item.N_NumMetros;
+                            itemViviendaBE.C_CodTipo = item.C_CodTipo;
+                            itemViviendaBE.B_Estado = item.B_Estado;
+                            itemViviendaBE.objResidente.C_Apellidos = item.Column1;
+
+                            lstViviendas.Add(itemViviendaBE);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstViviendas;
+        }
+
+        public ViviendaBE Buscar(int prm_N_IdVivienda)
+        {
+            ViviendaBE objVivienda = null;
+            try
+            {
+                using (DBML_ViviendaDataContext SQLDC = new DBML_ViviendaDataContext(CadenaConexionSQL))
+                {
+                    var resul = SQLDC.dsd_mnt_S_ViviendaId(prm_N_IdVivienda);
+                    foreach (var item in resul)
+                    {
+                        objVivienda = new ViviendaBE();
+                        objVivienda.N_IdVivienda = item.N_IdVivienda;
+                        objVivienda.N_IdResidente = item.N_IdResidente;
+                        objVivienda.C_NumEdificio = item.C_NumEdificio;
+                        objVivienda.C_NumDpto = item.C_NumDpto;
+                        objVivienda.N_NumMetros = item.N_NumMetros;
+                        objVivienda.C_CodTipo = item.C_CodTipo;
+                        objVivienda.B_Estado = item.B_Estado;
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return objVivienda;
+        }
+
+        public List<ViviendaBE> Buscar(ViviendaBE prm_Vivienda)
+        {
+            List<ViviendaBE> lstViviendas = new List<ViviendaBE>();
+            ViviendaBE itemViviendaBE = null;
+            try
+            {
+                using (DBML_ViviendaDataContext SQLDC = new DBML_ViviendaDataContext(CadenaConexionSQL))
+                {
+                    var resul = SQLDC.dsd_mnt_S_ViviendaDpto(prm_Vivienda.C_NumDpto, prm_Vivienda.C_NumEdificio);
+                    foreach (var item in resul)
+                    {
+                        itemViviendaBE = new ViviendaBE();
+                        itemViviendaBE.N_IdVivienda = item.N_IdVivienda;
+                        itemViviendaBE.N_IdResidente = item.N_IdResidente;
+                        itemViviendaBE.C_NumEdificio = item.C_NumEdificio;
+                        itemViviendaBE.C_NumDpto = item.C_NumDpto;
+                        itemViviendaBE.N_NumMetros = item.N_NumMetros;
+                        itemViviendaBE.C_CodTipo = item.C_CodTipo;
+                        itemViviendaBE.B_Estado = item.B_Estado;
+                        
+                        lstViviendas.Add(itemViviendaBE);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstViviendas;
+        }
+
+        public int Registrar(ViviendaBE itemVivienda)
+        {
+            int? codigoRetorno = -1;
+            try
+            {
+                using (DBML_ViviendaDataContext SQLDC = new DBML_ViviendaDataContext(CadenaConexionSQL))
+                {
+                     SQLDC.dsd_mnt_I_Vivienda(
+                       ref codigoRetorno ,
+                        itemVivienda.N_IdResidente,
+                        itemVivienda.C_NumEdificio,
+                        itemVivienda.C_NumDpto,
+                        itemVivienda.N_NumMetros,
+                        itemVivienda.C_CodTipo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return codigoRetorno == null ? 0 : codigoRetorno.Value;
+        }
+
+        public int Actualizar(ViviendaBE itemVivienda)
+        {
+            int codigoRetorno = -1;
+            try
+            {
+                using (DBML_ViviendaDataContext SQLDC = new DBML_ViviendaDataContext(CadenaConexionSQL))
+                {
+                    codigoRetorno = SQLDC.dsd_mnt_U_Vivienda(
+                        itemVivienda.N_IdVivienda,
+                        itemVivienda.N_IdResidente,
+                        itemVivienda.C_NumEdificio,
+                        itemVivienda.C_NumDpto,
+                        itemVivienda.N_NumMetros,
+                        itemVivienda.C_CodTipo,
+                        itemVivienda.B_Estado);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return codigoRetorno;
+        }
+
+        public bool Eliminar(int prm_N_IdVivienda)
+        {
+            int codigoRetorno = -1;
+            try
+            {
+                using (DBML_ViviendaDataContext SQLDC = new DBML_ViviendaDataContext(CadenaConexionSQL))
+                {
+                    codigoRetorno = SQLDC.dsd_mnt_D_Vivienda(prm_N_IdVivienda);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return codigoRetorno == 0 ? true : false;
+        }
+
+
+
         public List<ViviendaBE> ListarViviendas()
         {
             List<ViviendaBE> objlistavivienda = new List<ViviendaBE>();
