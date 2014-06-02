@@ -21,6 +21,7 @@ namespace ResidenteService
             try
             {
                 return objDA.ListarResidentes();
+                
             }
             catch (Exception ex)
             {
