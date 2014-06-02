@@ -5,6 +5,9 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Architecs.TestProject.SOAPagosService;
 using System.ServiceModel;
+using System.Net;
+using System.IO;
+using System.Web.Script.Serialization;
 
 
 namespace Architecs.TestProject
@@ -53,7 +56,7 @@ namespace Architecs.TestProject
 
                 Assert.AreNotEqual(0, retornaMensaje.CodigoRetorno);
             }
-            catch (FaultException<RetornaMensaje> exception)
+            catch (FaultException<RetornaMensajeT> exception)
             {
                 Console.WriteLine("Error : {0}", exception.Detail.Mensage);
             }
@@ -77,7 +80,7 @@ namespace Architecs.TestProject
 
                 Assert.AreNotEqual(1, retornaMensaje.CodigoRetorno);
             }
-            catch (FaultException<RetornaMensaje> exception)
+            catch (FaultException<RetornaMensajeT> exception)
             {
                 Console.WriteLine("Error : {0}", exception.Detail.Mensage);
             }
@@ -93,7 +96,7 @@ namespace Architecs.TestProject
                 IList<Cuota> lstCuotas = proxy.ListarCuota(pPeriodo).ToList();
                 Assert.AreNotEqual(0, lstCuotas.Count);
             }
-            catch (FaultException<RetornaMensaje> exception)
+            catch (FaultException<RetornaMensajeT> exception)
             {
                 Console.WriteLine("Error : {0}", exception.Detail.Mensage);
             }
@@ -110,7 +113,7 @@ namespace Architecs.TestProject
                 Cuota cuota = proxy.BuscarCuota(pIdCuota);
                 Assert.AreEqual(pIdCuota, cuota.N_IdCuota);
             }
-            catch (FaultException<RetornaMensaje> exception)
+            catch (FaultException<RetornaMensajeT> exception)
             {
                 Console.WriteLine("Error : {0}", exception.Detail.Mensage);
             }
@@ -132,11 +135,13 @@ namespace Architecs.TestProject
                 cuotaEliminada = proxy.BuscarCuota(pIdCuota);
                 Assert.AreNotEqual(pIdCuota, cuotaEliminada.N_IdCuota);
             }
-            catch (FaultException<RetornaMensaje> exception)
+            catch (FaultException<RetornaMensajeT> exception)
             {
                 Console.WriteLine("Error : {0}", exception.Detail.Mensage);
             }
 
         }
+
+       
     }
 }
