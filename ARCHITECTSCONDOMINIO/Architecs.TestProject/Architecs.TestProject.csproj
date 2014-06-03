@@ -53,6 +53,7 @@
     <Compile Include="PagosServiceUnitTest.cs" />
     <Compile Include="Entidades\Residente.cs" />
     <Compile Include="Entidades\RetornaMensajeT.cs" />
+    <Compile Include="QuejasServiceTest.cs" />
     <Compile Include="Service References\SOAPagosService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,6 +109,10 @@
     <ProjectReference Include="..\Architecs.Dominio\Architecs.Dominio.csproj">
       <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
       <Name>Architecs.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Architecs.Presentacion\Architecs.Presentacion.csproj">
+      <Project>{C86C111C-C405-4319-A43B-C56580AC4FC4}</Project>
+      <Name>Architecs.Presentacion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
