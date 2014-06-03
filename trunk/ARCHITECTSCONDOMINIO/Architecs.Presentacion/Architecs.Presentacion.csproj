@@ -164,6 +164,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dominio\QuejaConsulta.cs" />
     <Compile Include="Dominio\Directivo.cs" />
     <Compile Include="Dominio\Queja.cs" />
     <Compile Include="Dominio\Residente.cs" />

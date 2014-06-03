@@ -47,13 +47,14 @@ namespace Architecs.QuejasService.Persistencia
                 objQueja.C_Motivo = reader.GetString(3);
                 objQueja.D_FecRegistro = reader.GetDateTime(4);
                 objQueja.B_Estado = reader.GetBoolean(5);
+
                 ResidenteBE objresidente = new ResidenteBE();
                 objresidente.C_Nombre = reader.GetString(6);
                 objresidente.C_NumDocume = reader.GetString(7);
-
                 objQueja.Residente = objresidente;
 
                 objQueja.C_Detalle = reader.GetString(8);
+                objQueja.D_FecQueja = reader.GetString(9);
                 listarQuejas.Add(objQueja);
             }
             return listarQuejas;

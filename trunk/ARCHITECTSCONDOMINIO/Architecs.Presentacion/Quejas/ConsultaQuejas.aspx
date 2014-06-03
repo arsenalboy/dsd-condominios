@@ -74,17 +74,34 @@
         <asp:GridView ID="GvQuejas" runat="server" 
             class="table table-bordered table-hover" AutoGenerateColumns="False">
             <Columns>
-                <asp:BoundField DataField="N_IdQueja" HeaderText="N_IdQueja" />
+                <asp:BoundField DataField="N_IdQueja" HeaderText="N_IdQueja" >
+                <ItemStyle Width="100px" />
+                </asp:BoundField>
                 <asp:BoundField DataField="N_IdResidente" HeaderText="N_IdResidente" 
                     Visible="False" />
-                <asp:BoundField DataField="C_Tipo" HeaderText="C_Tipo" />
-                <asp:BoundField DataField="C_Motivo" HeaderText="C_Motivo" />
-                <asp:BoundField DataField="D_FecRegistro" HeaderText="D_FecRegistro" />
+                <asp:BoundField DataField="C_Tipo" HeaderText="Tipo" >
+                <ItemStyle Width="100px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="C_Motivo" HeaderText="Motivo" >
+                <ItemStyle Width="200px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="D_FecRegistro" HeaderText="Fecha Registro" 
+                    DataFormatString="{0:dd/MM/yyyy}">
+                <ItemStyle HorizontalAlign="Center" Width="90px" />
+                </asp:BoundField>
                 <asp:BoundField DataField="B_Estado" HeaderText="B_Estado" Visible="False" />
-                <asp:BoundField DataField="RESIDENTE" HeaderText="RESIDENTE" />
-                <asp:BoundField DataField="C_NumDocume" HeaderText="C_NumDocume" />
-                <asp:BoundField DataField="C_Detalle" HeaderText="C_Detalle" />
-                <asp:BoundField DataField="D_FecQueja" HeaderText="D_FecQueja" />
+                <asp:BoundField DataField="C_Nombre" HeaderText="RESIDENTE" >
+                <ItemStyle Width="200px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="C_NumDocume" HeaderText="Documento" >
+                <ItemStyle HorizontalAlign="Center" Width="90px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="C_Detalle" HeaderText="Detalle" >
+                <ItemStyle Width="200px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="D_FecQueja" HeaderText="Fecha Queja" >
+                <ItemStyle HorizontalAlign="Center" Width="90px" />
+                </asp:BoundField>
             </Columns>
         </asp:GridView>
       <footer></footer>
