@@ -61,6 +61,13 @@
   <ItemGroup>
     <Content Include="AjaxControlToolkit.dll" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\css\bootstrap-theme.css" />
+    <Content Include="css\css\bootstrap-theme.min.css" />
+    <Content Include="css\css\bootstrap.css" />
+    <Content Include="css\css\bootstrap.min.css" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\js\bootstrap.js" />
+    <Content Include="css\js\bootstrap.min.js" />
     <Content Include="frmViviendas.aspx" />
     <Content Include="images\Buscar_24x24.png" />
     <Content Include="images\Delete.gif" />
@@ -71,6 +78,11 @@
     <Content Include="Juntas\consultaVisitantes.aspx" />
     <Content Include="Juntas\CrearVisitante.aspx" />
     <Content Include="Juntas\RegistroJuntas.aspx" />
+    <None Include="css\css\bootstrap-theme.css.map" />
+    <None Include="css\css\bootstrap.css.map" />
+    <None Include="css\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="css\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="css\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Service References\JuntaService\Architecs.Presentacion.JuntaService.Directivo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -83,6 +95,7 @@
     </None>
     <Content Include="Quejas\ConsultaQuejas.aspx" />
     <Content Include="Quejas\CreaQueja.aspx" />
+    <Content Include="Scripts\Paginas\frmViviendas.aspx.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
