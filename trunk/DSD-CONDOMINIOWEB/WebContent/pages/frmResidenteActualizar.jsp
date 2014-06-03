@@ -12,8 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	ResidenteBE r = new ResidenteBE();
+<%	ResidenteBE r = new ResidenteBE();
 	r = (ResidenteBE)request.getAttribute("residente");
 	JOptionPane.showMessageDialog(null, r.getC_Nombre());
 	if(r != null) { 

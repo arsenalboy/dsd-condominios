@@ -30,7 +30,6 @@
 	          <li class="active"><a href="<%=request.getContextPath()%>/pages/principal.jsp" target="_top">Inicio</a></li>
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Residentes <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
-						<li><a href="<%=request.getContextPath()%>/pages/principal.jsp" target="_top" >Registrar</a></li>
 						<li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=1" target="_top" >Listar</a></li>	        							
 					</ul>
 			  </li>

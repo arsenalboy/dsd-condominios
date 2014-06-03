@@ -1,4 +1,4 @@
-package cleaner;
+ package cleaner;
 
 import java.rmi.RemoteException;
 import java.time.format.DateTimeFormatter;
@@ -60,10 +60,10 @@ public class ResidenteWS {
 		return 0;
 	}
 	
-	public ResidenteBE ObtenerResidente(int n_IdResidente){
+	public ResidenteBE ObtenerResidentePorID(int n_IdResidente){
 		
 		try {
-			return servicio.obtenerResidentePorID(n_IdResidente);
+			return servicio.obtenerResidentePorID(new Integer(n_IdResidente));
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
