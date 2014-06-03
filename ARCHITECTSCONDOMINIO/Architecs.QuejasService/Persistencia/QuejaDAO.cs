@@ -5,6 +5,7 @@ using System.Web;
 using Architecs.QuejasService.Dominio;
 using System.Data.SqlClient;
 using System.Data;
+using Architects.Dominio;
 
 namespace Architecs.QuejasService.Persistencia
 {
@@ -23,7 +24,7 @@ namespace Architecs.QuejasService.Persistencia
             CadenaConexionSQL = ConexionUtil.CadenaConeccion();
         }
 
-        public List<Queja> listarQuejas(string FechaIni, string FechaFin)
+        public List<Queja> listarQuejas(string FechaIni, string FechaFin, string C_Tipo)
         {
             List<Queja> listarQuejas = new List<Queja>();
             objconeccion = new SqlConnection(CadenaConexionSQL);
@@ -33,6 +34,8 @@ namespace Architecs.QuejasService.Persistencia
             objcomand.Parameters["@FechaIni"].Value = FechaIni;
             objcomand.Parameters.Add("@FechaFin", SqlDbType.DateTime);
             objcomand.Parameters["@FechaFin"].Value = FechaFin;
+            objcomand.Parameters.Add("@C_Tipo", SqlDbType.VarChar,45);
+            objcomand.Parameters["@C_Tipo"].Value = C_Tipo;
             objconeccion.Open();
             SqlDataReader reader = objcomand.ExecuteReader();
             while (reader.Read())
@@ -44,8 +47,13 @@ namespace Architecs.QuejasService.Persistencia
                 objQueja.C_Motivo = reader.GetString(3);
                 objQueja.D_FecRegistro = reader.GetDateTime(4);
                 objQueja.B_Estado = reader.GetBoolean(5);
-                objQueja.Residente.C_Nombre = reader.GetString(6);
-                objQueja.Residente.C_NumDocume = reader.GetString(7);
+                ResidenteBE objresidente = new ResidenteBE();
+                objresidente.C_Nombre = reader.GetString(6);
+                objresidente.C_NumDocume = reader.GetString(7);
+
+                objQueja.Residente = objresidente;
+
+                objQueja.C_Detalle = reader.GetString(8);
                 listarQuejas.Add(objQueja);
             }
             return listarQuejas;
@@ -65,12 +73,21 @@ namespace Architecs.QuejasService.Persistencia
                 objcomand.Parameters["@C_Tipo "].Value = objQueja.C_Tipo;
                 objcomand.Parameters.Add("@C_Motivo", SqlDbType.VarChar, 1000);
                 objcomand.Parameters["@C_Motivo"].Value = objQueja.C_Motivo;
+                objcomand.Parameters.Add("@C_Detalle", SqlDbType.VarChar, 1000);
+                objcomand.Parameters["@C_Detalle"].Value = objQueja.C_Detalle;
+                objcomand.Parameters.Add("@D_FecQueja", SqlDbType.DateTime);
+                objcomand.Parameters["@D_FecQueja"].Value = objQueja.D_FecQueja;
                 objconeccion.Open();
-                Int32 id;
-                id = Convert.ToInt32(objcomand.ExecuteScalar());
+               
+                string cadenadevuelta;
+                string[] valores;
+                cadenadevuelta = Convert.ToString(objcomand.ExecuteScalar());
+                valores = cadenadevuelta.Split(';');
+                
                 objconeccion.Close();
 
-                objQueja.N_IdQueja = id;
+                objQueja.N_IdQueja =  Convert.ToInt32(valores[0]);
+                objQueja.D_FecRegistro = Convert.ToDateTime(valores[1]);
                 return objQueja;
             }
             catch (Exception ex)

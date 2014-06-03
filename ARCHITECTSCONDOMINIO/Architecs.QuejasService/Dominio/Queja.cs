@@ -19,11 +19,14 @@ namespace Architecs.QuejasService.Dominio
         [DataMember]
         public string C_Motivo { get; set; }
         [DataMember]
+        public string  C_Detalle { get; set; }
+        [DataMember]
         public DateTime D_FecRegistro { get; set; }
         [DataMember]
         public Boolean B_Estado { get; set; }
         [DataMember]
         public ResidenteBE Residente { get; set; }
-
+        [DataMember]
+        public string D_FecQueja { get; set; }
     }
 }

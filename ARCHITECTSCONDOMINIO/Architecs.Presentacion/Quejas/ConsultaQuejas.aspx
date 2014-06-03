@@ -10,7 +10,7 @@
  <body>
   
   <jsp:include page="/pages/header.jsp" />
-  <form id="frmMorosos" action="/SISTEMACONDOMINIOWEB/ConsultaQuejasServlet" method=post>
+  <form id="frmMorosos"  runat="server">
   <input type="hidden" id="hidopcion"  name="opcion">  
     <div class="jumbotron">
       <div class="container">
@@ -21,26 +21,43 @@
     <div class="container">
       <hr>
       <div class="row">
-        <div class="col-md-3" >
+        <div class="col-md-6" >
           <h4>Tipo de Queja</h4>
         </div>
-        <div class="col-md-3">
-          <input type="text" id="txtcodigo" name="codigo" class="form-control" 
-          onKeyUp="filtrarQueja('filtroQuejas.jsp','&filtro='+this.value,'div_resultado')">
+        <div class="col-md-6">
+          <asp:DropDownList ID="CboTipoQueja" runat="server" class="form-control">
+                      <asp:ListItem Selected="True">Todos</asp:ListItem>
+                      <asp:ListItem>Leve</asp:ListItem>
+                      <asp:ListItem>Grave</asp:ListItem>
+                      <asp:ListItem>Muy Grave</asp:ListItem>
+                  </asp:DropDownList>
         </div>
-        <div class="col-md-3">
+    <%--    <div class="col-md-3">
           <div class="checkbox">
             <label>
               <input type="checkbox"  id="chktodos" name="todos">Todos</label>
           </div>
+        </div>--%>
+        <div class="col-md-6" >
+          <h4>Desde</h4>
         </div>
-        <div class="col-md-3">
-             <input type="button" class="btn btn-primary" value="Buscar"
-              onclick="filtrarQueja('filtroQuejas.jsp','&filtro=e','div_resultado')"/>
+        <div class="col-md-6" >
+          <asp:TextBox class="form-control" type= "date" id="TxtDesde" name="TxtDesde" required autofocus onchange="validarFechaMenorActual(this.value);" runat="server"></asp:TextBox>
+        </div>
+         <div class="col-md-6" >
+          <h4>Hasta</h4>
+        </div>
+        <div class="col-md-6" >
+          <asp:TextBox class="form-control" type= "date" id="TxtHasta" name="TxtHasta" required autofocus onchange="validarFechaMenorActual(this.value);" runat="server"></asp:TextBox>
+        </div>
+        <div class="col-md-6">
+        <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary" 
+                onclick="BtnBuscar_Click"/>
+             
         </div>
       </div>
       <hr>
-      <table class="table table-bordered table-hover" id="jqueryDataTable">
+     <%-- <table class="table table-bordered table-hover" id="jqueryDataTable">
         <thead>
           <tr class="success">
             <th>ID Queja</th>
@@ -53,7 +70,23 @@
         <tbody id="div_resultado">
           
         </tbody>
-      </table>  
+      </table>  --%>
+        <asp:GridView ID="GvQuejas" runat="server" 
+            class="table table-bordered table-hover" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="N_IdQueja" HeaderText="N_IdQueja" />
+                <asp:BoundField DataField="N_IdResidente" HeaderText="N_IdResidente" 
+                    Visible="False" />
+                <asp:BoundField DataField="C_Tipo" HeaderText="C_Tipo" />
+                <asp:BoundField DataField="C_Motivo" HeaderText="C_Motivo" />
+                <asp:BoundField DataField="D_FecRegistro" HeaderText="D_FecRegistro" />
+                <asp:BoundField DataField="B_Estado" HeaderText="B_Estado" Visible="False" />
+                <asp:BoundField DataField="RESIDENTE" HeaderText="RESIDENTE" />
+                <asp:BoundField DataField="C_NumDocume" HeaderText="C_NumDocume" />
+                <asp:BoundField DataField="C_Detalle" HeaderText="C_Detalle" />
+                <asp:BoundField DataField="D_FecQueja" HeaderText="D_FecQueja" />
+            </Columns>
+        </asp:GridView>
       <footer></footer>
     </div>
   

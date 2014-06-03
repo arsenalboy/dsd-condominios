@@ -10,6 +10,8 @@ using System.Net;
 using System.Text;
 using Architecs.Presentacion.Dominio;
 using System.Xml.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
 
 namespace Architecs.Presentacion.Quejas
 {
@@ -24,31 +26,56 @@ namespace Architecs.Presentacion.Quejas
         {
             // se serializa en xml y se envia
           
-            XElement xmlTree1 = new XElement("Queja",
+            /*XElement xmlTree1 = new XElement("Queja",
                 new XElement("N_IdResidente", 1),
                 new XElement("C_Tipo", CboTipoQueja.SelectedValue),
                 new XElement("C_Motivo", txtMotivo.Text)
-            );
+            );*/
 
-            byte[] data = Encoding.UTF8.GetBytes(xmlTree1.ToString());
+            try
+            {
+                string postdata = "{\"N_IdResidente\":1, \"C_Tipo\":\"" + CboTipoQueja.SelectedValue + "\",\"C_Motivo\":\"" + txtMotivo.Text + "\",\"C_Detalle\":\"" + TxtDetalle.Text + "\",\"D_FecQueja\":\"" + txtFecha.Text + "\"}"; //JSON
+                byte[] data = Encoding.UTF8.GetBytes(postdata);
 
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:62070/QuejaService.svc/Quejas");
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:62070/QuejaService.svc/Quejas");
 
-            req.Method = "POST";
-            req.ContentLength = data.Length;
-            req.ContentType = "application/xml";
+                req.Method = "POST";
+                req.ContentLength = data.Length;
+                req.ContentType = "application/json";
 
-            var reqStream = req.GetRequestStream();
-            reqStream.Write(data, 0, data.Length);
+                var reqStream = req.GetRequestStream();
+                reqStream.Write(data, 0, data.Length);
 
-            var res = (HttpWebResponse)req.GetResponse();
-            StreamReader reader = new StreamReader(res.GetResponseStream());
-            string alumnoJson = reader.ReadToEnd();
+                var res = (HttpWebResponse)req.GetResponse();
+                StreamReader reader = new StreamReader(res.GetResponseStream());
+                string alumnoJson = reader.ReadToEnd();
 
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            Queja QuejaCreada = js.Deserialize<Queja>(alumnoJson);
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                Queja alumnoCreado = js.Deserialize<Queja>(alumnoJson);
 
-            
+
+                String script = "document.getElementById('divacepto').style.display='block';";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta", script, true);
+                limpiar();
+            }
+            catch (FaultException ex)
+            {
+                String strScript;
+                strScript = "<script>alert('" + ex.Message + "')</script>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", strScript, false);
+            }
+
+
+
+
+        }
+
+        void limpiar()
+        {
+            TxtDetalle.Text = "";
+            txtMotivo.Text = "";
+            txtFecha.Text = "";
+            CboTipoQueja.SelectedIndex = 1;
         }
     }
 }

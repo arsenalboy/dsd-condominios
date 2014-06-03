@@ -14,11 +14,11 @@ namespace Architecs.QuejasService
     public interface IQuejaService
     {
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "Quejas", ResponseFormat = WebMessageFormat.Xml, RequestFormat = WebMessageFormat.Xml)]
+        [WebInvoke(Method = "POST", UriTemplate = "Quejas", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         Queja CrearQueja(Queja QuejaCrear);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "Quejas/Todos/{FechaIni},{FechaFin}", ResponseFormat = WebMessageFormat.Xml)]
-        List<Queja> ListarQuejas(string FechaIni, string FechaFin);
+        [WebInvoke(Method = "GET", UriTemplate = "Quejas/Todos/{FechaIni},{FechaFin},{C_Tipo}", ResponseFormat = WebMessageFormat.Json)]
+        List<Queja> ListarQuejas(string FechaIni, string FechaFin, string C_Tipo);
     }
 }

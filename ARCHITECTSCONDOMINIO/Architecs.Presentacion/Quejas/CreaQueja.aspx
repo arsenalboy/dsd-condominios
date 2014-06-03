@@ -47,7 +47,7 @@
             <tr>
               <td>Detalle de la Queja:</td>
               <td>
-                <asp:TextBox class="form-control" id="TextBox1" name="txtDetalle" required 
+                <asp:TextBox class="form-control" id="TxtDetalle" name="txtDetalle" required 
                       runat="server" TextMode="MultiLine"></asp:TextBox>
               </td>
             </tr>
@@ -61,19 +61,22 @@
                 <div>
                 
            
-            		  <p></p>
-			          <div class="alert alert-success">
-			            <button type="button" class="close" data-dismiss="alert">&times;</button>
-			            <b>En hora buena,</b> Su Queja se registró con éxito.
-			          </div>
+            		      <p></p>
+                           <div style="display:none;" id="divacepto">
+                                <div class="alert alert-success"  >
+			                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+			                    <b>En hora buena,</b> Su Queja se registró con éxito.
+			                    </div>
+         
+                          </div>
             	
 
 
-			          <p></p>
+			         <%-- <p></p>
 			          <div class="alert alert-danger">
 			            <button type="button" class="close" data-dismiss="alert">&times;</button>
 			            <b>ERROR!</b> No se pudo insertar el registro.
-			          </div>
+			          </div>--%>
             	
                 </div>
               </td>
