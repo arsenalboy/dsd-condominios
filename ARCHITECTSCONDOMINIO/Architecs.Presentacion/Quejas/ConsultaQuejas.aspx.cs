@@ -58,8 +58,27 @@ namespace Architecs.Presentacion.Quejas
                 string QuejasObtener = readerObtener.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 IList<Queja> ListaQuejas = js.Deserialize<List<Queja>>(QuejasObtener);
+                
+                //ya que no me salio como cargarlo directamente a la grilla lo pase a otra lista
+                List<QuejaConsulta> ObjQuejaConsulta = new List<QuejaConsulta>();
 
-                GvQuejas.DataSource = ListaQuejas;
+                foreach (Queja QUEJA in ListaQuejas)
+                {
+                    QuejaConsulta QUEJACON = new QuejaConsulta();
+                    QUEJACON.N_IdQueja = QUEJA.N_IdQueja;
+                    QUEJACON.N_IdResidente = QUEJA.N_IdResidente;
+                    QUEJACON.C_Nombre = QUEJA.Residente.C_Nombre;
+                    QUEJACON.B_Estado = QUEJA.B_Estado;
+                    QUEJACON.C_Detalle = QUEJA.C_Detalle;
+                    QUEJACON.C_Motivo = QUEJA.C_Motivo;
+                    QUEJACON.C_NumDocume = QUEJA.Residente.C_NumDocume;
+                    QUEJACON.C_Tipo = QUEJA.C_Tipo;
+                    QUEJACON.D_FecQueja = QUEJA.D_FecQueja;
+                    QUEJACON.D_FecRegistro = QUEJA.D_FecRegistro;
+                    ObjQuejaConsulta.Add(QUEJACON);
+                }
+                
+                GvQuejas.DataSource = ObjQuejaConsulta;
                 GvQuejas.DataBind();
             }
             catch (FaultException ex)
