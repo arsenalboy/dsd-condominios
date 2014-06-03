@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmViviendas.aspx.cs" Inherits="Architecs.Presentacion.frmViviendas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmViviendas.aspx.cs"  
+Inherits="Architecs.Presentacion.frmViviendas" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Listado de Viviendas</title>
@@ -8,9 +8,15 @@
     <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/Paginas/frmViviendas.aspx.js" type="text/javascript"></script>
+    <script src="Scripts/Popups.js" type="text/javascript"></script>
+    <script src="Scripts/Validaciones.js" type="text/javascript"></script>
 </head>
 <body>
     <form id="form1" runat="server">
+<%--    <cc1:toolkitscriptmanager id="ToolkitScriptManager1" runat="server" enablescriptglobalization="True"
+        enablescriptlocalization="true">
+        </cc1:toolkitscriptmanager>--%>
     <jsp:include page="/pages/header.jsp" />
     <div>
         <div class="jumbotron">
@@ -31,9 +37,8 @@
                 <div class="col-md-3">
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary" OnClick="btnBuscar_Click" />
                     <!-- Button trigger modal -->
-                    <button class="btn btn-primary btn" data-toggle="modal" data-target="#myModal">
-                        Launch demo modal
-                    </button>
+                    <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" class="btn btn-primary" data-toggle="modal"
+                        data-target="#myModal" />
                 </div>
             </div>
         </div>

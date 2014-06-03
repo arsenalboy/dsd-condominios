@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Architecs.Presentacion.Dominio
 {
-    public class ResidenteBE
+    public class Residente
     {
         public int N_IdResidente { get; set; }
         public string C_Nombre { get; set; }
