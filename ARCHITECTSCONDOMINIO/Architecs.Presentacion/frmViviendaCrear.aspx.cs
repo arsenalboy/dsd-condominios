@@ -20,48 +20,136 @@ namespace Architecs.Presentacion
         {
             if (!Page.IsPostBack)
             {
-                
+
                 SOAResidentes.ResidenteServiceClient proxi = new SOAResidentes.ResidenteServiceClient();
                 List<ResidenteBE> listaResidentes = new List<ResidenteBE>();
-                listaResidentes = proxi.ListarResidentes().ToList(); 
+                listaResidentes = proxi.ListarResidentes().ToList();
                 ddlN_IdResidente.DataSource = listaResidentes;
                 ddlN_IdResidente.DataValueField = "N_IdResidente";
                 ddlN_IdResidente.DataTextField = "C_Apellidos";
                 ddlN_IdResidente.DataBind();
+
+                this.btnCerrar.Attributes.Add("OnClick", "CerrarClose()");
+
+                String querystringID = string.Empty;
+                if (Request.QueryString.Get("pm") != null)
+                {
+                    Page.Title = "Edición de Vivienda";
+                    querystringID = Request.QueryString.Get("pm");
+                    string strURL = "http://localhost:62023/ViviendasService.svc/Viviendas";
+
+                    HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
+                       .Create(strURL + "/" + querystringID);
+                    reqObtener.Method = "GET";
+                    HttpWebResponse resObtener = (HttpWebResponse)reqObtener.GetResponse();
+                    StreamReader readerObtener = new StreamReader(resObtener.GetResponseStream());
+                    string viviendaJsonObtener = readerObtener.ReadToEnd();
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    Vivienda viviendaCreado = js.Deserialize<Vivienda>(viviendaJsonObtener);
+
+                    lblN_IdVivienda.Text = viviendaCreado.N_IdVivienda.ToString();
+                    ddlN_IdResidente.SelectedValue = viviendaCreado.N_IdResidente.ToString();
+                    txtC_NumEdificio.Text = viviendaCreado.C_NumEdificio;
+                    txtC_NumDpto.Text = viviendaCreado.C_NumDpto;
+                    txtN_NumMetros.Text = viviendaCreado.N_NumMetros.ToString();
+                    ddlC_CodTipo.SelectedValue = viviendaCreado.C_CodTipo;
+
+                }
 
             }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Prueba de creación de vivienda vía HTTP POST
-            string postdata = "{\"N_IdResidente\":\"" + ddlN_IdResidente.SelectedValue + "\"," +
-                               "\"C_NumEdificio\":\"" + txtC_NumEdificio.Text + "\"," +
-                               "\"C_NumDpto\":\"" + txtC_NumDpto.Text + "\"," +
-                               "\"N_NumMetros\":\"" + txtN_NumMetros.Text + "\"," +
-                               "\"C_CodTipo\":\"" + ddlC_CodTipo + "\" }"; //JSON
+            try
+            {
+                if (Request.QueryString.Get("pm") == null)
+                {
+                    // Prueba de creación de vivienda vía HTTP POST
+                    string postdata = "{\"N_IdResidente\":\"" + ddlN_IdResidente.SelectedValue + "\"," +
+                                       "\"C_NumEdificio\":\"" + txtC_NumEdificio.Text + "\"," +
+                                       "\"C_NumDpto\":\"" + txtC_NumDpto.Text + "\"," +
+                                       "\"N_NumMetros\":\"" + txtN_NumMetros.Text + "\"," +
+                                       "\"C_CodTipo\":\"" + ddlC_CodTipo.SelectedValue + "\" }"; //JSON
 
+                    string postdataok = "{\"N_IdResidente\":\"29\"," +
+                                      "\"C_NumEdificio\":\"8524\"," +
+                                      "\"C_NumDpto\":\"Dv0X\"," +
+                                      "\"N_NumMetros\":\"110\"," +
+                                      "\"C_CodTipo\":\"depa\" }"; //JSON
 
-            byte[] data = Encoding.UTF8.GetBytes(postdata);
+                    byte[] data = Encoding.UTF8.GetBytes(postdata);
 
-            HttpWebRequest req = (HttpWebRequest)WebRequest
-                 .Create(ConfigurationManager.AppSettings["URL_REST_vivienda"]);
+                    HttpWebRequest req = (HttpWebRequest)WebRequest
+                         .Create("http://localhost:62023/ViviendasService.svc/Viviendas"); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
 
-            req.Method = "POST";
-            req.ContentLength = data.Length;
-            req.ContentType = "application/json";
+                    req.Method = "POST";
+                    req.ContentLength = data.Length;
+                    req.ContentType = "application/json";
 
-            var reqStream = req.GetRequestStream();
-            reqStream.Write(data, 0, data.Length);
+                    var reqStream = req.GetRequestStream();
+                    reqStream.Write(data, 0, data.Length);
 
-            var res = (HttpWebResponse)req.GetResponse();
-            StreamReader reader = new StreamReader(res.GetResponseStream());
-            string alumnoJson = reader.ReadToEnd();
+                    var res = (HttpWebResponse)req.GetResponse();
+                    StreamReader reader = new StreamReader(res.GetResponseStream());
+                    string retornaMensajeJson = reader.ReadToEnd();
 
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            RetornaMensajeT retornaMensaje = js.Deserialize<RetornaMensajeT>(alumnoJson);
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    RetornaMensajeT retornaMensaje = js.Deserialize<RetornaMensajeT>(retornaMensajeJson);
 
-            
+                    lblMensaje.Text = retornaMensaje.Mensage;
+                }
+                else
+                {
+                    
+                    // Prueba de creación de vivienda vía HTTP POST
+                    string postdata = "{\"N_IdResidente\":\"" + lblN_IdVivienda.Text + "\"," +
+                                       "\"N_IdResidente\":\"" + ddlN_IdResidente.SelectedValue + "\"," +
+                                       "\"C_NumEdificio\":\"" + txtC_NumEdificio.Text + "\"," +
+                                       "\"C_NumDpto\":\"" + txtC_NumDpto.Text + "\"," +
+                                       "\"N_NumMetros\":\"" + txtN_NumMetros.Text + "\"," +
+                                       "\"C_CodTipo\":\"" + ddlC_CodTipo.SelectedValue + "\" }"; //JSON
+
+                    string postdataok = "{\"N_IdResidente\":\"29\"," +
+                                      "\"C_NumEdificio\":\"8524\"," +
+                                      "\"C_NumDpto\":\"Dv0X\"," +
+                                      "\"N_NumMetros\":\"110\"," +
+                                      "\"C_CodTipo\":\"depa\" }"; //JSON
+
+                    byte[] data = Encoding.UTF8.GetBytes(postdata);
+
+                    HttpWebRequest req = (HttpWebRequest)WebRequest
+                         .Create("http://localhost:62023/ViviendasService.svc/Viviendas/" + lblN_IdVivienda.Text); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
+
+                    req.Method = "PUT";
+                    req.ContentLength = data.Length;
+                    req.ContentType = "application/json";
+
+                    var reqStream = req.GetRequestStream();
+                    reqStream.Write(data, 0, data.Length);
+
+                    var res = (HttpWebResponse)req.GetResponse();
+                    StreamReader reader = new StreamReader(res.GetResponseStream());
+                    string retornaMensajeJson = reader.ReadToEnd();
+
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    RetornaMensajeT retornaMensaje = js.Deserialize<RetornaMensajeT>(retornaMensajeJson);
+
+                    lblMensaje.Text = retornaMensaje.Mensage;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = ex.Message;
+            }
+
         }
+
+        protected void btnCerrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

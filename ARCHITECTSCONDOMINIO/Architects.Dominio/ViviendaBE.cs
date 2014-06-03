@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 
 namespace Architects.Dominio
 {
+    [DataContract]
     public class ViviendaBE
     {
         public ViviendaBE()

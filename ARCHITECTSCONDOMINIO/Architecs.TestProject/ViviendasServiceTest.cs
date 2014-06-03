@@ -18,9 +18,9 @@ namespace Architecs.TestProject
         {
             // Prueba de creación de vivienda vía HTTP POST
             string postdata = "{\"N_IdResidente\":\"29\","+ 
-                               "\"C_NumEdificio\":\"R854\"," +
+                               "\"C_NumEdificio\":\"8524\"," +
                                "\"C_NumDpto\":\"Dv0X\"," + 
-                               "\"N_NumMetros\":\"120\"," + 
+                               "\"N_NumMetros\":\"110\"," + 
                                "\"C_CodTipo\":\"depa\" }"; //JSON
             
             

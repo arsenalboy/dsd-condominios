@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmViviendas.aspx.cs"  
-Inherits="Architecs.Presentacion.frmViviendas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmViviendas.aspx.cs" Inherits="Architecs.Presentacion.frmViviendas" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -14,7 +13,7 @@ Inherits="Architecs.Presentacion.frmViviendas" %>
 </head>
 <body>
     <form id="form1" runat="server">
-<%--    <cc1:toolkitscriptmanager id="ToolkitScriptManager1" runat="server" enablescriptglobalization="True"
+    <%--    <cc1:toolkitscriptmanager id="ToolkitScriptManager1" runat="server" enablescriptglobalization="True"
         enablescriptlocalization="true">
         </cc1:toolkitscriptmanager>--%>
     <jsp:include page="/pages/header.jsp" />
@@ -45,8 +44,17 @@ Inherits="Architecs.Presentacion.frmViviendas" %>
         <%--OnPageIndexChanging="gvItems_PageIndexChanging"  
                 OnRowCommand="gvItems_RowCommand" --%>
         <asp:GridView ID="gvViviendas" runat="server" Width="98%" AutoGenerateColumns="False"
-            AllowPaging="True" EmptyDataText="No existen ítems a mostrar." class="table table-bordered table-hover">
+            AllowPaging="True" EmptyDataText="No existen ítems a mostrar." 
+            class="table table-bordered table-hover" onrowcommand="gvViviendas_RowCommand" 
+            onrowdatabound="gvViviendas_RowDataBound">
             <Columns>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:HiddenField ID="hhdIDVivienda" runat="server" Value='<%#Eval("N_IdVivienda")%>' />
+                    </ItemTemplate>
+                    <HeaderStyle Width="30px" />
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>
                 <asp:BoundField DataField="N_IdVivienda" HeaderText="ID" ItemStyle-Width="50px" />
                 <asp:BoundField DataField="C_NumEdificio" HeaderText="N° Edificio" />
                 <asp:BoundField DataField="C_NumDpto" HeaderText="N° Dpto" />
@@ -56,7 +64,7 @@ Inherits="Architecs.Presentacion.frmViviendas" %>
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:ImageButton ID="btnEditar" runat="server" CommandArgument='<%#Eval("N_IdVivienda")%>'
-                            CommandName="Ver" ImageUrl="~/Images/edit.gif" ToolTip="Ver" />
+                            CommandName="Editar" ImageUrl="~/Images/edit.gif" ToolTip="Ver" />
                     </ItemTemplate>
                     <HeaderStyle Width="30px" />
                     <ItemStyle HorizontalAlign="Center" />
@@ -64,7 +72,7 @@ Inherits="Architecs.Presentacion.frmViviendas" %>
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:ImageButton ID="btnEliminar" runat="server" CommandArgument='<%#Eval("N_IdVivienda")%>'
-                            CommandName="Ver" ImageUrl="~/Images/delete.gif" ToolTip="Ver" />
+                            CommandName="Eliminar" ImageUrl="~/Images/delete.gif" ToolTip="Ver" />
                     </ItemTemplate>
                     <HeaderStyle Width="30px" />
                     <ItemStyle HorizontalAlign="Center" />
@@ -72,7 +80,6 @@ Inherits="Architecs.Presentacion.frmViviendas" %>
             </Columns>
         </asp:GridView>
     </div>
-    </form>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
@@ -97,5 +104,8 @@ Inherits="Architecs.Presentacion.frmViviendas" %>
             </div>
         </div>
     </div>
-</body>
+    <asp:Label ID="lblMensajes" runat="server" Font-Bold="True" Font-Size="Larger" 
+        ForeColor="#FF3300"></asp:Label>
+    </form>
+    </body>
 </html>

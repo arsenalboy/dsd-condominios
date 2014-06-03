@@ -34,7 +34,7 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                        <asp:MenuItem NavigateUrl="~/frmViviendas.aspx" Text="Administracion Viviendas "/>
                     </Items>
                 </asp:Menu>
             </div>
