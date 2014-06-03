@@ -11,23 +11,23 @@
 </head>
 <body>
 <div class="container">
-<form class="form-horizontal" name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=2" method="post">
+<form class="form-horizontal" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=2" method="post" role="form">
       <legend>RGISTRO DE RESIDENTES</legend>
         <div class="form-group">
-          <label for="txtNombre" class="col-lg-2 control-label">Nombres</label>
-          <div class="col-lg-10">
+          <label for="txtNombre" class="col-md-2 control-label">Nombres</label>
+          <div class="col-md-4">
             <input class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombres" type="text" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="txtApellidos" class="col-lg-2 control-label">Apellidos</label>
-          <div class="col-lg-10">
+          <label for="txtApellidos" class="col-md-2 control-label">Apellidos</label>
+          <div class="col-md-4">
               <input class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos" type="text" required>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="txtTipoDocumento">Tipo de Documento</label>
-          <div class="col-lg-10">
+          <label class="col-md-2 control-label" for="txtTipoDocumento">Tipo de Documento</label>
+          <div class="col-md-6">
           <select id="txtTipoDocumento" name="txtTipoDocumento" class="form-control" required>
             <option value="1" >DNI</option>
 				    <option value="2" >CARNET EXTRANJERIA</option>
@@ -35,32 +35,32 @@
         </div>
         </div>
         <div class="form-group">
-          <label for="txtNombre" class="col-lg-2 control-label">Número de Documento</label>
-          <div class="col-lg-10">
+          <label for="txtNombre" class="col-md-2 control-label">Número de Documento</label>
+          <div class="col-md-6">
             <input class="form-control" id="txtNuDocumento" name="txtNuDocumento" placeholder="Número de Documento" type="text" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="txtFeNac" class="col-lg-2 control-label">Fecha de nacimiento</label>
-          <div class="col-lg-10">
+          <label for="txtFeNac" class="col-md-2 control-label">Fecha de nacimiento</label>
+          <div class="col-md-6">
             <input class="form-control" id="txtFeNac" name="txtFeNac" placeholder="Fecha de nacimiento" type="date" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="txtCorreo" class="col-lg-4 control-label">Correo</label>
-          <div class="col-lg-10">
+          <label for="txtCorreo" class="col-md-2 control-label">Correo</label>
+          <div class="col-md-4">
             <input class="form-control" id="txtCorreo" name="txtCorreo" placeholder="Correo" type="email" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="txtClave" class="col-lg-4 control-label">Contraseña</label>
-          <div class="col-lg-10">
+          <label for="txtClave" class="col-md-2 control-label">Contraseña</label>
+          <div class="col-md-4">
             <input class="form-control" id="txtClave" name="txtClave" placeholder="Contraseña" type="password" required>
           </div>
         </div>
         <div class="form-group"></div>
         <div class="form-group">
-          <div class="col-lg-offset-2 col-lg-10">
+          <div class="col-md-offset-2 col-md-2">
             <button type="submit" class="btn btn-default">Entrar</button>
           </div>
         </div>

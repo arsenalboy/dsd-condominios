@@ -12,11 +12,6 @@
 <script type="text/javascript" src="js/thickbox.js"></script>
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
 
-<style>
-div.oculto{
-	
-}
-</style>
 </head>
 <body>
 <jsp:include page="/pages/header.jsp" />
@@ -28,10 +23,10 @@ div.oculto{
  </div>
  <p>
  <div class="container">
- 
- <a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=650&width=900" 
-title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </div></p>
-<table class="table">
+ <a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=520&width=750" 
+ class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </div></p>
+ <div class="panel-body">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>#</th>
@@ -42,7 +37,7 @@ title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg
       <th>Fecha Nacimiento</th>
       <th>Correo</th>
       <th>Estado</th>
-      <th></th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -92,5 +87,6 @@ if(r.getN_TipoDoc()==1){
 <%}%>
   </tbody>
 </table>
+</div>
 </body>
 </html>

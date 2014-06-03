@@ -64,7 +64,6 @@ public class ResidenteServlet extends HttpServlet {
 				ResidenteWS residente = new ResidenteWS();
 				
 				ResidenteBE[] listado = residente.listarResidente();
-				
 				request.setAttribute("ListaResidentes", listado);
 				page="/pages/ListaResidentes.jsp";
 				
@@ -72,23 +71,25 @@ public class ResidenteServlet extends HttpServlet {
 				
 				ResidenteWS residente = new ResidenteWS();
 				int x= residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
-
 				page="/pages/util.jsp?aux="+x;
 				
 			}else if(opcion.equals("3")){ //Actualiza Residentes
 				
 				ResidenteWS residente = new ResidenteWS();
-				residente.ModificarResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
-				page="/pages/ListaResidentes.jsp";
+				int x=residente.ModificarResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+				page="/pages/util.jsp?aux="+x;
+				
 				
 			}else if(opcion.equals("4")){ //Obtiene un residente por codigo
 				
 				ResidenteWS residente = new ResidenteWS();
 				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"0":request.getParameter("cod").trim());								
 				
-				residente.ObtenerResidente(codigo).getC_Apellidos();
-				JOptionPane.showMessageDialog(null, codigo);
-				request.setAttribute("residente",residente);
+				
+				System.out.println("codigo"+codigo);
+				ResidenteBE r=residente.ObtenerResidentePorID(codigo);
+				//residente.ObtenerResidente(codigo);mos
+				request.setAttribute("residente",r);
 				
 				page="/pages/frmResidenteActualizar.jsp";
 				
