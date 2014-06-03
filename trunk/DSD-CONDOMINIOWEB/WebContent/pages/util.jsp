@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-Exito
+<%
+int x = Integer.parseInt(request.getParameter("aux"));
+if(x>0){
+	out.println("Registro guardado Satisfactoriamente");
+}else{
+	out.println("OcurriÓ un error en el rgistro");
+}
+%>
 </body>
 </html>

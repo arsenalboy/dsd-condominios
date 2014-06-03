@@ -20,7 +20,7 @@ public class ResidenteBE  implements java.io.Serializable {
 
     private java.lang.String c_NumDocume;
 
-    private java.util.Calendar d_FecNacimi;
+    private java.sql.Date d_FecNacimi;
 
     private java.lang.Integer n_IdResidente;
 
@@ -36,7 +36,7 @@ public class ResidenteBE  implements java.io.Serializable {
            java.lang.String c_Correo,
            java.lang.String c_Nombre,
            java.lang.String c_NumDocume,
-           java.util.Calendar d_FecNacimi,
+           java.sql.Date d_FecNacimi,
            java.lang.Integer n_IdResidente,
            java.lang.Integer n_TipoDoc) {
            this.b_Estado = b_Estado;
@@ -176,7 +176,7 @@ public class ResidenteBE  implements java.io.Serializable {
      * 
      * @return d_FecNacimi
      */
-    public java.util.Calendar getD_FecNacimi() {
+    public java.sql.Date getD_FecNacimi() {
         return d_FecNacimi;
     }
 
@@ -186,7 +186,7 @@ public class ResidenteBE  implements java.io.Serializable {
      * 
      * @param d_FecNacimi
      */
-    public void setD_FecNacimi(java.util.Calendar d_FecNacimi) {
+    public void setD_FecNacimi(java.sql.Date d_FecNacimi) {
         this.d_FecNacimi = d_FecNacimi;
     }
 

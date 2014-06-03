@@ -1,8 +1,9 @@
+<%@page import="java.util.List"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="cleaner.ResidenteWS"%>
-<%@page import="org.datacontract.schemas._2004._07.Architects_Dominio.Residente,cleaner.*"%>
+<%@page import="org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE,cleaner.*"%>
 <%@page import="org.tempuri.ResidenteService"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,11 +13,12 @@
 </head>
 <body>
 <%
-	Residente r= (Residente)request.getAttribute("residente");
-	JOptionPane.showMessageDialog(null, r.getC_Correo());
+	ResidenteBE r = new ResidenteBE();
+	r = (ResidenteBE)request.getAttribute("residente");
+	JOptionPane.showMessageDialog(null, r.getC_Nombre());
 	if(r != null) { 
 %>
-<form name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=2" method="post">
+<form name"Residente" action="<%=request.getContextPath()%>/ResidenteServlet?opcion=3" method="post">
 
 <TABLE WIDTH=300>	
 		<TR>

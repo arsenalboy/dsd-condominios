@@ -1,5 +1,5 @@
 <%@page import="cleaner.ResidenteWS"%>
-<%@page import="org.datacontract.schemas._2004._07.Architects_Dominio.Residente,cleaner.*"%>
+<%@page import="org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE,cleaner.*"%>
 <%@page import="org.tempuri.ResidenteService"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -27,7 +27,9 @@ div.oculto{
       </div>
  </div>
  <p>
- <div class="container"><a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=650&width=900" 
+ <div class="container">
+ 
+ <a href="<%=request.getContextPath()%>/pages/frmResidenteRegsitro.jsp?keepThis=true&TB_iframe=true&height=650&width=900" 
 title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg" role="button">Agregar</span></a> </div></p>
 <table class="table">
   <thead>
@@ -46,12 +48,12 @@ title="REGISTRAR RESIDENTE" class="thickbox"><span class="btn btn-primary btn-lg
   <tbody>
 <%
 
-		Residente[] listado = (Residente[])request.getAttribute("ListaResidentes");
+		ResidenteBE[] listado = (ResidenteBE[])request.getAttribute("ListaResidentes");
 int x=1;
 
 String estado=null;
 String doc=null;
-for (Residente r : listado) {
+for (ResidenteBE r : listado) {
 
 if(r.getB_Estado()==true){
  	estado = "Activo";
@@ -70,7 +72,7 @@ if(r.getN_TipoDoc()==1){
   <td><%=r.getC_Apellidos() %></td>
   <td><%=doc %></td>
   <td><%=r.getC_NumDocume() %></td>
-  <td><%=r.getD_FecNacimi() %></td>
+  <td><%=r.getD_FecNacimi()%></td>
   <td><%=r.getC_Correo() %></td>
   <td><%=estado %></td>
   <td>
