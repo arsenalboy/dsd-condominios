@@ -16,7 +16,7 @@
   	<jsp:include page="/pages/header.jsp" />
   	<div class="jumbotron">
       <div class="container">
-        <h3>REGISTRO DE VISITANTES</h3>
+        <h3>REGISTRO DE Visitas al Condominio</h3>
         <p></p>
       </div>
     </div>
