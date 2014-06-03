@@ -19,9 +19,9 @@ namespace Architecs.QuejasService
             return ObjQUejaDAO.CreaQueja(QuejaCrear);
         }
 
-        public List<Queja> ListarQuejas(string FechaIni, string FechaFin)
+        public List<Queja> ListarQuejas(string FechaIni, string FechaFin, string C_Tipo)
         {
-            return ObjQUejaDAO.listarQuejas(FechaIni, FechaFin);
+            return ObjQUejaDAO.listarQuejas(FechaIni, FechaFin, C_Tipo);
         }
     }
 }

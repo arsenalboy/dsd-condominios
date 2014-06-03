@@ -15,6 +15,15 @@
    
   
      <div>
+       <p></p>
+           <div style="display:none;" id="divacepto">
+                <div class="alert alert-success"  >
+			    <button type="button" class="close" data-dismiss="alert">&times;</button>
+			    <b>En hora buena,</b> La junta se registró con éxito.
+			    </div>
+         
+          </div>
+
      <asp:UpdatePanel ID="uptabla" runat ="server"><ContentTemplate>
 
           <div class="container">
@@ -149,14 +158,7 @@
          	</div>
          </div>
         
-           <p></p>
-           <div style="display:none;" id="divacepto">
-                <div class="alert alert-success"  >
-			    <button type="button" class="close" data-dismiss="alert">&times;</button>
-			    <b>En hora buena,</b> La junta se registró con éxito.
-			    </div>
          
-          </div>
            </div>
           
            
