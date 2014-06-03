@@ -9,7 +9,7 @@ namespace Architecs.TestProject
     {
         public Vivienda()
         {
-            objResidente = new ResidenteBE();
+            objResidente = new Residente();
             
         }
 
@@ -21,6 +21,6 @@ namespace Architecs.TestProject
         public string C_CodTipo { get; set; }
         public bool B_Estado { get; set; }
 
-        public ResidenteBE objResidente { get; set; }
+        public Residente objResidente { get; set; }
     }
 }

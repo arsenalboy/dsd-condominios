@@ -1,3 +1,6 @@
 ﻿$(document).ready(function () {
-    alert("prueba jqyer");
+
+    $("[#btnNuevo]").click(function () {
+        alert("prueba jqyer - NUEVOOOO");
+    });
 });

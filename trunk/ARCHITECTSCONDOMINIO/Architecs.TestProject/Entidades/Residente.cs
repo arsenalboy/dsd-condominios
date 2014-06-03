@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Architecs.TestProject
 {
-    public class ResidenteBE
+    public class Residente
     {
         public int N_IdResidente { get; set; }
         public string C_Nombre { get; set; }

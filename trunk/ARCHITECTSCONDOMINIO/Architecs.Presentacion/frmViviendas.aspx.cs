@@ -20,6 +20,9 @@ namespace Architecs.Presentacion
             {
                 CargarGrilla();
             }
+            //this.btnNuevo.Attributes.Add("OnClick", "OpenPopup('frmViviendaCrear.aspx?pm=" + querystringENCRYP_ED + "',600,390)");
+            this.btnNuevo.Attributes.Add("OnClick", "OpenPopup('frmViviendaCrear.aspx',600,480)");
+
         }
 
         private void CargarGrilla()

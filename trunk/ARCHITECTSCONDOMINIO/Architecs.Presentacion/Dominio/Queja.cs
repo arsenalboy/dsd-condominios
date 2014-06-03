@@ -24,7 +24,7 @@ namespace Architecs.Presentacion.Dominio
         [DataMember]
         public Boolean B_Estado { get; set; }
         [DataMember]
-        public ResidenteBE Residente { get; set; }
+        public Residente Residente { get; set; }
         [DataMember]
         public string D_FecQueja { get; set; }
     }

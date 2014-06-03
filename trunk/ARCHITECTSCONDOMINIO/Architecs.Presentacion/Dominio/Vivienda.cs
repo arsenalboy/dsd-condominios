@@ -9,7 +9,7 @@ namespace Architecs.Presentacion.Dominio
     {
         public Vivienda()
         {
-            objResidente = new ResidenteBE();
+            objResidente = new Residente();
         }
 
         public int N_IdVivienda { get; set; }
@@ -20,6 +20,6 @@ namespace Architecs.Presentacion.Dominio
         public string C_CodTipo { get; set; }
         public bool B_Estado { get; set; }
 
-        public ResidenteBE objResidente { get; set; }
+        public Residente objResidente { get; set; }
     }
 }
