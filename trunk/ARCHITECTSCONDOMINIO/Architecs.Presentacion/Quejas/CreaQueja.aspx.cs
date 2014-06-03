@@ -51,7 +51,7 @@ namespace Architecs.Presentacion.Quejas
                 string alumnoJson = reader.ReadToEnd();
 
                 JavaScriptSerializer js = new JavaScriptSerializer();
-                Queja alumnoCreado = js.Deserialize<Queja>(alumnoJson);
+                Queja QuejaCreada = js.Deserialize<Queja>(alumnoJson);
 
 
                 String script = "document.getElementById('divacepto').style.display='block';";
