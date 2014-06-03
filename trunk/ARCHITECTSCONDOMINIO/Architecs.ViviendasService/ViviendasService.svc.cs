@@ -16,6 +16,7 @@ namespace Architecs.ViviendasService
     public class ViviendasService : IViviendasService
     {
         private ViviendaDAO viviendaDAO = null;
+
         private RetornaMensaje retornaMensaje = null;
 
         public RetornaMensaje CrearVivienda(ViviendaBE viviendaCrear)
@@ -58,6 +59,46 @@ namespace Architecs.ViviendasService
             return retornaMensaje;
         }
 
+        public RetornaMensaje ModificarVivienda(string N_IdVivienda, ViviendaBE viviendaModificar)
+        {
+            //List<ViviendaBE> lstViviendaBuscar = null;
+            try
+            {
+                retornaMensaje = new RetornaMensaje();
+                viviendaDAO = new ViviendaDAO();
+                //lstViviendaBuscar = viviendaDAO.Buscar(viviendaCrear);
+                //if (lstViviendaBuscar.Count == 0)
+                //{
+                retornaMensaje.CodigoRetorno = viviendaDAO.Actualizar(viviendaModificar);
+                retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Vivienda");
+                retornaMensaje.Exito = true;
+                //}
+                //else
+                //{
+                //    RetornaMensaje mensajeError = new RetornaMensaje
+                //    {
+                //        CodigoRetorno = -1,
+                //        Mensage = string.Format(resMensajes.msjYaExiste, "Vivienda"),
+                //        Exito = false,
+                //    };
+                //    throw new WebFaultException<RetornaMensaje>(mensajeError, HttpStatusCode.InternalServerError);
+                //}
+            }
+            catch (Exception exception)
+            {
+
+                RetornaMensaje mensajeError = new RetornaMensaje
+                {
+                    Mensage = string.Format(resMensajes.msjNoRegistrado + " - " + exception.Message, "Vivienda"),
+                    CodigoError = exception.GetHashCode().ToString(),
+                    Exito = false
+                };
+                throw new WebFaultException<RetornaMensaje>(mensajeError, HttpStatusCode.InternalServerError);
+
+            }
+            return retornaMensaje;
+        }
+
         public ViviendaBE ObtenerVivienda(string codVivienda)
         {
             ViviendaBE vivienda = new ViviendaBE();
@@ -79,7 +120,6 @@ namespace Architecs.ViviendasService
             }
             return vivienda;
         }
-
 
         public List<ViviendaBE> ListarVivienda()
         {
@@ -105,5 +145,33 @@ namespace Architecs.ViviendasService
             return lstCuota;
         }
 
+        public RetornaMensaje EliminarVivienda(string codVivienda)
+        {
+            ViviendaBE vivienda = new ViviendaBE();
+            try
+            {
+                retornaMensaje = new RetornaMensaje();
+                viviendaDAO = new ViviendaDAO();
+                retornaMensaje.Exito = viviendaDAO.Eliminar(Convert.ToInt32(codVivienda));
+                if(    retornaMensaje.Exito )
+                    retornaMensaje = new RetornaMensaje
+                {
+                    Mensage = string.Format(resMensajes.msjEliminadoOK, "Vivienda"),
+                    CodigoError = "-1",
+                    Exito = false
+                };
+            }
+            catch (Exception exception)
+            {
+                RetornaMensaje mensajeError = new RetornaMensaje
+                {
+                    Mensage = string.Format(resMensajes.msjNoEliminado, "Vivienda"),
+                    CodigoError = exception.GetHashCode().ToString(),
+                    Exito = false
+                };
+                throw new WebFaultException<RetornaMensaje>(mensajeError, HttpStatusCode.InternalServerError);
+            }
+            return retornaMensaje;
+        }
     }
 }

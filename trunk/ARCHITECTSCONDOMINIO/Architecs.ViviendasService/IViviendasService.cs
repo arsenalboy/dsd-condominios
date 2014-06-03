@@ -23,18 +23,18 @@ namespace Architecs.ViviendasService
         [WebInvoke(Method = "GET", UriTemplate = "Viviendas/{N_IdVivienda}", ResponseFormat = WebMessageFormat.Json)]
         ViviendaBE ObtenerVivienda(string N_IdVivienda);
 
-        //[OperationContract]
-        //[WebInvoke(
-        //      Method = "PUT"
-        //    , UriTemplate = "Viviendas/{N_IdVivienda}"
-        //    , RequestFormat = WebMessageFormat.Json
-        //    , ResponseFormat = WebMessageFormat.Json
-        //    , BodyStyle = WebMessageBodyStyle.Bare)]
-        //RetornaMensaje ModificarVivienda(string N_IdVivienda, ViviendaBE viviendaModificar);
+        [OperationContract]
+        [WebInvoke(
+              Method = "PUT"
+            , UriTemplate = "Viviendas/{N_IdVivienda}"
+            , RequestFormat = WebMessageFormat.Json
+            , ResponseFormat = WebMessageFormat.Json
+            , BodyStyle = WebMessageBodyStyle.Bare)]
+        RetornaMensaje ModificarVivienda(string N_IdVivienda, ViviendaBE viviendaModificar);
 
-        //[OperationContract]
-        //[WebInvoke(Method = "DELETE", UriTemplate = "Viviendas/{N_IdVivienda}", ResponseFormat = WebMessageFormat.Json)]
-        //RetornaMensaje EliminarAlumno(string codAlumno);
+        [OperationContract]
+        [WebInvoke(Method = "DELETE", UriTemplate = "Viviendas/{N_IdVivienda}", ResponseFormat = WebMessageFormat.Json)]
+        RetornaMensaje EliminarVivienda(string N_IdVivienda);
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Viviendas/", ResponseFormat = WebMessageFormat.Json)]
