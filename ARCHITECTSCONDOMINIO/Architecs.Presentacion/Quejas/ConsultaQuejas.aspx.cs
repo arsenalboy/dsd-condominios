@@ -19,7 +19,11 @@ namespace Architecs.Presentacion.Quejas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                String script = "document.getElementById('divaviso').style.display='none';";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta", script, true);
+            }
         }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
@@ -48,6 +52,9 @@ namespace Architecs.Presentacion.Quejas
 
                 //String script = "document.getElementById('divacepto').style.display='block';";
                 //ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta", script, true);
+
+
+
 
                 string strURL = "http://localhost:62070/QuejaService.svc/Quejas/Todos/" + TxtDesde.Text + "," + TxtHasta.Text + "," + CboTipoQueja.SelectedValue;
                 HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
@@ -80,6 +87,12 @@ namespace Architecs.Presentacion.Quejas
                 
                 GvQuejas.DataSource = ObjQuejaConsulta;
                 GvQuejas.DataBind();
+
+                if (ListaQuejas.Count == 0)
+                {
+                    String script2 = "document.getElementById('divaviso').style.display='block';";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta", script2, true);
+                }
             }
             catch (FaultException ex)
             {
