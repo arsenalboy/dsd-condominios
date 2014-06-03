@@ -104,7 +104,13 @@
                 </asp:BoundField>
             </Columns>
         </asp:GridView>
-      <footer></footer>
+      <footer>
+      <p></p>
+			          <div class="alert alert-danger" id="divaviso" style="display:none;">
+			            <button type="button" class="close" data-dismiss="alert">&times;</button>
+			            <b>AVISO!</b> No se encuentra registros con el criterio de busqueda.
+			          </div>
+      </footer>
     </div>
   
     </form>
