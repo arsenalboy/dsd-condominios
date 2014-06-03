@@ -17,7 +17,6 @@ import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 import javax.xml.bind.ParseConversionEvent;
 
-import org.datacontract.schemas._2004._07.Architects_Dominio.Residente;
 import org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE;
 
 import util.FormatoFecha;
@@ -45,7 +44,7 @@ public class ResidenteServlet extends HttpServlet {
 	private void processRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		String opcion = request.getParameter("opcion")==null?"2":request.getParameter("opcion");
+		String opcion = request.getParameter("opcion")==null?"1":request.getParameter("opcion");
 		int n_IdResidente = Integer.parseInt(request.getParameter("n_IdResidente")==null?"2":request.getParameter("n_IdResidente"));
 		String c_Nombre = request.getParameter("txtNombre")==null?"2":request.getParameter("txtNombre");
 		String c_Apellidos = request.getParameter("txtApellidos")==null?"2":request.getParameter("txtApellidos");
@@ -72,8 +71,9 @@ public class ResidenteServlet extends HttpServlet {
 			}else if(opcion.equals("2")){ //registra Residentes
 				
 				ResidenteWS residente = new ResidenteWS();
-				residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
-				page="/pages/util.jsp";
+				int x= residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+
+				page="/pages/util.jsp?aux="+x;
 				
 			}else if(opcion.equals("3")){ //Actualiza Residentes
 				
@@ -84,11 +84,12 @@ public class ResidenteServlet extends HttpServlet {
 			}else if(opcion.equals("4")){ //Obtiene un residente por codigo
 				
 				ResidenteWS residente = new ResidenteWS();
-				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"-1":request.getParameter("cod").trim());								
+				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"0":request.getParameter("cod").trim());								
 				
-				residente.ObtenerResidente(codigo);
-				//JOptionPane.showMessageDialog(null, residente.ObtenerResidente(codigo).getC_Correo());
+				residente.ObtenerResidente(codigo).getC_Apellidos();
+				JOptionPane.showMessageDialog(null, codigo);
 				request.setAttribute("residente",residente);
+				
 				page="/pages/frmResidenteActualizar.jsp";
 				
 			}else if(opcion.equals("5")){

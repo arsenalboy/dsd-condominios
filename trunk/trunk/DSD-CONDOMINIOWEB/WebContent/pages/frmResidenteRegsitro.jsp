@@ -26,9 +26,9 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="txtNuDocumento">Tipo de Documento</label>
+          <label class="col-lg-2 control-label" for="txtTipoDocumento">Tipo de Documento</label>
           <div class="col-lg-10">
-          <select id="txtNuDocumento" name="txtNuDocumento" class="form-control" required>
+          <select id="txtTipoDocumento" name="txtTipoDocumento" class="form-control" required>
             <option value="1" >DNI</option>
 				    <option value="2" >CARNET EXTRANJERIA</option>
           </select>
@@ -37,7 +37,7 @@
         <div class="form-group">
           <label for="txtNombre" class="col-lg-2 control-label">Número de Documento</label>
           <div class="col-lg-10">
-            <input class="form-control" id="txtNombre" name="txtNombre" placeholder="Número de Documento" type="text" required>
+            <input class="form-control" id="txtNuDocumento" name="txtNuDocumento" placeholder="Número de Documento" type="text" required>
           </div>
         </div>
         <div class="form-group">
