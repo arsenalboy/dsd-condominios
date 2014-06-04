@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 
-using Architects.Dominio;
+using Architecs.Dominio;
 using Architecs.HorariosService.Persitencia;
 using Architecs.EspaciosComunuesService.Persistencia;
 
