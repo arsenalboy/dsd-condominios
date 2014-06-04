@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="RetornaMensaje.cs" />
     <Compile Include="ValidationException.cs" />
+    <Compile Include="VisitanteBE.cs" />
     <Compile Include="ViviendaBE.cs" />
   </ItemGroup>
   <ItemGroup>

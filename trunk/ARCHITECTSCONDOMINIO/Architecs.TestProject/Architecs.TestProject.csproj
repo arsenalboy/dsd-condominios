@@ -55,12 +55,20 @@
     <Compile Include="Entidades\RetornaMensajeT.cs" />
     <Compile Include="QuejasServiceTest.cs" />
     <Compile Include="ResidentesTest.cs" />
+    <Compile Include="Service References\ResidenteProxy\Reference.cs" />
+    <Compile Include="Service References\ResidenteProxy\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SOAPagosService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Vivienda.cs" />
+    <Compile Include="TestResidente.cs" />
+    <Compile Include="TestVisitas.cs" />
     <Compile Include="ViviendasServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +76,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\ResidenteProxy\ResidenteService.wsdl" />
+    <None Include="Service References\ResidenteProxy\ResidenteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResidenteProxy\ResidenteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResidenteProxy\ResidenteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SOAPagosService\Architecs.TestProject.SOAPagosService.Cuota.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -115,6 +133,15 @@
       <Project>{C86C111C-C405-4319-A43B-C56580AC4FC4}</Project>
       <Name>Architecs.Presentacion</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Service References\ResidenteProxy\configuration.svcinfo" />
+    <Content Include="Service References\ResidenteProxy\configuration91.svcinfo" />
+    <Content Include="Service References\ResidenteProxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ResidenteProxy\ResidenteService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

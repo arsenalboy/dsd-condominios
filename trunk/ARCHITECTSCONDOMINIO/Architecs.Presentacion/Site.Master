@@ -5,8 +5,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
-    <link href="css/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <%--<link href="css/css/bootstrap.css" rel="stylesheet" type="text/css" />--%>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -16,7 +16,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    Mi aplicación ASP.NET
+                   CONDOMINIOS
                 </h1>
             </div>
             <div class="loginDisplay">
@@ -34,7 +34,18 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
-                        <asp:MenuItem NavigateUrl="~/frmViviendas.aspx" Text="Administracion Viviendas "/>
+                         <asp:MenuItem Text="Administracion Quejas ">
+                             <asp:MenuItem NavigateUrl="~/Quejas/ConsultaQuejas.aspx" Text="Listado" 
+                                 Value="Listado"></asp:MenuItem>
+                             <asp:MenuItem NavigateUrl="~/Quejas/CreaQueja.aspx" Text="Registrar" 
+                                 Value="Registrar"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Administracion Viviendas ">
+                            <asp:MenuItem NavigateUrl="~/frmViviendas.aspx" Text="Listado" Value="Listar">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://localhost:8080/DSD-CONDOMINIOWEB/ResidenteServlet?opcion=1" 
+                            Text="Residentes" Value="Residentes"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

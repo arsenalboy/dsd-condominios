@@ -46,7 +46,8 @@
         <asp:GridView ID="gvViviendas" runat="server" Width="98%" AutoGenerateColumns="False"
             AllowPaging="True" EmptyDataText="No existen ítems a mostrar." 
             class="table table-bordered table-hover" onrowcommand="gvViviendas_RowCommand" 
-            onrowdatabound="gvViviendas_RowDataBound">
+            onrowdatabound="gvViviendas_RowDataBound" 
+            onpageindexchanging="gvViviendas_PageIndexChanging">
             <Columns>
                 <asp:TemplateField>
                     <ItemTemplate>

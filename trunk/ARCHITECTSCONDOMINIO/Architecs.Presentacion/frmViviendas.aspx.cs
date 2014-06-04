@@ -104,5 +104,10 @@ namespace Architecs.Presentacion
                 btnEditar.Attributes.Add("Onclick", "OpenPopup('frmViviendaCrear.aspx?pm=" + hhdIDVivienda.Value + "',600,480)");
             }
         }
+
+        protected void gvViviendas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            CargarGrilla();
+        }
     }
 }

@@ -14,87 +14,93 @@
     <script src="Scripts/Validaciones.js" type="text/javascript"></script>
 </head>
 <body>
-    <div style="windows">
-        <form id="form1" runat="server" style="border: 2px; vertical-align: middle">
-        <div class="container">
-            <h3>
-                Administracion de Viviendas</h3>
-        </div>
-        <fieldset title="Datos de Vivienda:">
-            <table>
-                <tr>
-                    <td>
-                        Id Vivienda :
-                    </td>
-                    <td style="width: 300px;">
-                        <asp:Label ID="lblN_IdVivienda" runat="server" CssClass="form-control" Width="299px"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        N° Edificio :
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtC_NumEdificio" MaxLength="10" runat="server" CssClass="form-control"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        N° Departamento :
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtC_NumDpto"  MaxLength="10" runat="server" CssClass="form-control"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        N° Metros :
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtN_NumMetros"   MaxLength="10    " runat="server" CssClass="form-control"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Propietario :
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlN_IdResidente" runat="server" CssClass="form-control">
-                        </asp:DropDownList>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Tipo :
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlC_CodTipo" runat="server" CssClass="form-control" AppendDataBoundItems="True">
-                            <asp:ListItem>CASA</asp:ListItem>
-                            <asp:ListItem>DPTO</asp:ListItem>
-                            <asp:ListItem>CHAL</asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Estado :
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="chkB_Estado" runat="server" CssClass="form-control" Checked="True" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-primary"/>
-                    </td>
-                    <td>
-                        <asp:Button ID="btnCerrar" runat="server" Text="Cerrar" class="btn btn-primary" OnClick="btnCerrar_Click" />
-                        <asp:Label ID="lblMensaje" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-                    </td>
-                </tr>
-            </table>
-        </fieldset>
-        </form>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <div style="windows">
+                    <form id="form1" runat="server" style="border: 2px; vertical-align: middle">
+                    <div class="container">
+                        <h3>
+                            Administracion de Viviendas</h3>
+                    </div>
+                    <fieldset title="Datos de Vivienda:">
+                        <table>
+                            <tr>
+                                <td>
+                                    Id Vivienda :
+                                </td>
+                                <td style="width: 300px;">
+                                    <asp:Label ID="lblN_IdVivienda" runat="server" CssClass="form-control" Width="299px"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    N° Edificio :
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtC_NumEdificio" MaxLength="10" runat="server" CssClass="form-control"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    N° Departamento :
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtC_NumDpto" MaxLength="10" runat="server" CssClass="form-control"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    N° Metros :
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtN_NumMetros" MaxLength="10    " runat="server" CssClass="form-control"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Propietario :
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlN_IdResidente" runat="server" CssClass="form-control">
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Tipo :
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlC_CodTipo" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                                        <asp:ListItem>CASA</asp:ListItem>
+                                        <asp:ListItem>DPTO</asp:ListItem>
+                                        <asp:ListItem>CHAL</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Estado :
+                                </td>
+                                <td>
+                                    <asp:CheckBox ID="chkB_Estado" runat="server" CssClass="form-control" Checked="True" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-primary" />
+                                </td>
+                                <td>
+                                    <asp:Button ID="btnCerrar" runat="server" Text="Cerrar" class="btn btn-primary" OnClick="btnCerrar_Click" />
+                                    <asp:Label ID="lblMensaje" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
