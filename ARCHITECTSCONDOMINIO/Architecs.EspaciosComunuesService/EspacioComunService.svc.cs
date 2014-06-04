@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Architecs.EspaciosComunuesService.Persitencia;
-using Architects.Dominio;
+using Architecs.Dominio;
 
 namespace Architecs.EspaciosComunuesService
 {

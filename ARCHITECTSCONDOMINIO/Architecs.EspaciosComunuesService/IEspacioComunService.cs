@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Architects.Dominio;
+using Architecs.Dominio;
 
 namespace Architecs.EspaciosComunuesService
 {
