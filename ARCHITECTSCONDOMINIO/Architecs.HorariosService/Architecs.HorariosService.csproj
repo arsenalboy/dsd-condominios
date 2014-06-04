@@ -95,9 +95,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Architects.Dominio\Architects.Dominio.csproj">
-      <Project>{AEC58D5C-B1E9-4062-B0DA-3C4D5A800DB3}</Project>
-      <Name>Architects.Dominio</Name>
+    <ProjectReference Include="..\Architecs.Dominio\Architecs.Dominio.csproj">
+      <Project>{F4C7FC62-52B6-4FC6-BC44-20B1876B499A}</Project>
+      <Name>Architecs.Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
