@@ -48,10 +48,10 @@ namespace Architecs.Presentacion.Quejas
 
                 var res = (HttpWebResponse)req.GetResponse();
                 StreamReader reader = new StreamReader(res.GetResponseStream());
-                string alumnoJson = reader.ReadToEnd();
+                string viviendaJson = reader.ReadToEnd();
 
                 JavaScriptSerializer js = new JavaScriptSerializer();
-                Queja QuejaCreada = js.Deserialize<Queja>(alumnoJson);
+                Queja QuejaCreada = js.Deserialize<Queja>(viviendaJson);
 
 
                 String script = "document.getElementById('divacepto').style.display='block';";
@@ -64,9 +64,6 @@ namespace Architecs.Presentacion.Quejas
                 strScript = "<script>alert('" + ex.Message + "')</script>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", strScript, false);
             }
-
-
-
 
         }
 
