@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Architecs.SeguridadService.SeguridadService" CodeBehind="SeguridadService.svc.cs" %>
