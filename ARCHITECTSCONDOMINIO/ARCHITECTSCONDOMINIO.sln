@@ -25,6 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.ReportesService",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.TestProject", "Architecs.TestProject\Architecs.TestProject.csproj", "{CA9D8900-3FC6-4180-A3E9-671CC243C462}"
 	ProjectSection(ProjectDependencies) = postProject
+		{E7C73601-A0AD-4638-B8D4-4A0F868D961D} = {E7C73601-A0AD-4638-B8D4-4A0F868D961D}
 		{7CDAB574-411F-4F5E-90A2-F822E686EEA1} = {7CDAB574-411F-4F5E-90A2-F822E686EEA1}
 	EndProjectSection
 EndProject

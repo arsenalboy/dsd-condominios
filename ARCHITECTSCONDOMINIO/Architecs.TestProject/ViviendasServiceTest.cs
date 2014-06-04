@@ -23,7 +23,6 @@ namespace Architecs.TestProject
                                "\"N_NumMetros\":\"110\"," + 
                                "\"C_CodTipo\":\"depa\" }"; //JSON
             
-            
             byte[] data = Encoding.UTF8.GetBytes(postdata);
 
             HttpWebRequest req = (HttpWebRequest)WebRequest
@@ -38,83 +37,110 @@ namespace Architecs.TestProject
 
             var res = (HttpWebResponse)req.GetResponse();
             StreamReader reader = new StreamReader(res.GetResponseStream());
-            string alumnoJson = reader.ReadToEnd();
+            string viviendaJson = reader.ReadToEnd();
 
             JavaScriptSerializer js = new JavaScriptSerializer();
-            RetornaMensajeT retornaMensaje = js.Deserialize<RetornaMensajeT>(alumnoJson);
+            RetornaMensajeT retornaMensaje = js.Deserialize<RetornaMensajeT>(viviendaJson);
 
             Assert.AreNotEqual(0, retornaMensaje.CodigoRetorno);
 
 
         }
 
-
         [TestMethod]
         public void ViviendaListarTest()
         {
-            // Prueba de OBTENER un alumno vía HTTP GET
+            // Prueba de OBTENER un vivienda vía HTTP GET
 
             string strURL = "http://localhost:62023/ViviendasService.svc/Viviendas/";
-          //string strURL = "http://localhost:1275/Alumnos.svc/Alumnos";
             HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
                .Create(strURL);
             reqObtener.Method = "GET";
             HttpWebResponse resObtener = (HttpWebResponse)reqObtener.GetResponse();
             StreamReader readerObtener = new StreamReader(resObtener.GetResponseStream());
-            string alumnoJsonObtener = readerObtener.ReadToEnd();
+            string viviendaJsonObtener = readerObtener.ReadToEnd();
             JavaScriptSerializer js = new JavaScriptSerializer();
-            IList<Vivienda> alumnoCreado = js.Deserialize<List<Vivienda>>(alumnoJsonObtener);
+            IList<Vivienda> viviendaCreado = js.Deserialize<List<Vivienda>>(viviendaJsonObtener);
 
-            Assert.AreNotEqual(0, alumnoCreado.Count);
+            Assert.AreNotEqual(0, viviendaCreado.Count);
 
         }
 
-        //[TestMethod]
-        //public void ViviendaListar00202Test()
-        //{
-        //    ViviendasService.ViviendasService xx = new ViviendasService.ViviendasService();
-        //    List<ViviendaBE> lstListado = new List<ViviendaBE>();
-        //    lstListado = xx.ListarVivienda();
+        [TestMethod]
+        public void ViviendaEliminarTest()
+        {
+            string strIDvivienda = "16";
+            string strURL = "http://localhost:62023/ViviendasService.svc/Viviendas";
+            string strID = strIDvivienda;
+            HttpWebRequest reqEliminar = (HttpWebRequest)WebRequest
+               .Create(strURL + "/" + strID);
+            reqEliminar.Method = "DELETE";
+            HttpWebResponse resEliminar = (HttpWebResponse)reqEliminar.GetResponse();
 
-        //    Assert.AreNotEqual(0, lstListado.Count);
-        //}
-
-        //[TestMethod]
-        //public void ViviendaiNSERTARtar00202Test()
-        //{
-        //    ViviendasService.ViviendasService xx = new ViviendasService.ViviendasService();
-        //    ViviendaBE ITEMListado = new ViviendaBE();
-        //    RetornaMensaje X = new RetornaMensaje();
-
-        //    ITEMListado.C_NumDpto = "XXX";
-        //    ITEMListado.C_NumEdificio = "XEFX";
-        //    ITEMListado.N_IdResidente = 1;
-        //    ITEMListado.N_NumMetros = 120;
-        //    ITEMListado.C_CodTipo = "CAS";
-
-        //    X = xx.CrearVivienda(ITEMListado);
-
-        //    Assert.AreNotEqual(0, X.CodigoRetorno);
-        //}
+            string strURL2 = "http://localhost:62023/ViviendasService.svc/Viviendas";
+            string strID2 = strIDvivienda;
+            HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
+               .Create(strURL2 + "/" + strID2);
+            reqObtener.Method = "GET";
+            HttpWebResponse resObtener = (HttpWebResponse)reqObtener.GetResponse();
+            StreamReader readerObtener = new StreamReader(resObtener.GetResponseStream());
+            string viviendaJsonObtener = readerObtener.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Vivienda viviendaEliminada = js.Deserialize<Vivienda>(viviendaJsonObtener);
 
 
-        //[TestMethod]
-        //public void ViviendaiNSERTARtar00202Test()
-        //{
-        //    ViviendasService.ViviendasService xx = new ViviendasService.ViviendasService();
-        //    ViviendaBE ITEMListado = new ViviendaBE();
-        //    RetornaMensaje X = new RetornaMensaje();
+            Assert.AreEqual(null, viviendaEliminada);
+        }
 
-        //    ITEMListado.N_IdVivienda=8
-        //    ITEMListado.C_NumDpto = "XXX";
-        //    ITEMListado.C_NumEdificio = "XEFX";
-        //    ITEMListado.N_IdResidente = 1;
-        //    ITEMListado.N_NumMetros = 120;
-        //    ITEMListado.C_CodTipo = "CAS";
+        [TestMethod]
+        public void ViviendaBuscarTest()
+        {
+            string IDvivienda = "2";
+            string strURL = "http://localhost:62023/ViviendasService.svc/Viviendas";
 
-        //    X = xx.uP(ITEMListado);
+            HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
+               .Create(strURL + "/" + IDvivienda);
+            reqObtener.Method = "GET";
+            HttpWebResponse resObtener = (HttpWebResponse)reqObtener.GetResponse();
+            StreamReader readerObtener = new StreamReader(resObtener.GetResponseStream());
+            string viviendaJsonObtener = readerObtener.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Vivienda viviendaCreado = js.Deserialize<Vivienda>(viviendaJsonObtener);
 
-        //    Assert.AreNotEqual(0, X.CodigoRetorno);
-        //}
+            Assert.AreEqual(Convert.ToInt32(IDvivienda), viviendaCreado.N_IdVivienda);
+        }
+
+
+        [TestMethod]
+        public void ViviendaiNSERTARtar00202Test()
+        {
+            string postdata = "{\"N_IdResidente\":\"29\"," +
+            "\"C_NumEdificio\":\"8524\"," +
+            "\"C_NumDpto\":\"Dv0X\"," +
+            "\"N_NumMetros\":\"110\"," +
+            "\"C_CodTipo\":\"DEPA\" }"; //JSON
+
+            string strIdVivienda = "2";
+            byte[] data = Encoding.UTF8.GetBytes(postdata);
+
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+                 .Create("http://localhost:62023/ViviendasService.svc/Viviendas/" + strIdVivienda); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
+
+            req.Method = "PUT";
+            req.ContentLength = data.Length;
+            req.ContentType = "application/json";
+
+            var reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+
+            var res = (HttpWebResponse)req.GetResponse();
+            StreamReader reader = new StreamReader(res.GetResponseStream());
+            string retornaMensajeJson = reader.ReadToEnd();
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            RetornaMensajeT retornaMensaje = js.Deserialize<RetornaMensajeT>(retornaMensajeJson);
+
+            Assert.AreNotEqual(true, retornaMensaje.Exito);
+        }
     }
 }
