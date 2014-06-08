@@ -65,6 +65,7 @@
     <Compile Include="Dominio\Directivo.cs" />
     <Compile Include="Dominio\Junta.cs" />
     <Compile Include="Dominio\JuntaDirectivos.cs" />
+    <Compile Include="Dominio\ListaJuntas.cs" />
     <Compile Include="IJuntaService.cs" />
     <Compile Include="JuntaService.svc.cs">
       <DependentUpon>JuntaService.svc</DependentUpon>

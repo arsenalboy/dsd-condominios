@@ -35,6 +35,15 @@
   <wsdl:message name="IJuntaService_CreaJuntaDirectivos_RetornaMensajeFault_FaultMessage">
     <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q3:RetornaMensaje" />
   </wsdl:message>
+  <wsdl:message name="IJuntaService_listarJuntas_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarJuntas" />
+  </wsdl:message>
+  <wsdl:message name="IJuntaService_listarJuntas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarJuntasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJuntaService_listarJuntas_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q4:RetornaMensaje" />
+  </wsdl:message>
   <wsdl:portType name="IJuntaService">
     <wsdl:operation name="listarDirectivos">
       <wsdl:input wsaw:Action="http://tempuri.org/IJuntaService/listarDirectivos" message="tns:IJuntaService_listarDirectivos_InputMessage" />
@@ -50,6 +59,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivos" message="tns:IJuntaService_CreaJuntaDirectivos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivosResponse" message="tns:IJuntaService_CreaJuntaDirectivos_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivosRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IJuntaService_CreaJuntaDirectivos_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarJuntas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJuntaService/listarJuntas" message="tns:IJuntaService_listarJuntas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJuntaService/listarJuntasResponse" message="tns:IJuntaService_listarJuntas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IJuntaService/listarJuntasRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IJuntaService_listarJuntas_RetornaMensajeFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IJuntaService" type="tns:IJuntaService">
@@ -80,6 +94,18 @@
     </wsdl:operation>
     <wsdl:operation name="CreaJuntaDirectivos">
       <soap:operation soapAction="http://tempuri.org/IJuntaService/CreaJuntaDirectivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listarJuntas">
+      <soap:operation soapAction="http://tempuri.org/IJuntaService/listarJuntas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

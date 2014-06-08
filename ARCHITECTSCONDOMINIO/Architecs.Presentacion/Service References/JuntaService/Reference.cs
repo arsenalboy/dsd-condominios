@@ -215,6 +215,163 @@ namespace Architecs.Presentacion.JuntaService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ListaJuntas", Namespace="http://schemas.datacontract.org/2004/07/Architecs.ReunionesService.Dominio")]
+    [System.SerializableAttribute()]
+    public partial class ListaJuntas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string C_AcuerdoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string C_CargoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string C_HoraField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string C_NomPerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string C_PREJUNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string C_TemaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string D_FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int N_IdJuntaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string C_Acuerdo {
+            get {
+                return this.C_AcuerdoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.C_AcuerdoField, value) != true)) {
+                    this.C_AcuerdoField = value;
+                    this.RaisePropertyChanged("C_Acuerdo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string C_Cargo {
+            get {
+                return this.C_CargoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.C_CargoField, value) != true)) {
+                    this.C_CargoField = value;
+                    this.RaisePropertyChanged("C_Cargo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string C_Hora {
+            get {
+                return this.C_HoraField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.C_HoraField, value) != true)) {
+                    this.C_HoraField = value;
+                    this.RaisePropertyChanged("C_Hora");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string C_NomPer {
+            get {
+                return this.C_NomPerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.C_NomPerField, value) != true)) {
+                    this.C_NomPerField = value;
+                    this.RaisePropertyChanged("C_NomPer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string C_PREJUN {
+            get {
+                return this.C_PREJUNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.C_PREJUNField, value) != true)) {
+                    this.C_PREJUNField = value;
+                    this.RaisePropertyChanged("C_PREJUN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string C_Tema {
+            get {
+                return this.C_TemaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.C_TemaField, value) != true)) {
+                    this.C_TemaField = value;
+                    this.RaisePropertyChanged("C_Tema");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string D_Fecha {
+            get {
+                return this.D_FechaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.D_FechaField, value) != true)) {
+                    this.D_FechaField = value;
+                    this.RaisePropertyChanged("D_Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int N_IdJunta {
+            get {
+                return this.N_IdJuntaField;
+            }
+            set {
+                if ((this.N_IdJuntaField.Equals(value) != true)) {
+                    this.N_IdJuntaField = value;
+                    this.RaisePropertyChanged("N_IdJunta");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuntaService.IJuntaService")]
     public interface IJuntaService {
@@ -230,6 +387,10 @@ namespace Architecs.Presentacion.JuntaService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivos", ReplyAction="http://tempuri.org/IJuntaService/CreaJuntaDirectivosResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.JuntaService.RetornaMensaje), Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivosRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         int CreaJuntaDirectivos(int N_IdJunta, int N_IdDirectivo, string C_PreJun, bool B_Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntaService/listarJuntas", ReplyAction="http://tempuri.org/IJuntaService/listarJuntasResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.JuntaService.RetornaMensaje), Action="http://tempuri.org/IJuntaService/listarJuntasRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        System.Collections.Generic.List<Architecs.Presentacion.JuntaService.ListaJuntas> listarJuntas(string fechaini, string fechafin);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -269,6 +430,10 @@ namespace Architecs.Presentacion.JuntaService {
         
         public int CreaJuntaDirectivos(int N_IdJunta, int N_IdDirectivo, string C_PreJun, bool B_Estado) {
             return base.Channel.CreaJuntaDirectivos(N_IdJunta, N_IdDirectivo, C_PreJun, B_Estado);
+        }
+        
+        public System.Collections.Generic.List<Architecs.Presentacion.JuntaService.ListaJuntas> listarJuntas(string fechaini, string fechafin) {
+            return base.Channel.listarJuntas(fechaini, fechafin);
         }
     }
 }

@@ -23,5 +23,11 @@ namespace Architecs.QuejasService
         {
             return ObjQUejaDAO.listarQuejas(FechaIni, FechaFin, C_Tipo);
         }
+
+
+        public void Actualizar(string N_IdQueja, string B_Estado)
+        {
+            ObjQUejaDAO.Actualizar(N_IdQueja, B_Estado);
+        }
     }
 }

@@ -6,6 +6,7 @@ using Architecs.QuejasService.Dominio;
 using System.Data.SqlClient;
 using System.Data;
 using Architects.Dominio;
+using System.ServiceModel;
 
 namespace Architecs.QuejasService.Persistencia
 {
@@ -91,11 +92,39 @@ namespace Architecs.QuejasService.Persistencia
                 objQueja.D_FecRegistro = Convert.ToDateTime(valores[1]);
                 return objQueja;
             }
-            catch (Exception ex)
+            catch (FaultException ex)
             {
                 if (objconeccion.State == ConnectionState.Open)
                     objconeccion.Close();
-                throw new Exception(ex.Message);
+                throw new FaultException(ex.Message);
+            }
+
+
+        }
+
+        public void Actualizar(string N_IdQueja, string B_Estado)
+        {
+            try
+            {
+                objconeccion = new SqlConnection(CadenaConexionSQL);
+                SqlCommand objcomand = new SqlCommand("ACTUALIZAR_QUEJA", objconeccion);
+                objcomand.CommandType = CommandType.StoredProcedure;
+                objcomand.Parameters.Add("@N_IdQueja", SqlDbType.Int);
+                objcomand.Parameters["@N_IdQueja"].Value = Convert.ToInt32(N_IdQueja);
+                objcomand.Parameters.Add("@B_Estado ", SqlDbType.Bit);
+                objcomand.Parameters["@B_Estado "].Value =Convert.ToBoolean( B_Estado);
+                objconeccion.Open();
+
+                objcomand.ExecuteNonQuery();
+              
+                objconeccion.Close();
+
+            }
+            catch (FaultException ex)
+            {
+                if (objconeccion.State == ConnectionState.Open)
+                    objconeccion.Close();
+                throw new FaultException(ex.Message);
             }
 
 

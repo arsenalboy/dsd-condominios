@@ -62,5 +62,12 @@ namespace Architecs.ReunionesService
         }
 
         #endregion
+
+
+        public List<ListaJuntas> listarJuntas(string fechaini, string fechafin)
+        {
+
+            return ObjjuntaDAO.listarJuntas(fechaini, fechafin);
+        }
     }
 }
