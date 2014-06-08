@@ -101,5 +101,34 @@ namespace Architecs.Presentacion.Quejas
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", strScript, false);
             }
         }
+
+        protected void ChkAtendido_CheckedChanged(object sender, EventArgs e)
+        {
+            //cambiamos el estado del atendido
+            CheckBox check;
+            GridViewRow gvrow;
+
+            check = (CheckBox)sender;
+            gvrow = (GridViewRow)check.NamingContainer;
+
+            int id;
+            id = (int)GvQuejas.DataKeys[gvrow.RowIndex].Values["N_IdQueja"];
+
+            string VALOR;
+            if (check.Checked)
+                VALOR = "true";
+            else
+                VALOR = "false";
+
+            string strURL = "http://localhost:62070/QuejaService.svc/Quejas/" + id.ToString() +"," + VALOR;
+            HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
+               .Create(strURL);
+            reqObtener.Method = "UPDATE";
+            HttpWebResponse resObtener = (HttpWebResponse)reqObtener.GetResponse();
+            StreamReader readerObtener = new StreamReader(resObtener.GetResponseStream());
+            string QuejasObtener = readerObtener.ReadToEnd();
+            //JavaScriptSerializer js = new JavaScriptSerializer();
+            //IList<Queja> ListaQuejas = js.Deserialize<List<Queja>>(QuejasObtener);
+        }
     }
 }

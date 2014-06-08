@@ -115,5 +115,34 @@ namespace Architecs.ReunionesService.Persistencia
 
         }
 
+        public List<ListaJuntas> listarJuntas(string fechaini, string fechafin)
+        {
+            List<ListaJuntas> ListadeListaJuntas = new List<ListaJuntas>();
+            objconeccion = new SqlConnection(CadenaConexionSQL);
+            SqlCommand objcomand = new SqlCommand("LISTAR_JUNTAS", objconeccion);
+            objcomand.CommandType = CommandType.StoredProcedure;
+            objcomand.Parameters.Add("@FECHAINI", SqlDbType.Date);
+            objcomand.Parameters["@FECHAINI"].Value = fechaini;
+            objcomand.Parameters.Add("@FECHAFIN", SqlDbType.Date);
+            objcomand.Parameters["@FECHAFIN"].Value = fechafin;
+            objconeccion.Open();
+            SqlDataReader reader = objcomand.ExecuteReader();
+            while (reader.Read())
+            {
+                ListaJuntas obListaJuntas = new ListaJuntas();
+                obListaJuntas.N_IdJunta = reader.GetInt32(0);
+                obListaJuntas.D_Fecha = reader.GetString(1);
+                obListaJuntas.C_Hora = reader.GetString(2);
+                obListaJuntas.C_Tema = reader.GetString(3);
+                obListaJuntas.C_Acuerdo = reader.GetString(4);
+                obListaJuntas.C_NomPer = reader.GetString(5);
+                obListaJuntas.C_Cargo = reader.GetString(6);
+                obListaJuntas.C_PREJUN = reader.GetString(7);
+                ListadeListaJuntas.Add(obListaJuntas);
+            }
+            return ListadeListaJuntas;
+
+        }
+
     }
 }

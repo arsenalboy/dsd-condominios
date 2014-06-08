@@ -27,5 +27,10 @@ namespace Architecs.ReunionesService
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "CreaJuntaDirectivos")]
         Int32 CreaJuntaDirectivos(int N_IdJunta, int N_IdDirectivo, string C_PreJun, Boolean B_Estado);
+
+        /* LISTAR LAS JUNTAS POR FECHA */
+        [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "listarJuntas")]
+        List<ListaJuntas> listarJuntas(string fechaini, string fechafin);
     }
 }

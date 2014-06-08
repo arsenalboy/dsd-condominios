@@ -16,4 +16,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Directivo" nillable="true" type="tns:Directivo" />
+  <xs:complexType name="ArrayOfListaJuntas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaJuntas" nillable="true" type="tns:ListaJuntas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaJuntas" nillable="true" type="tns:ArrayOfListaJuntas" />
+  <xs:complexType name="ListaJuntas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="C_Acuerdo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Cargo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Hora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_NomPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_PREJUN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C_Tema" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="N_IdJunta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaJuntas" nillable="true" type="tns:ListaJuntas" />
 </xs:schema>

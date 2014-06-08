@@ -49,4 +49,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="listarJuntas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fechaini" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechafin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarJuntasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Architecs.ReunionesService.Dominio" minOccurs="0" name="listarJuntasResult" nillable="true" type="q2:ArrayOfListaJuntas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

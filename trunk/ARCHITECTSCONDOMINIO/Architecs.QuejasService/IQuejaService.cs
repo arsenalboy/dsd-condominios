@@ -20,5 +20,9 @@ namespace Architecs.QuejasService
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Quejas/Todos/{FechaIni},{FechaFin},{C_Tipo}", ResponseFormat = WebMessageFormat.Json)]
         List<Queja> ListarQuejas(string FechaIni, string FechaFin, string C_Tipo);
+
+        [OperationContract]
+        [WebInvoke(Method = "UPDATE", UriTemplate = "Quejas/{N_IdQueja},{B_Estado}", RequestFormat = WebMessageFormat.Json)]
+        void Actualizar(string N_IdQueja, string B_Estado);
     }
 }

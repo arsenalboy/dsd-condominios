@@ -32,7 +32,7 @@
                       <asp:ListItem>Muy Grave</asp:ListItem>
                   </asp:DropDownList>
         </div>
-    <%--    <div class="col-md-3">
+          <%--    <div class="col-md-3">
           <div class="checkbox">
             <label>
               <input type="checkbox"  id="chktodos" name="todos">Todos</label>
@@ -57,7 +57,7 @@
         </div>
       </div>
       <hr>
-     <%-- <table class="table table-bordered table-hover" id="jqueryDataTable">
+        <%-- <table class="table table-bordered table-hover" id="jqueryDataTable">
         <thead>
           <tr class="success">
             <th>ID Queja</th>
@@ -72,7 +72,7 @@
         </tbody>
       </table>  --%>
         <asp:GridView ID="GvQuejas" runat="server" 
-            class="table table-bordered table-hover" AutoGenerateColumns="False">
+            class="table table-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="N_IdQueja">
             <Columns>
                 <asp:BoundField DataField="N_IdQueja" HeaderText="N_IdQueja" >
                 <ItemStyle Width="100px" />
@@ -89,7 +89,7 @@
                     DataFormatString="{0:dd/MM/yyyy}">
                 <ItemStyle HorizontalAlign="Center" Width="90px" />
                 </asp:BoundField>
-                <asp:BoundField DataField="B_Estado" HeaderText="B_Estado" Visible="False" />
+                <%--<asp:BoundField DataField="B_Estado" HeaderText="B_Estado" Visible="False" />--%>
                 <asp:BoundField DataField="C_Nombre" HeaderText="RESIDENTE" >
                 <ItemStyle Width="200px" />
                 </asp:BoundField>
@@ -102,6 +102,13 @@
                 <asp:BoundField DataField="D_FecQueja" HeaderText="Fecha Queja" >
                 <ItemStyle HorizontalAlign="Center" Width="90px" />
                 </asp:BoundField>
+                <asp:TemplateField HeaderText="Atendido">
+                    <ItemTemplate>
+                        <asp:CheckBox ID="ChkAtendido" runat="server" Checked='<%# Eval("B_Estado") %>' 
+                            AutoPostBack="True" oncheckedchanged="ChkAtendido_CheckedChanged" />
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" Width="60px" />
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
       <footer>
