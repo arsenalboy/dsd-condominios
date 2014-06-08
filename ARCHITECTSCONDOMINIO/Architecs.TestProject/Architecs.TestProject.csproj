@@ -61,6 +61,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ResidenteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SOAPagosService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +89,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ResidenteProxy\ResidenteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResidenteService\ResidenteService.wsdl" />
+    <None Include="Service References\ResidenteService\ResidenteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResidenteService\ResidenteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResidenteService\ResidenteService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SOAPagosService\Architecs.TestProject.SOAPagosService.Cuota.datasource">
@@ -110,6 +125,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ResidenteService\" />
     <WCFMetadataStorage Include="Service References\SOAPagosService\" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +158,12 @@
       <LastGenOutput>Reference1.cs</LastGenOutput>
     </Content>
     <Content Include="Service References\ResidenteProxy\ResidenteService.disco" />
+    <None Include="Service References\ResidenteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ResidenteService\configuration.svcinfo" />
+    <None Include="Service References\ResidenteService\configuration91.svcinfo" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
