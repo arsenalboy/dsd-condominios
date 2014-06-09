@@ -16,7 +16,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[7];
+        _operations = new org.apache.axis.description.OperationDesc[8];
         _initOperationDesc1();
     }
 
@@ -33,9 +33,9 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
-                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
                       true
                      ));
         _operations[0] = oper;
@@ -62,9 +62,9 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
-                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
                       true
                      ));
         _operations[1] = oper;
@@ -85,16 +85,16 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
-                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
                       true
                      ));
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ObtenerResidentePorID");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "residenteId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "residente"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"));
@@ -103,12 +103,31 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
-                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
                       true
                      ));
         _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("ObtenerResidentePorNroDocumento");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "numeroDocumento"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        param.setNillable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ResidenteBE"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ObtenerResidentePorNroDocumentoResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
+                      true
+                     ));
+        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CrearResidente");
@@ -122,12 +141,12 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
-                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
                       true
                      ));
-        _operations[4] = oper;
+        _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ActualizarResidente");
@@ -135,36 +154,36 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         param.setOmittable(true);
         param.setNillable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "ActualizarResidenteResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
-                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
                       true
                      ));
-        _operations[5] = oper;
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("EliminarResidente");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "residenteID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), java.lang.Integer.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"));
-        oper.setReturnClass(org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"));
+        oper.setReturnClass(org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "EliminarResidenteResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"),
-                      "org.datacontract.schemas._2004._07.ResidenteService.ValidationException",
-                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException"), 
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"),
+                      "org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException",
+                      new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException"), 
                       true
                      ));
-        _operations[6] = oper;
+        _operations[7] = oper;
 
     }
 
@@ -213,9 +232,9 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/ResidenteService", "ValidationException");
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ValidationException");
             cachedSerQNames.add(qName);
-            cls = org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class;
+            cls = org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -286,7 +305,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         }
     }
 
-    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] listarResidentes() throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] listarResidentes() throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -320,15 +339,15 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
-              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] buscarResidentes(java.lang.String nombre, java.lang.String apellidos, java.lang.String numDocumento) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] buscarResidentes(java.lang.String nombre, java.lang.String apellidos, java.lang.String numDocumento) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -362,15 +381,15 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
-              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] listarResidentesPaginado(java.lang.Integer page, java.lang.Integer size) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE[] listarResidentesPaginado(java.lang.Integer page, java.lang.Integer size) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -404,15 +423,15 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
-              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE obtenerResidentePorID(java.lang.Integer residenteId) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE obtenerResidentePorID(java.lang.Integer residente) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -428,7 +447,7 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {residenteId});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {residente});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -446,20 +465,62 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
-              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public java.lang.Integer crearResidente(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE prmResidente) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE obtenerResidentePorNroDocumento(java.lang.String numeroDocumento) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[4]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ObtenerResidentePorNroDocumento");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "ObtenerResidentePorNroDocumento"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {numeroDocumento});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.Integer crearResidente(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE prmResidente) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://tempuri.org/IResidenteService/CrearResidente");
         _call.setEncodingStyle(null);
@@ -488,20 +549,20 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
-              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.ResidenteService.ValidationException actualizarResidente(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE prmResidente) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException actualizarResidente(org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE prmResidente) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
+        _call.setOperation(_operations[6]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://tempuri.org/IResidenteService/ActualizarResidente");
         _call.setEncodingStyle(null);
@@ -520,9 +581,9 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         else {
             extractAttachments(_call);
             try {
-                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) _resp;
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) _resp;
             } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -530,20 +591,20 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
-              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
          }
    }
   throw axisFaultException;
 }
     }
 
-    public org.datacontract.schemas._2004._07.ResidenteService.ValidationException eliminarResidente(java.lang.Integer residenteID) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.ResidenteService.ValidationException {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException eliminarResidente(java.lang.Integer residenteID) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://tempuri.org/IResidenteService/EliminarResidente");
         _call.setEncodingStyle(null);
@@ -562,9 +623,9 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         else {
             extractAttachments(_call);
             try {
-                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) _resp;
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) _resp;
             } catch (java.lang.Exception _exception) {
-                return (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.ResidenteService.ValidationException.class);
+                return (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) org.apache.axis.utils.JavaUtils.convert(_resp, org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -572,8 +633,8 @@ public class BasicHttpBinding_IResidenteServiceStub extends org.apache.axis.clie
         if (axisFaultException.detail instanceof java.rmi.RemoteException) {
               throw (java.rmi.RemoteException) axisFaultException.detail;
          }
-        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.ResidenteService.ValidationException) {
-              throw (org.datacontract.schemas._2004._07.ResidenteService.ValidationException) axisFaultException.detail;
+        if (axisFaultException.detail instanceof org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) {
+              throw (org.datacontract.schemas._2004._07.Architects_Dominio.ValidationException) axisFaultException.detail;
          }
    }
   throw axisFaultException;

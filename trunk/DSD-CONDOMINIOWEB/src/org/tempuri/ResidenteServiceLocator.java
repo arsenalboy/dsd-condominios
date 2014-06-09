@@ -22,7 +22,7 @@ public class ResidenteServiceLocator extends org.apache.axis.client.Service impl
     }
 
     // Use to get a proxy class for BasicHttpBinding_IResidenteService
-    private java.lang.String BasicHttpBinding_IResidenteService_address = "http://localhost:61951/ResidenteService.svc?wsdl";
+    private java.lang.String BasicHttpBinding_IResidenteService_address = "http://localhost:61951/ResidenteService.svc";
 
     public java.lang.String getBasicHttpBinding_IResidenteServiceAddress() {
         return BasicHttpBinding_IResidenteService_address;
