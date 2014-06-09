@@ -7,8 +7,9 @@ using System.Text;
 using System.Web.Script.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Architects.Dominio;
+
 using System.Runtime.Serialization;
+using Architecs.TestProject;
 
 namespace Architects.TestProject
 {   

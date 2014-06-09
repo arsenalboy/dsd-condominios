@@ -3,11 +3,12 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Architecs.TestProject.SOAPagosService;
 using System.ServiceModel;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
+using Architecs.TestProject.SOAPPagos;
+
 
 
 namespace Architecs.TestProject
@@ -19,6 +20,7 @@ namespace Architecs.TestProject
         [TestMethod]
         public void TipoPagoListarTest()
         {
+
             PagosServiceClient proxy = new PagosServiceClient();
             IList<TipoPago> tipoPagoListar;
             tipoPagoListar = proxy.ListarTipoPago();
@@ -26,17 +28,17 @@ namespace Architecs.TestProject
             Assert.AreNotEqual(tipoPagoListar.Count, 0);
         }
 
-        //[TestMethod]
-        public void TipoPagoCrearTest()
-        {
-            PagosServiceClient proxy = new PagosServiceClient();
-            RetornaMensaje retornaMensaje = null;
-            TipoPago tipoPago = new TipoPago();
-            string strDescripcion = "CONTADO";
-            retornaMensaje = proxy.RegistrarTipoPago(strDescripcion);
+        ////[TestMethod]
+        //public void TipoPagoCrearTest()
+        //{
+        //    PagosServiceClient proxy = new PagosServiceClient();
+        //    RetornaMensajeT retornaMensaje = null;
+        //    TipoPago tipoPago = new TipoPago();
+        //    string strDescripcion = "CONTADO";
+        //    retornaMensaje = proxy.RegistrarTipoPago(strDescripcion);
 
-            Assert.AreEqual(tipoPago.C_Descripcion, strDescripcion);
-        }
+        //    Assert.AreEqual(tipoPago.C_Descripcion, strDescripcion);
+        //}
 
         /* TABLA : Cuota*/
         [TestMethod]
@@ -52,7 +54,7 @@ namespace Architecs.TestProject
             string D_FecVncto = DateTime.Now.ToShortDateString();
             try
             {
-                retornaMensaje = proxy.RegistrarCuota(C_Periodo, N_IdVivienda,Convert.ToDouble(N_Importe), D_FecVncto);
+                retornaMensaje = proxy.RegistrarCuota(C_Periodo, N_IdVivienda, Convert.ToDouble(N_Importe), D_FecVncto);
 
                 Assert.AreNotEqual(0, retornaMensaje.CodigoRetorno);
             }

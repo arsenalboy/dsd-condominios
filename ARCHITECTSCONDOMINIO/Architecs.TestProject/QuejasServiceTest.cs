@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
-using Architecs.Presentacion.Dominio;
+using Architecs.TestProject.Dominio;
 
 namespace Architecs.TestProject
 {
