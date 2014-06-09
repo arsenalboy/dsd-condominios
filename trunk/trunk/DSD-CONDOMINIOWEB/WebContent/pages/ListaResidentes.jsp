@@ -76,10 +76,10 @@ if(r.getN_TipoDoc()==1){
   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
     <span class="fa fa-caret-down">></span></a>
   <ul class="dropdown-menu">
-    <li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=4&cod=<%=r.getN_IdResidente()%>&keepThis=true&TB_iframe=true&height=300&width=750" 
-			title="ACTUALIZAR RESIDENTE" class="thickbox">Actualizar</a></li>
+    <li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=4&cod=<%=r.getN_IdResidente()%>&keepThis=true&TB_iframe=true&height=50	0&width=750" 
+			class="thickbox">Actualizar</a></li>
     <li class="divider"></li>
-    <li><a href="#"><i class="i"></i> Eliminar</a></li>
+    <li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=5&cod=<%=r.getN_IdResidente()%>"><i class="i"></i> Eliminar</a></li>
   </ul>
 </div>
 </td>
