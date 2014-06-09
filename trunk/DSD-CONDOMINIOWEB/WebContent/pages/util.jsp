@@ -10,9 +10,9 @@
 <%
 int x = Integer.parseInt(request.getParameter("aux"));
 if(x>0){
-	out.println("Registro guardado Satisfactoriamente");
+	out.println("Registro guardado Satisfactoriamente "+x);
 }else{
-	out.println("OcurriÓ un error en el rgistro");
+	out.println("OcurriÓ un error en el rgistro "+x);
 }
 %>
 </body>

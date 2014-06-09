@@ -33,8 +33,6 @@ public class ResidenteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request,response);
-		
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +57,7 @@ public class ResidenteServlet extends HttpServlet {
 		
 		try{
  
-			if(opcion.equals("1")){	//trae todos los residentes
+			if(opcion.equals("1")){	//Lista todos los residentes
 				
 				ResidenteWS residente = new ResidenteWS();
 				
@@ -67,7 +65,7 @@ public class ResidenteServlet extends HttpServlet {
 				request.setAttribute("ListaResidentes", listado);
 				page="/pages/ListaResidentes.jsp";
 				
-			}else if(opcion.equals("2")){ //registra Residentes
+			}else if(opcion.equals("2")){ //Registra Residentes
 				
 				ResidenteWS residente = new ResidenteWS();
 				int x= residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
@@ -76,31 +74,28 @@ public class ResidenteServlet extends HttpServlet {
 			}else if(opcion.equals("3")){ //Actualiza Residentes
 				
 				ResidenteWS residente = new ResidenteWS();
-				int x=residente.ModificarResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+				int x = residente.ModificarResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
 				page="/pages/util.jsp?aux="+x;
-				
-				
-			}else if(opcion.equals("4")){ //Obtiene un residente por codigo
+					
+			}else if(opcion.equals("4")){ //Obtiene un residente por código
 				
 				ResidenteWS residente = new ResidenteWS();
 				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"0":request.getParameter("cod").trim());								
 				
-				
 				System.out.println("codigo"+codigo);
 				ResidenteBE r=residente.ObtenerResidentePorID(codigo);
-				//residente.ObtenerResidente(codigo);mos
 				request.setAttribute("residente",r);
 				
 				page="/pages/frmResidenteActualizar.jsp";
 				
-			}else if(opcion.equals("5")){
-				/*page="/pages/detalleVivienda.jsp";
-				String codigo=request.getParameter("codigo").trim().equals("")?"-1":request.getParameter("codigo").trim();								
-			
-				GestionVivienda viv=new GestionVivienda();
-				Vivienda vivienda=viv.obtener(Integer.parseInt(codigo));
-				request.setAttribute("vivienda",vivienda);*/
+			}else if(opcion.equals("5")){ //Elimina un Residente
 				
+				ResidenteWS residente = new ResidenteWS();
+				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"0":request.getParameter("cod").trim());								
+				int x= residente.EliminarResidente(codigo);
+				ResidenteBE[] listado = residente.listarResidente();
+				request.setAttribute("ListaResidentes", listado);
+				page="/pages/ListaResidentes.jsp?"+x;
 			}
 						
 		}catch(Exception e){
