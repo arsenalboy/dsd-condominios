@@ -46,6 +46,4 @@ namespace ResidenteService
         [OperationContract]
         ValidationException EliminarResidente(int residenteID);
     }
-
-   
 }
