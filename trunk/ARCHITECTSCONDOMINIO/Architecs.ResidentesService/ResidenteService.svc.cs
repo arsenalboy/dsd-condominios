@@ -103,7 +103,14 @@ namespace ResidenteService
         {
             try
             {
-                return objDA.CrearResidente(prmResidente);
+                if (ObtenerResidentePorNroDocumento(prmResidente.C_NumDocume) == null)
+                {
+                    return objDA.CrearResidente(prmResidente);                    
+                }
+                else
+                    throw new FaultException<ValidationException>
+                    (new ValidationException { ValidationError = "Este Número de Documento ya ha sido registrado" },
+                    new FaultReason("Residente Existente"));                
             }
             catch (Exception ex)
             {
