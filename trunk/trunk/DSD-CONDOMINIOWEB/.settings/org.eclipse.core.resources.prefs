@@ -3,6 +3,7 @@ encoding//src/org/datacontract/schemas/_2004/_07/Architecs_PagosService/Cuota.ja
 encoding//src/org/datacontract/schemas/_2004/_07/Architecs_PagosService/TipoPago.java=UTF-8
 encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/ResidenteBE.java=UTF-8
 encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/RetornaMensaje.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/ValidationException.java=UTF-8
 encoding//src/org/datacontract/schemas/_2004/_07/Architects_Dominio/Vivienda.java=UTF-8
 encoding//src/org/datacontract/schemas/_2004/_07/ResidenteService/ValidationException.java=UTF-8
 encoding//src/org/tempuri/BasicHttpBinding_IPagosServiceStub.java=UTF-8

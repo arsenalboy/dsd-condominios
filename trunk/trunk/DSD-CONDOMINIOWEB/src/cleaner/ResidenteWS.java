@@ -28,7 +28,7 @@ public class ResidenteWS {
 			prmResidenteBE.setC_Apellidos(c_Apellidos);
 			prmResidenteBE.setN_TipoDoc(n_TipoDoc);
 			prmResidenteBE.setC_NumDocume(c_NumDocume);
-			prmResidenteBE.setD_FecNacimi(d_FecNacimi) ;
+			//prmResidenteBE.setD_FecNacimi(d_FecNacimi) ;
 			prmResidenteBE.setC_Correo(c_Correo);
 			prmResidenteBE.setC_Clave(c_Clave);
 			return servicio.crearResidente(prmResidenteBE);
