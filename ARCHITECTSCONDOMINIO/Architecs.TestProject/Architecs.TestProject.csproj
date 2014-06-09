@@ -72,6 +72,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Vivienda.cs" />
+    <Compile Include="TestJuntas.cs" />
     <Compile Include="TestResidente.cs" />
     <Compile Include="TestVisitas.cs" />
     <Compile Include="ViviendasServiceTest.cs" />
