@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Architects.Dominio;
 using System.ServiceModel;
+using System.Messaging;
 
 namespace Architecs.QuejasService.Persistencia
 {
@@ -128,6 +129,56 @@ namespace Architecs.QuejasService.Persistencia
             }
 
 
+        }
+
+        public Queja MensajeEncola(Queja objQueja)
+        {
+            //guardamos los mensajes en cola si ocurre error
+            string rutaCola = @".\private$\queja";
+            if (!MessageQueue.Exists(rutaCola))
+            {
+                MessageQueue.Create(rutaCola);
+            }
+            MessageQueue cola = new MessageQueue(rutaCola);
+            Message mensaje = new Message();
+            mensaje.Label = "Queja registrada con fecha " + DateTime.Now.ToShortDateString();
+            mensaje.Body = new Queja()
+            {
+                N_IdResidente = objQueja.N_IdResidente,
+                B_Estado = objQueja.B_Estado,
+                C_Detalle = objQueja.C_Detalle,
+                C_Motivo = objQueja.C_Motivo,
+                C_Tipo = objQueja.C_Tipo,
+                D_FecQueja = objQueja.D_FecQueja,
+                D_FecRegistro = objQueja.D_FecRegistro
+            };
+            cola.Send(mensaje);
+            return objQueja;
+        }
+
+
+        public int InsertaQuejaEnCola()
+        {
+            string rutaCola = @".\private$\queja";
+            MessageQueue cola = new MessageQueue(rutaCola);
+
+            int cantidadmensajes=0;
+            
+            if (MessageQueue.Exists(rutaCola))
+            {
+                //recorrer y grabar
+                foreach (Message mensajeTodo in cola.GetAllMessages())
+                {
+                    mensajeTodo.Formatter = new XmlMessageFormatter(new Type[] { typeof(Queja) });
+                    Queja ObjQueja = (Queja)mensajeTodo.Body;
+                    CreaQueja(ObjQueja);
+                }
+                cantidadmensajes = cola.GetAllMessages().Count();
+                //se elimina los mensajes
+                MessageQueue.Delete(rutaCola);
+            }
+            return cantidadmensajes;
+                      
         }
     }
 }

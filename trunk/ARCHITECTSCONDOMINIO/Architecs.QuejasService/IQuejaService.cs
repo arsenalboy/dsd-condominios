@@ -13,6 +13,7 @@ namespace Architecs.QuejasService
     [ServiceContract]
     public interface IQuejaService
     {
+        //-----------------REST----------------------------------
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "Quejas", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         Queja CrearQueja(Queja QuejaCrear);
@@ -24,5 +25,7 @@ namespace Architecs.QuejasService
         [OperationContract]
         [WebInvoke(Method = "UPDATE", UriTemplate = "Quejas/{N_IdQueja},{B_Estado}", RequestFormat = WebMessageFormat.Json)]
         void Actualizar(string N_IdQueja, string B_Estado);
+
+
     }
 }

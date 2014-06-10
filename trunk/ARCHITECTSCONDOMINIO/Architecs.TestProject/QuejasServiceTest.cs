@@ -6,7 +6,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
-using Architecs.TestProject.Dominio;
+using Architecs.TestProject.Entidades;
+using System.Messaging;
 
 namespace Architecs.TestProject
 {
@@ -17,7 +18,7 @@ namespace Architecs.TestProject
     public class QuejasServiceTest
     {
         [TestMethod]
-        public void AlumnoCrearTest()
+        public void CrearQueja()
         {
 
             string postdata = "{\"N_IdResidente\":2, \"C_Tipo\":\"Leve\",\"C_Motivo\":\"Motivo Prueba\",\"C_Detalle\":\"Detalle Prueba\",\"D_FecQueja\":\"2014-06-03\"}"; //JSON
@@ -49,7 +50,7 @@ namespace Architecs.TestProject
         }
 
         [TestMethod]
-        public void AlumnoListarTest()
+        public void ListarQuejas()
         {
 
             string strURL = "http://localhost:62070/QuejaService.svc/Quejas/Todos/2000-01-01,2015-01-01,Todos";
@@ -89,5 +90,56 @@ namespace Architecs.TestProject
 
         }
 
+        [TestMethod]
+        public void Enviarmensaje()
+        {
+            //guardamos los mensajes en cola si ocurre error
+            string rutaCola = @".\private$\quejatest";
+            if (!MessageQueue.Exists(rutaCola))
+            {
+                MessageQueue.Create(rutaCola);
+            }
+            MessageQueue cola = new MessageQueue(rutaCola);
+            Message mensaje = new Message();
+            mensaje.Label = "Queja registrada con fecha " + DateTime.Now.ToShortDateString() + "1";
+            mensaje.Body = new Queja()
+            {
+                N_IdResidente = 1,
+                B_Estado = false,
+                C_Detalle = "niuno",
+                C_Motivo = "muchos",
+                C_Tipo = "Grave",
+                D_FecQueja = "2014-06-10",
+                D_FecRegistro =Convert.ToDateTime( "2014-06-10")
+            };
+            cola.Send(mensaje);
+            
+            //leemos el mensaje enviado
+            if (MessageQueue.Exists(rutaCola))
+            {
+                //recorrer y grabar
+                IEnumerable<Message> xxx = cola.GetAllMessages().Where(x => x.Label == "Queja registrada con fecha " + DateTime.Now.ToShortDateString() + "1");
+
+                Queja ObjQueja = (Queja)xxx.ToList()[0].Body;
+                  //se elimina los mensajes
+                MessageQueue.Delete(rutaCola);
+
+                Assert.AreEqual(ObjQueja.N_IdResidente, 1);
+                Assert.AreEqual(ObjQueja.B_Estado, false);
+                Assert.AreEqual(ObjQueja.C_Detalle, "niuno");
+                Assert.AreEqual(ObjQueja.C_Motivo, "muchos");
+                Assert.AreEqual(ObjQueja.C_Tipo, "Grave");
+                Assert.AreEqual(ObjQueja.D_FecQueja, "2014-06-10");
+                Assert.AreEqual(ObjQueja.D_FecRegistro, Convert.ToDateTime("2014-06-10"));
+            }
+
+
+           
+
+            // Prueba de OBTENER un alumno vía HTTP GET
+
+
+
+        }
     }
 }
