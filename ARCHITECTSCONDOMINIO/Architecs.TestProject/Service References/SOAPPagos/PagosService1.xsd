@@ -17,7 +17,7 @@
       <xs:element minOccurs="0" name="C_NumEdificio" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="N_IdResidente" type="xs:int" />
       <xs:element minOccurs="0" name="N_IdVivienda" type="xs:int" />
-      <xs:element minOccurs="0" name="N_NumMetros" type="xs:decimal" />
+      <xs:element minOccurs="0" name="N_NumMetros" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="objResidente" nillable="true" type="tns:ResidenteBE" />
     </xs:sequence>
   </xs:complexType>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Architecs.TestProject.SOAPagosService {
+namespace Architecs.TestProject.SOAPPagos {
     using System.Runtime.Serialization;
     using System;
     
@@ -214,10 +214,10 @@ namespace Architecs.TestProject.SOAPagosService {
         private System.Nullable<decimal> N_ImporteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Architecs.TestProject.SOAPagosService.TipoPago objTipoPagoField;
+        private Architecs.TestProject.SOAPPagos.TipoPago objTipoPagoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Architecs.TestProject.SOAPagosService.ViviendaBE objViviendaField;
+        private Architecs.TestProject.SOAPPagos.ViviendaBE objViviendaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -321,7 +321,7 @@ namespace Architecs.TestProject.SOAPagosService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Architecs.TestProject.SOAPagosService.TipoPago objTipoPago {
+        public Architecs.TestProject.SOAPPagos.TipoPago objTipoPago {
             get {
                 return this.objTipoPagoField;
             }
@@ -334,7 +334,7 @@ namespace Architecs.TestProject.SOAPagosService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Architecs.TestProject.SOAPagosService.ViviendaBE objVivienda {
+        public Architecs.TestProject.SOAPPagos.ViviendaBE objVivienda {
             get {
                 return this.objViviendaField;
             }
@@ -384,10 +384,10 @@ namespace Architecs.TestProject.SOAPagosService {
         private int N_IdViviendaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal N_NumMetrosField;
+        private System.Nullable<decimal> N_NumMetrosField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Architecs.TestProject.SOAPagosService.ResidenteBE objResidenteField;
+        private Architecs.TestProject.SOAPPagos.ResidenteBE objResidenteField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -478,7 +478,7 @@ namespace Architecs.TestProject.SOAPagosService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal N_NumMetros {
+        public System.Nullable<decimal> N_NumMetros {
             get {
                 return this.N_NumMetrosField;
             }
@@ -491,7 +491,7 @@ namespace Architecs.TestProject.SOAPagosService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Architecs.TestProject.SOAPagosService.ResidenteBE objResidente {
+        public Architecs.TestProject.SOAPPagos.ResidenteBE objResidente {
             get {
                 return this.objResidenteField;
             }
@@ -687,43 +687,43 @@ namespace Architecs.TestProject.SOAPagosService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SOAPagosService.IPagosService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SOAPPagos.IPagosService")]
     public interface IPagosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarTipoPago", ReplyAction="http://tempuri.org/IPagosService/ListarTipoPagoResponse")]
-        Architecs.TestProject.SOAPagosService.TipoPago[] ListarTipoPago();
+        Architecs.TestProject.SOAPPagos.TipoPago[] ListarTipoPago();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/RegistrarTipoPago", ReplyAction="http://tempuri.org/IPagosService/RegistrarTipoPagoResponse")]
-        Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarTipoPago(string Descripcion);
+        Architecs.TestProject.SOAPPagos.RetornaMensaje RegistrarTipoPago(string Descripcion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/RegistrarCuota", ReplyAction="http://tempuri.org/IPagosService/RegistrarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/RegistrarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPPagos.RetornaMensaje), Action="http://tempuri.org/IPagosService/RegistrarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architecs.TestProject.SOAPPagos.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ActualizarCuota", ReplyAction="http://tempuri.org/IPagosService/ActualizarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.TestProject.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPPagos.RetornaMensaje), Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architecs.TestProject.SOAPPagos.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuota", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.TestProject.SOAPagosService.Cuota[] ListarCuota(string pPeriodo);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPPagos.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architecs.TestProject.SOAPPagos.Cuota[] ListarCuota(string pPeriodo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/BuscarCuota", ReplyAction="http://tempuri.org/IPagosService/BuscarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/BuscarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.TestProject.SOAPagosService.Cuota BuscarCuota(int pIdCuota);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPPagos.RetornaMensaje), Action="http://tempuri.org/IPagosService/BuscarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architecs.TestProject.SOAPPagos.Cuota BuscarCuota(int pIdCuota);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/EliminarCuota", ReplyAction="http://tempuri.org/IPagosService/EliminarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/EliminarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.TestProject.SOAPagosService.RetornaMensaje EliminarCuota(int pIdCuota);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.TestProject.SOAPPagos.RetornaMensaje), Action="http://tempuri.org/IPagosService/EliminarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architecs.TestProject.SOAPPagos.RetornaMensaje EliminarCuota(int pIdCuota);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPagosServiceChannel : Architecs.TestProject.SOAPagosService.IPagosService, System.ServiceModel.IClientChannel {
+    public interface IPagosServiceChannel : Architecs.TestProject.SOAPPagos.IPagosService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PagosServiceClient : System.ServiceModel.ClientBase<Architecs.TestProject.SOAPagosService.IPagosService>, Architecs.TestProject.SOAPagosService.IPagosService {
+    public partial class PagosServiceClient : System.ServiceModel.ClientBase<Architecs.TestProject.SOAPPagos.IPagosService>, Architecs.TestProject.SOAPPagos.IPagosService {
         
         public PagosServiceClient() {
         }
@@ -744,31 +744,31 @@ namespace Architecs.TestProject.SOAPagosService {
                 base(binding, remoteAddress) {
         }
         
-        public Architecs.TestProject.SOAPagosService.TipoPago[] ListarTipoPago() {
+        public Architecs.TestProject.SOAPPagos.TipoPago[] ListarTipoPago() {
             return base.Channel.ListarTipoPago();
         }
         
-        public Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarTipoPago(string Descripcion) {
+        public Architecs.TestProject.SOAPPagos.RetornaMensaje RegistrarTipoPago(string Descripcion) {
             return base.Channel.RegistrarTipoPago(Descripcion);
         }
         
-        public Architecs.TestProject.SOAPagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
+        public Architecs.TestProject.SOAPPagos.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
             return base.Channel.RegistrarCuota(pPeriodo, pIdVivienda, pImporte, pFecVncto);
         }
         
-        public Architecs.TestProject.SOAPagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
+        public Architecs.TestProject.SOAPPagos.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
             return base.Channel.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto);
         }
         
-        public Architecs.TestProject.SOAPagosService.Cuota[] ListarCuota(string pPeriodo) {
+        public Architecs.TestProject.SOAPPagos.Cuota[] ListarCuota(string pPeriodo) {
             return base.Channel.ListarCuota(pPeriodo);
         }
         
-        public Architecs.TestProject.SOAPagosService.Cuota BuscarCuota(int pIdCuota) {
+        public Architecs.TestProject.SOAPPagos.Cuota BuscarCuota(int pIdCuota) {
             return base.Channel.BuscarCuota(pIdCuota);
         }
         
-        public Architecs.TestProject.SOAPagosService.RetornaMensaje EliminarCuota(int pIdCuota) {
+        public Architecs.TestProject.SOAPPagos.RetornaMensaje EliminarCuota(int pIdCuota) {
             return base.Channel.EliminarCuota(pIdCuota);
         }
     }
