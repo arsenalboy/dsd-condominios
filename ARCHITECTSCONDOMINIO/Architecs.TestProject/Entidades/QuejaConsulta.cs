@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace Architecs.TestProject.Dominio
+namespace Architecs.TestProject.Entidades
 {
     [DataContract]
     public class QuejaConsulta

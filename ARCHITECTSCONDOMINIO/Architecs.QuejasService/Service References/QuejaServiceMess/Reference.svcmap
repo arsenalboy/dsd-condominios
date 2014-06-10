@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="987b1e51-4501-424b-8446-5cef06fd4358" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62070/QuejaServiceMessage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QuejaServiceMessage.xsd" MetadataType="Schema" ID="bfbcde93-7ae2-48d8-95fb-6cae25c4094d" SourceId="1" SourceUrl="http://localhost:62070/QuejaServiceMessage.svc?xsd=xsd0" />
+    <MetadataFile FileName="QuejaServiceMessage1.xsd" MetadataType="Schema" ID="a96bd92a-5e93-44a7-b3c3-e3707e006b08" SourceId="1" SourceUrl="http://localhost:62070/QuejaServiceMessage.svc?xsd=xsd2" />
+    <MetadataFile FileName="QuejaServiceMessage2.xsd" MetadataType="Schema" ID="71d6b497-2b63-4b34-9ac1-878b3e0108a9" SourceId="1" SourceUrl="http://localhost:62070/QuejaServiceMessage.svc?xsd=xsd1" />
+    <MetadataFile FileName="QuejaServiceMessage.wsdl" MetadataType="Wsdl" ID="2346016d-250b-480a-8156-00cfb993605e" SourceId="1" SourceUrl="http://localhost:62070/QuejaServiceMessage.svc?wsdl" />
+    <MetadataFile FileName="QuejaServiceMessage.disco" MetadataType="Disco" ID="9b2c82af-82ea-4654-b981-432491cf08eb" SourceId="1" SourceUrl="http://localhost:62070/QuejaServiceMessage.svc?disco" />
+    <MetadataFile FileName="QuejaServiceMessage3.xsd" MetadataType="Schema" ID="181f24cf-43c6-4f52-ac17-53fe1fcd056d" SourceId="1" SourceUrl="http://localhost:62070/QuejaServiceMessage.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

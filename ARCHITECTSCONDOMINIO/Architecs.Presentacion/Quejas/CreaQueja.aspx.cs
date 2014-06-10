@@ -60,6 +60,9 @@ namespace Architecs.Presentacion.Quejas
             }
             catch (FaultException ex)
             {
+                //pero antes guaradames los mensaje en cola por si falla
+
+
                 String strScript;
                 strScript = "<script>alert('" + ex.Message + "')</script>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", strScript, false);
