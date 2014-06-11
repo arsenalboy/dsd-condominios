@@ -5,9 +5,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.ServiceModel;
-using Architecs.TestProject.SOAPResidentes;
-//using Architects.TestProject.ResidenteProxy;
-//using Architecs.Presentacion.SOAResidentes;
+using Architects.TestProject.ResidenteProxy;
+using Architects.Dominio;
 
 namespace Architects.TestProject
 {
