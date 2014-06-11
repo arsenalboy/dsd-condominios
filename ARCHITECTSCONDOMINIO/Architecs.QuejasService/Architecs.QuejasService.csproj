@@ -32,7 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Architects.Dominio, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Web.DynamicData" />
