@@ -54,7 +54,7 @@ public class ResidenteServlet extends HttpServlet {
 		String c_Clave = request.getParameter("txtClave")==null?"2":request.getParameter("txtClave");
 		Boolean b_Estado=true;
 		String page="";	
-		
+		String msg= null;
 		try{
  
 			if(opcion.equals("1")){	//Lista todos los residentes
@@ -66,10 +66,16 @@ public class ResidenteServlet extends HttpServlet {
 				page="/pages/ListaResidentes.jsp";
 				
 			}else if(opcion.equals("2")){ //Registra Residentes
+				try {
+					ResidenteWS residente = new ResidenteWS();
+					int x= residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+					page="/pages/util.jsp?aux="+x;
+				} catch (Exception e) {
+					//page="/pages/ListaResidentes.jsp"+msg=e.getMessage();
+					request.setAttribute("mensaje",e.getMessage());	
+					System.out.print("ERROR DE REGISTRO: "+e.getMessage());
+				}
 				
-				ResidenteWS residente = new ResidenteWS();
-				int x= residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
-				page="/pages/util.jsp?aux="+x;
 				
 			}else if(opcion.equals("3")){ //Actualiza Residentes
 				
