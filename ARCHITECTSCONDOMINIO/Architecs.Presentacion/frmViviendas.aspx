@@ -36,8 +36,8 @@
                 <div class="col-md-3">
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary" OnClick="btnBuscar_Click" />
                     <!-- Button trigger modal -->
-                    <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" class="btn btn-primary" data-toggle="modal"
-                        data-target="#myModal" />
+                      <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" class="btn btn-primary" data-toggle="modal"
+                        data-target="#myModal" onclick="btnNuevo_Click" />
                 </div>
             </div>
         </div>

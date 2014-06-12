@@ -60,6 +60,7 @@ namespace Architecs.Presentacion
             switch (e.CommandName)
             {
                 case "Editar":
+
                     break;
 
                 case "Eliminar":
@@ -109,5 +110,10 @@ namespace Architecs.Presentacion
         {
             CargarGrilla();
         }
+
+        //protected void btnNuevo_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
