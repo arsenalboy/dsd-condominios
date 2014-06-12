@@ -6,18 +6,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
-using Architecs.TestProject.Dominio;
+using Architecs.Test.Entidades;
 
-namespace Architecs.TestProject
+namespace Architecs.Test
 {
     /// <summary>
     /// Descripción resumida de QuejasServiceTest
     /// </summary>
     [TestClass]
-    public class QuejasServiceTest
+    public class TestQuejas
     {
         [TestMethod]
-        public void AlumnoCrearTest()
+        public void CrearQueja()
         {
 
             string postdata = "{\"N_IdResidente\":2, \"C_Tipo\":\"Leve\",\"C_Motivo\":\"Motivo Prueba\",\"C_Detalle\":\"Detalle Prueba\",\"D_FecQueja\":\"2014-06-03\"}"; //JSON
@@ -49,7 +49,7 @@ namespace Architecs.TestProject
         }
 
         [TestMethod]
-        public void AlumnoListarTest()
+        public void ListarQuejas()
         {
 
             string strURL = "http://localhost:62070/QuejaService.svc/Quejas/Todos/2000-01-01,2015-01-01,Todos";

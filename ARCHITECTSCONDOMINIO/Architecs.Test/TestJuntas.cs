@@ -3,8 +3,9 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Architecs.Test;
 
-namespace Architecs.TestProject
+namespace Architecs.Test
 {
     /// <summary>
     /// Descripción resumida de TestJuntas
@@ -12,59 +13,38 @@ namespace Architecs.TestProject
     [TestClass]
     public class TestJuntas
     {
-        public TestJuntas()
+        [TestMethod]
+        public void CrearJunta()
         {
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Obtiene o establece el contexto de las pruebas que proporciona
-        ///información y funcionalidad para la ejecución de pruebas actual.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
+            try
             {
-                return testContextInstance;
+                //grabamos las juntas
+                SOAPJuntasService.JuntaServiceClient objjunta = new SOAPJuntasService.JuntaServiceClient();
+                //primero grabamos la cabecera
+                int id;
+                id = objjunta.CreaJunta(Convert.ToDateTime("2014-06-12"), "20", "Tema de Test", "Acuerdos Creados");
+                int id2;
+                id2 = objjunta.CreaJuntaDirectivos(id, 1, "SI", true);
+                Assert.AreNotEqual(0, id);
+                Assert.AreNotEqual(0, id2);
             }
-            set
+            catch (Exception ex)
             {
-                testContextInstance = value;
+                //test para la falla
+                Assert.AreEqual("El horario ya se encuentra ocupado", ex.Message);
             }
+        
         }
-
-        #region Atributos de prueba adicionales
-        //
-        // Puede usar los siguientes atributos adicionales conforme escribe las pruebas:
-        //
-        // Use ClassInitialize para ejecutar el código antes de ejecutar la primera prueba en la clase
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup para ejecutar el código una vez ejecutadas todas las pruebas en una clase
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Usar TestInitialize para ejecutar el código antes de ejecutar cada prueba 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup para ejecutar el código una vez ejecutadas todas las pruebas
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void ListarJunta()
         {
-            //
-            // TODO: Agregar aquí la lógica de las pruebas
-            //
+            //listamos
+            SOAPJuntasService.JuntaServiceClient objjuntaservice = new SOAPJuntasService.JuntaServiceClient();
+            List<SOAPJuntasService.ListaJuntas> ObjListaJuntas = new List<SOAPJuntasService.ListaJuntas>();
+            ObjListaJuntas = objjuntaservice.listarJuntas("2013-01-01", "2014-12-31");
+            //debe traer valores
+            Assert.AreNotEqual(0, ObjListaJuntas.Count());
         }
     }
 }
