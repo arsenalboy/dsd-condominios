@@ -22,7 +22,7 @@ public class PagosServiceLocator extends org.apache.axis.client.Service implemen
     }
 
     // Use to get a proxy class for BasicHttpBinding_IPagosService
-    private java.lang.String BasicHttpBinding_IPagosService_address = "http://localhost:62031/PagosService.svc";
+    private java.lang.String BasicHttpBinding_IPagosService_address = "http://localhost:59154/PagosService.svc";
 
     public java.lang.String getBasicHttpBinding_IPagosServiceAddress() {
         return BasicHttpBinding_IPagosService_address;

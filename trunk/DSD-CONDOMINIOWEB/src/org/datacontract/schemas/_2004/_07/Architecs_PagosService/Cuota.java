@@ -10,9 +10,9 @@ package org.datacontract.schemas._2004._07.Architecs_PagosService;
 public class Cuota  implements java.io.Serializable {
     private java.lang.String c_Periodo;
 
-    private java.util.Calendar d_FecPago;
+    private java.sql.Date d_FecPago;
 
-    private java.util.Calendar d_FecVncto;
+    private java.sql.Date d_FecVncto;
 
     private java.lang.Integer n_IdCuota;
 
@@ -24,21 +24,21 @@ public class Cuota  implements java.io.Serializable {
 
     private org.datacontract.schemas._2004._07.Architecs_PagosService.TipoPago objTipoPago;
 
-    private org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda objVivienda;
+    private org.datacontract.schemas._2004._07.Architects_Dominio.ViviendaBE objVivienda;
 
     public Cuota() {
     }
 
     public Cuota(
            java.lang.String c_Periodo,
-           java.util.Calendar d_FecPago,
-           java.util.Calendar d_FecVncto,
+           java.sql.Date d_FecPago,
+           java.sql.Date d_FecVncto,
            java.lang.Integer n_IdCuota,
            java.lang.Integer n_IdTipoPago,
            java.lang.Integer n_IdVivienda,
            java.math.BigDecimal n_Importe,
            org.datacontract.schemas._2004._07.Architecs_PagosService.TipoPago objTipoPago,
-           org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda objVivienda) {
+           org.datacontract.schemas._2004._07.Architects_Dominio.ViviendaBE objVivienda) {
            this.c_Periodo = c_Periodo;
            this.d_FecPago = d_FecPago;
            this.d_FecVncto = d_FecVncto;
@@ -76,7 +76,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @return d_FecPago
      */
-    public java.util.Calendar getD_FecPago() {
+    public java.sql.Date getD_FecPago() {
         return d_FecPago;
     }
 
@@ -86,7 +86,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @param d_FecPago
      */
-    public void setD_FecPago(java.util.Calendar d_FecPago) {
+    public void setD_FecPago(java.sql.Date d_FecPago) {
         this.d_FecPago = d_FecPago;
     }
 
@@ -96,7 +96,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @return d_FecVncto
      */
-    public java.util.Calendar getD_FecVncto() {
+    public java.sql.Date getD_FecVncto() {
         return d_FecVncto;
     }
 
@@ -106,7 +106,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @param d_FecVncto
      */
-    public void setD_FecVncto(java.util.Calendar d_FecVncto) {
+    public void setD_FecVncto(java.sql.Date d_FecVncto) {
         this.d_FecVncto = d_FecVncto;
     }
 
@@ -216,7 +216,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @return objVivienda
      */
-    public org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda getObjVivienda() {
+    public org.datacontract.schemas._2004._07.Architects_Dominio.ViviendaBE getObjVivienda() {
         return objVivienda;
     }
 
@@ -226,7 +226,7 @@ public class Cuota  implements java.io.Serializable {
      * 
      * @param objVivienda
      */
-    public void setObjVivienda(org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda objVivienda) {
+    public void setObjVivienda(org.datacontract.schemas._2004._07.Architects_Dominio.ViviendaBE objVivienda) {
         this.objVivienda = objVivienda;
     }
 
@@ -350,7 +350,7 @@ public class Cuota  implements java.io.Serializable {
         elemField.setXmlName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.PagosService", "N_IdTipoPago"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setMinOccurs(0);
-        elemField.setNillable(false);
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("n_IdVivienda");
@@ -376,7 +376,7 @@ public class Cuota  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("objVivienda");
         elemField.setXmlName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architecs.PagosService", "objVivienda"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Vivienda"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ViviendaBE"));
         elemField.setMinOccurs(0);
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);

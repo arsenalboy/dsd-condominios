@@ -7,6 +7,11 @@
 
 package org.tempuri;
 
+import java.rmi.RemoteException;
+import java.sql.Date;
+
+import org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje;
+
 public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.Stub implements org.tempuri.IPagosService {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
@@ -59,7 +64,7 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pImporte"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"), java.lang.Double.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "pFecVncto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "date"), java.sql.Date.class, false, false);
         param.setOmittable(true);
         param.setNillable(true);
         oper.addParameter(param);
@@ -242,9 +247,9 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "Vivienda");
+            qName = new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/Architects.Dominio", "ViviendaBE");
             cachedSerQNames.add(qName);
-            cls = org.datacontract.schemas._2004._07.Architects_Dominio.Vivienda.class;
+            cls = org.datacontract.schemas._2004._07.Architects_Dominio.ViviendaBE.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -592,5 +597,13 @@ public class BasicHttpBinding_IPagosServiceStub extends org.apache.axis.client.S
   throw axisFaultException;
 }
     }
+
+	@Override
+	public RetornaMensaje registrarCuota(String pPeriodo, Integer pIdVivienda,
+			Double pImporte, Date pFecVncto) throws RemoteException,
+			RetornaMensaje {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

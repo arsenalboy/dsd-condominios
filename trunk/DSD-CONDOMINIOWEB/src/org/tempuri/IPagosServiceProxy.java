@@ -56,7 +56,7 @@ public class IPagosServiceProxy implements org.tempuri.IPagosService {
     return iPagosService.registrarTipoPago(descripcion);
   }
   
-  public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarCuota(java.lang.String pPeriodo, java.lang.Integer pIdVivienda, java.lang.Double pImporte, java.lang.String pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje{
+  public org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje registrarCuota(String pPeriodo, Integer pIdVivienda, Double pImporte, java.sql.Date pFecVncto) throws java.rmi.RemoteException, org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje{
     if (iPagosService == null)
       _initIPagosServiceProxy();
     return iPagosService.registrarCuota(pPeriodo, pIdVivienda, pImporte, pFecVncto);
@@ -85,6 +85,5 @@ public class IPagosServiceProxy implements org.tempuri.IPagosService {
       _initIPagosServiceProxy();
     return iPagosService.eliminarCuota(pIdCuota);
   }
-  
   
 }

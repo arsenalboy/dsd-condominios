@@ -2,6 +2,7 @@ package cleaner;
 
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
+import java.sql.Date;
 
 import org.datacontract.schemas._2004._07.Architects_Dominio.RetornaMensaje;
 import org.datacontract.schemas._2004._07.Architecs_PagosService.Cuota;
@@ -17,7 +18,7 @@ public class PagosWS {
 		servicio = new IPagosServiceProxy();
 	}
 	
-	public RetornaMensaje RegistrarCuota(String pPeriodo, int pIdVivienda, double pImporte, String pFecVncto){
+	public RetornaMensaje RegistrarCuota(String pPeriodo, int pIdVivienda, double pImporte, Date pFecVncto){
 		RetornaMensaje retornaMensaje = null;
 		try{
 			//Date dateFecVncto = pFecVncto.getTime(); 
