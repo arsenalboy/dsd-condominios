@@ -38,6 +38,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -45,11 +47,14 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Queja.cs" />
+    <Compile Include="Entidades\QuejaConsulta.cs" />
+    <Compile Include="Entidades\Residente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuejasServiceTest.cs" />
+    <Compile Include="TestJuntas.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
