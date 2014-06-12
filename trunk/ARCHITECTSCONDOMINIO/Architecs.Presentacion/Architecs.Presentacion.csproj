@@ -85,6 +85,19 @@
     <None Include="css\fonts\glyphicons-halflings-regular.eot" />
     <None Include="css\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="css\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Service References\HorarioService\Architecs.Presentacion.HorarioService.HorarioBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HorarioService\HorarioService.wsdl" />
+    <None Include="Service References\HorarioService\HorarioService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorarioService\HorarioService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorarioService\HorarioService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\JuntaService\Architecs.Presentacion.JuntaService.Directivo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -100,10 +113,27 @@
     </None>
     <Content Include="Quejas\ConsultaQuejas.aspx" />
     <Content Include="Quejas\CreaQueja.aspx" />
+    <Content Include="Reservas\CreaReserva.aspx" />
     <Content Include="Scripts\Paginas\frmViviendaCrear.aspx.js" />
     <Content Include="Scripts\Paginas\frmViviendas.aspx.js" />
     <Content Include="Scripts\Popups.js" />
     <Content Include="Scripts\Validaciones.js" />
+    <None Include="Service References\ReservaService\Architecs.Presentacion.ReservaService.EspacioComunBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReservaService\Architecs.Presentacion.ReservaService.ReservasBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReservaService\ReservaService.wsdl" />
+    <None Include="Service References\ReservaService\ReservaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReservaService\ReservaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReservaService\ReservaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SOAResidentes\Architecs.Presentacion.SOAResidentes.ResidenteBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -113,6 +143,20 @@
     <None Include="Service References\SOAResidentes\configuration91.svcinfo" />
     <None Include="Service References\SOAResidentes\configuration.svcinfo" />
     <None Include="Service References\SOAResidentes\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HorarioService\HorarioService.disco" />
+    <None Include="Service References\HorarioService\configuration91.svcinfo" />
+    <None Include="Service References\HorarioService\configuration.svcinfo" />
+    <None Include="Service References\HorarioService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ReservaService\ReservaService.disco" />
+    <None Include="Service References\ReservaService\configuration91.svcinfo" />
+    <None Include="Service References\ReservaService\configuration.svcinfo" />
+    <None Include="Service References\ReservaService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -224,7 +268,24 @@
     <Compile Include="Quejas\CreaQueja.aspx.designer.cs">
       <DependentUpon>CreaQueja.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reservas\CreaReserva.aspx.cs">
+      <DependentUpon>CreaReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservas\CreaReserva.aspx.designer.cs">
+      <DependentUpon>CreaReserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HorarioService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\JuntaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReservaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -257,7 +318,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HorarioService\" />
     <WCFMetadataStorage Include="Service References\JuntaService\" />
+    <WCFMetadataStorage Include="Service References\ReservaService\" />
     <WCFMetadataStorage Include="Service References\SOAResidentes\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
