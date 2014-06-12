@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Architecs.TestProject
+namespace Architecs.Test.Entidades
 {
     public class Residente
     {

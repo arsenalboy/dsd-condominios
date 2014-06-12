@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace Architecs.TestProject.Dominio
+namespace Architecs.Test.Entidades
 {
 
     public class QuejaConsulta
@@ -19,6 +19,6 @@ namespace Architecs.TestProject.Dominio
         public Boolean B_Estado { get; set; }
         public string C_Nombre { get; set; }
         public string C_NumDocume { get; set; }
-         public string D_FecQueja { get; set; }
+        public string D_FecQueja { get; set; }
     }
 }

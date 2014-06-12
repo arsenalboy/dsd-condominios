@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace Architecs.TestProject.Dominio
+namespace Architecs.Test.Entidades
 {
     public class Queja
     {
