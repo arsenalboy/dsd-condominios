@@ -38,18 +38,18 @@
         <label>
         <input type="submit" class="btn btn-primary" id="btnBuscar" value="Buscar" onclick="OnButton1();"/>
         </label>
-          <input type="submit" class="btn btn-primary"  id="btnNuevo" value="Nuevo" onclick="OnButton2();"/>	
+        <!--   <input type="submit" class="btn btn-primary"  id="btnNuevo" value="Nuevo" onclick="OnButton2();"/>--> 	
           
-          <a href="<%= request.getContextPath()%>/CuotaServlet?op=create" class="btn btn-primar">Nuevo</a>           
+          <a href="<%= request.getContextPath()%>/pages/frmCuotaCrear.jsp" class="btn btn-primar">
+          <span class="btn btn-primary btn-lg" role="button">Nuevo</span></a>           
         </p>
       </form>
      
   </fieldset>
 
   <fieldset  class="form-horizontal well">
-      
-	<table width="550" height="65" border="1" cellpadding="0" cellspacing="0"   
-		   class="table table-striped">
+     <div class="panel-body">
+	<table width="550" height="65" class="table table-striped table-bordered">
   	<tr>
 	  	<th width="40" scope="col">Item</th>
 	    <th width="49" scope="col">Nro.Cuota</th>
@@ -65,19 +65,20 @@
 	<%
 	Cuota[] lstCuotas = (Cuota[])request.getAttribute("lstCuotas");
 	int contador = 1;
-
+	//=cuotas.getObjTipoPago().getC_Descripcion()==null?"":cuotas.getObjTipoPago().getC_Descripcion()
+	//=cuotas.getD_FecPago()==null?"":cuotas.getD_FecPago()
 	for(Cuota cuotas : lstCuotas){
 	%>  
 	  <tr>
 	    <td><%=contador++ %></td>
-	    <td><% out.print(cuotas.getN_IdCuota()); %></td>
-	    <td><% out.print(cuotas.getC_Periodo()); %></td>
-	    <td><% out.print(cuotas.getObjVivienda().getC_NumEdificio()); %></td>
-	    <td><% out.print(cuotas.getObjVivienda().getObjResidente().getC_Apellidos()); %></td>
-	    <td><% out.print(cuotas.getN_Importe()); %></td>
-	    <td><% out.print(FormatoFecha.dateToStringDDMMYYYYY(cuotas.getD_FecVncto().getTime())); %></td>
-	    <td><% out.print(cuotas.getObjTipoPago().getC_Descripcion()==null?"":cuotas.getObjTipoPago().getC_Descripcion()); %></td>
-	    <td><% out.print(cuotas.getD_FecPago()==null?"":cuotas.getD_FecPago()); %></td>
+	    <td><%=cuotas.getN_IdCuota()%></td>
+	    <td><%=cuotas.getC_Periodo()%></td>
+	    <td><%=cuotas.getObjVivienda().getC_NumEdificio()%></td>
+	    <td><%=cuotas.getObjVivienda().getObjResidente().getC_Apellidos()%></td>
+	    <td><%=cuotas.getN_Importe()%></td>
+	    <td><%=cuotas.getD_FecVncto()%></td>
+	    <td><%=cuotas.getObjTipoPago().getC_Descripcion()%></td>
+	    <td><%=cuotas.getD_FecPago()==null?"No Pagado":cuotas.getD_FecPago()%></td>
 	      <%if( (contador >0)){ %>
 	    		  <td>
 	    		  <a href="Editar"   onclick="return confirm('¿Está seguro que desea EDITAR Cuota');">Editar</a> - 
@@ -96,7 +97,7 @@
 	   	 <p>&nbsp;</p>
 	     <p>&copy; OCarril 2014 </p>
 	   </div>
-
+</div>
     </fieldset>
   </body>
 	

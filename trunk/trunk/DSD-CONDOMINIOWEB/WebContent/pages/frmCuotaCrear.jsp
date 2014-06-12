@@ -35,7 +35,7 @@
         <h3>Generación de Cuotas</h3>
     </div>
 	<div class="jumbotron">
-		<form id="frmCuotaNueva" name="frmCuotaNueva" action="<%= request.getContextPath() %>/pages" method="post">
+		<form id="frmCuotaNueva" name="frmCuotaNueva" action="<%= request.getContextPath() %>/CuotaServlet?op=create" method="post">
 		<fieldset>
         <legend>Cuota Nueva</legend>   
         	<input type="hidden" id="id" name ="id" value="">
@@ -89,7 +89,8 @@
 				<tr>
 					<td colspan="2">
 						<input type="submit" value="Aceptar" class="btn btn-succes"/>
-						<input type="button" value="Regresar" class="btn btn-danger"/>
+						<a href="<%=request.getContextPath()%>/CuotaServlet?op=list"  />
+						<label class="btn btn-danger">Regresar</label></a>
 						
 						<!-- CuotaServlet?op=create" onsubmit="validar()" -->
 					</td>	
