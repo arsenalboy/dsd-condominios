@@ -88,6 +88,7 @@ namespace Architecs.Presentacion.Reservas
             //grabamos
             try
             {
+                lblcorrecto.Text = "";
                 if (CboHoraIni.SelectedIndex != 0 & CboHoraFin.SelectedIndex != 0 & CboEspacio.SelectedIndex != 0 & TxtFechReserva.Text != "")
                 {
                     //se inserta la reserva
@@ -101,12 +102,14 @@ namespace Architecs.Presentacion.Reservas
                     ObjReserva.B_Estado = true;
                     objreservaServ.CreaReserva(ObjReserva);
 
+                    lblcorrecto.Text = "Reserva para el dia " + Convert.ToDateTime(TxtFechReserva.Text).ToShortDateString() + " de " + LblHoraIni.Text + " a " + LblHoraFin.Text ;
                     String script = "document.getElementById('divacepto').style.display='block';";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alerta", script, true);
                 }
             }
             catch (Exception ex)
             {
+                lblcorrecto.Text = "";
                 String strScript;
                 strScript = "<script>alert('" + ex.Message + "')</script>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", strScript, false);
