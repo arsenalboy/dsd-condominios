@@ -70,6 +70,7 @@
     <Content Include="css\js\bootstrap.js" />
     <Content Include="css\js\bootstrap.min.js" />
     <Content Include="frmCuota.aspx" />
+    <Content Include="frmCuotaCrear.aspx" />
     <Content Include="frmViviendaCrear.aspx" />
     <Content Include="frmViviendas.aspx" />
     <Content Include="images\Buscar_24x24.png" />
@@ -119,6 +120,28 @@
     <Content Include="Scripts\Paginas\frmViviendas.aspx.js" />
     <Content Include="Scripts\Popups.js" />
     <Content Include="Scripts\Validaciones.js" />
+    <None Include="Service References\PagosService\Architecs.Presentacion.PagosService.Cuota.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PagosService\Architecs.Presentacion.PagosService.RetornaMensaje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PagosService\Architecs.Presentacion.PagosService.TipoPago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PagosService\PagosService.wsdl" />
+    <None Include="Service References\PagosService\PagosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PagosService\PagosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PagosService\PagosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PagosService\PagosService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ReservaService\Architecs.Presentacion.ReservaService.EspacioComunBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -158,6 +181,13 @@
     <None Include="Service References\ReservaService\configuration91.svcinfo" />
     <None Include="Service References\ReservaService\configuration.svcinfo" />
     <None Include="Service References\ReservaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PagosService\PagosService.disco" />
+    <None Include="Service References\PagosService\configuration91.svcinfo" />
+    <None Include="Service References\PagosService\configuration.svcinfo" />
+    <None Include="Service References\PagosService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -224,6 +254,13 @@
     </Compile>
     <Compile Include="frmCuota.aspx.designer.cs">
       <DependentUpon>frmCuota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuotaCrear.aspx.cs">
+      <DependentUpon>frmCuotaCrear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCuotaCrear.aspx.designer.cs">
+      <DependentUpon>frmCuotaCrear.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmViviendaCrear.aspx.cs">
       <DependentUpon>frmViviendaCrear.aspx</DependentUpon>
@@ -293,6 +330,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\PagosService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ReservaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -328,6 +370,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\HorarioService\" />
     <WCFMetadataStorage Include="Service References\JuntaService\" />
+    <WCFMetadataStorage Include="Service References\PagosService\" />
     <WCFMetadataStorage Include="Service References\ReservaService\" />
     <WCFMetadataStorage Include="Service References\SOAResidentes\" />
   </ItemGroup>

@@ -22,7 +22,6 @@ namespace Architecs.Presentacion
                 {
                     CargarGrilla();
                 }
-                //this.btnNuevo.Attributes.Add("OnClick", "OpenPopup('frmViviendaCrear.aspx',600,480)");
             }
             catch (Exception ex)
             {
@@ -114,8 +113,6 @@ namespace Architecs.Presentacion
         {
             Response.Redirect("frmViviendaCrear.aspx");
         }
-
-        
 
 
     }

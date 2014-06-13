@@ -89,7 +89,7 @@ namespace Architecs.Presentacion
 
                     JavaScriptSerializer js = new JavaScriptSerializer();
                     RetornaMensajeT retornaMensaje = js.Deserialize<RetornaMensajeT>(retornaMensajeJson);
-
+                    lblN_IdVivienda.Text = retornaMensaje.CodigoRetorno.ToString();
                     lblMensaje.Text = retornaMensaje.Mensage;
                 }
                 else

@@ -46,6 +46,12 @@
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="http://localhost:8080/DSD-CONDOMINIOWEB/ResidenteServlet?opcion=1" 
                             Text="Residentes" Value="Residentes"></asp:MenuItem>
+                        <asp:MenuItem Text="Administrar Pagos" Value="Administrar Pagos">
+                            <asp:MenuItem NavigateUrl="~/frmCuota.aspx" Text="Listado" Value="Listado">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Pagar Cuota" Value="Pagar Cuota"></asp:MenuItem>
+                            <asp:MenuItem Text="Morosos" Value="Morosos"></asp:MenuItem>
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>
