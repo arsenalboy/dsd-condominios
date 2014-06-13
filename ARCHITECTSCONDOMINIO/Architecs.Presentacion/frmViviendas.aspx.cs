@@ -22,7 +22,7 @@ namespace Architecs.Presentacion
                 {
                     CargarGrilla();
                 }
-                this.btnNuevo.Attributes.Add("OnClick", "OpenPopup('frmViviendaCrear.aspx',600,480)");
+                //this.btnNuevo.Attributes.Add("OnClick", "OpenPopup('frmViviendaCrear.aspx',600,480)");
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace Architecs.Presentacion
             switch (e.CommandName)
             {
                 case "Editar":
-
+                    Response.Redirect("frmViviendaCrear.aspx?pm=" + e.CommandArgument);
                     break;
 
                 case "Eliminar":
@@ -100,20 +100,23 @@ namespace Architecs.Presentacion
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                ImageButton btnEditar = (ImageButton)e.Row.FindControl("btnEditar");
-                HiddenField hhdIDVivienda = (HiddenField)e.Row.FindControl("hhdIDVivienda");
-                btnEditar.Attributes.Add("Onclick", "OpenPopup('frmViviendaCrear.aspx?pm=" + hhdIDVivienda.Value + "',600,480)");
+                
             }
         }
 
         protected void gvViviendas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            gvViviendas.PageIndex = e.NewPageIndex;
             CargarGrilla();
         }
 
-        //protected void btnNuevo_Click(object sender, EventArgs e)
-        //{
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmViviendaCrear.aspx");
+        }
 
-        //}
+        
+
+
     }
 }

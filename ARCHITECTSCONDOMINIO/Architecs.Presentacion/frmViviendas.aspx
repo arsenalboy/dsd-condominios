@@ -13,10 +13,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <%--    <cc1:toolkitscriptmanager id="ToolkitScriptManager1" runat="server" enablescriptglobalization="True"
-        enablescriptlocalization="true">
-        </cc1:toolkitscriptmanager>--%>
-    <jsp:include page="/pages/header.jsp" />
     <div>
         <div class="jumbotron">
             <div class="container">
@@ -33,18 +29,15 @@
                 <div class="col-md-3">
                     <asp:TextBox type="text" ID="txtcodigo" name="codigo" class="form-control" runat="server"></asp:TextBox>
                 </div>
-                <div class="col-md-3"> <%----%><%--onclick="btnNuevo_Click"--%> 
+                <div class="col-md-3"> 
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary" OnClick="btnBuscar_Click"/>
-                    <!-- Button trigger modal -->
                       <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" class="btn btn-primary" data-toggle="modal"
-                        data-target="#myModal" />
+                        data-target="#myModal" onclick="btnNuevo_Click" />
                 </div>
             </div>
         </div>
-        <%--OnPageIndexChanging="gvItems_PageIndexChanging"  
-                OnRowCommand="gvItems_RowCommand" --%>
         <asp:GridView ID="gvViviendas" runat="server" Width="98%" AutoGenerateColumns="False"
-            AllowPaging="True" EmptyDataText="No existen ítems a mostrar." 
+            AllowPaging="True" EmptyDataText="No existen ítems a mostrar." PageSize="7" 
             class="table table-bordered table-hover" onrowcommand="gvViviendas_RowCommand" 
             onrowdatabound="gvViviendas_RowDataBound" 
             onpageindexchanging="gvViviendas_PageIndexChanging">
