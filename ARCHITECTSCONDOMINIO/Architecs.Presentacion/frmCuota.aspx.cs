@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Architecs.Presentacion.PagosService;
 
 namespace Architecs.Presentacion
 {
@@ -23,24 +24,53 @@ namespace Architecs.Presentacion
                 lblMensajes.Text = ex.Message;
             }
         }
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CargarGrilla();
+            lblMensajes.Text = string.Empty;
+        }
+        protected void gvCuotas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "Editar":
+                    Response.Redirect("frmCuotaCrear.aspx?pm=" + e.CommandArgument);
+                    break;
 
+                case "Eliminar":
+                    try
+                    {
+                        PagosService.PagosServiceClient proxiPagos = new PagosServiceClient();
+                        RetornaMensaje retorna = proxiPagos.EliminarCuota(Convert.ToInt32(e.CommandArgument));
+                        if (retorna.Exito)
+                            lblMensajes.Text = retorna.Mensage;
+                        CargarGrilla();
+                    }
+                    catch (Exception ex)
+                    {
+                        lblMensajes.Text = ex.Message;
+                    }
+                    break;
+            }
+        }
+        protected void gvCuotas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvCuotas.PageIndex = e.NewPageIndex;
+            CargarGrilla();
+        }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmCuotaCrear.aspx");
+        }
         private void CargarGrilla()
         {
-            // Prueba de OBTENER las viviendas vía HTTP GET - REST
+            
+            PagosService.PagosServiceClient proxyPagos = new PagosService.PagosServiceClient();
+            IList<Cuota> lstCuota = proxyPagos.ListarCuota(txtcodigo.Text);
 
-            //string strURL = ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString();
-
-            //HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
-            //   .Create(strURL);
-            //reqObtener.Method = "GET";
-            //HttpWebResponse resObtener = (HttpWebResponse)reqObtener.GetResponse();
-            //StreamReader readerObtener = new StreamReader(resObtener.GetResponseStream());
-            //string viviemdasJsonObtener = readerObtener.ReadToEnd();
-            //JavaScriptSerializer js = new JavaScriptSerializer();
-            //IList<Vivienda> lstViviendas = js.Deserialize<List<Vivienda>>(viviemdasJsonObtener);
-
-            //gvViviendas.DataSource = lstViviendas;
-            //gvViviendas.DataBind();
+            gvCuotas.DataSource = lstCuota;
+            gvCuotas.DataBind();
         }
     }
 }

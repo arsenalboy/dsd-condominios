@@ -32,7 +32,6 @@ namespace Architecs.Presentacion
         private void CargarGrilla()
         {
             // Prueba de OBTENER las viviendas vía HTTP GET - REST
-
             string strURL = ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString();
 
             HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
@@ -95,13 +94,6 @@ namespace Architecs.Presentacion
             }
         }
 
-        protected void gvViviendas_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                
-            }
-        }
 
         protected void gvViviendas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
