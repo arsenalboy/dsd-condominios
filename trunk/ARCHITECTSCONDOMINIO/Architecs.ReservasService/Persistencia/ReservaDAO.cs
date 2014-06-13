@@ -62,6 +62,41 @@ namespace Architecs.ReservasService.Persistencia
         }
 
 
+        public string ValidaReserva(ReservasBE ObjReserva)
+        {
+            try
+            {
+                objconeccion = new SqlConnection(CadenaConexionSQL);
+                SqlCommand objcomand = new SqlCommand("VALIDAR_RESERVAS", objconeccion);
+                objcomand.CommandType = CommandType.StoredProcedure;
+                objcomand.Parameters.Add("@N_IdResidente", SqlDbType.Int);
+                objcomand.Parameters["@N_IdResidente"].Value = ObjReserva.N_IdResidente;
+                objcomand.Parameters.Add("@N_IdHorarioIni ", SqlDbType.Int);
+                objcomand.Parameters["@N_IdHorarioIni "].Value = ObjReserva.N_IdHorarioIni;
+                objcomand.Parameters.Add("@N_IdHorarioFin ", SqlDbType.Int);
+                objcomand.Parameters["@N_IdHorarioFin "].Value = ObjReserva.N_IdHorarioFin;
+                objcomand.Parameters.Add("@N_IdEspacioComun", SqlDbType.Int);
+                objcomand.Parameters["@N_IdEspacioComun"].Value = ObjReserva.N_IdEspacioComun;
+                objcomand.Parameters.Add("@D_FecRegistro", SqlDbType.Date);
+                objcomand.Parameters["@D_FecRegistro"].Value = ObjReserva.D_FecRegistro;
+                objconeccion.Open();
+
+                string valor;
+                valor = Convert.ToString(objcomand.ExecuteScalar());
+
+                objconeccion.Close();
+
+               
+                return valor;
+            }
+            catch (Exception ex)
+            {
+                if (objconeccion.State == ConnectionState.Open)
+                    objconeccion.Close();
+                throw new FaultException(ex.Message);
+            }
+        }
+
         public List<EspacioComunBE> ListarEspacioComun()
         {
             try

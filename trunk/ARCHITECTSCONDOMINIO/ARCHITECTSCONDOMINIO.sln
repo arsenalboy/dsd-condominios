@@ -46,8 +46,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.HorariosService", "Architecs.HorariosService\Architecs.HorariosService.csproj", "{DDE52FFF-206B-4AEC-BB2D-C41F11612EC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecs.Test", "Architecs.Test\Architecs.Test.csproj", "{55B0A825-A178-4212-8644-84DEFA3F0C7A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9028327-B102-4B19-BBC4-D61897578156} = {C9028327-B102-4B19-BBC4-D61897578156}
+		{D8401D94-D4E9-4F0C-842B-326879C5C04C} = {D8401D94-D4E9-4F0C-842B-326879C5C04C}
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ARCHITECTSCONDOMINIO.vsmdi
 	EndGlobalSection
@@ -119,9 +127,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

@@ -17,26 +17,34 @@ namespace Architecs.Test
          * "No se puede reservar mas  de tres horas"
          * "La reserva no se aplica para ese horario , ya que esta ocupado"
          * 
-         * 
+         * <b
          * para evitar esto, se ejecutaria uno por uno ingresando los datos correctos
          */
         [TestMethod]
         public void InsertaTestCorrecto()
         {
-            //se inserta la reserva
-            SOAPReservaService.ReservaServiceClient objreservaServ = new SOAPReservaService.ReservaServiceClient();
-            SOAPReservaService.ReservasBE ObjReserva = new SOAPReservaService.ReservasBE();
-            ObjReserva.N_IdResidente = 4;
-            ObjReserva.N_IdHorarioIni = Convert.ToInt32(1);
-            ObjReserva.N_IdHorarioFin = Convert.ToInt32(2);
-            ObjReserva.N_IdEspacioComun = Convert.ToInt32(2);
-            ObjReserva.D_FecRegistro = Convert.ToDateTime("2014-06-20");
-            ObjReserva.B_Estado = true;
+            try
+            {
+                //se inserta la reserva
+                SOAPReservaService.ReservaServiceClient objreservaServ = new SOAPReservaService.ReservaServiceClient();
+                SOAPReservaService.ReservasBE ObjReserva = new SOAPReservaService.ReservasBE();
+                ObjReserva.N_IdResidente = 4;
+                ObjReserva.N_IdHorarioIni = Convert.ToInt32(1);
+                ObjReserva.N_IdHorarioFin = Convert.ToInt32(2);
+                ObjReserva.N_IdEspacioComun = Convert.ToInt32(2);
+                ObjReserva.D_FecRegistro = Convert.ToDateTime("2014-06-20");
+                ObjReserva.B_Estado = true;
 
-            SOAPReservaService.ReservasBE ObjReservaPrueba = new SOAPReservaService.ReservasBE();
-            ObjReservaPrueba = objreservaServ.CreaReserva(ObjReserva);
+                SOAPReservaService.ReservasBE ObjReservaPrueba = new SOAPReservaService.ReservasBE();
+                ObjReservaPrueba = objreservaServ.CreaReserva(ObjReserva);
 
-            Assert.AreNotEqual(0, ObjReservaPrueba.N_IdReserva);
+                Assert.AreNotEqual(0, ObjReservaPrueba.N_IdReserva);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("No puede hacer mas de una reserva por el mismo espacio", ex.Message); ;
+            }
+           
 
         }
 
@@ -52,7 +60,7 @@ namespace Architecs.Test
                 ObjReserva.N_IdHorarioIni = Convert.ToInt32(6);
                 ObjReserva.N_IdHorarioFin = Convert.ToInt32(7);
                 ObjReserva.N_IdEspacioComun = Convert.ToInt32(2);
-                ObjReserva.D_FecRegistro = Convert.ToDateTime("2020-06-20");
+                ObjReserva.D_FecRegistro = Convert.ToDateTime("2000-06-20");
                 ObjReserva.B_Estado = true;
 
                 SOAPReservaService.ReservasBE ObjReservaPrueba = new SOAPReservaService.ReservasBE();
@@ -77,7 +85,7 @@ namespace Architecs.Test
                 SOAPReservaService.ReservasBE ObjReserva = new SOAPReservaService.ReservasBE();
                 ObjReserva.N_IdResidente = 4;
                 ObjReserva.N_IdHorarioIni = Convert.ToInt32(1);
-                ObjReserva.N_IdHorarioFin = Convert.ToInt32(9);
+                ObjReserva.N_IdHorarioFin = Convert.ToInt32(3);
                 ObjReserva.N_IdEspacioComun = Convert.ToInt32(2);
                 ObjReserva.D_FecRegistro = Convert.ToDateTime("2014-06-20");
                 ObjReserva.B_Estado = true;
