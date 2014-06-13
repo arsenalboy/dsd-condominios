@@ -4,19 +4,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="jumbotron">
+  <div class="jumbotron">
         <div class="container">
             <h3>
                 Registro de Cuota</h3>
         </div>
     </div>
-    <table style="left: 20px">
+     <table style="left: 20px">
         <tr>
             <td>
                 <div style="windows">
-                    <form id="form1" runat="server" style="border: 2px; vertical-align: middle">
+                   <%-- <form id="form1" runat="server" style="border: 2px; vertical-align: middle">--%>
                     <fieldset title="Datos de Vivienda:">
-                        <table>
+                         <table>
                             
                             
                             <tr>
@@ -24,7 +24,7 @@
                                     Id Cuota :
                                 </td>
                                 <td style="width: 300px;">
-                                    <asp:Label ID="lblN_IdVivienda" runat="server" CssClass="form-control" Width="299px"></asp:Label>
+                                    <asp:Label ID="lblN_IdCuota" runat="server" CssClass="form-control" Width="299px"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -49,7 +49,7 @@
                                    Vivienda/Departamento :
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="ddlVivienda" MaxLength="10" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlVivienda" runat="server" CssClass="form-control"></asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
@@ -57,16 +57,7 @@
                                    Fecha de Vencimiento: :
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtFechaVcto" MaxLength="10" runat="server" CssClass="form-control"></asp:TextBox>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Propietario :
-                                </td>
-                                <td>
-                                    <asp:DropDownList ID="txtResidente" runat="server" CssClass="form-control">
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="txtFechaVcto" MaxLength="12" runat="server" CssClass="form-control"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -94,7 +85,7 @@
                             </tr>
                         </table>
                     </fieldset>
-                    </form>
+                   <%-- </form>--%>
                 </div>
             </td>
         </tr>
