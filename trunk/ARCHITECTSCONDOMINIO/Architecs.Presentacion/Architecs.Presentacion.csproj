@@ -69,6 +69,7 @@
     <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\js\bootstrap.js" />
     <Content Include="css\js\bootstrap.min.js" />
+    <Content Include="frmCuota.aspx" />
     <Content Include="frmViviendaCrear.aspx" />
     <Content Include="frmViviendas.aspx" />
     <Content Include="images\Buscar_24x24.png" />
@@ -217,6 +218,13 @@
     <Compile Include="Dominio\Queja.cs" />
     <Compile Include="Dominio\Residente.cs" />
     <Compile Include="Dominio\RetornaMensajeT.cs" />
+    <Compile Include="frmCuota.aspx.cs">
+      <DependentUpon>frmCuota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCuota.aspx.designer.cs">
+      <DependentUpon>frmCuota.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmViviendaCrear.aspx.cs">
       <DependentUpon>frmViviendaCrear.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

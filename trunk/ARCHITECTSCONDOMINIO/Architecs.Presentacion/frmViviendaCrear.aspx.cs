@@ -29,14 +29,13 @@ namespace Architecs.Presentacion
                 ddlN_IdResidente.DataTextField = "C_Apellidos";
                 ddlN_IdResidente.DataBind();
 
-                this.btnCerrar.Attributes.Add("OnClick", "CerrarClose()");
-
+                
                 String querystringID = string.Empty;
                 if (Request.QueryString.Get("pm") != null)
                 {
                     Page.Title = "Edición de Vivienda";
                     querystringID = Request.QueryString.Get("pm");
-                    string strURL = "http://localhost:59151/ViviendasService.svc/Viviendas";
+                    string strURL = ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString(); // "http://localhost:59151/ViviendasService.svc/Viviendas";
 
                     HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
                        .Create(strURL + "/" + querystringID);
@@ -72,16 +71,10 @@ namespace Architecs.Presentacion
                                        "\"N_NumMetros\":\"" + txtN_NumMetros.Text + "\"," +
                                        "\"C_CodTipo\":\"" + ddlC_CodTipo.SelectedValue + "\" }"; //JSON
 
-                    string postdataok = "{\"N_IdResidente\":\"29\"," +
-                                      "\"C_NumEdificio\":\"8524\"," +
-                                      "\"C_NumDpto\":\"Dv0X\"," +
-                                      "\"N_NumMetros\":\"110\"," +
-                                      "\"C_CodTipo\":\"depa\" }"; //JSON
-
                     byte[] data = Encoding.UTF8.GetBytes(postdata);
 
                     HttpWebRequest req = (HttpWebRequest)WebRequest
-                         .Create("http://localhost:59151/ViviendasService.svc/Viviendas"); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
+                         .Create(ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString());
 
                     req.Method = "POST";
                     req.ContentLength = data.Length;
@@ -101,7 +94,6 @@ namespace Architecs.Presentacion
                 }
                 else
                 {
-                    
                     // Prueba de creación de vivienda vía HTTP POST
                     string postdata = "{\"N_IdVivienda\":\"" + lblN_IdVivienda.Text + "\"," +
                                        "\"N_IdResidente\":\"" + ddlN_IdResidente.SelectedValue + "\"," +
@@ -110,16 +102,10 @@ namespace Architecs.Presentacion
                                        "\"N_NumMetros\":\"" + txtN_NumMetros.Text + "\"," +
                                        "\"C_CodTipo\":\"" + ddlC_CodTipo.SelectedValue + "\" }"; //JSON
 
-                    string postdataok = "{\"N_IdResidente\":\"29\"," +
-                                      "\"C_NumEdificio\":\"8524\"," +
-                                      "\"C_NumDpto\":\"Dv0X\"," +
-                                      "\"N_NumMetros\":\"110\"," +
-                                      "\"C_CodTipo\":\"depa\" }"; //JSON
-
                     byte[] data = Encoding.UTF8.GetBytes(postdata);
 
                     HttpWebRequest req = (HttpWebRequest)WebRequest
-                         .Create("http://localhost:59151/ViviendasService.svc/Viviendas/" + lblN_IdVivienda.Text); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
+                         .Create(ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()+"/" + lblN_IdVivienda.Text); 
 
                     req.Method = "PUT";
                     req.ContentLength = data.Length;
@@ -147,7 +133,7 @@ namespace Architecs.Presentacion
 
         protected void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("frmViviendas.aspx");
         }
 
 

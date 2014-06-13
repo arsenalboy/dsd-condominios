@@ -14,15 +14,17 @@
     <script src="Scripts/Validaciones.js" type="text/javascript"></script>
 </head>
 <body>
+    <div class="jumbotron">
+            <div class="container">
+                <h3>
+                    Registro de Vivienda</h3>
+            </div>
+        </div>
     <table>
         <tr>
             <td>
                 <div style="windows">
                     <form id="form1" runat="server" style="border: 2px; vertical-align: middle">
-                    <div class="container">
-                        <h3>
-                            Administracion de Viviendas</h3>
-                    </div>
                     <fieldset title="Datos de Vivienda:">
                         <table>
                             <tr>
@@ -91,7 +93,8 @@
                                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" class="btn btn-primary" />
                                 </td>
                                 <td>
-                                    <asp:Button ID="btnCerrar" runat="server" Text="Cerrar" class="btn btn-primary" OnClick="btnCerrar_Click" />
+                                    <asp:Button ID="btnCerrar" runat="server" Text="Regresar" 
+                                        class="btn btn-primary" OnClick="btnCerrar_Click" />
                                     <asp:Label ID="lblMensaje" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
                                 </td>
                             </tr>
