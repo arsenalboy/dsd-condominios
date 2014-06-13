@@ -20,15 +20,15 @@
                     Registro de Vivienda</h3>
             </div>
         </div>
-    <table>
+    <table style="left:20px">
         <tr>
             <td>
-                <div style="windows">
+                <div style="windows" >
                     <form id="form1" runat="server" style="border: 2px; vertical-align: middle">
                     <fieldset title="Datos de Vivienda:">
                         <table>
                             <tr>
-                                <td>
+                                <td style="right">
                                     Id Vivienda :
                                 </td>
                                 <td style="width: 300px;">
@@ -56,7 +56,7 @@
                                     N° Metros :
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtN_NumMetros" MaxLength="10    " runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtN_NumMetros" MaxLength="10    " runat="server" onkeypress="return filterInput(1, event, true)" CssClass="form-control"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -90,13 +90,16 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" class="btn btn-primary" />
+                                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" class="btn btn-primary alert-success" />
                                 </td>
                                 <td>
-                                    <asp:Button ID="btnCerrar" runat="server" Text="Regresar" 
-                                        class="btn btn-primary" OnClick="btnCerrar_Click" />
-                                    <asp:Label ID="lblMensaje" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                                    <asp:Button ID="btnCerrar" runat="server" Text="Regresar" class="btn btn-primary alert-danger" OnClick="btnCerrar_Click" />
                                 </td>
+                            </tr>
+                            <tr>
+                            <td colspan="2">
+                                    <asp:Label ID="lblMensaje" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>                            
+                            </td>
                             </tr>
                         </table>
                     </fieldset>
