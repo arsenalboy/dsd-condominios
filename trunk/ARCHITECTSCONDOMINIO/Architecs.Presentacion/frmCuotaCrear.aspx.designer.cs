@@ -13,22 +13,13 @@ namespace Architecs.Presentacion {
     public partial class frmCuotaCrear {
         
         /// <summary>
-        /// form1 control.
+        /// lblN_IdCuota control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// lblN_IdVivienda control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblN_IdVivienda;
+        protected global::System.Web.UI.WebControls.Label lblN_IdCuota;
         
         /// <summary>
         /// lblPeriodo control.
@@ -65,15 +56,6 @@ namespace Architecs.Presentacion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaVcto;
-        
-        /// <summary>
-        /// txtResidente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtResidente;
         
         /// <summary>
         /// chkB_Estado control.

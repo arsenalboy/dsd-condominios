@@ -74,6 +74,7 @@
     <Content Include="frmViviendaCrear.aspx" />
     <Content Include="frmViviendas.aspx" />
     <Content Include="images\Buscar_24x24.png" />
+    <Content Include="images\Calendar.png" />
     <Content Include="images\Delete.gif" />
     <Content Include="images\Edit.gif" />
     <Content Include="images\NoData_32x32.png" />
