@@ -3,8 +3,6 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <form id="form1" runat="server">
     <div>
         <div class="jumbotron">
             <div class="container">
@@ -30,7 +28,6 @@
         <asp:GridView ID="gvCuotas" runat="server" Width="98%" AutoGenerateColumns="False"
             AllowPaging="True" EmptyDataText="No existen ítems a mostrar." PageSize="7" 
             class="table table-bordered table-hover" onrowcommand="gvCuotas_RowCommand" 
-            onrowdatabound="gvCuotas_RowDataBound" 
             onpageindexchanging="gvCuotas_PageIndexChanging">
             <Columns>
                 <asp:TemplateField>
@@ -47,7 +44,7 @@
                 <asp:BoundField DataField="objVivienda.ObjResidente.C_Apellidos" HeaderText="Propietario/Residente" />
 
                 <asp:BoundField DataField="N_Importe" HeaderText="Importe" />
-                <asp:BoundField DataField="D_FecVncto" HeaderText="Fecha Vencto" />
+                <asp:BoundField DataField="D_FecVncto" HeaderText="Fecha Vencto" DataFormatString="{0:dd/MM/yyyy}" />
                 <asp:BoundField DataField="objTipoPago.C_Descripcion" HeaderText="Tipo Pago" />
                 <asp:TemplateField>
                     <ItemTemplate>
@@ -56,7 +53,7 @@
                     </ItemTemplate>
                     <HeaderStyle Width="30px" />
                     <ItemStyle HorizontalAlign="Center" />
-                </asp:TemplateField>
+                </asp:TemplateField><%----%>
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:ImageButton ID="btnEliminar" runat="server" CommandArgument='<%#Eval("N_IdCuota")%>'
@@ -68,31 +65,6 @@
             </Columns>
         </asp:GridView>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;</button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                        Close</button>
-                    <button type="button" class="btn btn-primary">
-                        Save
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
     <asp:Label ID="lblMensajes" runat="server" Font-Bold="True" Font-Size="Larger" 
         ForeColor="#FF3300"></asp:Label>
-    </form>
 </asp:Content>
