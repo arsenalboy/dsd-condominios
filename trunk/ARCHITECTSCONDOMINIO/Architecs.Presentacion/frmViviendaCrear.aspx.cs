@@ -36,7 +36,7 @@ namespace Architecs.Presentacion
                 {
                     Page.Title = "Edición de Vivienda";
                     querystringID = Request.QueryString.Get("pm");
-                    string strURL = "http://localhost:62023/ViviendasService.svc/Viviendas";
+                    string strURL = "http://localhost:59151/ViviendasService.svc/Viviendas";
 
                     HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
                        .Create(strURL + "/" + querystringID);
@@ -81,7 +81,7 @@ namespace Architecs.Presentacion
                     byte[] data = Encoding.UTF8.GetBytes(postdata);
 
                     HttpWebRequest req = (HttpWebRequest)WebRequest
-                         .Create("http://localhost:62023/ViviendasService.svc/Viviendas"); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
+                         .Create("http://localhost:59151/ViviendasService.svc/Viviendas"); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
 
                     req.Method = "POST";
                     req.ContentLength = data.Length;
@@ -103,7 +103,7 @@ namespace Architecs.Presentacion
                 {
                     
                     // Prueba de creación de vivienda vía HTTP POST
-                    string postdata = "{\"N_IdResidente\":\"" + lblN_IdVivienda.Text + "\"," +
+                    string postdata = "{\"N_IdVivienda\":\"" + lblN_IdVivienda.Text + "\"," +
                                        "\"N_IdResidente\":\"" + ddlN_IdResidente.SelectedValue + "\"," +
                                        "\"C_NumEdificio\":\"" + txtC_NumEdificio.Text + "\"," +
                                        "\"C_NumDpto\":\"" + txtC_NumDpto.Text + "\"," +
@@ -119,7 +119,7 @@ namespace Architecs.Presentacion
                     byte[] data = Encoding.UTF8.GetBytes(postdata);
 
                     HttpWebRequest req = (HttpWebRequest)WebRequest
-                         .Create("http://localhost:62023/ViviendasService.svc/Viviendas/" + lblN_IdVivienda.Text); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
+                         .Create("http://localhost:59151/ViviendasService.svc/Viviendas/" + lblN_IdVivienda.Text); //ConfigurationManager.AppSettings["URL_REST_vivienda"].ToString()
 
                     req.Method = "PUT";
                     req.ContentLength = data.Length;

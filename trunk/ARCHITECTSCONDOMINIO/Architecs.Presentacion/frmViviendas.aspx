@@ -33,11 +33,11 @@
                 <div class="col-md-3">
                     <asp:TextBox type="text" ID="txtcodigo" name="codigo" class="form-control" runat="server"></asp:TextBox>
                 </div>
-                <div class="col-md-3">
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary" OnClick="btnBuscar_Click" />
+                <div class="col-md-3"> <%----%><%--onclick="btnNuevo_Click"--%> 
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" class="btn btn-primary" OnClick="btnBuscar_Click"/>
                     <!-- Button trigger modal -->
                       <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" class="btn btn-primary" data-toggle="modal"
-                        data-target="#myModal" onclick="btnNuevo_Click" />
+                        data-target="#myModal" />
                 </div>
             </div>
         </div>

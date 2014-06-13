@@ -88,7 +88,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-primary" />
+                                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" class="btn btn-primary" />
                                 </td>
                                 <td>
                                     <asp:Button ID="btnCerrar" runat="server" Text="Cerrar" class="btn btn-primary" OnClick="btnCerrar_Click" />

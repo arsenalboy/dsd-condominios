@@ -66,15 +66,15 @@ namespace Architecs.Presentacion
                 case "Eliminar":
                     try
                     {
-                        lblMensajes.Text = string.Empty;  
-                        string strURL = "http://localhost:62023/ViviendasService.svc/Viviendas";
+                        lblMensajes.Text = string.Empty;
+                        string strURL = "http://localhost:59151/ViviendasService.svc/Viviendas";
                         string strID = e.CommandArgument.ToString();
                         HttpWebRequest reqEliminar = (HttpWebRequest)WebRequest
                            .Create(strURL + "/" + strID);
                         reqEliminar.Method = "DELETE";
                         HttpWebResponse resEliminar = (HttpWebResponse)reqEliminar.GetResponse();
 
-                        string strURL2 = "http://localhost:62023/ViviendasService.svc/Viviendas";
+                        string strURL2 = "http://localhost:59151/ViviendasService.svc/Viviendas";
                         string strID2 = e.CommandArgument.ToString();
                         HttpWebRequest reqObtener = (HttpWebRequest)WebRequest
                            .Create(strURL2 + "/" + strID2);
