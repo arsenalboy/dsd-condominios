@@ -11,17 +11,21 @@
 </head>
 <body>
 <%
-//int x = Integer.parseInt(request.getParameter("aux"));
-int x=1;
+int x = Integer.parseInt(request.getParameter("aux"));
+String msg = request.getParameter("msg");
 if(x>0){%>
-	<div class="alert alert-success">
+	<div class="panel-body">
+		<div class="alert alert-success">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<b>En hora buena,</b> Su reserva se registró con éxito.
+		<b>En hora buena,</b> El registro se Realizo con éxito.<%=msg %>
 		</div>
+	</div>
 <%}else{%>
-	<div class="alert alert-success">
-	<button type="button" class="close" data-dismiss="warning">&times;</button>
-	<b>En hora buena,</b> Su reserva se registró con éxito.
+	<div class="panel-body">
+		<div class="alert alert-danger">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<b>ERROR!</b> No se pudo realizar la operacion <%=msg %>
+		</div>
 	</div>
 <%}%>
 </body>

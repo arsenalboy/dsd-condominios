@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="cleaner.ResidenteWS"%>
 <%@page import="org.datacontract.schemas._2004._07.Architects_Dominio.ResidenteBE,cleaner.*"%>
 <%@page import="org.tempuri.ResidenteService"%>
@@ -79,8 +80,9 @@ if(r.getN_TipoDoc()==1){
     <li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=4&cod=<%=r.getN_IdResidente()%>&keepThis=true&TB_iframe=true&height=500&width=750" 
 			class="thickbox">Actualizar</a></li>
     <li class="divider"></li>
-    <li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=5&cod=<%=r.getN_IdResidente()%>"><i class="i"></i> Eliminar</a></li>
+    <li><a href="<%=request.getContextPath()%>/ResidenteServlet?opcion=5&cod=<%=r.getN_IdResidente()%>" onclick="return confirm('¿Desea Eliminar el registro');""><i class="i"></i> Eliminar</a></li>
   </ul>
+  
 </div>
 </td>
 </tr>
