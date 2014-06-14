@@ -164,6 +164,44 @@ namespace VisitasService
             }            
         }
 
+        public List<VisitanteBE> BuscarVisitantesPorVariosFiltros(string nroDocumento, string fechaVisita, string nroDocResidente)
+        {
+            ResidenteServiceClient client = new ResidenteServiceClient();
+            const DateTimeStyles style = DateTimeStyles.AllowWhiteSpaces;
+            DateTime dtTemp = DateTime.Now.Date;
+            DateTime? dtFechaVisita = null;
+            List<VisitanteBE> VisitantesEncontrados = new List<VisitanteBE>();
+
+            try
+            {
+                Architects.Dominio.ResidenteBE residente = GetEntity(client.ObtenerResidentePorNroDocumento(nroDocResidente));
+
+               if (DateTime.TryParseExact(fechaVisita, "yyyy-MM-dd", CultureInfo.InvariantCulture, style, out dtTemp)
+               || DateTime.TryParseExact(fechaVisita, "yyyy-dd-MM", CultureInfo.InvariantCulture, style, out dtTemp)
+               || DateTime.TryParseExact(fechaVisita, "dd-MM-yyyy", CultureInfo.InvariantCulture, style, out dtTemp)
+               || DateTime.TryParseExact(fechaVisita, "MM-dd-yyyy", CultureInfo.InvariantCulture, style, out dtTemp))
+                    dtFechaVisita = dtTemp;
+
+                if (!dtFechaVisita.HasValue)
+                    throw new WebFaultException<string>("Formato de Fecha Incorrecto", HttpStatusCode.InternalServerError);                                
+
+                if (residente != null)
+                    VisitantesEncontrados = new List<VisitanteBE>(objDA.BuscarVisitantes(nroDocumento
+                        , "", dtFechaVisita, residente.N_IdResidente));
+
+                for (int i = 0; i < VisitantesEncontrados.Count; i++)
+                {
+                    VisitantesEncontrados[i].O_ResidenteBE = residente;
+                }
+
+                return VisitantesEncontrados;
+            }
+            catch (WebFaultException ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<VisitanteBE> BuscarVisitantesPorResidente_JSON(string NroDocumento)
         {
             ResidenteServiceClient client = new ResidenteServiceClient();
