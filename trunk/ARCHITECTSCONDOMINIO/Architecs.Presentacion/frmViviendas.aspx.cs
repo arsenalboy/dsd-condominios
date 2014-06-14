@@ -45,6 +45,7 @@ namespace Architecs.Presentacion
 
             gvViviendas.DataSource = lstViviendas;
             gvViviendas.DataBind();
+            lblMensajes.Text = "Probando";
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
