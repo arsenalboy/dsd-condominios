@@ -16,13 +16,13 @@
         <div class="form-group">
           <label for="txtNombre" class="col-md-2 control-label">Nombres</label>
           <div class="col-md-4">
-            <input class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombres" type="text" required>
+            <input class="form-control" id="txtNombre" name="txtNombre" value="REs1" placeholder="Nombres" type="text" required>
           </div>
         </div>
         <div class="form-group">
           <label for="txtApellidos" class="col-md-2 control-label">Apellidos</label>
           <div class="col-md-4">
-              <input class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos" type="text" required>
+              <input class="form-control" id="txtApellidos" name="txtApellidos" value="REs1" placeholder="Apellidos" type="text" required>
           </div>
         </div>
         <div class="form-group">
@@ -37,25 +37,25 @@
         <div class="form-group">
           <label for="txtNombre" class="col-md-2 control-label">Número de Documento</label>
           <div class="col-md-6">
-            <input class="form-control" id="txtNuDocumento" name="txtNuDocumento" placeholder="Número de Documento" type="text" required>
+            <input class="form-control" id="txtNuDocumento" name="txtNuDocumento" value="88887777" placeholder="Número de Documento" type="text" required>
           </div>
         </div>
         <div class="form-group">
           <label for="txtFeNac" class="col-md-2 control-label">Fecha de nacimiento</label>
           <div class="col-md-6">
-            <input class="form-control" id="txtFeNac" name="txtFeNac" placeholder="Fecha de nacimiento" type="date" required>
+            <input class="form-control" id="txtFeNac" name="txtFeNac" placeholder="Fecha de nacimiento" value="20/10/1980"type="date" required>
           </div>
         </div>
         <div class="form-group">
           <label for="txtCorreo" class="col-md-2 control-label">Correo</label>
           <div class="col-md-4">
-            <input class="form-control" id="txtCorreo" name="txtCorreo" placeholder="Correo" type="email" required>
+            <input class="form-control" id="txtCorreo" name="txtCorreo" value="a@a" placeholder="Correo" type="email" required>
           </div>
         </div>
         <div class="form-group">
           <label for="txtClave" class="col-md-2 control-label">Contraseña</label>
           <div class="col-md-4">
-            <input class="form-control" id="txtClave" name="txtClave" placeholder="Contraseña" type="password" required>
+            <input class="form-control" id="txtClave" name="txtClave" value="123" placeholder="Contraseña" type="password" required>
           </div>
         </div>
         <div class="form-group"></div>

@@ -55,6 +55,7 @@ public class ResidenteServlet extends HttpServlet {
 		Boolean b_Estado=true;
 		String page="";	
 		String msg= null;
+		int x=0;
 		try{
  
 			if(opcion.equals("1")){	//Lista todos los residentes
@@ -68,19 +69,22 @@ public class ResidenteServlet extends HttpServlet {
 			}else if(opcion.equals("2")){ //Registra Residentes
 				try {
 					ResidenteWS residente = new ResidenteWS();
-					int x= residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+					x= residente.CrearResidente(c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
 					page="/pages/util.jsp?aux="+x;
 				} catch (Exception e) {
 					//page="/pages/ListaResidentes.jsp"+msg=e.getMessage();
 					request.setAttribute("mensaje",e.getMessage());	
 					System.out.print("ERROR DE REGISTRO: "+e.getMessage());
+					msg=e.getMessage();
+					page="/pages/util.jsp?aux="+x+"?msg="+msg;
 				}
 				
 				
 			}else if(opcion.equals("3")){ //Actualiza Residentes
 				
 				ResidenteWS residente = new ResidenteWS();
-				int x = residente.ModificarResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+				residente.ModificarResidente(n_IdResidente, c_Nombre, c_Apellidos, n_TipoDoc, c_NumDocume, D_FecNacimi, c_Correo, c_Clave, b_Estado);
+				x = 1;
 				page="/pages/util.jsp?aux="+x;
 					
 			}else if(opcion.equals("4")){ //Obtiene un residente por código
@@ -98,7 +102,7 @@ public class ResidenteServlet extends HttpServlet {
 				
 				ResidenteWS residente = new ResidenteWS();
 				int codigo= Integer.parseInt(request.getParameter("cod").trim().equals("")?"0":request.getParameter("cod").trim());								
-				int x= residente.EliminarResidente(codigo);
+				x= residente.EliminarResidente(codigo);
 				ResidenteBE[] listado = residente.listarResidente();
 				request.setAttribute("ListaResidentes", listado);
 				page="/pages/ListaResidentes.jsp?"+x;
