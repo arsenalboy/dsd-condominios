@@ -50,8 +50,8 @@
               </li>
                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Quejas <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
-						<li><a href="Quejas/CreaQueja.aspx" target="_top" >Crear Queja</a></li>
-						<li><a href="Quejas/ConsultaQuejas.aspx" target="_top" >Consultar Quejas</a></li>	        							
+						<li><a href="../Quejas/CreaQueja.aspx" target="_top" >Crear Queja</a></li>
+						<li><a href="../Quejas/ConsultaQuejas.aspx" target="_top" >Consultar Quejas</a></li>	        							
 					</ul>
 			  </li>
 			  <li><a href="home.aspx" target="_top">Configuración</a></li>
