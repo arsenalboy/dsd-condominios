@@ -78,6 +78,11 @@ namespace VisitasService
         IEnumerable<VisitanteBE> ListarVisitantesPaginado(string page, int size);
 
         [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "Visitantes/{nroDocumento},{fechaVisita},{nroDocResidente}",
+            ResponseFormat = WebMessageFormat.Json)]
+        List<VisitanteBE> BuscarVisitantesPorVariosFiltros(string nroDocumento, string fechaVisita, string nroDocResidente);
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "Visitantes", BodyStyle = WebMessageBodyStyle.Bare,
             RequestFormat = WebMessageFormat.Xml, ResponseFormat = WebMessageFormat.Xml)]
         VisitanteBE AgregarVisitante(XElement dataVisitante);        
