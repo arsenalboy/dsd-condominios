@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="88YuEn1tulF9vJPytgwAPOiNQRI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="aQsgggBSwGi4uXoGFYln9t5Q69k=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IJuntaService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IJuntaService" contract="JuntaService.IJuntaService" bindingType="basicHttpBinding" address="http://localhost:62067/JuntaService.svc" bindingConfiguration="BasicHttpBinding_IJuntaService">
+    <endpoint name="BasicHttpBinding_IJuntaService" contract="JuntaService.IJuntaService" bindingType="basicHttpBinding" address="http://localhost:59173/JuntaService.svc" bindingConfiguration="BasicHttpBinding_IJuntaService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:62067/JuntaService.svc</serializedValue>
+          <serializedValue>http://localhost:59173/JuntaService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

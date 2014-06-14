@@ -74,7 +74,7 @@
   <body>
     <div class="container">
  	  
-      <form class="form-signin" action="Default.aspx" method="post" >
+      <form class="form-signin" action="home.aspx" method="post" >
         <h2 class="form-signin-heading"></h2>
         <input type="hidden"  value="R" name="hidTipo" id="hidTipo"/>
         <input type="text" value="carlos10@gmail.com" name="txtUser" id="txtUser" class="form-control" placeholder="Usuario">

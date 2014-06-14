@@ -124,99 +124,6 @@ namespace Architecs.Presentacion.JuntaService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-    [System.SerializableAttribute()]
-    public partial class RetornaMensaje : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodigoErrorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodigoRetornoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ExitoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MensageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CodigoError {
-            get {
-                return this.CodigoErrorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodigoErrorField, value) != true)) {
-                    this.CodigoErrorField = value;
-                    this.RaisePropertyChanged("CodigoError");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CodigoRetorno {
-            get {
-                return this.CodigoRetornoField;
-            }
-            set {
-                if ((this.CodigoRetornoField.Equals(value) != true)) {
-                    this.CodigoRetornoField = value;
-                    this.RaisePropertyChanged("CodigoRetorno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Exito {
-            get {
-                return this.ExitoField;
-            }
-            set {
-                if ((this.ExitoField.Equals(value) != true)) {
-                    this.ExitoField = value;
-                    this.RaisePropertyChanged("Exito");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mensage {
-            get {
-                return this.MensageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MensageField, value) != true)) {
-                    this.MensageField = value;
-                    this.RaisePropertyChanged("Mensage");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ListaJuntas", Namespace="http://schemas.datacontract.org/2004/07/Architecs.ReunionesService.Dominio")]
     [System.SerializableAttribute()]
     public partial class ListaJuntas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -377,19 +284,19 @@ namespace Architecs.Presentacion.JuntaService {
     public interface IJuntaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntaService/listarDirectivos", ReplyAction="http://tempuri.org/IJuntaService/listarDirectivosResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.JuntaService.RetornaMensaje), Action="http://tempuri.org/IJuntaService/listarDirectivosRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IJuntaService/listarDirectivosRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         System.Collections.Generic.List<Architecs.Presentacion.JuntaService.Directivo> listarDirectivos(string C_NomPer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntaService/CreaJunta", ReplyAction="http://tempuri.org/IJuntaService/CreaJuntaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.JuntaService.RetornaMensaje), Action="http://tempuri.org/IJuntaService/CreaJuntaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IJuntaService/CreaJuntaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         int CreaJunta(System.DateTime D_Fecha, string C_Hora, string C_Tema, string C_Acuerdo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivos", ReplyAction="http://tempuri.org/IJuntaService/CreaJuntaDirectivosResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.JuntaService.RetornaMensaje), Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivosRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IJuntaService/CreaJuntaDirectivosRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         int CreaJuntaDirectivos(int N_IdJunta, int N_IdDirectivo, string C_PreJun, bool B_Estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntaService/listarJuntas", ReplyAction="http://tempuri.org/IJuntaService/listarJuntasResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.JuntaService.RetornaMensaje), Action="http://tempuri.org/IJuntaService/listarJuntasRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IJuntaService/listarJuntasRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         System.Collections.Generic.List<Architecs.Presentacion.JuntaService.ListaJuntas> listarJuntas(string fechaini, string fechafin);
     }
     

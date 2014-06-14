@@ -23,14 +23,14 @@
 
 	      <div class="navbar-collapse collapse">
 	        <ul class="nav navbar-nav">
-	          <li class="active"><a href="home.aspx" target="_top">Inicio</a></li>
+	          <li class="active"><a href="../home.aspx" target="_top">Inicio</a></li>
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Residentes <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
 						<li><a href="#" target="_top" >Listar</a></li>	        							
 					</ul>
 			  </li>
 			  <li><a href="#" target="_top">Viviendas</a></li>
-			  <li><a href="<#" target="_top">Reservas</a></li>
+			  <li><a href="#" target="_top">Reservas</a></li>
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuotas <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
 						<li><a href="#" target="_top" >Listar</a></li>
@@ -45,9 +45,12 @@
 						<li><a href="#" target="_top" >Quejas</a></li>	        							
 					</ul>
 			  </li>
-			  <li><a href="#" target="_top">Juntas</a>
-                       
-              </li>
+			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Juntas <b class="caret"></b></a>
+			  		<ul class="dropdown-menu">
+						<li><a href="../Juntas/RegistroJuntas.aspx" target="_top" >Crear Junta</a></li>
+						<li><a href="../Juntas/ConsultaJuntas.aspx" target="_top" >Consultar Junta</a></li>	  
+					</ul>
+			  </li>
                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Quejas <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
 						<li><a href="../Quejas/CreaQueja.aspx" target="_top" >Crear Queja</a></li>
