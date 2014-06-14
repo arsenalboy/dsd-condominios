@@ -23,7 +23,7 @@
 
 	      <div class="navbar-collapse collapse">
 	        <ul class="nav navbar-nav">
-	          <li class="active"><a href="principal.aspx" target="_top">Inicio</a></li>
+	          <li class="active"><a href="home.aspx" target="_top">Inicio</a></li>
 			  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Residentes <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
 						<li><a href="#" target="_top" >Listar</a></li>	        							
@@ -50,12 +50,12 @@
               </li>
                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Quejas <b class="caret"></b></a>
 			  		<ul class="dropdown-menu">
-						<li><a href="<%=request.getContextPath()%>%>/Quejas/CreaQueja.aspx" target="_top" >Crear Queja</a></li>
-						<li><a href="<%=Request.RequestContext()%>/Quejas/ConsultaQuejas.aspx" target="_top" >Consultar Quejas</a></li>	        							
+						<li><a href="<%=HttpContext.Current.Request.Url.Host%>/Quejas/CreaQueja.aspx" target="_top" >Crear Queja</a></li>
+						<li><a href="<%=HttpContext.Current.Request.Url.Host%>/Quejas/ConsultaQuejas.aspx" target="_top" >Consultar Quejas</a></li>	        							
 					</ul>
 			  </li>
-			  <li><a href="principal.aspx" target="_top">Configuración</a></li>
-	          <li><a href="principal.aspx" target="_top">Salir</a></li>
+			  <li><a href="home.aspx" target="_top">Configuración</a></li>
+	          <li><a href="home.aspx" target="_top">Salir</a></li>
 	        </ul>
 	      </div><!--/.nav-collapse -->
 	    </div>
