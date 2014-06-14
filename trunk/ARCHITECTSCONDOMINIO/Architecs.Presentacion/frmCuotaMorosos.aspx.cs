@@ -8,7 +8,7 @@ using Architecs.Presentacion.PagosService;
 
 namespace Architecs.Presentacion
 {
-    public partial class frmCuotaPagos : System.Web.UI.Page
+    public partial class frmCuotaMorosos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,17 +29,7 @@ namespace Architecs.Presentacion
             CargarGrilla();
             lblMensajes.Text = string.Empty;
         }
-        protected void gvCuotas_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            switch (e.CommandName)
-            {
-                case "Pagar":
-                    Response.Redirect("frmCuotaPagar.aspx?pm=" + e.CommandArgument);
-                    break;
-
-                
-            }
-        }
+        
         protected void gvCuotas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvCuotas.PageIndex = e.NewPageIndex;
@@ -50,7 +40,7 @@ namespace Architecs.Presentacion
         {
             
             PagosService.PagosServiceClient proxyPagos = new PagosService.PagosServiceClient();
-            IList<Cuota> lstCuota = proxyPagos.ListarCuotaPorResidente(txtLoginUser.Text);
+            IList<Cuota> lstCuota = proxyPagos.ListarCuotaMorosas(txtPeriodo.Text);
 
             gvCuotas.DataSource = lstCuota;
             gvCuotas.DataBind();

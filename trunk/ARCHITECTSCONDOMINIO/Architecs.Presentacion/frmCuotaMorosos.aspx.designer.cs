@@ -10,25 +10,16 @@
 namespace Architecs.Presentacion {
     
     
-    public partial class frmCuotaPagos {
+    public partial class frmCuotaMorosos {
         
         /// <summary>
-        /// txtResidente control.
+        /// txtPeriodo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtResidente;
-        
-        /// <summary>
-        /// txtLoginUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLoginUser;
+        protected global::System.Web.UI.WebControls.TextBox txtPeriodo;
         
         /// <summary>
         /// btnBuscar control.

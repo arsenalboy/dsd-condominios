@@ -57,8 +57,12 @@
                         <asp:MenuItem Text="Administrar Pagos" Value="Administrar Pagos">
                             <asp:MenuItem NavigateUrl="~/frmCuota.aspx" Text="Listado" Value="Listado">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Pagar Cuota" Value="Pagar Cuota"></asp:MenuItem>
-                            <asp:MenuItem Text="Morosos" Value="Morosos"></asp:MenuItem>
+                            <asp:MenuItem Text="Registrar Cuota" Value="Registrar Cuota" 
+                                NavigateUrl="~/frmCuotaCrear.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/frmCuotaPagos.aspx" Text="Cuotas por Residente" 
+                                Value="Cuotas por Residente"></asp:MenuItem>
+                            <asp:MenuItem Text="Morosos" Value="Morosos" 
+                                NavigateUrl="~/frmCuotaMorosos.aspx"></asp:MenuItem>
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>

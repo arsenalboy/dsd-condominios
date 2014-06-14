@@ -145,6 +145,48 @@ namespace Architecs.PagosService.Persistencia
             }
             return lstCuota;
         }
+
+        public List<Cuota> ListarMorosos(string prm_C_Periodo)
+        {
+            List<Cuota> lstCuota = new List<Cuota>();
+            try
+            {
+                using (DBMLPagosDataContext SQLDC = new DBMLPagosDataContext(conexion))
+                {
+                    var resul = SQLDC.dsd_mnt_S_CuotaMorosos(prm_C_Periodo);
+
+                    foreach (var item in resul)
+                    {
+                        Cuota cuota = new Cuota();
+                        cuota.N_IdCuota = item.N_IdCuota;
+                        cuota.C_Periodo = item.C_Periodo;
+                        cuota.N_IdVivienda = item.N_IdVivienda;
+
+                        cuota.objVivienda.C_NumDpto = item.C_NumDpto;
+                        cuota.objVivienda.C_NumEdificio = item.C_NumEdificio;
+                        cuota.objVivienda.objResidente.C_Apellidos = item.C_Propietario;
+
+                        cuota.N_IdTipoPago = item.N_IdTipoPago;
+                        cuota.N_Importe = item.N_Importe;
+                        cuota.D_FecVncto = item.D_FecVncto;
+                        cuota.D_FecPago = item.D_FecPago;
+
+                        cuota.objTipoPago.C_Descripcion = item.V_IdTipoPago;
+                        cuota.objVivienda.C_NumDpto = item.C_NumDpto;
+                        cuota.objVivienda.C_NumEdificio = item.C_NumEdificio;
+                        cuota.C_NumDeposito = item.C_NumDeposito;
+
+                        lstCuota.Add(cuota);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lstCuota;
+        }
+      
         #endregion
 
         #region /* Proceso de SELECT BY ID CODE */
@@ -164,17 +206,25 @@ namespace Architecs.PagosService.Persistencia
                     var resul = SQLDC.dsd_mnt_S_CuotaId(prm_N_IdCuota);
                     foreach (var item in resul)
                     {
-                        cuota = new Cuota()
-                        {
-                            N_IdCuota = item.N_IdCuota,
-                            C_Periodo = item.C_Periodo,
-                            N_IdVivienda = item.N_IdVivienda,
-                            N_IdTipoPago = item.N_IdTipoPago,
-                            N_Importe = item.N_Importe,
-                            D_FecVncto = item.D_FecVncto,
-                            D_FecPago = item.D_FecPago,
-                            C_NumDeposito = item.C_NumDeposito,
-                        };
+                        cuota = new Cuota() { };
+                        cuota.N_IdCuota = item.N_IdCuota;
+                        cuota.C_Periodo = item.C_Periodo;
+                        cuota.N_IdVivienda = item.N_IdVivienda;
+
+                        cuota.objVivienda.C_NumDpto = item.C_NumDpto;
+                        cuota.objVivienda.C_NumEdificio = item.C_NumEdificio;
+                        cuota.objVivienda.objResidente.C_Apellidos = item.C_Propietario;
+
+                        cuota.N_IdTipoPago = item.N_IdTipoPago;
+                        cuota.N_Importe = item.N_Importe;
+                        cuota.D_FecVncto = item.D_FecVncto;
+                        cuota.D_FecPago = item.D_FecPago;
+
+                        cuota.objTipoPago.C_Descripcion = item.V_IdTipoPago;
+                        cuota.objVivienda.C_NumDpto = item.C_NumDpto;
+                        cuota.objVivienda.C_NumEdificio = item.C_NumEdificio;
+                        cuota.C_NumDeposito = item.C_NumDeposito;
+
                     }
                 }
             }
@@ -276,6 +326,26 @@ namespace Architecs.PagosService.Persistencia
             return codigoRetorno;
         }
 
+        public int PagarCuota(Cuota pcuota)
+        {
+            int codigoRetorno = -1;
+            try
+            {
+                using (DBMLPagosDataContext SQLDC = new DBMLPagosDataContext(conexion))
+                {
+                    codigoRetorno = SQLDC.dsd_mnt_U_CuotaPago(
+                        pcuota.N_IdCuota,
+                        pcuota.D_FecPago,
+                        pcuota.N_IdTipoPago,
+                        pcuota.C_NumDeposito);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return codigoRetorno;
+        }
         #endregion
 
         #region /* Proceso de DELETE BY ID CODE */

@@ -62,6 +62,8 @@
   <ItemGroup>
     <Content Include="AjaxControlToolkit.dll" />
     <Content Include="AjaxMin.dll" />
+    <Content Include="frmCuotaMorosos.aspx" />
+    <Content Include="frmCuotaPagar.aspx" />
     <Content Include="frmCuotaPagos.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\css\bootstrap-theme.css" />
@@ -82,6 +84,7 @@
     <Content Include="images\Delete.gif" />
     <Content Include="images\Edit.gif" />
     <Content Include="images\NoData_32x32.png" />
+    <Content Include="images\Pagos.png" />
     <Content Include="images\Select_16x16.png" />
     <Content Include="images\ver.png" />
     <Content Include="index.aspx" />
@@ -241,6 +244,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCuotaMorosos.aspx.cs">
+      <DependentUpon>frmCuotaMorosos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCuotaMorosos.aspx.designer.cs">
+      <DependentUpon>frmCuotaMorosos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuotaPagar.aspx.cs">
+      <DependentUpon>frmCuotaPagar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCuotaPagar.aspx.designer.cs">
+      <DependentUpon>frmCuotaPagar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmCuotaPagos.aspx.cs">
       <DependentUpon>frmCuotaPagos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

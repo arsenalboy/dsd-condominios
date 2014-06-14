@@ -16,7 +16,7 @@ namespace Architecs.PagosService.Persistencia
         private string conexion = string.Empty;
         public TipoPagoDAO()
         {
-            conexion = ConfigurationManager.ConnectionStrings["CondominiosDBConnectionString"].ToString(); // Utilitario.CadenaConeccion();
+            conexion = Utilitario.CadenaConeccion();
         }
 
         public List<TipoPago> Listar()
