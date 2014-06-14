@@ -9,7 +9,7 @@ namespace Architecs.PagosService
 { 
 	/// <summary>
 	/// Proyecto    : Modulo de Mantenimiento de : 
-	/// Creacion    : OCARRIL
+	/// Creacion    : OCARRIL / ACANTUARIAS
 	/// Fecha       : 17/05/2014-08:27:00 a.m.
 	/// Descripcion : Capa de Entidades 
 	/// Archivo     : [Gestion.Cuota.cs]
