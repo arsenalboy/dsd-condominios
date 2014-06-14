@@ -74,13 +74,13 @@ namespace Architecs.Presentacion.Reservas
         protected void CboHoraIni_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CboHoraIni.SelectedIndex != 0)
-                LblHoraIni.Text = CboHoraIni.SelectedItem.ToString().Substring(0, 5).Trim();
+                LblHoraIni.Text = CboHoraIni.SelectedItem.ToString();
         }
 
         protected void CboHoraFin_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CboHoraFin.SelectedIndex != 0)
-            LblHoraFin.Text = CboHoraFin.SelectedItem.ToString().Substring(0,5).Trim();
+            LblHoraFin.Text = CboHoraFin.SelectedItem.ToString();
         }
 
         protected void BtnGrabar_Click(object sender, EventArgs e)
