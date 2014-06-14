@@ -92,105 +92,15 @@ namespace Architecs.Presentacion.PagosService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-    [System.SerializableAttribute()]
-    public partial class RetornaMensaje : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodigoErrorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodigoRetornoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ExitoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MensageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CodigoError {
-            get {
-                return this.CodigoErrorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodigoErrorField, value) != true)) {
-                    this.CodigoErrorField = value;
-                    this.RaisePropertyChanged("CodigoError");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CodigoRetorno {
-            get {
-                return this.CodigoRetornoField;
-            }
-            set {
-                if ((this.CodigoRetornoField.Equals(value) != true)) {
-                    this.CodigoRetornoField = value;
-                    this.RaisePropertyChanged("CodigoRetorno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Exito {
-            get {
-                return this.ExitoField;
-            }
-            set {
-                if ((this.ExitoField.Equals(value) != true)) {
-                    this.ExitoField = value;
-                    this.RaisePropertyChanged("Exito");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mensage {
-            get {
-                return this.MensageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MensageField, value) != true)) {
-                    this.MensageField = value;
-                    this.RaisePropertyChanged("Mensage");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Cuota", Namespace="http://schemas.datacontract.org/2004/07/Architecs.PagosService")]
     [System.SerializableAttribute()]
     public partial class Cuota : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string C_NumDepositoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string C_PeriodoField;
@@ -217,7 +127,7 @@ namespace Architecs.Presentacion.PagosService {
         private Architecs.Presentacion.PagosService.TipoPago objTipoPagoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Architecs.Presentacion.PagosService.ViviendaBE objViviendaField;
+        private Architects.Dominio.ViviendaBE objViviendaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -226,6 +136,19 @@ namespace Architecs.Presentacion.PagosService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string C_NumDeposito {
+            get {
+                return this.C_NumDepositoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.C_NumDepositoField, value) != true)) {
+                    this.C_NumDepositoField = value;
+                    this.RaisePropertyChanged("C_NumDeposito");
+                }
             }
         }
         
@@ -334,7 +257,7 @@ namespace Architecs.Presentacion.PagosService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Architecs.Presentacion.PagosService.ViviendaBE objVivienda {
+        public Architects.Dominio.ViviendaBE objVivienda {
             get {
                 return this.objViviendaField;
             }
@@ -342,336 +265,6 @@ namespace Architecs.Presentacion.PagosService {
                 if ((object.ReferenceEquals(this.objViviendaField, value) != true)) {
                     this.objViviendaField = value;
                     this.RaisePropertyChanged("objVivienda");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ViviendaBE", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-    [System.SerializableAttribute()]
-    public partial class ViviendaBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool B_EstadoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_CodTipoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_NumDptoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_NumEdificioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int N_IdResidenteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int N_IdViviendaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> N_NumMetrosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Architecs.Presentacion.PagosService.ResidenteBE objResidenteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool B_Estado {
-            get {
-                return this.B_EstadoField;
-            }
-            set {
-                if ((this.B_EstadoField.Equals(value) != true)) {
-                    this.B_EstadoField = value;
-                    this.RaisePropertyChanged("B_Estado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_CodTipo {
-            get {
-                return this.C_CodTipoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_CodTipoField, value) != true)) {
-                    this.C_CodTipoField = value;
-                    this.RaisePropertyChanged("C_CodTipo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_NumDpto {
-            get {
-                return this.C_NumDptoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_NumDptoField, value) != true)) {
-                    this.C_NumDptoField = value;
-                    this.RaisePropertyChanged("C_NumDpto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_NumEdificio {
-            get {
-                return this.C_NumEdificioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_NumEdificioField, value) != true)) {
-                    this.C_NumEdificioField = value;
-                    this.RaisePropertyChanged("C_NumEdificio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int N_IdResidente {
-            get {
-                return this.N_IdResidenteField;
-            }
-            set {
-                if ((this.N_IdResidenteField.Equals(value) != true)) {
-                    this.N_IdResidenteField = value;
-                    this.RaisePropertyChanged("N_IdResidente");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int N_IdVivienda {
-            get {
-                return this.N_IdViviendaField;
-            }
-            set {
-                if ((this.N_IdViviendaField.Equals(value) != true)) {
-                    this.N_IdViviendaField = value;
-                    this.RaisePropertyChanged("N_IdVivienda");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> N_NumMetros {
-            get {
-                return this.N_NumMetrosField;
-            }
-            set {
-                if ((this.N_NumMetrosField.Equals(value) != true)) {
-                    this.N_NumMetrosField = value;
-                    this.RaisePropertyChanged("N_NumMetros");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Architecs.Presentacion.PagosService.ResidenteBE objResidente {
-            get {
-                return this.objResidenteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.objResidenteField, value) != true)) {
-                    this.objResidenteField = value;
-                    this.RaisePropertyChanged("objResidente");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResidenteBE", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-    [System.SerializableAttribute()]
-    public partial class ResidenteBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool B_EstadoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_ApellidosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_ClaveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_CorreoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_NombreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string C_NumDocumeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime D_FecNacimiField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int N_IdResidenteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int N_TipoDocField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool B_Estado {
-            get {
-                return this.B_EstadoField;
-            }
-            set {
-                if ((this.B_EstadoField.Equals(value) != true)) {
-                    this.B_EstadoField = value;
-                    this.RaisePropertyChanged("B_Estado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_Apellidos {
-            get {
-                return this.C_ApellidosField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_ApellidosField, value) != true)) {
-                    this.C_ApellidosField = value;
-                    this.RaisePropertyChanged("C_Apellidos");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_Clave {
-            get {
-                return this.C_ClaveField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_ClaveField, value) != true)) {
-                    this.C_ClaveField = value;
-                    this.RaisePropertyChanged("C_Clave");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_Correo {
-            get {
-                return this.C_CorreoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_CorreoField, value) != true)) {
-                    this.C_CorreoField = value;
-                    this.RaisePropertyChanged("C_Correo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_Nombre {
-            get {
-                return this.C_NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_NombreField, value) != true)) {
-                    this.C_NombreField = value;
-                    this.RaisePropertyChanged("C_Nombre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string C_NumDocume {
-            get {
-                return this.C_NumDocumeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.C_NumDocumeField, value) != true)) {
-                    this.C_NumDocumeField = value;
-                    this.RaisePropertyChanged("C_NumDocume");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime D_FecNacimi {
-            get {
-                return this.D_FecNacimiField;
-            }
-            set {
-                if ((this.D_FecNacimiField.Equals(value) != true)) {
-                    this.D_FecNacimiField = value;
-                    this.RaisePropertyChanged("D_FecNacimi");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int N_IdResidente {
-            get {
-                return this.N_IdResidenteField;
-            }
-            set {
-                if ((this.N_IdResidenteField.Equals(value) != true)) {
-                    this.N_IdResidenteField = value;
-                    this.RaisePropertyChanged("N_IdResidente");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int N_TipoDoc {
-            get {
-                return this.N_TipoDocField;
-            }
-            set {
-                if ((this.N_TipoDocField.Equals(value) != true)) {
-                    this.N_TipoDocField = value;
-                    this.RaisePropertyChanged("N_TipoDoc");
                 }
             }
         }
@@ -694,27 +287,31 @@ namespace Architecs.Presentacion.PagosService {
         Architecs.Presentacion.PagosService.TipoPago[] ListarTipoPago();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/RegistrarTipoPago", ReplyAction="http://tempuri.org/IPagosService/RegistrarTipoPagoResponse")]
-        Architecs.Presentacion.PagosService.RetornaMensaje RegistrarTipoPago(string Descripcion);
+        Architects.Dominio.RetornaMensaje RegistrarTipoPago(string Descripcion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/RegistrarCuota", ReplyAction="http://tempuri.org/IPagosService/RegistrarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.PagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/RegistrarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.Presentacion.PagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/RegistrarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architects.Dominio.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ActualizarCuota", ReplyAction="http://tempuri.org/IPagosService/ActualizarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.PagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.Presentacion.PagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architects.Dominio.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuota", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.PagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         Architecs.Presentacion.PagosService.Cuota[] ListarCuota(string pPeriodo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuotaPorResidente", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaPorResidenteResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaPorResidenteRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architecs.Presentacion.PagosService.Cuota[] ListarCuotaPorResidente(string pCorreoResidente);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/BuscarCuota", ReplyAction="http://tempuri.org/IPagosService/BuscarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.PagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/BuscarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/BuscarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         Architecs.Presentacion.PagosService.Cuota BuscarCuota(int pIdCuota);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/EliminarCuota", ReplyAction="http://tempuri.org/IPagosService/EliminarCuotaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Architecs.Presentacion.PagosService.RetornaMensaje), Action="http://tempuri.org/IPagosService/EliminarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
-        Architecs.Presentacion.PagosService.RetornaMensaje EliminarCuota(int pIdCuota);
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/EliminarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architects.Dominio.RetornaMensaje EliminarCuota(int pIdCuota);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -748,15 +345,15 @@ namespace Architecs.Presentacion.PagosService {
             return base.Channel.ListarTipoPago();
         }
         
-        public Architecs.Presentacion.PagosService.RetornaMensaje RegistrarTipoPago(string Descripcion) {
+        public Architects.Dominio.RetornaMensaje RegistrarTipoPago(string Descripcion) {
             return base.Channel.RegistrarTipoPago(Descripcion);
         }
         
-        public Architecs.Presentacion.PagosService.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
+        public Architects.Dominio.RetornaMensaje RegistrarCuota(string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
             return base.Channel.RegistrarCuota(pPeriodo, pIdVivienda, pImporte, pFecVncto);
         }
         
-        public Architecs.Presentacion.PagosService.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
+        public Architects.Dominio.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto) {
             return base.Channel.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto);
         }
         
@@ -764,11 +361,15 @@ namespace Architecs.Presentacion.PagosService {
             return base.Channel.ListarCuota(pPeriodo);
         }
         
+        public Architecs.Presentacion.PagosService.Cuota[] ListarCuotaPorResidente(string pCorreoResidente) {
+            return base.Channel.ListarCuotaPorResidente(pCorreoResidente);
+        }
+        
         public Architecs.Presentacion.PagosService.Cuota BuscarCuota(int pIdCuota) {
             return base.Channel.BuscarCuota(pIdCuota);
         }
         
-        public Architecs.Presentacion.PagosService.RetornaMensaje EliminarCuota(int pIdCuota) {
+        public Architects.Dominio.RetornaMensaje EliminarCuota(int pIdCuota) {
             return base.Channel.EliminarCuota(pIdCuota);
         }
     }

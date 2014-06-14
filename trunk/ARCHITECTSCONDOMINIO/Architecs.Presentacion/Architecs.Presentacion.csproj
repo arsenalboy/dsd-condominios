@@ -62,6 +62,7 @@
   <ItemGroup>
     <Content Include="AjaxControlToolkit.dll" />
     <Content Include="AjaxMin.dll" />
+    <Content Include="frmCuotaPagos.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\css\bootstrap-theme.css" />
     <Content Include="css\css\bootstrap-theme.min.css" />
@@ -92,6 +93,7 @@
     <None Include="css\fonts\glyphicons-halflings-regular.eot" />
     <None Include="css\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="css\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\DataSources\Architects.Dominio.RetornaMensaje.datasource" />
     <None Include="Service References\HorarioService\Architecs.Presentacion.HorarioService.HorarioBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -140,9 +142,6 @@
     <Content Include="Scripts\Popups.js" />
     <Content Include="Scripts\Validaciones.js" />
     <None Include="Service References\PagosService\Architecs.Presentacion.PagosService.Cuota.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PagosService\Architecs.Presentacion.PagosService.RetornaMensaje.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PagosService\Architecs.Presentacion.PagosService.TipoPago.datasource">
@@ -242,6 +241,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCuotaPagos.aspx.cs">
+      <DependentUpon>frmCuotaPagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCuotaPagos.aspx.designer.cs">
+      <DependentUpon>frmCuotaPagos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

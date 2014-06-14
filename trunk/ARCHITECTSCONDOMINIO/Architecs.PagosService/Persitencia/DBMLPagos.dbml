@@ -4,73 +4,6 @@
     <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Gestion.dsd_mnt_I_Cuota" Method="dsd_mnt_I_Cuota">
-    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_N_Importe" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="prm_D_FecVncto" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Gestion.dsd_mnt_S_Cuota" Method="dsd_mnt_S_Cuota">
-    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
-    <ElementType Name="dsd_mnt_S_CuotaResult">
-      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="C_Propietario" Type="System.String" DbType="VarChar(181)" CanBeNull="true" />
-      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="V_IdTipoPago" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
-      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="Gestion.dsd_mnt_S_CuotaId" Method="dsd_mnt_S_CuotaId">
-    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" />
-    <ElementType Name="dsd_mnt_S_CuotaIdResult">
-      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="Gestion.dsd_mnt_S_CuotaIdPeriodo" Method="dsd_mnt_S_CuotaIdPeriodo">
-    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
-    <ElementType Name="dsd_mnt_S_CuotaIdPeriodoResult">
-      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="C_Propietario" Type="System.String" DbType="VarChar(181)" CanBeNull="true" />
-      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="V_IdTipoPago" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
-      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="Gestion.dsd_mnt_U_Cuota" Method="dsd_mnt_U_Cuota">
-    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_N_IdTipoPago" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_N_Importe" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="prm_D_FecVncto" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Gestion.dsd_mnt_U_CuotaPago" Method="dsd_mnt_U_CuotaPago">
-    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_D_FecPago" Type="System.String" DbType="VarChar(1)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="Maestros.dsd_mnt_I_TipoPago" Method="dsd_mnt_I_TipoPago">
     <Parameter Name="prmN_IdTipoPago" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="prm_C_Descripcion" Type="System.String" DbType="VarChar(45)" />
@@ -89,6 +22,99 @@
     <ElementType Name="dsd_mnt_S_TipoPagoIdResult">
       <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="C_Descripcion" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Gestion.dsd_mnt_S_Cuota" Method="dsd_mnt_S_Cuota">
+    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <ElementType Name="dsd_mnt_S_CuotaResult">
+      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_Propietario" Type="System.String" DbType="VarChar(181)" CanBeNull="true" />
+      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="V_IdTipoPago" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="C_NumDeposito" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Gestion.dsd_mnt_S_CuotaId" Method="dsd_mnt_S_CuotaId">
+    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" />
+    <ElementType Name="dsd_mnt_S_CuotaIdResult">
+      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="C_NumDeposito" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumDeposito1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="B_Estado1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumDeposito2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="B_Estado2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Gestion.dsd_mnt_S_CuotaIdPeriodo" Method="dsd_mnt_S_CuotaIdPeriodo">
+    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="dsd_mnt_S_CuotaIdPeriodoResult">
+      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_Propietario" Type="System.String" DbType="VarChar(181)" CanBeNull="true" />
+      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="V_IdTipoPago" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="C_NumDeposito" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Gestion.dsd_mnt_U_CuotaPago" Method="dsd_mnt_U_CuotaPago">
+    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_D_FecPago" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="prm_C_NumDeposito" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Gestion.dsd_mnt_U_Cuota" Method="dsd_mnt_U_Cuota">
+    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_N_Importe" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="prm_D_FecVncto" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Gestion.dsd_mnt_I_Cuota" Method="dsd_mnt_I_Cuota">
+    <Parameter Name="prm_N_IdCuota" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_C_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_N_IdVivienda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_N_Importe" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="prm_D_FecVncto" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Gestion.dsd_mnt_S_CuotaPorResidente" Method="dsd_mnt_S_CuotaPorResidente">
+    <Parameter Name="prm_C_Correo" Type="System.String" DbType="VarChar(45)" />
+    <ElementType Name="dsd_mnt_S_CuotaPorResidenteResult">
+      <Column Name="N_IdCuota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Periodo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="N_IdVivienda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_NumEdificio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_NumDpto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="C_Propietario" Type="System.String" DbType="VarChar(181)" CanBeNull="true" />
+      <Column Name="N_IdTipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="V_IdTipoPago" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="N_Importe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="D_FecVncto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="D_FecPago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="C_NumDeposito" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="B_Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>

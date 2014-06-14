@@ -32,6 +32,10 @@ namespace Architecs.PagosService
         List<Cuota> ListarCuota(string pPeriodo);
 
         [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "ListarCuotaPorResidente")]
+        List<Cuota> ListarCuotaPorResidente(string pCorreoResidente);
+
+        [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "BuscarCuota")]
         Cuota BuscarCuota(int pIdCuota);
 

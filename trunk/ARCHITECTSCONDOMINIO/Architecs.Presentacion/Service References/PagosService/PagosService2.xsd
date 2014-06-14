@@ -23,6 +23,7 @@
   <xs:element name="ArrayOfCuota" nillable="true" type="tns:ArrayOfCuota" />
   <xs:complexType name="Cuota">
     <xs:sequence>
+      <xs:element minOccurs="0" name="C_NumDeposito" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="C_Periodo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="D_FecPago" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="D_FecVncto" nillable="true" type="xs:dateTime" />

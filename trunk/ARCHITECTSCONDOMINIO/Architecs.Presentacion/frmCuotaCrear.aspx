@@ -32,7 +32,8 @@
                                     Periodo [YYYYMM]:
                                 </td>
                                 <td style="width: 300px;">
-                                    <asp:Label ID="lblPeriodo" runat="server" CssClass="form-control" Width="299px"></asp:Label>
+                                    <asp:TextBox ID="txtPeriodo" runat="server" CssClass="form-control"  onkeypress="return filterInput(1, event)"
+                                        Width="299px" MaxLength="6"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -40,7 +41,8 @@
                                      Importe de Pago:
                                 </td>
                                 <td style="width: 300px;">
-                                    <asp:Label ID="Label1" runat="server" CssClass="form-control" Width="299px"></asp:Label>
+                                    <asp:TextBox ID="txtImportePago" runat="server" CssClass="form-control" onkeypress="return filterInput(1, event, true)"
+                                        Width="299px" MaxLength="12"></asp:TextBox>
                                 </td>
                             </tr>
                            
@@ -57,7 +59,8 @@
                                    Fecha de Vencimiento: :
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtFechaVcto" MaxLength="12" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtFechaVcto" MaxLength="10" runat="server"  type= "date" 
+                                        CssClass="form-control" TextMode="Date"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -71,10 +74,11 @@
                             <tr>
                                 <td>
                                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar"
-                                        class="btn btn-primary alert-success" />
+                                        class="btn btn-primary alert-success" onclick="btnGuardar_Click" />
                                 </td>
                                 <td>
-                                    <asp:Button ID="btnCerrar" runat="server" Text="Regresar" class="btn btn-primary alert-danger"
+                                    <asp:Button ID="btnCerrar" runat="server" Text="Regresar" 
+                                        class="btn btn-primary alert-danger" onclick="btnCerrar_Click"
                                          />
                                 </td>
                             </tr>
