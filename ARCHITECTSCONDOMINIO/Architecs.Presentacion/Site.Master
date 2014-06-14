@@ -44,6 +44,14 @@
                             <asp:MenuItem NavigateUrl="~/frmViviendas.aspx" Text="Listado" Value="Listar">
                             </asp:MenuItem>
                         </asp:MenuItem>
+
+                         <asp:MenuItem Text="Visitas">
+                             <asp:MenuItem NavigateUrl="~/Visitas/frmVisita.aspx" Text="Listado" 
+                                 Value="Listado"></asp:MenuItem>
+                             <asp:MenuItem NavigateUrl="~/Visitas/frmRegistrarVisita.aspx" Text="Registrar" 
+                                 Value="Registrar"></asp:MenuItem>
+                        </asp:MenuItem>
+
                         <asp:MenuItem NavigateUrl="http://localhost:8080/DSD-CONDOMINIOWEB/ResidenteServlet?opcion=1" 
                             Text="Residentes" Value="Residentes"></asp:MenuItem>
                         <asp:MenuItem Text="Administrar Pagos" Value="Administrar Pagos">
