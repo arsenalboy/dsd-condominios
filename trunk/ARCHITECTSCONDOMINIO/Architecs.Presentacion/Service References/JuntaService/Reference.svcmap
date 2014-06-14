@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:62067/JuntaService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:59173/JuntaService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="JuntaService.disco" MetadataType="Disco" ID="db35bfd2-bb04-4309-95a4-9b92fc042f7a" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?disco" />
-    <MetadataFile FileName="JuntaService.xsd" MetadataType="Schema" ID="59a99238-cde5-481b-9ac1-4d3426447da4" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd3" />
-    <MetadataFile FileName="JuntaService1.xsd" MetadataType="Schema" ID="f91fb4fe-6632-4ecd-976e-8e1c58ab7590" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd1" />
-    <MetadataFile FileName="JuntaService.wsdl" MetadataType="Wsdl" ID="faae2d6c-7ad1-46bc-9673-9c22662915fd" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?wsdl" />
-    <MetadataFile FileName="JuntaService2.xsd" MetadataType="Schema" ID="e9436280-070e-4ed0-aae2-9fbcac1b1a51" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd2" />
-    <MetadataFile FileName="JuntaService3.xsd" MetadataType="Schema" ID="b312d19f-8ff8-4058-b092-862f09bb1398" SourceId="1" SourceUrl="http://localhost:62067/JuntaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="JuntaService4.xsd" MetadataType="Schema" ID="3633f843-376e-4973-aa29-8e79c47578b5" SourceId="1" SourceUrl="http://localhost:59173/JuntaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="JuntaService41.xsd" MetadataType="Schema" ID="8d10c291-a3f3-453a-8487-539612348401" SourceId="1" SourceUrl="http://localhost:59173/JuntaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="JuntaService42.xsd" MetadataType="Schema" ID="5af14866-1629-4c54-aa9c-1e46c6a056ab" SourceId="1" SourceUrl="http://localhost:59173/JuntaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="JuntaService1.wsdl" MetadataType="Wsdl" ID="2d22f966-8fbb-4603-9457-e180315cc82e" SourceId="1" SourceUrl="http://localhost:59173/JuntaService.svc?wsdl" />
+    <MetadataFile FileName="JuntaService43.xsd" MetadataType="Schema" ID="f0fd4a29-dc6a-4934-a068-773b7173d503" SourceId="1" SourceUrl="http://localhost:59173/JuntaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="JuntaService1.disco" MetadataType="Disco" ID="cf9127ce-cbef-47a5-aec3-f2941300ef16" SourceId="1" SourceUrl="http://localhost:59173/JuntaService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
