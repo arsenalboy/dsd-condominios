@@ -28,12 +28,20 @@ namespace Architecs.PagosService
         RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
 
         [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "PagarCuota")]
+        RetornaMensaje PagarCuota(int pIdCuota,string pFecPago, string pNumDeposito, int pTipoPago);
+
+        [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "ListarCuota")]
         List<Cuota> ListarCuota(string pPeriodo);
 
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "ListarCuotaPorResidente")]
         List<Cuota> ListarCuotaPorResidente(string pCorreoResidente);
+
+        [FaultContract(typeof(RetornaMensaje))]
+        [OperationContract(Name = "ListarCuotaMorosas")]
+        List<Cuota> ListarCuotaMorosas(string pPeriodo);
 
         [FaultContract(typeof(RetornaMensaje))]
         [OperationContract(Name = "BuscarCuota")]

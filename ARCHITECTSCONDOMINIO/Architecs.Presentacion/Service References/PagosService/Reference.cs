@@ -297,6 +297,10 @@ namespace Architecs.Presentacion.PagosService {
         [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         Architects.Dominio.RetornaMensaje ActualizarCuota(int pIdCuota, string pPeriodo, int pIdVivienda, double pImporte, string pFecVncto);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/PagarCuota", ReplyAction="http://tempuri.org/IPagosService/PagarCuotaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/PagarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architects.Dominio.RetornaMensaje PagarCuota(int pIdCuota, string pFecPago, string pNumDeposito, int pTipoPago);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuota", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         Architecs.Presentacion.PagosService.Cuota[] ListarCuota(string pPeriodo);
@@ -304,6 +308,10 @@ namespace Architecs.Presentacion.PagosService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuotaPorResidente", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaPorResidenteResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaPorResidenteRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
         Architecs.Presentacion.PagosService.Cuota[] ListarCuotaPorResidente(string pCorreoResidente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/ListarCuotaMorosas", ReplyAction="http://tempuri.org/IPagosService/ListarCuotaMorosasResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/ListarCuotaMorosasRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
+        Architecs.Presentacion.PagosService.Cuota[] ListarCuotaMorosas(string pPeriodo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagosService/BuscarCuota", ReplyAction="http://tempuri.org/IPagosService/BuscarCuotaResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Architects.Dominio.RetornaMensaje), Action="http://tempuri.org/IPagosService/BuscarCuotaRetornaMensajeFault", Name="RetornaMensaje", Namespace="http://schemas.datacontract.org/2004/07/Architects.Dominio")]
@@ -357,12 +365,20 @@ namespace Architecs.Presentacion.PagosService {
             return base.Channel.ActualizarCuota(pIdCuota, pPeriodo, pIdVivienda, pImporte, pFecVncto);
         }
         
+        public Architects.Dominio.RetornaMensaje PagarCuota(int pIdCuota, string pFecPago, string pNumDeposito, int pTipoPago) {
+            return base.Channel.PagarCuota(pIdCuota, pFecPago, pNumDeposito, pTipoPago);
+        }
+        
         public Architecs.Presentacion.PagosService.Cuota[] ListarCuota(string pPeriodo) {
             return base.Channel.ListarCuota(pPeriodo);
         }
         
         public Architecs.Presentacion.PagosService.Cuota[] ListarCuotaPorResidente(string pCorreoResidente) {
             return base.Channel.ListarCuotaPorResidente(pCorreoResidente);
+        }
+        
+        public Architecs.Presentacion.PagosService.Cuota[] ListarCuotaMorosas(string pPeriodo) {
+            return base.Channel.ListarCuotaMorosas(pPeriodo);
         }
         
         public Architecs.Presentacion.PagosService.Cuota BuscarCuota(int pIdCuota) {

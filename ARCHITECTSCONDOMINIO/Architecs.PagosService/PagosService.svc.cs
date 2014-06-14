@@ -7,6 +7,8 @@ using System.Text;
 
 using Architecs.PagosService.Persistencia;
 using Architects.Dominio;
+using System.Messaging;
+using System.Configuration;
 
 namespace Architecs.PagosService
 {
@@ -163,6 +165,80 @@ namespace Architecs.PagosService
             return retornaMensaje;
         }
 
+        public RetornaMensaje PagarCuota(int pIdCuota, string pFecPago, string pNumDeposito, int pTipoPago)
+        {
+            retornaMensaje = new RetornaMensaje();
+            try
+            {
+                try
+                {
+                    DateTime fechaPago = Convert.ToDateTime(pFecPago);
+                }
+                catch (Exception ex)
+                {
+                    retornaMensaje.CodigoRetorno = -1;
+                    retornaMensaje.Mensage = string.Format("Firmato de fecha es INCORRECTO.", "Cuota");
+                    retornaMensaje.Exito = false;
+                    return retornaMensaje;
+                }
+                //** SE GUARDARA EL PAGO DEL CLIENTE EN UNA COLA DE MENSAJES.
+
+                string rutaCola = ConfigurationManager.AppSettings["DireccionMSQColas"].ToString(); // @".\private$\CondominioCola";
+                if (!MessageQueue.Exists(rutaCola))
+                    MessageQueue.Create(rutaCola);
+                MessageQueue cola = new MessageQueue(rutaCola);
+                Message mensaje = new Message();
+                mensaje.Label = "Nuevo Pago registrado de RESIDENTE ";
+                mensaje.Body = new Cuota()
+                {
+                    D_FecPago = Convert.ToDateTime(pFecPago),
+                    C_NumDeposito = pNumDeposito,
+                    N_IdCuota = pIdCuota,
+                    N_IdTipoPago = pTipoPago
+                };
+                cola.Send(mensaje);
+                retornaMensaje.CodigoRetorno = 1;
+                retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK+" , En cola para su validación.", "Cuota");
+                retornaMensaje.Exito = true;
+
+                //retornaMensaje = new RetornaMensaje();
+                //cuotaDAO = new CuotaDAO();
+                //Cuota cuotaBuscar = null;
+                //cuotaBuscar = cuotaDAO.Buscar(pPeriodo, pIdVivienda);
+                //if (cuotaBuscar != null)
+                //{
+                //    Cuota cuota = new Cuota
+                //    {
+                //        N_IdCuota = pIdCuota,
+                //        C_Periodo = pPeriodo,
+                //        N_IdVivienda = pIdVivienda,
+                //        N_Importe = Convert.ToDecimal(pImporte),
+                //        D_FecVncto = Convert.ToDateTime(pFecVncto)
+                //    };
+                //    retornaMensaje.CodigoRetorno = cuotaDAO.Actualizar(cuota);
+                //    retornaMensaje.Mensage = string.Format(resMensajes.msjGuardadoOK, "Cuota");
+                //    retornaMensaje.Exito = true;
+                //}
+                //else
+                //{
+                //    retornaMensaje.CodigoRetorno = -1;
+                //    retornaMensaje.Mensage = string.Format(resMensajes.msjYaExiste, "Cuota");
+                //    retornaMensaje.Exito = false;
+                //}
+            }
+            catch (Exception exception)
+            {
+                throw new FaultException<RetornaMensaje>
+                    (new RetornaMensaje
+                    {
+                        Mensage = string.Format(resMensajes.msjNoRegistrado, "Cuota"),
+                        CodigoError = exception.GetHashCode().ToString(),
+                        Exito = false
+                    }
+                    , new FaultReason(exception.Message));
+            }
+            return retornaMensaje;
+        }
         /// <summary>
         /// Permita el listado de Cuotas
         /// </summary>
@@ -217,6 +293,47 @@ namespace Architecs.PagosService
             return lstCuota;
         }
 
+
+        public List<Cuota> ListarCuotaMorosas(string pPeriodo)
+        {
+            List<Cuota> lstCuota = new List<Cuota>();
+            try
+            {
+                cuotaDAO = new CuotaDAO();
+
+                /* LEER LA COLA DE MENSAJES Y GUARDAR EN BASE DE DATOS */
+                string rutaCola = ConfigurationManager.AppSettings["DireccionMSQColas"].ToString(); // @".\private$\CondominioCola";
+                MessageQueue cola = new MessageQueue(rutaCola);
+                int cantidadMensajes = cola.GetAllMessages().Count();
+                if (cantidadMensajes > 0)
+                    foreach (Message mensajeTodo in cola.GetAllMessages())
+                    {
+                        cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(Cuota) });
+                        Message mensaje = cola.Receive();
+                        Cuota pagoCuota = (Cuota)mensaje.Body;
+
+                        int cuotaRegistrado = -1;
+                        cuotaRegistrado = cuotaDAO.PagarCuota(pagoCuota);
+                    }
+
+                /* FIN LEER LA COLA DE MENSAJES Y GUARDAR EN BASE DE DATOS */
+
+                lstCuota = cuotaDAO.ListarMorosos(pPeriodo);
+            }
+            catch (Exception exception)
+            {
+
+                throw new FaultException<RetornaMensaje>
+                    (new RetornaMensaje
+                    {
+                        Mensage = string.Format(resMensajes.msjNoListado, "Cuota"),
+                        CodigoError = exception.GetHashCode().ToString(),
+                        Exito = true
+                    }
+                    , new FaultReason(exception.Message));
+            }
+            return lstCuota;
+        }
         /// <summary>
         /// Permite buscar cuota por Id de registro
         /// </summary>

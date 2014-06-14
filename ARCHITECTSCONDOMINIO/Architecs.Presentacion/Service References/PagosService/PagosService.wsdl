@@ -38,6 +38,15 @@
   <wsdl:message name="IPagosService_ActualizarCuota_RetornaMensajeFault_FaultMessage">
     <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q2:RetornaMensaje" />
   </wsdl:message>
+  <wsdl:message name="IPagosService_PagarCuota_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagarCuota" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_PagarCuota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagarCuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_PagarCuota_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q3:RetornaMensaje" />
+  </wsdl:message>
   <wsdl:message name="IPagosService_ListarCuota_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarCuota" />
   </wsdl:message>
@@ -45,7 +54,7 @@
     <wsdl:part name="parameters" element="tns:ListarCuotaResponse" />
   </wsdl:message>
   <wsdl:message name="IPagosService_ListarCuota_RetornaMensajeFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q3:RetornaMensaje" />
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q4:RetornaMensaje" />
   </wsdl:message>
   <wsdl:message name="IPagosService_ListarCuotaPorResidente_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarCuotaPorResidente" />
@@ -54,7 +63,16 @@
     <wsdl:part name="parameters" element="tns:ListarCuotaPorResidenteResponse" />
   </wsdl:message>
   <wsdl:message name="IPagosService_ListarCuotaPorResidente_RetornaMensajeFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q4:RetornaMensaje" />
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q5:RetornaMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ListarCuotaMorosas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCuotaMorosas" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ListarCuotaMorosas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCuotaMorosasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagosService_ListarCuotaMorosas_RetornaMensajeFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q6:RetornaMensaje" />
   </wsdl:message>
   <wsdl:message name="IPagosService_BuscarCuota_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarCuota" />
@@ -63,7 +81,7 @@
     <wsdl:part name="parameters" element="tns:BuscarCuotaResponse" />
   </wsdl:message>
   <wsdl:message name="IPagosService_BuscarCuota_RetornaMensajeFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q5:RetornaMensaje" />
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q7:RetornaMensaje" />
   </wsdl:message>
   <wsdl:message name="IPagosService_EliminarCuota_InputMessage">
     <wsdl:part name="parameters" element="tns:EliminarCuota" />
@@ -72,7 +90,7 @@
     <wsdl:part name="parameters" element="tns:EliminarCuotaResponse" />
   </wsdl:message>
   <wsdl:message name="IPagosService_EliminarCuota_RetornaMensajeFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q6:RetornaMensaje" />
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Architects.Dominio" name="detail" element="q8:RetornaMensaje" />
   </wsdl:message>
   <wsdl:portType name="IPagosService">
     <wsdl:operation name="ListarTipoPago">
@@ -93,6 +111,11 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/ActualizarCuotaResponse" message="tns:IPagosService_ActualizarCuota_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/ActualizarCuotaRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_ActualizarCuota_RetornaMensajeFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PagarCuota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/PagarCuota" message="tns:IPagosService_PagarCuota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/PagarCuotaResponse" message="tns:IPagosService_PagarCuota_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/PagarCuotaRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_PagarCuota_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListarCuota">
       <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/ListarCuota" message="tns:IPagosService_ListarCuota_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaResponse" message="tns:IPagosService_ListarCuota_OutputMessage" />
@@ -102,6 +125,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaPorResidente" message="tns:IPagosService_ListarCuotaPorResidente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaPorResidenteResponse" message="tns:IPagosService_ListarCuotaPorResidente_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaPorResidenteRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_ListarCuotaPorResidente_RetornaMensajeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCuotaMorosas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaMorosas" message="tns:IPagosService_ListarCuotaMorosas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaMorosasResponse" message="tns:IPagosService_ListarCuotaMorosas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPagosService/ListarCuotaMorosasRetornaMensajeFault" name="RetornaMensajeFault" message="tns:IPagosService_ListarCuotaMorosas_RetornaMensajeFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="BuscarCuota">
       <wsdl:input wsaw:Action="http://tempuri.org/IPagosService/BuscarCuota" message="tns:IPagosService_BuscarCuota_InputMessage" />
@@ -158,6 +186,18 @@
         <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="PagarCuota">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/PagarCuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ListarCuota">
       <soap:operation soapAction="http://tempuri.org/IPagosService/ListarCuota" style="document" />
       <wsdl:input>
@@ -172,6 +212,18 @@
     </wsdl:operation>
     <wsdl:operation name="ListarCuotaPorResidente">
       <soap:operation soapAction="http://tempuri.org/IPagosService/ListarCuotaPorResidente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RetornaMensajeFault">
+        <soap:fault use="literal" name="RetornaMensajeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCuotaMorosas">
+      <soap:operation soapAction="http://tempuri.org/IPagosService/ListarCuotaMorosas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
