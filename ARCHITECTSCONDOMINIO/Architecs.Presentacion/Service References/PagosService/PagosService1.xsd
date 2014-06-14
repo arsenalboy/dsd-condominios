@@ -77,6 +77,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListarCuotaPorResidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pCorreoResidente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCuotaPorResidenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Architecs.PagosService" minOccurs="0" name="ListarCuotaPorResidenteResult" nillable="true" type="q6:ArrayOfCuota" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="BuscarCuota">
     <xs:complexType>
       <xs:sequence>
@@ -87,7 +101,7 @@
   <xs:element name="BuscarCuotaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Architecs.PagosService" minOccurs="0" name="BuscarCuotaResult" nillable="true" type="q6:Cuota" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Architecs.PagosService" minOccurs="0" name="BuscarCuotaResult" nillable="true" type="q7:Cuota" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -101,7 +115,7 @@
   <xs:element name="EliminarCuotaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="EliminarCuotaResult" nillable="true" type="q7:RetornaMensaje" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Architects.Dominio" minOccurs="0" name="EliminarCuotaResult" nillable="true" type="q8:RetornaMensaje" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -192,6 +192,31 @@ namespace Architecs.PagosService
             return lstCuota;
         }
 
+
+        public List<Cuota> ListarCuotaPorResidente(string pCorreoResidente)
+        {
+            List<Cuota> lstCuota = new List<Cuota>();
+            try
+            {
+                cuotaDAO = new CuotaDAO();
+
+                lstCuota = cuotaDAO.ListarPorResidente(pCorreoResidente);
+            }
+            catch (Exception exception)
+            {
+
+                throw new FaultException<RetornaMensaje>
+                    (new RetornaMensaje
+                    {
+                        Mensage = string.Format(resMensajes.msjNoListado, "Cuota"),
+                        CodigoError = exception.GetHashCode().ToString(),
+                        Exito = true
+                    }
+                    , new FaultReason(exception.Message));
+            }
+            return lstCuota;
+        }
+
         /// <summary>
         /// Permite buscar cuota por Id de registro
         /// </summary>

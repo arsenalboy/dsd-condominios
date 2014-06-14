@@ -8,7 +8,7 @@ using Architecs.Presentacion.PagosService;
 
 namespace Architecs.Presentacion
 {
-    public partial class frmCuota : System.Web.UI.Page
+    public partial class frmCuotaPagos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,24 +33,11 @@ namespace Architecs.Presentacion
         {
             switch (e.CommandName)
             {
-                case "Editar":
-                    Response.Redirect("frmCuotaCrear.aspx?pm=" + e.CommandArgument);
+                case "Pagar":
+                    Response.Redirect("frmCuotaPagar.aspx?pm=" + e.CommandArgument);
                     break;
 
-                case "Eliminar":
-                    try
-                    {
-                        PagosService.PagosServiceClient proxiPagos = new PagosServiceClient();
-                        Architects.Dominio.RetornaMensaje retorna = proxiPagos.EliminarCuota(Convert.ToInt32(e.CommandArgument));
-                        if (retorna.Exito)
-                            lblMensajes.Text = retorna.Mensage;
-                        CargarGrilla();
-                    }
-                    catch (Exception ex)
-                    {
-                        lblMensajes.Text = ex.Message;
-                    }
-                    break;
+                
             }
         }
         protected void gvCuotas_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -59,10 +46,6 @@ namespace Architecs.Presentacion
             CargarGrilla();
         }
 
-        protected void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("frmCuotaCrear.aspx");
-        }
         private void CargarGrilla()
         {
             

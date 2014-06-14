@@ -37,6 +37,8 @@ namespace Architecs.PagosService
         public Nullable<DateTime> D_FecVncto { get; set; }
         [DataMember]
         public Nullable<DateTime> D_FecPago { get; set; }
+        [DataMember]
+        public string C_NumDeposito { get; set; }
 
         [DataMember]
         public TipoPago objTipoPago { get; set; }
